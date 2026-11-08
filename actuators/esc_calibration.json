@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-10-05",
+  "status": "single_channel_5s_and_current_profile_joint_2s_bench_verified",
+  "calibration_complete": false,
+  "esc": "Hobbywing WP-1625",
+  "throttle_channel": 0,
+  "unit": "microseconds",
+  "pca9685": {
+    "address": "0x40",
+    "requested_frequency_hz": 60,
+    "prescale": 101,
+    "nominal_oscillator_hz": 25000000,
+    "nominal_frequency_hz": 59.838388480392155
+  },
+  "neutral": {
+    "requested_us": 1550,
+    "selection_status": "1550 us startup and return value; user reports reproducible 1655 us start under this startup condition. Internal ESC learned value is not read back.",
+    "esc_learned_neutral_us": null,
+    "ticks": 380,
+    "nominal_actual_us": 1550.4,
+    "stationary_before_throttle_confirmed_by_user": true,
+    "return_to_stop_confirmed_by_user": true,
+    "user_observation": "能，中位静止，回中后也停住",
+    "power_on_order": "Provide neutral signal first, then immediately turn on ESC",
+    "startup_pair_repeatability_confirmed_by_user": true,
+    "power_cycle_count_reported": null
+  },
+  "previous_neutral_observations": [
+    {
+      "requested_us": 1500,
+      "ticks": 368,
+      "nominal_actual_us": 1501.44,
+      "requested_frequency_hz": 60,
+      "startup_self_test_confirmed_by_user": true,
+      "user_observation": "先发送中位再立即上电：一声短鸣加上一声长鸣，随后红灯熄灭",
+      "note": "Historical startup check; latest forward-start trials used 1550 us neutral"
+    }
+  ],
+  "start_us": 1655,
+  "start_observation": {
+    "requested_us": 1655,
+    "source": "Direct user report: 现在1550启动的话1655能够复现",
+    "reference_neutral_us": 1550,
+    "startup_neutral_us": 1550,
+    "ticks": 406,
+    "nominal_actual_us": 1656.48,
+    "trial_duration_seconds": 0.5,
+    "logged_1655_trials_at_review": 3,
+    "logged_sessions_at_review": 2,
+    "repeatability_confirmed_by_user": true,
+    "power_cycle_count_reported": null,
+    "sustained_low_speed_verified": true,
+    "loaded_ground_driving_verified": false,
+    "sustained_validation_review": "runs/20261005_140718_hold_review.json"
+  },
+  "previous_start_observation": {
+    "requested_us": 1615,
+    "validity": "Observed in the previous session; not established across ESC power cycles",
+    "source": "User reported 1615 us as a relatively stable starting point",
+    "reference_neutral_us": 1550,
+    "ticks": 396,
+    "nominal_actual_us": 1615.68,
+    "trial_duration_seconds": 0.5,
+    "successful_trials_at_review": 3,
+    "initial_movement_also_reported_at_us": 1610,
+    "raw_session_start_mark_us_at_review": 1610,
+    "selection_basis": "1610 us is the raw onset mark; 1615 us is the user's selected reliable start",
+    "sustained_low_speed_verified": false,
+    "loaded_ground_driving_verified": false
+  },
+  "slow_us": 1655,
+  "latest_reported_start_us": 1655,
+  "repeatable_start_calibration_valid": true,
+  "repeatability_scope": "User-reported repeatable start with 1550 us startup/return at 60 Hz, plus one session of finite-duration holds up to 5 seconds; loaded ground driving not verified",
+  "start_shift_review": "runs/20261005_start_shift_review.json",
+  "rotation_direction": "forward",
+  "latest_start_evidence": {
+    "sessions": [
+      {
+        "session": "runs/20261005_132626_705856_esc_manual/esc_calibration.json",
+        "session_ended_at": "2026-10-05T13:37:00.110431+08:00",
+        "final_session_sha256": "6bf2d424dd1e62f2f9d7ff8e98b5cfd8b2292616931c2cad6bcec71819408789",
+        "successful_1655_trials": 2,
+        "bus_error_events": 0,
+        "final_shutdown_confirmed": true
+      },
+      {
+        "session": "runs/20261005_133707_892405_esc_manual/esc_calibration.json",
+        "snapshot_last_event_at": "2026-10-05T13:41:30.658518+08:00",
+        "snapshot_sha256": "1266a3054b74ad80c552a7e3809d188a29cf1a1f13cde31c3da6c8f66dfbaeca",
+        "successful_1655_trials_at_review": 1,
+        "bus_error_events_at_review": 0,
+        "completed_output_sequences_off": true,
+        "session_still_open_at_review": true
+      }
+    ],
+    "review": "runs/20261005_start_shift_review.json",
+    "physical_confirmation_source": "User reports that starting with 1550 us reproduces the 1655 us start; software does not record the physical switch timing"
+  },
+  "previous_start_evidence": {
+    "session": "runs/20261005_121347_421697_esc_manual/esc_calibration.json",
+    "review": "runs/20261005_121347_start_review.json",
+    "physical_confirmation_source": "Direct user report of reliable 1615 us start and stopping at 1550 us; session notes describe forward rotation",
+    "session_ended_at": "2026-10-05T12:27:38.027435+08:00",
+    "final_session_sha256": "301aeea71e695fb7cdedf2a18dc49a6875370559cb204d2139520bf3b5297348",
+    "successful_neutral_tests": 3,
+    "successful_throttle_trials": 42,
+    "event_count": 1442,
+    "bus_error_events": 0,
+    "final_shutdown_confirmed": true
+  },
+  "evidence": {
+    "session": "runs/20261005_120222_376282_esc_manual/esc_calibration.json",
+    "review": "runs/20261005_120222_review.json",
+    "neutral_confirmation_source": "User clarification after session review; exact startup power-on time was not captured in the software log",
+    "no_rotation_user_reported_at_us": [
+      1560,
+      1570
+    ],
+    "sound_and_flashing_phase": "Half-second throttle phase",
+    "highest_trial_in_reviewed_session_us": 1590,
+    "successful_throttle_trials": 11,
+    "bus_error_events": 0,
+    "final_shutdown_confirmed": true
+  },
+  "limitations": [
+    "Pulse widths and frequency are nominal register-based calculations, not measured waveforms",
+    "Physical movement and stopping confirmation comes from user observations, not an ESC or wheel sensor",
+    "Old 1615 us start belongs to an earlier session with uncertain power-on neutral; its causal difference from the reproduced 1655 us pair is not proven",
+    "Reproduction is based on user observation; exact physical power-cycle count and switch timing were not logged",
+    "Single-ESC forward holds are user-confirmed up to 5 seconds; current-profile joint bench holds up to 2 seconds. Loaded driving, continuous control, reverse/brake behavior and long-term repeatability remain unverified",
+    "Frequency as the cause of earlier no-response has not been established",
+    "Initial joint no-motion was followed by restored operation after battery replacement per user; low battery remains suspected, not measured. Current 1745/1490/2020 us joint bench tests now have explicit user confirmations at 0.5, 1 and 2 seconds for each direction."
+  ],
+  "updated_at": "2026-10-06T08:59:56.552415+08:00",
+  "bench_forward_low_speed_verified": true,
+  "sustained_low_speed_verified": true,
+  "sustained_verification_maximum_seconds": 5,
+  "loaded_ground_driving_verified": false,
+  "latest_sustained_review": "runs/20261005_140718_hold_review.json",
+  "slow_observation": {
+    "channel": 0,
+    "requested_us": 1655,
+    "ticks": 406,
+    "nominal_actual_us": 1656.48,
+    "prescale": 101,
+    "tick_us": 4.08,
+    "nominal_frequency_hz": 59.838388480392155,
+    "neutral_only": false,
+    "neutral_before_seconds": 5,
+    "throttle_seconds": 5.0,
+    "neutral_after_seconds": 1,
+    "expiry_and_all_off_verified": true,
+    "neutral_us": 1550,
+    "neutral_ticks": 380,
+    "neutral_nominal_actual_us": 1550.4,
+    "time": "2026-10-05T14:12:30.510548+08:00",
+    "selection_status": "User marked slow after two completed five-second runs and notes of stable forward rotation/return stop",
+    "verification_scope": "Raised-wheel bench procedure, maximum 5 seconds per run",
+    "tested_durations_seconds": [
+      0.5,
+      1,
+      2,
+      5
+    ],
+    "five_second_repetitions": 2,
+    "return_to_neutral_stop_confirmed_by_user": true,
+    "stop_time_seconds_measured": null,
+    "lower_trial_us": 1650,
+    "lower_trial_observation": "1650没有正常运行",
+    "evidence_session": "runs/20261005_140718_422072_esc_manual/esc_calibration.json",
+    "evidence_review": "runs/20261005_140718_hold_review.json"
+  },
+  "latest_sustained_evidence": {
+    "session": "runs/20261005_140718_422072_esc_manual/esc_calibration.json",
+    "source_sha256": "aabe815a62cfaf439a1af4537fd5e4fad9c8eef76f83edbc7082041588f5a37a",
+    "review": "runs/20261005_140718_hold_review.json",
+    "ended_at": "2026-10-05T14:13:23.001560+08:00",
+    "event_count": 416,
+    "error_events": 0,
+    "final_shutdown_confirmed": true,
+    "notes": [
+      {
+        "time": "2026-10-05T14:09:29.578906+08:00",
+        "text": "正常转动",
+        "preceding_output_input": "hold 0.5",
+        "preceding_target_us": 1655,
+        "preceding_duration_seconds": 0.5
+      },
+      {
+        "time": "2026-10-05T14:10:24.481356+08:00",
+        "text": "前进平稳，回中后很快停住，无抖动",
+        "preceding_output_input": "hold 1",
+        "preceding_target_us": 1655,
+        "preceding_duration_seconds": 1.0
+      },
+      {
+        "time": "2026-10-05T14:11:17.908229+08:00",
+        "text": "转动稳定，回中后停住也稳定",
+        "preceding_output_input": "hold 2",
+        "preceding_target_us": 1655,
+        "preceding_duration_seconds": 2.0
+      },
+      {
+        "time": "2026-10-05T14:12:26.755564+08:00",
+        "text": "转动平稳，回中后立刻停住（可能有不易感知的时间偏差）总体稳定",
+        "preceding_output_input": "hold 5",
+        "preceding_target_us": 1655,
+        "preceding_duration_seconds": 5.0
+      },
+      {
+        "time": "2026-10-05T14:13:05.468826+08:00",
+        "text": "1650没有正常运行",
+        "preceding_output_input": "-5",
+        "preceding_target_us": 1650,
+        "preceding_duration_seconds": 0.5
+      }
+    ]
+  },
+  "joint_motion_verified": true,
+  "latest_joint_observation": {
+    "session": "runs/20261006_084951_398775_joint_manual/joint_test.json",
+    "source_sha256": "239a252f7a771136ee3c4f3f8bf89bbe3be8d89073598807551d75c14b44e7ba",
+    "review": "runs/20261006_084951_joint_review.json",
+    "ended_at": "2026-10-06T08:54:52.091998+08:00",
+    "firmware_version": 9,
+    "host_tool_revision": 5,
+    "requested_pwm_hz": 60,
+    "prescale": 101,
+    "steering_us": {
+      "center": 1745,
+      "right": 1490,
+      "left": 2020
+    },
+    "neutral_us": 1550,
+    "forward_us": 1655,
+    "tested_durations_seconds": [
+      0.5,
+      1,
+      2
+    ],
+    "maximum_joint_target_seconds": 2,
+    "repetitions_per_direction_and_duration": 1,
+    "all_outputs_expired_and_off": true,
+    "all_outputs_explicitly_confirmed_by_user": true,
+    "output_sequences": 13,
+    "event_count": 546,
+    "error_events": 0,
+    "rejected_commands": 3,
+    "final_shutdown_confirmed": true,
+    "full_finite_joint_acceptance_passed": true,
+    "verification_scope": "Finite-duration joint bench procedure; center/right/left each tested once at 0.5, 1 and 2 seconds, with explicit user ok; no measured wheel speed or steering angle, no loaded driving or continuous-control validation",
+    "loaded_ground_driving_verified": false,
+    "continuous_control_verified": false
+  },
+  "previous_joint_observation": {
+    "session": "runs/20261005_144430_248123_joint_manual/joint_test.json",
+    "review": "runs/20261005_144430_joint_review.json",
+    "neutral_us": 1550,
+    "forward_us": 1655,
+    "duration_seconds": 0.5,
+    "drive_wheels_raised": true,
+    "center_rotation_observed": false,
+    "right_rotation_observed": false,
+    "left_rotation_observed": null,
+    "root_cause_proven": false,
+    "earlier_single_channel_slow_result_preserved": true
+  },
+  "joint_throttle_motion_confirmed_by_user": true,
+  "latest_steering_review": "runs/20261005_204600_steering_review.json",
+  "joint_observation_history": [
+    {
+      "session": "runs/20261005_155208_565304_joint_manual/joint_test.json",
+      "review": "runs/20261005_155208_joint_review.json",
+      "neutral_us": 1550,
+      "forward_us": 1655,
+      "tested_durations_seconds": [
+        0.5,
+        1,
+        2
+      ],
+      "battery_replaced": true,
+      "esc_operation_restored_user_report": true,
+      "all_sequences_expired_and_off": true,
+      "event_count": 474,
+      "error_events": 0,
+      "right_2s_explicit_ok_recorded": false,
+      "steering_right_return_issue_persists": true,
+      "full_joint_acceptance_passed": false,
+      "root_cause_proven": false
+    }
+  ],
+  "joint_motion_verification_scope": "Finite-duration joint bench procedure; center/right/left each tested once at 0.5, 1 and 2 seconds, with explicit user ok; no measured wheel speed or steering angle, no loaded driving or continuous-control validation",
+  "joint_maximum_verified_seconds": 2,
+  "latest_joint_review": "runs/20261006_084951_joint_review.json",
+  "calibration_complete_scope": "Full vehicle calibration including loaded driving; finite bench milestones are tracked separately"
+}

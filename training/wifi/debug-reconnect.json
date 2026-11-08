@@ -1,0 +1,4 @@
+[
+  ["debug", "wpa_cli -p /run/kosmo-wifi/control -i wlan0 log_level DEBUG && wpa_cli -p /run/kosmo-wifi/control -i wlan0 reconnect"],
+  ["channels", "iw phy phy0 info | grep -A 3 -B 2 '2457 MHz'; iw dev wlan0 link; ip link show wlan0; true"]
+]

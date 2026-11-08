@@ -1,0 +1,12 @@
+{
+  "source": "\u8d5b\u9898\u76f8\u5173\u6570\u636ekosmo\\3. Demo\\6.Komos2_PU\\block_editor\\k100_be\\ip_core\\k100_be_processing_unit_1_0_0",
+  "sha256": {
+    "pu_atm.v": "51b082bdc0c69555c6c2eca29b9618773acdb7c3b3e7a011c818a805eec569c0",
+    "pu_aw_atm.v": "bba82e378555e2d2d06213f2e9339633add1737c0d2ca630f44cacd79c906c2c",
+    "pu_b_atm.v": "9e5ac2a5c2625d261d2b245933cece325dfdba42657e5e6a4ddf76a9cd9b6f17",
+    "pu_trace_buffer.v": "aa0415596c51f80333a6689f7588abbeb3bd8af42cf4084b3e47d2de3fd813d1",
+    "pu_w_atm.v": "2161048086cb342ef2aeff683e802de7459dcd7104f8c21f96e92780181b999d",
+    "system_process_unit.v": "caf519fddaf5c744b4223b9d5e013fad0ab2d822df73f70e5334d8e99ccbbaed"
+  },
+  "note": "Unmodified generated Pango PU RTL. Vendor license applies."
+}

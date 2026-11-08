@@ -1,0 +1,1357 @@
+{
+  "upstream": "espressif/esp32-camera",
+  "version": "v2.1.3",
+  "width": 160,
+  "height": 120,
+  "format": "RGB565_MSB_FIRST",
+  "external_oscillator_hz": "measure on module; upstream reference uses 24 MHz",
+  "clkrc": 3,
+  "dvp_divider": 8,
+  "colorbar_index": 221,
+  "writes": 223,
+  "sha256": {
+    "ov2640.c": "38829e0a0c91a1661e58d318e8066c52017aefdaf0526b265115cd7b393f88ba",
+    "ov2640_regs.h": "7ffc0cebb0f67aaac037b8111c5f247383a8e502ff2fd62fe4caf4383222d213",
+    "ov2640_settings.h": "b0086d2fd8498f126bb0483ae0992b46a03c82503be1c0f5b778037930d9da66"
+  },
+  "sequence": [
+    {
+      "index": 0,
+      "register": "ff",
+      "value": "01",
+      "delay_ms": 0
+    },
+    {
+      "index": 1,
+      "register": "12",
+      "value": "80",
+      "delay_ms": 10
+    },
+    {
+      "index": 2,
+      "register": "ff",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 3,
+      "register": "2c",
+      "value": "ff",
+      "delay_ms": 0
+    },
+    {
+      "index": 4,
+      "register": "2e",
+      "value": "df",
+      "delay_ms": 0
+    },
+    {
+      "index": 5,
+      "register": "ff",
+      "value": "01",
+      "delay_ms": 0
+    },
+    {
+      "index": 6,
+      "register": "3c",
+      "value": "32",
+      "delay_ms": 0
+    },
+    {
+      "index": 7,
+      "register": "11",
+      "value": "01",
+      "delay_ms": 0
+    },
+    {
+      "index": 8,
+      "register": "09",
+      "value": "02",
+      "delay_ms": 0
+    },
+    {
+      "index": 9,
+      "register": "04",
+      "value": "28",
+      "delay_ms": 0
+    },
+    {
+      "index": 10,
+      "register": "13",
+      "value": "e5",
+      "delay_ms": 0
+    },
+    {
+      "index": 11,
+      "register": "14",
+      "value": "48",
+      "delay_ms": 0
+    },
+    {
+      "index": 12,
+      "register": "2c",
+      "value": "0c",
+      "delay_ms": 0
+    },
+    {
+      "index": 13,
+      "register": "33",
+      "value": "78",
+      "delay_ms": 0
+    },
+    {
+      "index": 14,
+      "register": "3a",
+      "value": "33",
+      "delay_ms": 0
+    },
+    {
+      "index": 15,
+      "register": "3b",
+      "value": "fb",
+      "delay_ms": 0
+    },
+    {
+      "index": 16,
+      "register": "3e",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 17,
+      "register": "43",
+      "value": "11",
+      "delay_ms": 0
+    },
+    {
+      "index": 18,
+      "register": "16",
+      "value": "10",
+      "delay_ms": 0
+    },
+    {
+      "index": 19,
+      "register": "39",
+      "value": "92",
+      "delay_ms": 0
+    },
+    {
+      "index": 20,
+      "register": "35",
+      "value": "da",
+      "delay_ms": 0
+    },
+    {
+      "index": 21,
+      "register": "22",
+      "value": "1a",
+      "delay_ms": 0
+    },
+    {
+      "index": 22,
+      "register": "37",
+      "value": "c3",
+      "delay_ms": 0
+    },
+    {
+      "index": 23,
+      "register": "23",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 24,
+      "register": "34",
+      "value": "c0",
+      "delay_ms": 0
+    },
+    {
+      "index": 25,
+      "register": "06",
+      "value": "88",
+      "delay_ms": 0
+    },
+    {
+      "index": 26,
+      "register": "07",
+      "value": "c0",
+      "delay_ms": 0
+    },
+    {
+      "index": 27,
+      "register": "0d",
+      "value": "87",
+      "delay_ms": 0
+    },
+    {
+      "index": 28,
+      "register": "0e",
+      "value": "41",
+      "delay_ms": 0
+    },
+    {
+      "index": 29,
+      "register": "4c",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 30,
+      "register": "4a",
+      "value": "81",
+      "delay_ms": 0
+    },
+    {
+      "index": 31,
+      "register": "21",
+      "value": "99",
+      "delay_ms": 0
+    },
+    {
+      "index": 32,
+      "register": "24",
+      "value": "40",
+      "delay_ms": 0
+    },
+    {
+      "index": 33,
+      "register": "25",
+      "value": "38",
+      "delay_ms": 0
+    },
+    {
+      "index": 34,
+      "register": "26",
+      "value": "82",
+      "delay_ms": 0
+    },
+    {
+      "index": 35,
+      "register": "5c",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 36,
+      "register": "63",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 37,
+      "register": "61",
+      "value": "70",
+      "delay_ms": 0
+    },
+    {
+      "index": 38,
+      "register": "62",
+      "value": "80",
+      "delay_ms": 0
+    },
+    {
+      "index": 39,
+      "register": "7c",
+      "value": "05",
+      "delay_ms": 0
+    },
+    {
+      "index": 40,
+      "register": "20",
+      "value": "80",
+      "delay_ms": 0
+    },
+    {
+      "index": 41,
+      "register": "28",
+      "value": "30",
+      "delay_ms": 0
+    },
+    {
+      "index": 42,
+      "register": "6c",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 43,
+      "register": "6d",
+      "value": "80",
+      "delay_ms": 0
+    },
+    {
+      "index": 44,
+      "register": "6e",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 45,
+      "register": "70",
+      "value": "02",
+      "delay_ms": 0
+    },
+    {
+      "index": 46,
+      "register": "71",
+      "value": "94",
+      "delay_ms": 0
+    },
+    {
+      "index": 47,
+      "register": "73",
+      "value": "c1",
+      "delay_ms": 0
+    },
+    {
+      "index": 48,
+      "register": "3d",
+      "value": "34",
+      "delay_ms": 0
+    },
+    {
+      "index": 49,
+      "register": "5a",
+      "value": "57",
+      "delay_ms": 0
+    },
+    {
+      "index": 50,
+      "register": "4f",
+      "value": "bb",
+      "delay_ms": 0
+    },
+    {
+      "index": 51,
+      "register": "50",
+      "value": "9c",
+      "delay_ms": 0
+    },
+    {
+      "index": 52,
+      "register": "12",
+      "value": "20",
+      "delay_ms": 0
+    },
+    {
+      "index": 53,
+      "register": "17",
+      "value": "11",
+      "delay_ms": 0
+    },
+    {
+      "index": 54,
+      "register": "18",
+      "value": "43",
+      "delay_ms": 0
+    },
+    {
+      "index": 55,
+      "register": "19",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 56,
+      "register": "1a",
+      "value": "25",
+      "delay_ms": 0
+    },
+    {
+      "index": 57,
+      "register": "32",
+      "value": "89",
+      "delay_ms": 0
+    },
+    {
+      "index": 58,
+      "register": "37",
+      "value": "c0",
+      "delay_ms": 0
+    },
+    {
+      "index": 59,
+      "register": "4f",
+      "value": "ca",
+      "delay_ms": 0
+    },
+    {
+      "index": 60,
+      "register": "50",
+      "value": "a8",
+      "delay_ms": 0
+    },
+    {
+      "index": 61,
+      "register": "6d",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 62,
+      "register": "3d",
+      "value": "38",
+      "delay_ms": 0
+    },
+    {
+      "index": 63,
+      "register": "ff",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 64,
+      "register": "e5",
+      "value": "7f",
+      "delay_ms": 0
+    },
+    {
+      "index": 65,
+      "register": "f9",
+      "value": "c0",
+      "delay_ms": 0
+    },
+    {
+      "index": 66,
+      "register": "41",
+      "value": "24",
+      "delay_ms": 0
+    },
+    {
+      "index": 67,
+      "register": "e0",
+      "value": "14",
+      "delay_ms": 0
+    },
+    {
+      "index": 68,
+      "register": "76",
+      "value": "ff",
+      "delay_ms": 0
+    },
+    {
+      "index": 69,
+      "register": "33",
+      "value": "a0",
+      "delay_ms": 0
+    },
+    {
+      "index": 70,
+      "register": "42",
+      "value": "20",
+      "delay_ms": 0
+    },
+    {
+      "index": 71,
+      "register": "43",
+      "value": "18",
+      "delay_ms": 0
+    },
+    {
+      "index": 72,
+      "register": "4c",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 73,
+      "register": "87",
+      "value": "50",
+      "delay_ms": 0
+    },
+    {
+      "index": 74,
+      "register": "88",
+      "value": "3f",
+      "delay_ms": 0
+    },
+    {
+      "index": 75,
+      "register": "d7",
+      "value": "03",
+      "delay_ms": 0
+    },
+    {
+      "index": 76,
+      "register": "d9",
+      "value": "10",
+      "delay_ms": 0
+    },
+    {
+      "index": 77,
+      "register": "d3",
+      "value": "82",
+      "delay_ms": 0
+    },
+    {
+      "index": 78,
+      "register": "c8",
+      "value": "08",
+      "delay_ms": 0
+    },
+    {
+      "index": 79,
+      "register": "c9",
+      "value": "80",
+      "delay_ms": 0
+    },
+    {
+      "index": 80,
+      "register": "7c",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 81,
+      "register": "7d",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 82,
+      "register": "7c",
+      "value": "03",
+      "delay_ms": 0
+    },
+    {
+      "index": 83,
+      "register": "7d",
+      "value": "48",
+      "delay_ms": 0
+    },
+    {
+      "index": 84,
+      "register": "7d",
+      "value": "48",
+      "delay_ms": 0
+    },
+    {
+      "index": 85,
+      "register": "7c",
+      "value": "08",
+      "delay_ms": 0
+    },
+    {
+      "index": 86,
+      "register": "7d",
+      "value": "20",
+      "delay_ms": 0
+    },
+    {
+      "index": 87,
+      "register": "7d",
+      "value": "10",
+      "delay_ms": 0
+    },
+    {
+      "index": 88,
+      "register": "7d",
+      "value": "0e",
+      "delay_ms": 0
+    },
+    {
+      "index": 89,
+      "register": "90",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 90,
+      "register": "91",
+      "value": "0e",
+      "delay_ms": 0
+    },
+    {
+      "index": 91,
+      "register": "91",
+      "value": "1a",
+      "delay_ms": 0
+    },
+    {
+      "index": 92,
+      "register": "91",
+      "value": "31",
+      "delay_ms": 0
+    },
+    {
+      "index": 93,
+      "register": "91",
+      "value": "5a",
+      "delay_ms": 0
+    },
+    {
+      "index": 94,
+      "register": "91",
+      "value": "69",
+      "delay_ms": 0
+    },
+    {
+      "index": 95,
+      "register": "91",
+      "value": "75",
+      "delay_ms": 0
+    },
+    {
+      "index": 96,
+      "register": "91",
+      "value": "7e",
+      "delay_ms": 0
+    },
+    {
+      "index": 97,
+      "register": "91",
+      "value": "88",
+      "delay_ms": 0
+    },
+    {
+      "index": 98,
+      "register": "91",
+      "value": "8f",
+      "delay_ms": 0
+    },
+    {
+      "index": 99,
+      "register": "91",
+      "value": "96",
+      "delay_ms": 0
+    },
+    {
+      "index": 100,
+      "register": "91",
+      "value": "a3",
+      "delay_ms": 0
+    },
+    {
+      "index": 101,
+      "register": "91",
+      "value": "af",
+      "delay_ms": 0
+    },
+    {
+      "index": 102,
+      "register": "91",
+      "value": "c4",
+      "delay_ms": 0
+    },
+    {
+      "index": 103,
+      "register": "91",
+      "value": "d7",
+      "delay_ms": 0
+    },
+    {
+      "index": 104,
+      "register": "91",
+      "value": "e8",
+      "delay_ms": 0
+    },
+    {
+      "index": 105,
+      "register": "91",
+      "value": "20",
+      "delay_ms": 0
+    },
+    {
+      "index": 106,
+      "register": "92",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 107,
+      "register": "93",
+      "value": "06",
+      "delay_ms": 0
+    },
+    {
+      "index": 108,
+      "register": "93",
+      "value": "e3",
+      "delay_ms": 0
+    },
+    {
+      "index": 109,
+      "register": "93",
+      "value": "05",
+      "delay_ms": 0
+    },
+    {
+      "index": 110,
+      "register": "93",
+      "value": "05",
+      "delay_ms": 0
+    },
+    {
+      "index": 111,
+      "register": "93",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 112,
+      "register": "93",
+      "value": "04",
+      "delay_ms": 0
+    },
+    {
+      "index": 113,
+      "register": "93",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 114,
+      "register": "93",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 115,
+      "register": "93",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 116,
+      "register": "93",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 117,
+      "register": "93",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 118,
+      "register": "93",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 119,
+      "register": "93",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 120,
+      "register": "96",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 121,
+      "register": "97",
+      "value": "08",
+      "delay_ms": 0
+    },
+    {
+      "index": 122,
+      "register": "97",
+      "value": "19",
+      "delay_ms": 0
+    },
+    {
+      "index": 123,
+      "register": "97",
+      "value": "02",
+      "delay_ms": 0
+    },
+    {
+      "index": 124,
+      "register": "97",
+      "value": "0c",
+      "delay_ms": 0
+    },
+    {
+      "index": 125,
+      "register": "97",
+      "value": "24",
+      "delay_ms": 0
+    },
+    {
+      "index": 126,
+      "register": "97",
+      "value": "30",
+      "delay_ms": 0
+    },
+    {
+      "index": 127,
+      "register": "97",
+      "value": "28",
+      "delay_ms": 0
+    },
+    {
+      "index": 128,
+      "register": "97",
+      "value": "26",
+      "delay_ms": 0
+    },
+    {
+      "index": 129,
+      "register": "97",
+      "value": "02",
+      "delay_ms": 0
+    },
+    {
+      "index": 130,
+      "register": "97",
+      "value": "98",
+      "delay_ms": 0
+    },
+    {
+      "index": 131,
+      "register": "97",
+      "value": "80",
+      "delay_ms": 0
+    },
+    {
+      "index": 132,
+      "register": "97",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 133,
+      "register": "97",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 134,
+      "register": "a4",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 135,
+      "register": "a8",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 136,
+      "register": "c5",
+      "value": "11",
+      "delay_ms": 0
+    },
+    {
+      "index": 137,
+      "register": "c6",
+      "value": "51",
+      "delay_ms": 0
+    },
+    {
+      "index": 138,
+      "register": "bf",
+      "value": "80",
+      "delay_ms": 0
+    },
+    {
+      "index": 139,
+      "register": "c7",
+      "value": "10",
+      "delay_ms": 0
+    },
+    {
+      "index": 140,
+      "register": "b6",
+      "value": "66",
+      "delay_ms": 0
+    },
+    {
+      "index": 141,
+      "register": "b8",
+      "value": "a5",
+      "delay_ms": 0
+    },
+    {
+      "index": 142,
+      "register": "b7",
+      "value": "64",
+      "delay_ms": 0
+    },
+    {
+      "index": 143,
+      "register": "b9",
+      "value": "7c",
+      "delay_ms": 0
+    },
+    {
+      "index": 144,
+      "register": "b3",
+      "value": "af",
+      "delay_ms": 0
+    },
+    {
+      "index": 145,
+      "register": "b4",
+      "value": "97",
+      "delay_ms": 0
+    },
+    {
+      "index": 146,
+      "register": "b5",
+      "value": "ff",
+      "delay_ms": 0
+    },
+    {
+      "index": 147,
+      "register": "b0",
+      "value": "c5",
+      "delay_ms": 0
+    },
+    {
+      "index": 148,
+      "register": "b1",
+      "value": "94",
+      "delay_ms": 0
+    },
+    {
+      "index": 149,
+      "register": "b2",
+      "value": "0f",
+      "delay_ms": 0
+    },
+    {
+      "index": 150,
+      "register": "c4",
+      "value": "5c",
+      "delay_ms": 0
+    },
+    {
+      "index": 151,
+      "register": "c3",
+      "value": "fd",
+      "delay_ms": 0
+    },
+    {
+      "index": 152,
+      "register": "7f",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 153,
+      "register": "e5",
+      "value": "1f",
+      "delay_ms": 0
+    },
+    {
+      "index": 154,
+      "register": "e1",
+      "value": "67",
+      "delay_ms": 0
+    },
+    {
+      "index": 155,
+      "register": "dd",
+      "value": "7f",
+      "delay_ms": 0
+    },
+    {
+      "index": 156,
+      "register": "da",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 157,
+      "register": "e0",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 158,
+      "register": "05",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 159,
+      "register": "ff",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 160,
+      "register": "05",
+      "value": "01",
+      "delay_ms": 0
+    },
+    {
+      "index": 161,
+      "register": "ff",
+      "value": "01",
+      "delay_ms": 0
+    },
+    {
+      "index": 162,
+      "register": "12",
+      "value": "20",
+      "delay_ms": 0
+    },
+    {
+      "index": 163,
+      "register": "03",
+      "value": "0a",
+      "delay_ms": 0
+    },
+    {
+      "index": 164,
+      "register": "32",
+      "value": "89",
+      "delay_ms": 0
+    },
+    {
+      "index": 165,
+      "register": "17",
+      "value": "11",
+      "delay_ms": 0
+    },
+    {
+      "index": 166,
+      "register": "18",
+      "value": "43",
+      "delay_ms": 0
+    },
+    {
+      "index": 167,
+      "register": "19",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 168,
+      "register": "1a",
+      "value": "25",
+      "delay_ms": 0
+    },
+    {
+      "index": 169,
+      "register": "4f",
+      "value": "ca",
+      "delay_ms": 0
+    },
+    {
+      "index": 170,
+      "register": "50",
+      "value": "a8",
+      "delay_ms": 0
+    },
+    {
+      "index": 171,
+      "register": "5a",
+      "value": "23",
+      "delay_ms": 0
+    },
+    {
+      "index": 172,
+      "register": "6d",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 173,
+      "register": "3d",
+      "value": "38",
+      "delay_ms": 0
+    },
+    {
+      "index": 174,
+      "register": "39",
+      "value": "92",
+      "delay_ms": 0
+    },
+    {
+      "index": 175,
+      "register": "35",
+      "value": "da",
+      "delay_ms": 0
+    },
+    {
+      "index": 176,
+      "register": "22",
+      "value": "1a",
+      "delay_ms": 0
+    },
+    {
+      "index": 177,
+      "register": "37",
+      "value": "c3",
+      "delay_ms": 0
+    },
+    {
+      "index": 178,
+      "register": "23",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 179,
+      "register": "34",
+      "value": "c0",
+      "delay_ms": 0
+    },
+    {
+      "index": 180,
+      "register": "06",
+      "value": "88",
+      "delay_ms": 0
+    },
+    {
+      "index": 181,
+      "register": "07",
+      "value": "c0",
+      "delay_ms": 0
+    },
+    {
+      "index": 182,
+      "register": "0d",
+      "value": "87",
+      "delay_ms": 0
+    },
+    {
+      "index": 183,
+      "register": "0e",
+      "value": "41",
+      "delay_ms": 0
+    },
+    {
+      "index": 184,
+      "register": "4c",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 185,
+      "register": "ff",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 186,
+      "register": "e0",
+      "value": "04",
+      "delay_ms": 0
+    },
+    {
+      "index": 187,
+      "register": "c0",
+      "value": "32",
+      "delay_ms": 0
+    },
+    {
+      "index": 188,
+      "register": "c1",
+      "value": "25",
+      "delay_ms": 0
+    },
+    {
+      "index": 189,
+      "register": "8c",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 190,
+      "register": "51",
+      "value": "64",
+      "delay_ms": 0
+    },
+    {
+      "index": 191,
+      "register": "52",
+      "value": "4a",
+      "delay_ms": 0
+    },
+    {
+      "index": 192,
+      "register": "53",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 193,
+      "register": "54",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 194,
+      "register": "55",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 195,
+      "register": "57",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 196,
+      "register": "86",
+      "value": "3d",
+      "delay_ms": 0
+    },
+    {
+      "index": 197,
+      "register": "50",
+      "value": "80",
+      "delay_ms": 0
+    },
+    {
+      "index": 198,
+      "register": "ff",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 199,
+      "register": "51",
+      "value": "64",
+      "delay_ms": 0
+    },
+    {
+      "index": 200,
+      "register": "52",
+      "value": "4a",
+      "delay_ms": 0
+    },
+    {
+      "index": 201,
+      "register": "53",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 202,
+      "register": "54",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 203,
+      "register": "55",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 204,
+      "register": "57",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 205,
+      "register": "5a",
+      "value": "28",
+      "delay_ms": 0
+    },
+    {
+      "index": 206,
+      "register": "5b",
+      "value": "1e",
+      "delay_ms": 0
+    },
+    {
+      "index": 207,
+      "register": "5c",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 208,
+      "register": "ff",
+      "value": "01",
+      "delay_ms": 0
+    },
+    {
+      "index": 209,
+      "register": "11",
+      "value": "03",
+      "delay_ms": 0
+    },
+    {
+      "index": 210,
+      "register": "15",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 211,
+      "register": "ff",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 212,
+      "register": "d3",
+      "value": "08",
+      "delay_ms": 0
+    },
+    {
+      "index": 213,
+      "register": "05",
+      "value": "00",
+      "delay_ms": 10
+    },
+    {
+      "index": 214,
+      "register": "ff",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 215,
+      "register": "e0",
+      "value": "04",
+      "delay_ms": 0
+    },
+    {
+      "index": 216,
+      "register": "da",
+      "value": "08",
+      "delay_ms": 0
+    },
+    {
+      "index": 217,
+      "register": "d7",
+      "value": "03",
+      "delay_ms": 0
+    },
+    {
+      "index": 218,
+      "register": "e1",
+      "value": "77",
+      "delay_ms": 0
+    },
+    {
+      "index": 219,
+      "register": "e0",
+      "value": "00",
+      "delay_ms": 0
+    },
+    {
+      "index": 220,
+      "register": "ff",
+      "value": "01",
+      "delay_ms": 0
+    },
+    {
+      "index": 221,
+      "register": "12",
+      "value": "20",
+      "delay_ms": 0
+    },
+    {
+      "index": 222,
+      "register": "ff",
+      "value": "00",
+      "delay_ms": 50
+    }
+  ]
+}

@@ -1,0 +1,7186 @@
+{
+  "schema": "kosmo-opt4-ro-layout-v3",
+  "fixed_stages": 448,
+  "tile_and_ble_pinned": true,
+  "init_locked": true,
+  "feedback_and_truth_tables_checked": true,
+  "counter_clock_constraints_checked": true,
+  "routes_fixed": false,
+  "reuse_qualified": false,
+  "seed_netlist": "C:\\Users\\zyj\\Desktop\\fpga\\kosmo_donkeycar\\cnn_deploy_opt4\\integration\\training\\build\\board\\ro_capture_seed\\prj_tasks\\pnr_1\\generate_netlist\\kosmo_training_top_sim.v",
+  "seed_netlist_sha256": "1a399ed1cd439d529b0e0bbb639c5f219289336efd26168cf6cd5717295b1ef2",
+  "mapped_stages": {
+    "puf_core/bank/osc[0].ro_unit/gate0": {
+      "tile": "CLMA_393_624",
+      "ble": "A",
+      "oscillator": 0,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[0]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N4",
+        "4": "_GND1189",
+        "5": "_GND1188"
+      },
+      "output": "puf_core/bank/osc[0].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[0].ro_unit/inv1": {
+      "tile": "CLMA_393_624",
+      "ble": "B",
+      "oscillator": 0,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1188",
+        "2": "1'b1",
+        "3": "_GND1189",
+        "4": "puf_core/bank/osc[0].ro_unit/chain[0]",
+        "5": "_GND1190"
+      },
+      "output": "puf_core/bank/osc[0].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[0].ro_unit/inv2": {
+      "tile": "CLMA_393_624",
+      "ble": "C",
+      "oscillator": 0,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1189",
+        "3": "_GND1188",
+        "4": "puf_core/bank/osc[0].ro_unit/chain[1]",
+        "5": "_GND1191"
+      },
+      "output": "puf_core/bank/osc[0].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[0].ro_unit/inv3": {
+      "tile": "CLMA_393_624",
+      "ble": "D",
+      "oscillator": 0,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1191",
+        "3": "_GND1190",
+        "4": "puf_core/bank/osc[0].ro_unit/chain[2]",
+        "5": "_GND1189"
+      },
+      "output": "puf_core/bank/osc[0].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[0].ro_unit/inv4": {
+      "tile": "CLMA_393_625",
+      "ble": "A",
+      "oscillator": 0,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1190",
+        "3": "_GND1191",
+        "4": "puf_core/bank/osc[0].ro_unit/chain[3]",
+        "5": "_GND1188"
+      },
+      "output": "puf_core/bank/osc[0].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[0].ro_unit/inv5": {
+      "tile": "CLMA_393_625",
+      "ble": "B",
+      "oscillator": 0,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1188",
+        "2": "1'b1",
+        "3": "_GND1189",
+        "4": "_GND1191",
+        "5": "puf_core/bank/osc[0].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[0].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[0].ro_unit/inv6": {
+      "tile": "CLMA_393_625",
+      "ble": "C",
+      "oscillator": 0,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1189",
+        "3": "_GND1188",
+        "4": "_GND1190",
+        "5": "puf_core/bank/osc[0].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[0]"
+    },
+    "puf_core/bank/osc[1].ro_unit/gate0": {
+      "tile": "CLMA_393_636",
+      "ble": "A",
+      "oscillator": 1,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[1]",
+        "2": "1'b1",
+        "3": "_GND1171",
+        "4": "_GND1196",
+        "5": "puf_core/bank/N11"
+      },
+      "output": "puf_core/bank/osc[1].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[1].ro_unit/inv1": {
+      "tile": "CLMA_393_636",
+      "ble": "B",
+      "oscillator": 1,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "_GND1196",
+        "1": "1'b1",
+        "2": "1'b1",
+        "3": "_GND1196",
+        "4": "puf_core/bank/osc[1].ro_unit/chain[0]",
+        "5": "_GND1197"
+      },
+      "output": "puf_core/bank/osc[1].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[1].ro_unit/inv2": {
+      "tile": "CLMA_393_636",
+      "ble": "C",
+      "oscillator": 1,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1197",
+        "2": "_GND1196",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[1].ro_unit/chain[1]",
+        "5": "_GND1171"
+      },
+      "output": "puf_core/bank/osc[1].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[1].ro_unit/inv3": {
+      "tile": "CLMA_393_636",
+      "ble": "D",
+      "oscillator": 1,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1171",
+        "3": "_GND1197",
+        "4": "puf_core/bank/osc[1].ro_unit/chain[2]",
+        "5": "_GND1196"
+      },
+      "output": "puf_core/bank/osc[1].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[1].ro_unit/inv4": {
+      "tile": "CLMA_393_637",
+      "ble": "A",
+      "oscillator": 1,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1197",
+        "3": "_GND1171",
+        "4": "puf_core/bank/osc[1].ro_unit/chain[3]",
+        "5": "_GND1198"
+      },
+      "output": "puf_core/bank/osc[1].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[1].ro_unit/inv5": {
+      "tile": "CLMA_393_637",
+      "ble": "B",
+      "oscillator": 1,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1198",
+        "3": "_GND1196",
+        "4": "_GND1171",
+        "5": "puf_core/bank/osc[1].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[1].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[1].ro_unit/inv6": {
+      "tile": "CLMA_393_637",
+      "ble": "C",
+      "oscillator": 1,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1196",
+        "3": "_GND1198",
+        "4": "_GND1197",
+        "5": "puf_core/bank/osc[1].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[1]"
+    },
+    "puf_core/bank/osc[2].ro_unit/gate0": {
+      "tile": "CLMA_393_660",
+      "ble": "A",
+      "oscillator": 2,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[2]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N18",
+        "4": "_GND1204",
+        "5": "_GND1203"
+      },
+      "output": "puf_core/bank/osc[2].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[2].ro_unit/inv1": {
+      "tile": "CLMA_393_660",
+      "ble": "B",
+      "oscillator": 2,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1203",
+        "2": "1'b1",
+        "3": "_GND1204",
+        "4": "puf_core/bank/osc[2].ro_unit/chain[0]",
+        "5": "_GND1186"
+      },
+      "output": "puf_core/bank/osc[2].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[2].ro_unit/inv2": {
+      "tile": "CLMA_393_660",
+      "ble": "C",
+      "oscillator": 2,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1204",
+        "3": "_GND1203",
+        "4": "puf_core/bank/osc[2].ro_unit/chain[1]",
+        "5": "_GND1205"
+      },
+      "output": "puf_core/bank/osc[2].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[2].ro_unit/inv3": {
+      "tile": "CLMA_393_660",
+      "ble": "D",
+      "oscillator": 2,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1205",
+        "3": "_GND1186",
+        "4": "puf_core/bank/osc[2].ro_unit/chain[2]",
+        "5": "_GND1204"
+      },
+      "output": "puf_core/bank/osc[2].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[2].ro_unit/inv4": {
+      "tile": "CLMA_393_661",
+      "ble": "A",
+      "oscillator": 2,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1186",
+        "3": "_GND1205",
+        "4": "puf_core/bank/osc[2].ro_unit/chain[3]",
+        "5": "_GND1203"
+      },
+      "output": "puf_core/bank/osc[2].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[2].ro_unit/inv5": {
+      "tile": "CLMA_393_661",
+      "ble": "B",
+      "oscillator": 2,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1203",
+        "2": "1'b1",
+        "3": "_GND1204",
+        "4": "_GND1205",
+        "5": "puf_core/bank/osc[2].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[2].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[2].ro_unit/inv6": {
+      "tile": "CLMA_393_661",
+      "ble": "C",
+      "oscillator": 2,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1204",
+        "3": "_GND1203",
+        "4": "_GND1186",
+        "5": "puf_core/bank/osc[2].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[2]"
+    },
+    "puf_core/bank/osc[3].ro_unit/gate0": {
+      "tile": "CLMA_393_702",
+      "ble": "A",
+      "oscillator": 3,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[3]",
+        "2": "1'b1",
+        "3": "_GND1211",
+        "4": "_GND1210",
+        "5": "puf_core/bank/N25"
+      },
+      "output": "puf_core/bank/osc[3].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[3].ro_unit/inv1": {
+      "tile": "CLMA_393_702",
+      "ble": "B",
+      "oscillator": 3,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1213",
+        "2": "1'b1",
+        "3": "_GND1210",
+        "4": "puf_core/bank/osc[3].ro_unit/chain[0]",
+        "5": "_GND1212"
+      },
+      "output": "puf_core/bank/osc[3].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[3].ro_unit/inv2": {
+      "tile": "CLMA_393_702",
+      "ble": "C",
+      "oscillator": 3,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1210",
+        "3": "_GND1213",
+        "4": "puf_core/bank/osc[3].ro_unit/chain[1]",
+        "5": "_GND1211"
+      },
+      "output": "puf_core/bank/osc[3].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[3].ro_unit/inv3": {
+      "tile": "CLMA_393_702",
+      "ble": "D",
+      "oscillator": 3,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1211",
+        "3": "_GND1212",
+        "4": "puf_core/bank/osc[3].ro_unit/chain[2]",
+        "5": "_GND1210"
+      },
+      "output": "puf_core/bank/osc[3].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[3].ro_unit/inv4": {
+      "tile": "CLMA_393_703",
+      "ble": "A",
+      "oscillator": 3,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1212",
+        "3": "_GND1211",
+        "4": "puf_core/bank/osc[3].ro_unit/chain[3]",
+        "5": "_GND1213"
+      },
+      "output": "puf_core/bank/osc[3].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[3].ro_unit/inv5": {
+      "tile": "CLMA_393_703",
+      "ble": "B",
+      "oscillator": 3,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1213",
+        "2": "1'b1",
+        "3": "_GND1210",
+        "4": "_GND1211",
+        "5": "puf_core/bank/osc[3].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[3].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[3].ro_unit/inv6": {
+      "tile": "CLMA_393_703",
+      "ble": "C",
+      "oscillator": 3,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1210",
+        "3": "_GND1213",
+        "4": "_GND1212",
+        "5": "puf_core/bank/osc[3].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[3]"
+    },
+    "puf_core/bank/osc[4].ro_unit/gate0": {
+      "tile": "CLMA_405_618",
+      "ble": "A",
+      "oscillator": 4,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[4]",
+        "2": "1'b1",
+        "3": "_GND1219",
+        "4": "_GND1218",
+        "5": "puf_core/bank/N32"
+      },
+      "output": "puf_core/bank/osc[4].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[4].ro_unit/inv1": {
+      "tile": "CLMA_405_618",
+      "ble": "B",
+      "oscillator": 4,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "_GND1218",
+        "1": "1'b1",
+        "2": "1'b1",
+        "3": "_GND1218",
+        "4": "puf_core/bank/osc[4].ro_unit/chain[0]",
+        "5": "_GND1220"
+      },
+      "output": "puf_core/bank/osc[4].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[4].ro_unit/inv2": {
+      "tile": "CLMA_405_618",
+      "ble": "C",
+      "oscillator": 4,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1220",
+        "2": "_GND1218",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[4].ro_unit/chain[1]",
+        "5": "_GND1219"
+      },
+      "output": "puf_core/bank/osc[4].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[4].ro_unit/inv3": {
+      "tile": "CLMA_405_618",
+      "ble": "D",
+      "oscillator": 4,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1219",
+        "3": "_GND1220",
+        "4": "puf_core/bank/osc[4].ro_unit/chain[2]",
+        "5": "_GND1218"
+      },
+      "output": "puf_core/bank/osc[4].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[4].ro_unit/inv4": {
+      "tile": "CLMA_405_619",
+      "ble": "A",
+      "oscillator": 4,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1220",
+        "3": "_GND1219",
+        "4": "puf_core/bank/osc[4].ro_unit/chain[3]",
+        "5": "_GND1221"
+      },
+      "output": "puf_core/bank/osc[4].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[4].ro_unit/inv5": {
+      "tile": "CLMA_405_619",
+      "ble": "B",
+      "oscillator": 4,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1221",
+        "3": "_GND1218",
+        "4": "_GND1219",
+        "5": "puf_core/bank/osc[4].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[4].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[4].ro_unit/inv6": {
+      "tile": "CLMA_405_619",
+      "ble": "C",
+      "oscillator": 4,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1218",
+        "3": "_GND1221",
+        "4": "_GND1220",
+        "5": "puf_core/bank/osc[4].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[4]"
+    },
+    "puf_core/bank/osc[5].ro_unit/gate0": {
+      "tile": "CLMA_405_636",
+      "ble": "A",
+      "oscillator": 5,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "_GND1198",
+        "1": "puf_core/bank/clocks[5]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N39",
+        "4": "1'b1",
+        "5": "_GND1198"
+      },
+      "output": "puf_core/bank/osc[5].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[5].ro_unit/inv1": {
+      "tile": "CLMA_405_636",
+      "ble": "B",
+      "oscillator": 5,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1198",
+        "2": "_GND1198",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[5].ro_unit/chain[0]",
+        "5": "_GND1197"
+      },
+      "output": "puf_core/bank/osc[5].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[5].ro_unit/inv2": {
+      "tile": "CLMA_405_636",
+      "ble": "C",
+      "oscillator": 5,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1197",
+        "2": "1'b1",
+        "3": "_GND1198",
+        "4": "puf_core/bank/osc[5].ro_unit/chain[1]",
+        "5": "_GND1171"
+      },
+      "output": "puf_core/bank/osc[5].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[5].ro_unit/inv3": {
+      "tile": "CLMA_405_636",
+      "ble": "D",
+      "oscillator": 5,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1171",
+        "3": "_GND1197",
+        "4": "puf_core/bank/osc[5].ro_unit/chain[2]",
+        "5": "_GND1196"
+      },
+      "output": "puf_core/bank/osc[5].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[5].ro_unit/inv4": {
+      "tile": "CLMA_405_637",
+      "ble": "A",
+      "oscillator": 5,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1197",
+        "3": "_GND1171",
+        "4": "puf_core/bank/osc[5].ro_unit/chain[3]",
+        "5": "_GND1198"
+      },
+      "output": "puf_core/bank/osc[5].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[5].ro_unit/inv5": {
+      "tile": "CLMA_405_637",
+      "ble": "B",
+      "oscillator": 5,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1198",
+        "3": "_GND1196",
+        "4": "_GND1171",
+        "5": "puf_core/bank/osc[5].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[5].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[5].ro_unit/inv6": {
+      "tile": "CLMA_405_637",
+      "ble": "C",
+      "oscillator": 5,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1196",
+        "3": "_GND1198",
+        "4": "_GND1197",
+        "5": "puf_core/bank/osc[5].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[5]"
+    },
+    "puf_core/bank/osc[6].ro_unit/gate0": {
+      "tile": "CLMA_405_654",
+      "ble": "A",
+      "oscillator": 6,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[6]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N46",
+        "4": "_GND1199",
+        "5": "_GND1227"
+      },
+      "output": "puf_core/bank/osc[6].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[6].ro_unit/inv1": {
+      "tile": "CLMA_405_654",
+      "ble": "B",
+      "oscillator": 6,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1227",
+        "2": "1'b1",
+        "3": "_GND1199",
+        "4": "puf_core/bank/osc[6].ro_unit/chain[0]",
+        "5": "_GND1201"
+      },
+      "output": "puf_core/bank/osc[6].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[6].ro_unit/inv2": {
+      "tile": "CLMA_405_654",
+      "ble": "C",
+      "oscillator": 6,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1199",
+        "3": "_GND1227",
+        "4": "puf_core/bank/osc[6].ro_unit/chain[1]",
+        "5": "_GND1200"
+      },
+      "output": "puf_core/bank/osc[6].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[6].ro_unit/inv3": {
+      "tile": "CLMA_405_654",
+      "ble": "D",
+      "oscillator": 6,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1200",
+        "3": "_GND1201",
+        "4": "puf_core/bank/osc[6].ro_unit/chain[2]",
+        "5": "_GND1199"
+      },
+      "output": "puf_core/bank/osc[6].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[6].ro_unit/inv4": {
+      "tile": "CLMA_405_655",
+      "ble": "A",
+      "oscillator": 6,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1201",
+        "3": "_GND1200",
+        "4": "puf_core/bank/osc[6].ro_unit/chain[3]",
+        "5": "_GND1227"
+      },
+      "output": "puf_core/bank/osc[6].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[6].ro_unit/inv5": {
+      "tile": "CLMA_405_655",
+      "ble": "B",
+      "oscillator": 6,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1227",
+        "2": "1'b1",
+        "3": "_GND1199",
+        "4": "_GND1200",
+        "5": "puf_core/bank/osc[6].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[6].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[6].ro_unit/inv6": {
+      "tile": "CLMA_405_655",
+      "ble": "C",
+      "oscillator": 6,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1199",
+        "3": "_GND1227",
+        "4": "_GND1201",
+        "5": "puf_core/bank/osc[6].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[6]"
+    },
+    "puf_core/bank/osc[7].ro_unit/gate0": {
+      "tile": "CLMA_405_672",
+      "ble": "A",
+      "oscillator": 7,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[7]",
+        "2": "1'b1",
+        "3": "_GND1233",
+        "4": "_GND1232",
+        "5": "puf_core/bank/N53"
+      },
+      "output": "puf_core/bank/osc[7].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[7].ro_unit/inv1": {
+      "tile": "CLMA_405_672",
+      "ble": "B",
+      "oscillator": 7,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1235",
+        "2": "1'b1",
+        "3": "_GND1232",
+        "4": "puf_core/bank/osc[7].ro_unit/chain[0]",
+        "5": "_GND1234"
+      },
+      "output": "puf_core/bank/osc[7].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[7].ro_unit/inv2": {
+      "tile": "CLMA_405_672",
+      "ble": "C",
+      "oscillator": 7,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1232",
+        "3": "_GND1235",
+        "4": "puf_core/bank/osc[7].ro_unit/chain[1]",
+        "5": "_GND1233"
+      },
+      "output": "puf_core/bank/osc[7].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[7].ro_unit/inv3": {
+      "tile": "CLMA_405_672",
+      "ble": "D",
+      "oscillator": 7,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1233",
+        "3": "_GND1234",
+        "4": "puf_core/bank/osc[7].ro_unit/chain[2]",
+        "5": "_GND1232"
+      },
+      "output": "puf_core/bank/osc[7].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[7].ro_unit/inv4": {
+      "tile": "CLMA_405_673",
+      "ble": "A",
+      "oscillator": 7,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1234",
+        "3": "_GND1233",
+        "4": "puf_core/bank/osc[7].ro_unit/chain[3]",
+        "5": "_GND1235"
+      },
+      "output": "puf_core/bank/osc[7].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[7].ro_unit/inv5": {
+      "tile": "CLMA_405_673",
+      "ble": "B",
+      "oscillator": 7,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1235",
+        "2": "1'b1",
+        "3": "_GND1232",
+        "4": "_GND1233",
+        "5": "puf_core/bank/osc[7].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[7].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[7].ro_unit/inv6": {
+      "tile": "CLMA_405_673",
+      "ble": "C",
+      "oscillator": 7,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1232",
+        "3": "_GND1235",
+        "4": "_GND1234",
+        "5": "puf_core/bank/osc[7].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[7]"
+    },
+    "puf_core/bank/osc[8].ro_unit/gate0": {
+      "tile": "CLMA_405_696",
+      "ble": "A",
+      "oscillator": 8,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[8]",
+        "2": "1'b1",
+        "3": "_GND1241",
+        "4": "_GND1240",
+        "5": "puf_core/bank/N60"
+      },
+      "output": "puf_core/bank/osc[8].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[8].ro_unit/inv1": {
+      "tile": "CLMA_405_696",
+      "ble": "B",
+      "oscillator": 8,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1243",
+        "2": "1'b1",
+        "3": "_GND1240",
+        "4": "puf_core/bank/osc[8].ro_unit/chain[0]",
+        "5": "_GND1242"
+      },
+      "output": "puf_core/bank/osc[8].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[8].ro_unit/inv2": {
+      "tile": "CLMA_405_696",
+      "ble": "C",
+      "oscillator": 8,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1240",
+        "3": "_GND1243",
+        "4": "puf_core/bank/osc[8].ro_unit/chain[1]",
+        "5": "_GND1241"
+      },
+      "output": "puf_core/bank/osc[8].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[8].ro_unit/inv3": {
+      "tile": "CLMA_405_696",
+      "ble": "D",
+      "oscillator": 8,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1241",
+        "3": "_GND1242",
+        "4": "puf_core/bank/osc[8].ro_unit/chain[2]",
+        "5": "_GND1240"
+      },
+      "output": "puf_core/bank/osc[8].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[8].ro_unit/inv4": {
+      "tile": "CLMA_405_697",
+      "ble": "A",
+      "oscillator": 8,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1242",
+        "3": "_GND1241",
+        "4": "puf_core/bank/osc[8].ro_unit/chain[3]",
+        "5": "_GND1243"
+      },
+      "output": "puf_core/bank/osc[8].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[8].ro_unit/inv5": {
+      "tile": "CLMA_405_697",
+      "ble": "B",
+      "oscillator": 8,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1243",
+        "2": "1'b1",
+        "3": "_GND1240",
+        "4": "_GND1241",
+        "5": "puf_core/bank/osc[8].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[8].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[8].ro_unit/inv6": {
+      "tile": "CLMA_405_697",
+      "ble": "C",
+      "oscillator": 8,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1240",
+        "3": "_GND1243",
+        "4": "_GND1242",
+        "5": "puf_core/bank/osc[8].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[8]"
+    },
+    "puf_core/bank/osc[9].ro_unit/gate0": {
+      "tile": "CLMA_417_546",
+      "ble": "A",
+      "oscillator": 9,
+      "stage": 0,
+      "init": 4557430888798830399,
+      "pins": {
+        "0": "_GND1253",
+        "1": "puf_core/bank/clocks[9]",
+        "2": "puf_core/bank/N67",
+        "3": "1'b1",
+        "4": "1'b1",
+        "5": "_GND1253"
+      },
+      "output": "puf_core/bank/osc[9].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[9].ro_unit/inv1": {
+      "tile": "CLMA_417_546",
+      "ble": "B",
+      "oscillator": 9,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1253",
+        "2": "_GND1253",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[9].ro_unit/chain[0]",
+        "5": "_GND1254"
+      },
+      "output": "puf_core/bank/osc[9].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[9].ro_unit/inv2": {
+      "tile": "CLMA_417_546",
+      "ble": "C",
+      "oscillator": 9,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1254",
+        "2": "1'b1",
+        "3": "_GND1253",
+        "4": "puf_core/bank/osc[9].ro_unit/chain[1]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[9].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[9].ro_unit/inv3": {
+      "tile": "CLMA_417_546",
+      "ble": "D",
+      "oscillator": 9,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b0",
+        "2": "1'b1",
+        "3": "_GND1254",
+        "4": "puf_core/bank/osc[9].ro_unit/chain[2]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[9].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[9].ro_unit/inv4": {
+      "tile": "CLMA_417_547",
+      "ble": "A",
+      "oscillator": 9,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1254",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[9].ro_unit/chain[3]",
+        "5": "_GND1253"
+      },
+      "output": "puf_core/bank/osc[9].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[9].ro_unit/inv5": {
+      "tile": "CLMA_417_547",
+      "ble": "B",
+      "oscillator": 9,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1253",
+        "2": "_GND1253",
+        "3": "1'b0",
+        "4": "1'b1",
+        "5": "puf_core/bank/osc[9].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[9].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[9].ro_unit/inv6": {
+      "tile": "CLMA_417_547",
+      "ble": "C",
+      "oscillator": 9,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1254",
+        "2": "1'b1",
+        "3": "_GND1253",
+        "4": "_GND1254",
+        "5": "puf_core/bank/osc[9].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[9]"
+    },
+    "puf_core/bank/osc[10].ro_unit/gate0": {
+      "tile": "CLMA_417_558",
+      "ble": "A",
+      "oscillator": 10,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[10]",
+        "2": "1'b1",
+        "3": "_GND1258",
+        "4": "puf_core/bank/N74",
+        "5": "_GND1257"
+      },
+      "output": "puf_core/bank/osc[10].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[10].ro_unit/inv1": {
+      "tile": "CLMA_417_558",
+      "ble": "B",
+      "oscillator": 10,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1257",
+        "2": "1'b1",
+        "3": "_GND1260",
+        "4": "puf_core/bank/osc[10].ro_unit/chain[0]",
+        "5": "_GND1259"
+      },
+      "output": "puf_core/bank/osc[10].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[10].ro_unit/inv2": {
+      "tile": "CLMA_417_558",
+      "ble": "C",
+      "oscillator": 10,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1260",
+        "3": "_GND1257",
+        "4": "puf_core/bank/osc[10].ro_unit/chain[1]",
+        "5": "_GND1258"
+      },
+      "output": "puf_core/bank/osc[10].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[10].ro_unit/inv3": {
+      "tile": "CLMA_417_558",
+      "ble": "D",
+      "oscillator": 10,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1258",
+        "3": "_GND1259",
+        "4": "puf_core/bank/osc[10].ro_unit/chain[2]",
+        "5": "_GND1260"
+      },
+      "output": "puf_core/bank/osc[10].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[10].ro_unit/inv4": {
+      "tile": "CLMA_417_559",
+      "ble": "A",
+      "oscillator": 10,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1259",
+        "3": "_GND1258",
+        "4": "puf_core/bank/osc[10].ro_unit/chain[3]",
+        "5": "_GND1257"
+      },
+      "output": "puf_core/bank/osc[10].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[10].ro_unit/inv5": {
+      "tile": "CLMA_417_559",
+      "ble": "B",
+      "oscillator": 10,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1257",
+        "2": "1'b1",
+        "3": "_GND1260",
+        "4": "_GND1258",
+        "5": "puf_core/bank/osc[10].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[10].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[10].ro_unit/inv6": {
+      "tile": "CLMA_417_559",
+      "ble": "C",
+      "oscillator": 10,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1260",
+        "3": "_GND1257",
+        "4": "_GND1259",
+        "5": "puf_core/bank/osc[10].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[10]"
+    },
+    "puf_core/bank/osc[11].ro_unit/gate0": {
+      "tile": "CLMA_417_576",
+      "ble": "A",
+      "oscillator": 11,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[11]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N81",
+        "4": "_GND1266",
+        "5": "_GND1265"
+      },
+      "output": "puf_core/bank/osc[11].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[11].ro_unit/inv1": {
+      "tile": "CLMA_417_576",
+      "ble": "B",
+      "oscillator": 11,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1265",
+        "2": "1'b1",
+        "3": "_GND1266",
+        "4": "puf_core/bank/osc[11].ro_unit/chain[0]",
+        "5": "_GND1267"
+      },
+      "output": "puf_core/bank/osc[11].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[11].ro_unit/inv2": {
+      "tile": "CLMA_417_576",
+      "ble": "C",
+      "oscillator": 11,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1266",
+        "3": "_GND1265",
+        "4": "puf_core/bank/osc[11].ro_unit/chain[1]",
+        "5": "_GND1268"
+      },
+      "output": "puf_core/bank/osc[11].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[11].ro_unit/inv3": {
+      "tile": "CLMA_417_576",
+      "ble": "D",
+      "oscillator": 11,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1268",
+        "3": "_GND1267",
+        "4": "puf_core/bank/osc[11].ro_unit/chain[2]",
+        "5": "_GND1266"
+      },
+      "output": "puf_core/bank/osc[11].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[11].ro_unit/inv4": {
+      "tile": "CLMA_417_577",
+      "ble": "A",
+      "oscillator": 11,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1267",
+        "3": "_GND1268",
+        "4": "puf_core/bank/osc[11].ro_unit/chain[3]",
+        "5": "_GND1265"
+      },
+      "output": "puf_core/bank/osc[11].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[11].ro_unit/inv5": {
+      "tile": "CLMA_417_577",
+      "ble": "B",
+      "oscillator": 11,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1265",
+        "2": "1'b1",
+        "3": "_GND1266",
+        "4": "_GND1268",
+        "5": "puf_core/bank/osc[11].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[11].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[11].ro_unit/inv6": {
+      "tile": "CLMA_417_577",
+      "ble": "C",
+      "oscillator": 11,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1266",
+        "3": "_GND1265",
+        "4": "_GND1267",
+        "5": "puf_core/bank/osc[11].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[11]"
+    },
+    "puf_core/bank/osc[12].ro_unit/gate0": {
+      "tile": "CLMA_417_600",
+      "ble": "A",
+      "oscillator": 12,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[12]",
+        "2": "1'b1",
+        "3": "_GND1273",
+        "4": "_GND1272",
+        "5": "puf_core/bank/N88"
+      },
+      "output": "puf_core/bank/osc[12].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[12].ro_unit/inv1": {
+      "tile": "CLMA_417_600",
+      "ble": "B",
+      "oscillator": 12,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1275",
+        "2": "1'b1",
+        "3": "_GND1272",
+        "4": "puf_core/bank/osc[12].ro_unit/chain[0]",
+        "5": "_GND1274"
+      },
+      "output": "puf_core/bank/osc[12].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[12].ro_unit/inv2": {
+      "tile": "CLMA_417_600",
+      "ble": "C",
+      "oscillator": 12,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1272",
+        "3": "_GND1275",
+        "4": "puf_core/bank/osc[12].ro_unit/chain[1]",
+        "5": "_GND1273"
+      },
+      "output": "puf_core/bank/osc[12].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[12].ro_unit/inv3": {
+      "tile": "CLMA_417_600",
+      "ble": "D",
+      "oscillator": 12,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1273",
+        "3": "_GND1274",
+        "4": "puf_core/bank/osc[12].ro_unit/chain[2]",
+        "5": "_GND1272"
+      },
+      "output": "puf_core/bank/osc[12].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[12].ro_unit/inv4": {
+      "tile": "CLMA_417_601",
+      "ble": "A",
+      "oscillator": 12,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1274",
+        "3": "_GND1273",
+        "4": "puf_core/bank/osc[12].ro_unit/chain[3]",
+        "5": "_GND1275"
+      },
+      "output": "puf_core/bank/osc[12].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[12].ro_unit/inv5": {
+      "tile": "CLMA_417_601",
+      "ble": "B",
+      "oscillator": 12,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1275",
+        "2": "1'b1",
+        "3": "_GND1272",
+        "4": "_GND1273",
+        "5": "puf_core/bank/osc[12].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[12].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[12].ro_unit/inv6": {
+      "tile": "CLMA_417_601",
+      "ble": "C",
+      "oscillator": 12,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1272",
+        "3": "_GND1275",
+        "4": "_GND1274",
+        "5": "puf_core/bank/osc[12].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[12]"
+    },
+    "puf_core/bank/osc[13].ro_unit/gate0": {
+      "tile": "CLMA_417_612",
+      "ble": "A",
+      "oscillator": 13,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[13]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N95",
+        "4": "_GND1281",
+        "5": "_GND1280"
+      },
+      "output": "puf_core/bank/osc[13].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[13].ro_unit/inv1": {
+      "tile": "CLMA_417_612",
+      "ble": "B",
+      "oscillator": 13,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1280",
+        "2": "1'b1",
+        "3": "_GND1281",
+        "4": "puf_core/bank/osc[13].ro_unit/chain[0]",
+        "5": "_GND1282"
+      },
+      "output": "puf_core/bank/osc[13].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[13].ro_unit/inv2": {
+      "tile": "CLMA_417_612",
+      "ble": "C",
+      "oscillator": 13,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1281",
+        "3": "_GND1280",
+        "4": "puf_core/bank/osc[13].ro_unit/chain[1]",
+        "5": "_GND1283"
+      },
+      "output": "puf_core/bank/osc[13].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[13].ro_unit/inv3": {
+      "tile": "CLMA_417_612",
+      "ble": "D",
+      "oscillator": 13,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1283",
+        "3": "_GND1282",
+        "4": "puf_core/bank/osc[13].ro_unit/chain[2]",
+        "5": "_GND1281"
+      },
+      "output": "puf_core/bank/osc[13].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[13].ro_unit/inv4": {
+      "tile": "CLMA_417_613",
+      "ble": "A",
+      "oscillator": 13,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1282",
+        "3": "_GND1283",
+        "4": "puf_core/bank/osc[13].ro_unit/chain[3]",
+        "5": "_GND1280"
+      },
+      "output": "puf_core/bank/osc[13].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[13].ro_unit/inv5": {
+      "tile": "CLMA_417_613",
+      "ble": "B",
+      "oscillator": 13,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1280",
+        "2": "1'b1",
+        "3": "_GND1281",
+        "4": "_GND1283",
+        "5": "puf_core/bank/osc[13].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[13].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[13].ro_unit/inv6": {
+      "tile": "CLMA_417_613",
+      "ble": "C",
+      "oscillator": 13,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1281",
+        "3": "_GND1280",
+        "4": "_GND1282",
+        "5": "puf_core/bank/osc[13].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[13]"
+    },
+    "puf_core/bank/osc[14].ro_unit/gate0": {
+      "tile": "CLMA_417_642",
+      "ble": "A",
+      "oscillator": 14,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[14]",
+        "2": "1'b0",
+        "3": "1'b1",
+        "4": "1'b0",
+        "5": "puf_core/bank/N102"
+      },
+      "output": "puf_core/bank/osc[14].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[14].ro_unit/inv1": {
+      "tile": "CLMA_417_642",
+      "ble": "B",
+      "oscillator": 14,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1288",
+        "2": "1'b0",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[14].ro_unit/chain[0]",
+        "5": "_GND1287"
+      },
+      "output": "puf_core/bank/osc[14].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[14].ro_unit/inv2": {
+      "tile": "CLMA_417_642",
+      "ble": "C",
+      "oscillator": 14,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "_GND1288",
+        "4": "puf_core/bank/osc[14].ro_unit/chain[1]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[14].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[14].ro_unit/inv3": {
+      "tile": "CLMA_417_642",
+      "ble": "D",
+      "oscillator": 14,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "_GND1287",
+        "4": "puf_core/bank/osc[14].ro_unit/chain[2]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[14].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[14].ro_unit/inv4": {
+      "tile": "CLMA_417_643",
+      "ble": "A",
+      "oscillator": 14,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1287",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[14].ro_unit/chain[3]",
+        "5": "_GND1288"
+      },
+      "output": "puf_core/bank/osc[14].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[14].ro_unit/inv5": {
+      "tile": "CLMA_417_643",
+      "ble": "B",
+      "oscillator": 14,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "1'b0",
+        "4": "1'b0",
+        "5": "puf_core/bank/osc[14].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[14].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[14].ro_unit/inv6": {
+      "tile": "CLMA_417_643",
+      "ble": "C",
+      "oscillator": 14,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "_GND1288",
+        "4": "_GND1287",
+        "5": "puf_core/bank/osc[14].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[14]"
+    },
+    "puf_core/bank/osc[15].ro_unit/gate0": {
+      "tile": "CLMA_417_672",
+      "ble": "A",
+      "oscillator": 15,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[15]",
+        "2": "1'b1",
+        "3": "_GND1293",
+        "4": "puf_core/bank/N109",
+        "5": "_GND1292"
+      },
+      "output": "puf_core/bank/osc[15].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[15].ro_unit/inv1": {
+      "tile": "CLMA_417_672",
+      "ble": "B",
+      "oscillator": 15,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1292",
+        "2": "1'b1",
+        "3": "_GND1295",
+        "4": "puf_core/bank/osc[15].ro_unit/chain[0]",
+        "5": "_GND1294"
+      },
+      "output": "puf_core/bank/osc[15].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[15].ro_unit/inv2": {
+      "tile": "CLMA_417_672",
+      "ble": "C",
+      "oscillator": 15,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1295",
+        "3": "_GND1292",
+        "4": "puf_core/bank/osc[15].ro_unit/chain[1]",
+        "5": "_GND1293"
+      },
+      "output": "puf_core/bank/osc[15].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[15].ro_unit/inv3": {
+      "tile": "CLMA_417_672",
+      "ble": "D",
+      "oscillator": 15,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1293",
+        "3": "_GND1294",
+        "4": "puf_core/bank/osc[15].ro_unit/chain[2]",
+        "5": "_GND1295"
+      },
+      "output": "puf_core/bank/osc[15].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[15].ro_unit/inv4": {
+      "tile": "CLMA_417_673",
+      "ble": "A",
+      "oscillator": 15,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1294",
+        "3": "_GND1293",
+        "4": "puf_core/bank/osc[15].ro_unit/chain[3]",
+        "5": "_GND1292"
+      },
+      "output": "puf_core/bank/osc[15].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[15].ro_unit/inv5": {
+      "tile": "CLMA_417_673",
+      "ble": "B",
+      "oscillator": 15,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1292",
+        "2": "1'b1",
+        "3": "_GND1295",
+        "4": "_GND1293",
+        "5": "puf_core/bank/osc[15].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[15].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[15].ro_unit/inv6": {
+      "tile": "CLMA_417_673",
+      "ble": "C",
+      "oscillator": 15,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1295",
+        "3": "_GND1292",
+        "4": "_GND1294",
+        "5": "puf_core/bank/osc[15].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[15]"
+    },
+    "puf_core/bank/osc[16].ro_unit/gate0": {
+      "tile": "CLMA_417_684",
+      "ble": "A",
+      "oscillator": 16,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[16]",
+        "2": "1'b1",
+        "3": "_GND1301",
+        "4": "puf_core/bank/N116",
+        "5": "_GND1300"
+      },
+      "output": "puf_core/bank/osc[16].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[16].ro_unit/inv1": {
+      "tile": "CLMA_417_684",
+      "ble": "B",
+      "oscillator": 16,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1300",
+        "2": "1'b1",
+        "3": "_GND1303",
+        "4": "puf_core/bank/osc[16].ro_unit/chain[0]",
+        "5": "_GND1302"
+      },
+      "output": "puf_core/bank/osc[16].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[16].ro_unit/inv2": {
+      "tile": "CLMA_417_684",
+      "ble": "C",
+      "oscillator": 16,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1303",
+        "3": "_GND1300",
+        "4": "puf_core/bank/osc[16].ro_unit/chain[1]",
+        "5": "_GND1301"
+      },
+      "output": "puf_core/bank/osc[16].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[16].ro_unit/inv3": {
+      "tile": "CLMA_417_684",
+      "ble": "D",
+      "oscillator": 16,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1301",
+        "3": "_GND1302",
+        "4": "puf_core/bank/osc[16].ro_unit/chain[2]",
+        "5": "_GND1303"
+      },
+      "output": "puf_core/bank/osc[16].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[16].ro_unit/inv4": {
+      "tile": "CLMA_417_685",
+      "ble": "A",
+      "oscillator": 16,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1302",
+        "3": "_GND1301",
+        "4": "puf_core/bank/osc[16].ro_unit/chain[3]",
+        "5": "_GND1300"
+      },
+      "output": "puf_core/bank/osc[16].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[16].ro_unit/inv5": {
+      "tile": "CLMA_417_685",
+      "ble": "B",
+      "oscillator": 16,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1300",
+        "2": "1'b1",
+        "3": "_GND1303",
+        "4": "_GND1301",
+        "5": "puf_core/bank/osc[16].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[16].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[16].ro_unit/inv6": {
+      "tile": "CLMA_417_685",
+      "ble": "C",
+      "oscillator": 16,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1303",
+        "3": "_GND1300",
+        "4": "_GND1302",
+        "5": "puf_core/bank/osc[16].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[16]"
+    },
+    "puf_core/bank/osc[17].ro_unit/gate0": {
+      "tile": "CLMA_429_558",
+      "ble": "A",
+      "oscillator": 17,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[17]",
+        "2": "1'b1",
+        "3": "_GND1327",
+        "4": "puf_core/bank/N123",
+        "5": "_GND1326"
+      },
+      "output": "puf_core/bank/osc[17].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[17].ro_unit/inv1": {
+      "tile": "CLMA_429_558",
+      "ble": "B",
+      "oscillator": 17,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1326",
+        "2": "1'b1",
+        "3": "_GND1329",
+        "4": "puf_core/bank/osc[17].ro_unit/chain[0]",
+        "5": "_GND1328"
+      },
+      "output": "puf_core/bank/osc[17].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[17].ro_unit/inv2": {
+      "tile": "CLMA_429_558",
+      "ble": "C",
+      "oscillator": 17,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1329",
+        "3": "_GND1326",
+        "4": "puf_core/bank/osc[17].ro_unit/chain[1]",
+        "5": "_GND1327"
+      },
+      "output": "puf_core/bank/osc[17].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[17].ro_unit/inv3": {
+      "tile": "CLMA_429_558",
+      "ble": "D",
+      "oscillator": 17,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1327",
+        "3": "_GND1328",
+        "4": "puf_core/bank/osc[17].ro_unit/chain[2]",
+        "5": "_GND1329"
+      },
+      "output": "puf_core/bank/osc[17].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[17].ro_unit/inv4": {
+      "tile": "CLMA_429_559",
+      "ble": "A",
+      "oscillator": 17,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1328",
+        "3": "_GND1327",
+        "4": "puf_core/bank/osc[17].ro_unit/chain[3]",
+        "5": "_GND1326"
+      },
+      "output": "puf_core/bank/osc[17].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[17].ro_unit/inv5": {
+      "tile": "CLMA_429_559",
+      "ble": "B",
+      "oscillator": 17,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1326",
+        "2": "1'b1",
+        "3": "_GND1329",
+        "4": "_GND1327",
+        "5": "puf_core/bank/osc[17].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[17].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[17].ro_unit/inv6": {
+      "tile": "CLMA_429_559",
+      "ble": "C",
+      "oscillator": 17,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1329",
+        "3": "_GND1326",
+        "4": "_GND1328",
+        "5": "puf_core/bank/osc[17].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[17]"
+    },
+    "puf_core/bank/osc[18].ro_unit/gate0": {
+      "tile": "CLMA_429_576",
+      "ble": "A",
+      "oscillator": 18,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[18]",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "_GND1267",
+        "5": "puf_core/bank/N130"
+      },
+      "output": "puf_core/bank/osc[18].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[18].ro_unit/inv1": {
+      "tile": "CLMA_429_576",
+      "ble": "B",
+      "oscillator": 18,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1334",
+        "2": "1'b1",
+        "3": "_GND1267",
+        "4": "puf_core/bank/osc[18].ro_unit/chain[0]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[18].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[18].ro_unit/inv2": {
+      "tile": "CLMA_429_576",
+      "ble": "C",
+      "oscillator": 18,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1267",
+        "3": "_GND1334",
+        "4": "puf_core/bank/osc[18].ro_unit/chain[1]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[18].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[18].ro_unit/inv3": {
+      "tile": "CLMA_429_576",
+      "ble": "D",
+      "oscillator": 18,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b0",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[18].ro_unit/chain[2]",
+        "5": "_GND1267"
+      },
+      "output": "puf_core/bank/osc[18].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[18].ro_unit/inv4": {
+      "tile": "CLMA_429_577",
+      "ble": "A",
+      "oscillator": 18,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1267",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[18].ro_unit/chain[3]",
+        "5": "_GND1334"
+      },
+      "output": "puf_core/bank/osc[18].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[18].ro_unit/inv5": {
+      "tile": "CLMA_429_577",
+      "ble": "B",
+      "oscillator": 18,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "_GND1267",
+        "1": "_GND1334",
+        "2": "1'b1",
+        "3": "_GND1267",
+        "4": "1'b1",
+        "5": "puf_core/bank/osc[18].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[18].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[18].ro_unit/inv6": {
+      "tile": "CLMA_429_577",
+      "ble": "C",
+      "oscillator": 18,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b0",
+        "2": "_GND1267",
+        "3": "_GND1334",
+        "4": "1'b1",
+        "5": "puf_core/bank/osc[18].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[18]"
+    },
+    "puf_core/bank/osc[19].ro_unit/gate0": {
+      "tile": "CLMA_429_594",
+      "ble": "A",
+      "oscillator": 19,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[19]",
+        "2": "1'b1",
+        "3": "_GND1339",
+        "4": "_GND1338",
+        "5": "puf_core/bank/N137"
+      },
+      "output": "puf_core/bank/osc[19].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[19].ro_unit/inv1": {
+      "tile": "CLMA_429_594",
+      "ble": "B",
+      "oscillator": 19,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1341",
+        "2": "1'b1",
+        "3": "_GND1338",
+        "4": "puf_core/bank/osc[19].ro_unit/chain[0]",
+        "5": "_GND1340"
+      },
+      "output": "puf_core/bank/osc[19].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[19].ro_unit/inv2": {
+      "tile": "CLMA_429_594",
+      "ble": "C",
+      "oscillator": 19,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1338",
+        "3": "_GND1341",
+        "4": "puf_core/bank/osc[19].ro_unit/chain[1]",
+        "5": "_GND1339"
+      },
+      "output": "puf_core/bank/osc[19].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[19].ro_unit/inv3": {
+      "tile": "CLMA_429_594",
+      "ble": "D",
+      "oscillator": 19,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1339",
+        "3": "_GND1340",
+        "4": "puf_core/bank/osc[19].ro_unit/chain[2]",
+        "5": "_GND1338"
+      },
+      "output": "puf_core/bank/osc[19].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[19].ro_unit/inv4": {
+      "tile": "CLMA_429_595",
+      "ble": "A",
+      "oscillator": 19,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1340",
+        "3": "_GND1339",
+        "4": "puf_core/bank/osc[19].ro_unit/chain[3]",
+        "5": "_GND1341"
+      },
+      "output": "puf_core/bank/osc[19].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[19].ro_unit/inv5": {
+      "tile": "CLMA_429_595",
+      "ble": "B",
+      "oscillator": 19,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1341",
+        "2": "1'b1",
+        "3": "_GND1338",
+        "4": "_GND1339",
+        "5": "puf_core/bank/osc[19].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[19].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[19].ro_unit/inv6": {
+      "tile": "CLMA_429_595",
+      "ble": "C",
+      "oscillator": 19,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1338",
+        "3": "_GND1341",
+        "4": "_GND1340",
+        "5": "puf_core/bank/osc[19].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[19]"
+    },
+    "puf_core/bank/osc[20].ro_unit/gate0": {
+      "tile": "CLMA_429_612",
+      "ble": "A",
+      "oscillator": 20,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[20]",
+        "2": "1'b1",
+        "3": "_GND1283",
+        "4": "_GND1282",
+        "5": "puf_core/bank/N144"
+      },
+      "output": "puf_core/bank/osc[20].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[20].ro_unit/inv1": {
+      "tile": "CLMA_429_612",
+      "ble": "B",
+      "oscillator": 20,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1343",
+        "2": "1'b1",
+        "3": "_GND1282",
+        "4": "puf_core/bank/osc[20].ro_unit/chain[0]",
+        "5": "_GND1281"
+      },
+      "output": "puf_core/bank/osc[20].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[20].ro_unit/inv2": {
+      "tile": "CLMA_429_612",
+      "ble": "C",
+      "oscillator": 20,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1282",
+        "3": "_GND1343",
+        "4": "puf_core/bank/osc[20].ro_unit/chain[1]",
+        "5": "_GND1283"
+      },
+      "output": "puf_core/bank/osc[20].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[20].ro_unit/inv3": {
+      "tile": "CLMA_429_612",
+      "ble": "D",
+      "oscillator": 20,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1283",
+        "3": "_GND1281",
+        "4": "puf_core/bank/osc[20].ro_unit/chain[2]",
+        "5": "_GND1282"
+      },
+      "output": "puf_core/bank/osc[20].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[20].ro_unit/inv4": {
+      "tile": "CLMA_429_613",
+      "ble": "A",
+      "oscillator": 20,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1281",
+        "3": "_GND1283",
+        "4": "puf_core/bank/osc[20].ro_unit/chain[3]",
+        "5": "_GND1343"
+      },
+      "output": "puf_core/bank/osc[20].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[20].ro_unit/inv5": {
+      "tile": "CLMA_429_613",
+      "ble": "B",
+      "oscillator": 20,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1343",
+        "2": "1'b1",
+        "3": "_GND1282",
+        "4": "_GND1283",
+        "5": "puf_core/bank/osc[20].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[20].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[20].ro_unit/inv6": {
+      "tile": "CLMA_429_613",
+      "ble": "C",
+      "oscillator": 20,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1282",
+        "3": "_GND1343",
+        "4": "_GND1281",
+        "5": "puf_core/bank/osc[20].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[20]"
+    },
+    "puf_core/bank/osc[21].ro_unit/gate0": {
+      "tile": "CLMA_429_636",
+      "ble": "A",
+      "oscillator": 21,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[21]",
+        "2": "1'b1",
+        "3": "_GND1349",
+        "4": "_GND1348",
+        "5": "puf_core/bank/N151"
+      },
+      "output": "puf_core/bank/osc[21].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[21].ro_unit/inv1": {
+      "tile": "CLMA_429_636",
+      "ble": "B",
+      "oscillator": 21,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1351",
+        "2": "1'b1",
+        "3": "_GND1348",
+        "4": "puf_core/bank/osc[21].ro_unit/chain[0]",
+        "5": "_GND1350"
+      },
+      "output": "puf_core/bank/osc[21].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[21].ro_unit/inv2": {
+      "tile": "CLMA_429_636",
+      "ble": "C",
+      "oscillator": 21,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1348",
+        "3": "_GND1351",
+        "4": "puf_core/bank/osc[21].ro_unit/chain[1]",
+        "5": "_GND1349"
+      },
+      "output": "puf_core/bank/osc[21].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[21].ro_unit/inv3": {
+      "tile": "CLMA_429_636",
+      "ble": "D",
+      "oscillator": 21,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1349",
+        "3": "_GND1350",
+        "4": "puf_core/bank/osc[21].ro_unit/chain[2]",
+        "5": "_GND1348"
+      },
+      "output": "puf_core/bank/osc[21].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[21].ro_unit/inv4": {
+      "tile": "CLMA_429_637",
+      "ble": "A",
+      "oscillator": 21,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1350",
+        "3": "_GND1349",
+        "4": "puf_core/bank/osc[21].ro_unit/chain[3]",
+        "5": "_GND1351"
+      },
+      "output": "puf_core/bank/osc[21].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[21].ro_unit/inv5": {
+      "tile": "CLMA_429_637",
+      "ble": "B",
+      "oscillator": 21,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1351",
+        "2": "1'b1",
+        "3": "_GND1348",
+        "4": "_GND1349",
+        "5": "puf_core/bank/osc[21].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[21].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[21].ro_unit/inv6": {
+      "tile": "CLMA_429_637",
+      "ble": "C",
+      "oscillator": 21,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1348",
+        "3": "_GND1351",
+        "4": "_GND1350",
+        "5": "puf_core/bank/osc[21].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[21]"
+    },
+    "puf_core/bank/osc[22].ro_unit/gate0": {
+      "tile": "CLMA_429_648",
+      "ble": "A",
+      "oscillator": 22,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[22]",
+        "2": "1'b1",
+        "3": "_GND1291",
+        "4": "_GND1290",
+        "5": "puf_core/bank/N158"
+      },
+      "output": "puf_core/bank/osc[22].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[22].ro_unit/inv1": {
+      "tile": "CLMA_429_648",
+      "ble": "B",
+      "oscillator": 22,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1355",
+        "2": "1'b1",
+        "3": "_GND1290",
+        "4": "puf_core/bank/osc[22].ro_unit/chain[0]",
+        "5": "_GND1287"
+      },
+      "output": "puf_core/bank/osc[22].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[22].ro_unit/inv2": {
+      "tile": "CLMA_429_648",
+      "ble": "C",
+      "oscillator": 22,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1290",
+        "3": "_GND1355",
+        "4": "puf_core/bank/osc[22].ro_unit/chain[1]",
+        "5": "_GND1291"
+      },
+      "output": "puf_core/bank/osc[22].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[22].ro_unit/inv3": {
+      "tile": "CLMA_429_648",
+      "ble": "D",
+      "oscillator": 22,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1291",
+        "3": "_GND1287",
+        "4": "puf_core/bank/osc[22].ro_unit/chain[2]",
+        "5": "_GND1290"
+      },
+      "output": "puf_core/bank/osc[22].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[22].ro_unit/inv4": {
+      "tile": "CLMA_429_649",
+      "ble": "A",
+      "oscillator": 22,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1287",
+        "3": "_GND1291",
+        "4": "puf_core/bank/osc[22].ro_unit/chain[3]",
+        "5": "_GND1355"
+      },
+      "output": "puf_core/bank/osc[22].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[22].ro_unit/inv5": {
+      "tile": "CLMA_429_649",
+      "ble": "B",
+      "oscillator": 22,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1355",
+        "2": "1'b1",
+        "3": "_GND1290",
+        "4": "_GND1291",
+        "5": "puf_core/bank/osc[22].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[22].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[22].ro_unit/inv6": {
+      "tile": "CLMA_429_649",
+      "ble": "C",
+      "oscillator": 22,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1290",
+        "3": "_GND1355",
+        "4": "_GND1287",
+        "5": "puf_core/bank/osc[22].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[22]"
+    },
+    "puf_core/bank/osc[23].ro_unit/gate0": {
+      "tile": "CLMA_429_666",
+      "ble": "A",
+      "oscillator": 23,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[23]",
+        "2": "1'b1",
+        "3": "_GND1361",
+        "4": "_GND1360",
+        "5": "puf_core/bank/N165"
+      },
+      "output": "puf_core/bank/osc[23].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[23].ro_unit/inv1": {
+      "tile": "CLMA_429_666",
+      "ble": "B",
+      "oscillator": 23,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1363",
+        "2": "1'b1",
+        "3": "_GND1360",
+        "4": "puf_core/bank/osc[23].ro_unit/chain[0]",
+        "5": "_GND1362"
+      },
+      "output": "puf_core/bank/osc[23].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[23].ro_unit/inv2": {
+      "tile": "CLMA_429_666",
+      "ble": "C",
+      "oscillator": 23,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1360",
+        "3": "_GND1363",
+        "4": "puf_core/bank/osc[23].ro_unit/chain[1]",
+        "5": "_GND1361"
+      },
+      "output": "puf_core/bank/osc[23].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[23].ro_unit/inv3": {
+      "tile": "CLMA_429_666",
+      "ble": "D",
+      "oscillator": 23,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1361",
+        "3": "_GND1362",
+        "4": "puf_core/bank/osc[23].ro_unit/chain[2]",
+        "5": "_GND1360"
+      },
+      "output": "puf_core/bank/osc[23].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[23].ro_unit/inv4": {
+      "tile": "CLMA_429_667",
+      "ble": "A",
+      "oscillator": 23,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1362",
+        "3": "_GND1361",
+        "4": "puf_core/bank/osc[23].ro_unit/chain[3]",
+        "5": "_GND1363"
+      },
+      "output": "puf_core/bank/osc[23].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[23].ro_unit/inv5": {
+      "tile": "CLMA_429_667",
+      "ble": "B",
+      "oscillator": 23,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1363",
+        "2": "1'b1",
+        "3": "_GND1360",
+        "4": "_GND1361",
+        "5": "puf_core/bank/osc[23].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[23].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[23].ro_unit/inv6": {
+      "tile": "CLMA_429_667",
+      "ble": "C",
+      "oscillator": 23,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1360",
+        "3": "_GND1363",
+        "4": "_GND1362",
+        "5": "puf_core/bank/osc[23].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[23]"
+    },
+    "puf_core/bank/osc[24].ro_unit/gate0": {
+      "tile": "CLMA_429_684",
+      "ble": "A",
+      "oscillator": 24,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[24]",
+        "2": "1'b1",
+        "3": "_GND1369",
+        "4": "_GND1368",
+        "5": "puf_core/bank/N172"
+      },
+      "output": "puf_core/bank/osc[24].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[24].ro_unit/inv1": {
+      "tile": "CLMA_429_684",
+      "ble": "B",
+      "oscillator": 24,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1371",
+        "2": "1'b1",
+        "3": "_GND1368",
+        "4": "puf_core/bank/osc[24].ro_unit/chain[0]",
+        "5": "_GND1370"
+      },
+      "output": "puf_core/bank/osc[24].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[24].ro_unit/inv2": {
+      "tile": "CLMA_429_684",
+      "ble": "C",
+      "oscillator": 24,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1368",
+        "3": "_GND1371",
+        "4": "puf_core/bank/osc[24].ro_unit/chain[1]",
+        "5": "_GND1369"
+      },
+      "output": "puf_core/bank/osc[24].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[24].ro_unit/inv3": {
+      "tile": "CLMA_429_684",
+      "ble": "D",
+      "oscillator": 24,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1369",
+        "3": "_GND1370",
+        "4": "puf_core/bank/osc[24].ro_unit/chain[2]",
+        "5": "_GND1368"
+      },
+      "output": "puf_core/bank/osc[24].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[24].ro_unit/inv4": {
+      "tile": "CLMA_429_685",
+      "ble": "A",
+      "oscillator": 24,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1370",
+        "3": "_GND1369",
+        "4": "puf_core/bank/osc[24].ro_unit/chain[3]",
+        "5": "_GND1371"
+      },
+      "output": "puf_core/bank/osc[24].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[24].ro_unit/inv5": {
+      "tile": "CLMA_429_685",
+      "ble": "B",
+      "oscillator": 24,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1371",
+        "2": "1'b1",
+        "3": "_GND1368",
+        "4": "_GND1369",
+        "5": "puf_core/bank/osc[24].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[24].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[24].ro_unit/inv6": {
+      "tile": "CLMA_429_685",
+      "ble": "C",
+      "oscillator": 24,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1368",
+        "3": "_GND1371",
+        "4": "_GND1370",
+        "5": "puf_core/bank/osc[24].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[24]"
+    },
+    "puf_core/bank/osc[25].ro_unit/gate0": {
+      "tile": "CLMA_429_696",
+      "ble": "A",
+      "oscillator": 25,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[25]",
+        "2": "1'b1",
+        "3": "_GND1377",
+        "4": "_GND1376",
+        "5": "puf_core/bank/N179"
+      },
+      "output": "puf_core/bank/osc[25].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[25].ro_unit/inv1": {
+      "tile": "CLMA_429_696",
+      "ble": "B",
+      "oscillator": 25,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1379",
+        "2": "1'b1",
+        "3": "_GND1376",
+        "4": "puf_core/bank/osc[25].ro_unit/chain[0]",
+        "5": "_GND1378"
+      },
+      "output": "puf_core/bank/osc[25].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[25].ro_unit/inv2": {
+      "tile": "CLMA_429_696",
+      "ble": "C",
+      "oscillator": 25,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1376",
+        "3": "_GND1379",
+        "4": "puf_core/bank/osc[25].ro_unit/chain[1]",
+        "5": "_GND1377"
+      },
+      "output": "puf_core/bank/osc[25].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[25].ro_unit/inv3": {
+      "tile": "CLMA_429_696",
+      "ble": "D",
+      "oscillator": 25,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1377",
+        "3": "_GND1378",
+        "4": "puf_core/bank/osc[25].ro_unit/chain[2]",
+        "5": "_GND1376"
+      },
+      "output": "puf_core/bank/osc[25].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[25].ro_unit/inv4": {
+      "tile": "CLMA_429_697",
+      "ble": "A",
+      "oscillator": 25,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1378",
+        "3": "_GND1377",
+        "4": "puf_core/bank/osc[25].ro_unit/chain[3]",
+        "5": "_GND1379"
+      },
+      "output": "puf_core/bank/osc[25].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[25].ro_unit/inv5": {
+      "tile": "CLMA_429_697",
+      "ble": "B",
+      "oscillator": 25,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1379",
+        "2": "1'b1",
+        "3": "_GND1376",
+        "4": "_GND1377",
+        "5": "puf_core/bank/osc[25].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[25].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[25].ro_unit/inv6": {
+      "tile": "CLMA_429_697",
+      "ble": "C",
+      "oscillator": 25,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1376",
+        "3": "_GND1379",
+        "4": "_GND1378",
+        "5": "puf_core/bank/osc[25].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[25]"
+    },
+    "puf_core/bank/osc[26].ro_unit/gate0": {
+      "tile": "CLMA_453_588",
+      "ble": "A",
+      "oscillator": 26,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[26]",
+        "2": "1'b0",
+        "3": "1'b1",
+        "4": "1'b0",
+        "5": "puf_core/bank/N186"
+      },
+      "output": "puf_core/bank/osc[26].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[26].ro_unit/inv1": {
+      "tile": "CLMA_453_588",
+      "ble": "B",
+      "oscillator": 26,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1399",
+        "2": "1'b0",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[26].ro_unit/chain[0]",
+        "5": "_GND1396"
+      },
+      "output": "puf_core/bank/osc[26].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[26].ro_unit/inv2": {
+      "tile": "CLMA_453_588",
+      "ble": "C",
+      "oscillator": 26,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "_GND1399",
+        "4": "puf_core/bank/osc[26].ro_unit/chain[1]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[26].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[26].ro_unit/inv3": {
+      "tile": "CLMA_453_588",
+      "ble": "D",
+      "oscillator": 26,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "_GND1396",
+        "4": "puf_core/bank/osc[26].ro_unit/chain[2]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[26].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[26].ro_unit/inv4": {
+      "tile": "CLMA_453_589",
+      "ble": "A",
+      "oscillator": 26,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1396",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[26].ro_unit/chain[3]",
+        "5": "_GND1399"
+      },
+      "output": "puf_core/bank/osc[26].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[26].ro_unit/inv5": {
+      "tile": "CLMA_453_589",
+      "ble": "B",
+      "oscillator": 26,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "1'b0",
+        "4": "1'b0",
+        "5": "puf_core/bank/osc[26].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[26].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[26].ro_unit/inv6": {
+      "tile": "CLMA_453_589",
+      "ble": "C",
+      "oscillator": 26,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "_GND1399",
+        "4": "_GND1396",
+        "5": "puf_core/bank/osc[26].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[26]"
+    },
+    "puf_core/bank/osc[27].ro_unit/gate0": {
+      "tile": "CLMA_453_606",
+      "ble": "A",
+      "oscillator": 27,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "_GND1404",
+        "1": "puf_core/bank/clocks[27]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N193",
+        "4": "1'b1",
+        "5": "_GND1404"
+      },
+      "output": "puf_core/bank/osc[27].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[27].ro_unit/inv1": {
+      "tile": "CLMA_453_606",
+      "ble": "B",
+      "oscillator": 27,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1404",
+        "2": "_GND1404",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[27].ro_unit/chain[0]",
+        "5": "_GND1405"
+      },
+      "output": "puf_core/bank/osc[27].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[27].ro_unit/inv2": {
+      "tile": "CLMA_453_606",
+      "ble": "C",
+      "oscillator": 27,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1405",
+        "2": "1'b1",
+        "3": "_GND1404",
+        "4": "puf_core/bank/osc[27].ro_unit/chain[1]",
+        "5": "_GND1406"
+      },
+      "output": "puf_core/bank/osc[27].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[27].ro_unit/inv3": {
+      "tile": "CLMA_453_606",
+      "ble": "D",
+      "oscillator": 27,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1406",
+        "3": "_GND1405",
+        "4": "puf_core/bank/osc[27].ro_unit/chain[2]",
+        "5": "_GND1407"
+      },
+      "output": "puf_core/bank/osc[27].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[27].ro_unit/inv4": {
+      "tile": "CLMA_453_607",
+      "ble": "A",
+      "oscillator": 27,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1405",
+        "3": "_GND1406",
+        "4": "puf_core/bank/osc[27].ro_unit/chain[3]",
+        "5": "_GND1404"
+      },
+      "output": "puf_core/bank/osc[27].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[27].ro_unit/inv5": {
+      "tile": "CLMA_453_607",
+      "ble": "B",
+      "oscillator": 27,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1404",
+        "3": "_GND1407",
+        "4": "_GND1406",
+        "5": "puf_core/bank/osc[27].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[27].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[27].ro_unit/inv6": {
+      "tile": "CLMA_453_607",
+      "ble": "C",
+      "oscillator": 27,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1407",
+        "3": "_GND1404",
+        "4": "_GND1405",
+        "5": "puf_core/bank/osc[27].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[27]"
+    },
+    "puf_core/bank/osc[28].ro_unit/gate0": {
+      "tile": "CLMA_453_618",
+      "ble": "A",
+      "oscillator": 28,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[28]",
+        "2": "1'b1",
+        "3": "_GND1411",
+        "4": "_GND1410",
+        "5": "puf_core/bank/N200"
+      },
+      "output": "puf_core/bank/osc[28].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[28].ro_unit/inv1": {
+      "tile": "CLMA_453_618",
+      "ble": "B",
+      "oscillator": 28,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1413",
+        "2": "1'b1",
+        "3": "_GND1410",
+        "4": "puf_core/bank/osc[28].ro_unit/chain[0]",
+        "5": "_GND1412"
+      },
+      "output": "puf_core/bank/osc[28].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[28].ro_unit/inv2": {
+      "tile": "CLMA_453_618",
+      "ble": "C",
+      "oscillator": 28,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1410",
+        "3": "_GND1413",
+        "4": "puf_core/bank/osc[28].ro_unit/chain[1]",
+        "5": "_GND1411"
+      },
+      "output": "puf_core/bank/osc[28].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[28].ro_unit/inv3": {
+      "tile": "CLMA_453_618",
+      "ble": "D",
+      "oscillator": 28,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1411",
+        "3": "_GND1412",
+        "4": "puf_core/bank/osc[28].ro_unit/chain[2]",
+        "5": "_GND1410"
+      },
+      "output": "puf_core/bank/osc[28].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[28].ro_unit/inv4": {
+      "tile": "CLMA_453_619",
+      "ble": "A",
+      "oscillator": 28,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1412",
+        "3": "_GND1411",
+        "4": "puf_core/bank/osc[28].ro_unit/chain[3]",
+        "5": "_GND1413"
+      },
+      "output": "puf_core/bank/osc[28].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[28].ro_unit/inv5": {
+      "tile": "CLMA_453_619",
+      "ble": "B",
+      "oscillator": 28,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1413",
+        "2": "1'b1",
+        "3": "_GND1410",
+        "4": "_GND1411",
+        "5": "puf_core/bank/osc[28].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[28].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[28].ro_unit/inv6": {
+      "tile": "CLMA_453_619",
+      "ble": "C",
+      "oscillator": 28,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1410",
+        "3": "_GND1413",
+        "4": "_GND1412",
+        "5": "puf_core/bank/osc[28].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[28]"
+    },
+    "puf_core/bank/osc[29].ro_unit/gate0": {
+      "tile": "CLMA_453_642",
+      "ble": "A",
+      "oscillator": 29,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[29]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N207",
+        "4": "_GND1419",
+        "5": "_GND1418"
+      },
+      "output": "puf_core/bank/osc[29].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[29].ro_unit/inv1": {
+      "tile": "CLMA_453_642",
+      "ble": "B",
+      "oscillator": 29,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1418",
+        "2": "1'b1",
+        "3": "_GND1419",
+        "4": "puf_core/bank/osc[29].ro_unit/chain[0]",
+        "5": "_GND1420"
+      },
+      "output": "puf_core/bank/osc[29].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[29].ro_unit/inv2": {
+      "tile": "CLMA_453_642",
+      "ble": "C",
+      "oscillator": 29,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1419",
+        "3": "_GND1418",
+        "4": "puf_core/bank/osc[29].ro_unit/chain[1]",
+        "5": "_GND1421"
+      },
+      "output": "puf_core/bank/osc[29].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[29].ro_unit/inv3": {
+      "tile": "CLMA_453_642",
+      "ble": "D",
+      "oscillator": 29,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1421",
+        "3": "_GND1420",
+        "4": "puf_core/bank/osc[29].ro_unit/chain[2]",
+        "5": "_GND1419"
+      },
+      "output": "puf_core/bank/osc[29].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[29].ro_unit/inv4": {
+      "tile": "CLMA_453_643",
+      "ble": "A",
+      "oscillator": 29,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1420",
+        "3": "_GND1421",
+        "4": "puf_core/bank/osc[29].ro_unit/chain[3]",
+        "5": "_GND1418"
+      },
+      "output": "puf_core/bank/osc[29].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[29].ro_unit/inv5": {
+      "tile": "CLMA_453_643",
+      "ble": "B",
+      "oscillator": 29,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1418",
+        "2": "1'b1",
+        "3": "_GND1419",
+        "4": "_GND1421",
+        "5": "puf_core/bank/osc[29].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[29].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[29].ro_unit/inv6": {
+      "tile": "CLMA_453_643",
+      "ble": "C",
+      "oscillator": 29,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1419",
+        "3": "_GND1418",
+        "4": "_GND1420",
+        "5": "puf_core/bank/osc[29].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[29]"
+    },
+    "puf_core/bank/osc[30].ro_unit/gate0": {
+      "tile": "CLMA_453_666",
+      "ble": "A",
+      "oscillator": 30,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[30]",
+        "2": "1'b1",
+        "3": "_GND1427",
+        "4": "_GND1426",
+        "5": "puf_core/bank/N214"
+      },
+      "output": "puf_core/bank/osc[30].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[30].ro_unit/inv1": {
+      "tile": "CLMA_453_666",
+      "ble": "B",
+      "oscillator": 30,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1429",
+        "2": "1'b1",
+        "3": "_GND1426",
+        "4": "puf_core/bank/osc[30].ro_unit/chain[0]",
+        "5": "_GND1428"
+      },
+      "output": "puf_core/bank/osc[30].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[30].ro_unit/inv2": {
+      "tile": "CLMA_453_666",
+      "ble": "C",
+      "oscillator": 30,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1426",
+        "3": "_GND1429",
+        "4": "puf_core/bank/osc[30].ro_unit/chain[1]",
+        "5": "_GND1427"
+      },
+      "output": "puf_core/bank/osc[30].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[30].ro_unit/inv3": {
+      "tile": "CLMA_453_666",
+      "ble": "D",
+      "oscillator": 30,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1427",
+        "3": "_GND1428",
+        "4": "puf_core/bank/osc[30].ro_unit/chain[2]",
+        "5": "_GND1426"
+      },
+      "output": "puf_core/bank/osc[30].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[30].ro_unit/inv4": {
+      "tile": "CLMA_453_667",
+      "ble": "A",
+      "oscillator": 30,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1428",
+        "3": "_GND1427",
+        "4": "puf_core/bank/osc[30].ro_unit/chain[3]",
+        "5": "_GND1429"
+      },
+      "output": "puf_core/bank/osc[30].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[30].ro_unit/inv5": {
+      "tile": "CLMA_453_667",
+      "ble": "B",
+      "oscillator": 30,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1429",
+        "2": "1'b1",
+        "3": "_GND1426",
+        "4": "_GND1427",
+        "5": "puf_core/bank/osc[30].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[30].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[30].ro_unit/inv6": {
+      "tile": "CLMA_453_667",
+      "ble": "C",
+      "oscillator": 30,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1426",
+        "3": "_GND1429",
+        "4": "_GND1428",
+        "5": "puf_core/bank/osc[30].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[30]"
+    },
+    "puf_core/bank/osc[31].ro_unit/gate0": {
+      "tile": "CLMA_453_684",
+      "ble": "A",
+      "oscillator": 31,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[31]",
+        "2": "1'b1",
+        "3": "_GND1435",
+        "4": "puf_core/bank/N221",
+        "5": "_GND1434"
+      },
+      "output": "puf_core/bank/osc[31].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[31].ro_unit/inv1": {
+      "tile": "CLMA_453_684",
+      "ble": "B",
+      "oscillator": 31,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1434",
+        "2": "1'b1",
+        "3": "_GND1437",
+        "4": "puf_core/bank/osc[31].ro_unit/chain[0]",
+        "5": "_GND1436"
+      },
+      "output": "puf_core/bank/osc[31].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[31].ro_unit/inv2": {
+      "tile": "CLMA_453_684",
+      "ble": "C",
+      "oscillator": 31,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1437",
+        "3": "_GND1434",
+        "4": "puf_core/bank/osc[31].ro_unit/chain[1]",
+        "5": "_GND1435"
+      },
+      "output": "puf_core/bank/osc[31].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[31].ro_unit/inv3": {
+      "tile": "CLMA_453_684",
+      "ble": "D",
+      "oscillator": 31,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1435",
+        "3": "_GND1436",
+        "4": "puf_core/bank/osc[31].ro_unit/chain[2]",
+        "5": "_GND1437"
+      },
+      "output": "puf_core/bank/osc[31].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[31].ro_unit/inv4": {
+      "tile": "CLMA_453_685",
+      "ble": "A",
+      "oscillator": 31,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1436",
+        "3": "_GND1435",
+        "4": "puf_core/bank/osc[31].ro_unit/chain[3]",
+        "5": "_GND1434"
+      },
+      "output": "puf_core/bank/osc[31].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[31].ro_unit/inv5": {
+      "tile": "CLMA_453_685",
+      "ble": "B",
+      "oscillator": 31,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1434",
+        "2": "1'b1",
+        "3": "_GND1437",
+        "4": "_GND1435",
+        "5": "puf_core/bank/osc[31].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[31].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[31].ro_unit/inv6": {
+      "tile": "CLMA_453_685",
+      "ble": "C",
+      "oscillator": 31,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1437",
+        "3": "_GND1434",
+        "4": "_GND1436",
+        "5": "puf_core/bank/osc[31].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[31]"
+    },
+    "puf_core/bank/osc[32].ro_unit/gate0": {
+      "tile": "CLMA_393_630",
+      "ble": "A",
+      "oscillator": 32,
+      "stage": 0,
+      "init": 4557430888798830399,
+      "pins": {
+        "0": "_GND1192",
+        "1": "puf_core/bank/clocks[32]",
+        "2": "puf_core/bank/N228",
+        "3": "1'b1",
+        "4": "1'b1",
+        "5": "_GND1192"
+      },
+      "output": "puf_core/bank/osc[32].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[32].ro_unit/inv1": {
+      "tile": "CLMA_393_630",
+      "ble": "B",
+      "oscillator": 32,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1192",
+        "2": "_GND1192",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[32].ro_unit/chain[0]",
+        "5": "_GND1193"
+      },
+      "output": "puf_core/bank/osc[32].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[32].ro_unit/inv2": {
+      "tile": "CLMA_393_630",
+      "ble": "C",
+      "oscillator": 32,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1193",
+        "2": "1'b1",
+        "3": "_GND1192",
+        "4": "puf_core/bank/osc[32].ro_unit/chain[1]",
+        "5": "_GND1194"
+      },
+      "output": "puf_core/bank/osc[32].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[32].ro_unit/inv3": {
+      "tile": "CLMA_393_630",
+      "ble": "D",
+      "oscillator": 32,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1194",
+        "3": "_GND1193",
+        "4": "puf_core/bank/osc[32].ro_unit/chain[2]",
+        "5": "_GND1195"
+      },
+      "output": "puf_core/bank/osc[32].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[32].ro_unit/inv4": {
+      "tile": "CLMA_393_631",
+      "ble": "A",
+      "oscillator": 32,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1193",
+        "3": "_GND1194",
+        "4": "puf_core/bank/osc[32].ro_unit/chain[3]",
+        "5": "_GND1192"
+      },
+      "output": "puf_core/bank/osc[32].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[32].ro_unit/inv5": {
+      "tile": "CLMA_393_631",
+      "ble": "B",
+      "oscillator": 32,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1192",
+        "3": "_GND1195",
+        "4": "_GND1194",
+        "5": "puf_core/bank/osc[32].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[32].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[32].ro_unit/inv6": {
+      "tile": "CLMA_393_631",
+      "ble": "C",
+      "oscillator": 32,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1195",
+        "3": "_GND1192",
+        "4": "_GND1193",
+        "5": "puf_core/bank/osc[32].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[32]"
+    },
+    "puf_core/bank/osc[33].ro_unit/gate0": {
+      "tile": "CLMA_393_654",
+      "ble": "A",
+      "oscillator": 33,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[33]",
+        "2": "1'b1",
+        "3": "_GND1200",
+        "4": "_GND1199",
+        "5": "puf_core/bank/N235"
+      },
+      "output": "puf_core/bank/osc[33].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[33].ro_unit/inv1": {
+      "tile": "CLMA_393_654",
+      "ble": "B",
+      "oscillator": 33,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "_GND1199",
+        "1": "1'b1",
+        "2": "1'b1",
+        "3": "_GND1199",
+        "4": "puf_core/bank/osc[33].ro_unit/chain[0]",
+        "5": "_GND1201"
+      },
+      "output": "puf_core/bank/osc[33].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[33].ro_unit/inv2": {
+      "tile": "CLMA_393_654",
+      "ble": "C",
+      "oscillator": 33,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1201",
+        "2": "_GND1199",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[33].ro_unit/chain[1]",
+        "5": "_GND1200"
+      },
+      "output": "puf_core/bank/osc[33].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[33].ro_unit/inv3": {
+      "tile": "CLMA_393_654",
+      "ble": "D",
+      "oscillator": 33,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1200",
+        "3": "_GND1201",
+        "4": "puf_core/bank/osc[33].ro_unit/chain[2]",
+        "5": "_GND1199"
+      },
+      "output": "puf_core/bank/osc[33].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[33].ro_unit/inv4": {
+      "tile": "CLMA_393_655",
+      "ble": "A",
+      "oscillator": 33,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1201",
+        "3": "_GND1200",
+        "4": "puf_core/bank/osc[33].ro_unit/chain[3]",
+        "5": "_GND1202"
+      },
+      "output": "puf_core/bank/osc[33].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[33].ro_unit/inv5": {
+      "tile": "CLMA_393_655",
+      "ble": "B",
+      "oscillator": 33,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1202",
+        "3": "_GND1199",
+        "4": "_GND1200",
+        "5": "puf_core/bank/osc[33].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[33].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[33].ro_unit/inv6": {
+      "tile": "CLMA_393_655",
+      "ble": "C",
+      "oscillator": 33,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1199",
+        "3": "_GND1202",
+        "4": "_GND1201",
+        "5": "puf_core/bank/osc[33].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[33]"
+    },
+    "puf_core/bank/osc[34].ro_unit/gate0": {
+      "tile": "CLMA_393_678",
+      "ble": "A",
+      "oscillator": 34,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[34]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N242",
+        "4": "_GND1207",
+        "5": "_GND1206"
+      },
+      "output": "puf_core/bank/osc[34].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[34].ro_unit/inv1": {
+      "tile": "CLMA_393_678",
+      "ble": "B",
+      "oscillator": 34,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1206",
+        "2": "1'b1",
+        "3": "_GND1207",
+        "4": "puf_core/bank/osc[34].ro_unit/chain[0]",
+        "5": "_GND1208"
+      },
+      "output": "puf_core/bank/osc[34].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[34].ro_unit/inv2": {
+      "tile": "CLMA_393_678",
+      "ble": "C",
+      "oscillator": 34,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1207",
+        "3": "_GND1206",
+        "4": "puf_core/bank/osc[34].ro_unit/chain[1]",
+        "5": "_GND1209"
+      },
+      "output": "puf_core/bank/osc[34].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[34].ro_unit/inv3": {
+      "tile": "CLMA_393_678",
+      "ble": "D",
+      "oscillator": 34,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1209",
+        "3": "_GND1208",
+        "4": "puf_core/bank/osc[34].ro_unit/chain[2]",
+        "5": "_GND1207"
+      },
+      "output": "puf_core/bank/osc[34].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[34].ro_unit/inv4": {
+      "tile": "CLMA_393_679",
+      "ble": "A",
+      "oscillator": 34,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1208",
+        "3": "_GND1209",
+        "4": "puf_core/bank/osc[34].ro_unit/chain[3]",
+        "5": "_GND1206"
+      },
+      "output": "puf_core/bank/osc[34].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[34].ro_unit/inv5": {
+      "tile": "CLMA_393_679",
+      "ble": "B",
+      "oscillator": 34,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1206",
+        "2": "1'b1",
+        "3": "_GND1207",
+        "4": "_GND1209",
+        "5": "puf_core/bank/osc[34].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[34].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[34].ro_unit/inv6": {
+      "tile": "CLMA_393_679",
+      "ble": "C",
+      "oscillator": 34,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1207",
+        "3": "_GND1206",
+        "4": "_GND1208",
+        "5": "puf_core/bank/osc[34].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[34]"
+    },
+    "puf_core/bank/osc[35].ro_unit/gate0": {
+      "tile": "CLMA_405_612",
+      "ble": "A",
+      "oscillator": 35,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[35]",
+        "2": "1'b1",
+        "3": "_GND1215",
+        "4": "_GND1214",
+        "5": "puf_core/bank/N249"
+      },
+      "output": "puf_core/bank/osc[35].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[35].ro_unit/inv1": {
+      "tile": "CLMA_405_612",
+      "ble": "B",
+      "oscillator": 35,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1217",
+        "2": "1'b1",
+        "3": "_GND1214",
+        "4": "puf_core/bank/osc[35].ro_unit/chain[0]",
+        "5": "_GND1216"
+      },
+      "output": "puf_core/bank/osc[35].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[35].ro_unit/inv2": {
+      "tile": "CLMA_405_612",
+      "ble": "C",
+      "oscillator": 35,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1214",
+        "3": "_GND1217",
+        "4": "puf_core/bank/osc[35].ro_unit/chain[1]",
+        "5": "_GND1215"
+      },
+      "output": "puf_core/bank/osc[35].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[35].ro_unit/inv3": {
+      "tile": "CLMA_405_612",
+      "ble": "D",
+      "oscillator": 35,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1215",
+        "3": "_GND1216",
+        "4": "puf_core/bank/osc[35].ro_unit/chain[2]",
+        "5": "_GND1214"
+      },
+      "output": "puf_core/bank/osc[35].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[35].ro_unit/inv4": {
+      "tile": "CLMA_405_613",
+      "ble": "A",
+      "oscillator": 35,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1216",
+        "3": "_GND1215",
+        "4": "puf_core/bank/osc[35].ro_unit/chain[3]",
+        "5": "_GND1217"
+      },
+      "output": "puf_core/bank/osc[35].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[35].ro_unit/inv5": {
+      "tile": "CLMA_405_613",
+      "ble": "B",
+      "oscillator": 35,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1217",
+        "2": "1'b1",
+        "3": "_GND1214",
+        "4": "_GND1215",
+        "5": "puf_core/bank/osc[35].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[35].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[35].ro_unit/inv6": {
+      "tile": "CLMA_405_613",
+      "ble": "C",
+      "oscillator": 35,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1214",
+        "3": "_GND1217",
+        "4": "_GND1216",
+        "5": "puf_core/bank/osc[35].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[35]"
+    },
+    "puf_core/bank/osc[36].ro_unit/gate0": {
+      "tile": "CLMA_405_630",
+      "ble": "A",
+      "oscillator": 36,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[36]",
+        "2": "1'b1",
+        "3": "_GND1194",
+        "4": "puf_core/bank/N256",
+        "5": "_GND1222"
+      },
+      "output": "puf_core/bank/osc[36].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[36].ro_unit/inv1": {
+      "tile": "CLMA_405_630",
+      "ble": "B",
+      "oscillator": 36,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1222",
+        "2": "1'b1",
+        "3": "_GND1195",
+        "4": "puf_core/bank/osc[36].ro_unit/chain[0]",
+        "5": "_GND1193"
+      },
+      "output": "puf_core/bank/osc[36].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[36].ro_unit/inv2": {
+      "tile": "CLMA_405_630",
+      "ble": "C",
+      "oscillator": 36,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1195",
+        "3": "_GND1222",
+        "4": "puf_core/bank/osc[36].ro_unit/chain[1]",
+        "5": "_GND1194"
+      },
+      "output": "puf_core/bank/osc[36].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[36].ro_unit/inv3": {
+      "tile": "CLMA_405_630",
+      "ble": "D",
+      "oscillator": 36,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1194",
+        "3": "_GND1193",
+        "4": "puf_core/bank/osc[36].ro_unit/chain[2]",
+        "5": "_GND1195"
+      },
+      "output": "puf_core/bank/osc[36].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[36].ro_unit/inv4": {
+      "tile": "CLMA_405_631",
+      "ble": "A",
+      "oscillator": 36,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1193",
+        "3": "_GND1194",
+        "4": "puf_core/bank/osc[36].ro_unit/chain[3]",
+        "5": "_GND1222"
+      },
+      "output": "puf_core/bank/osc[36].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[36].ro_unit/inv5": {
+      "tile": "CLMA_405_631",
+      "ble": "B",
+      "oscillator": 36,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1222",
+        "2": "1'b1",
+        "3": "_GND1195",
+        "4": "_GND1194",
+        "5": "puf_core/bank/osc[36].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[36].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[36].ro_unit/inv6": {
+      "tile": "CLMA_405_631",
+      "ble": "C",
+      "oscillator": 36,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1195",
+        "3": "_GND1222",
+        "4": "_GND1193",
+        "5": "puf_core/bank/osc[36].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[36]"
+    },
+    "puf_core/bank/osc[37].ro_unit/gate0": {
+      "tile": "CLMA_405_642",
+      "ble": "A",
+      "oscillator": 37,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[37]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N263",
+        "4": "1'b0",
+        "5": "_GND1223"
+      },
+      "output": "puf_core/bank/osc[37].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[37].ro_unit/inv1": {
+      "tile": "CLMA_405_642",
+      "ble": "B",
+      "oscillator": 37,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1223",
+        "2": "1'b0",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[37].ro_unit/chain[0]",
+        "5": "_GND1225"
+      },
+      "output": "puf_core/bank/osc[37].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[37].ro_unit/inv2": {
+      "tile": "CLMA_405_642",
+      "ble": "C",
+      "oscillator": 37,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "_GND1223",
+        "4": "puf_core/bank/osc[37].ro_unit/chain[1]",
+        "5": "_GND1226"
+      },
+      "output": "puf_core/bank/osc[37].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[37].ro_unit/inv3": {
+      "tile": "CLMA_405_642",
+      "ble": "D",
+      "oscillator": 37,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1226",
+        "2": "_GND1226",
+        "3": "_GND1225",
+        "4": "puf_core/bank/osc[37].ro_unit/chain[2]",
+        "5": "1'b1"
+      },
+      "output": "puf_core/bank/osc[37].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[37].ro_unit/inv4": {
+      "tile": "CLMA_405_643",
+      "ble": "A",
+      "oscillator": 37,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1225",
+        "3": "_GND1226",
+        "4": "puf_core/bank/osc[37].ro_unit/chain[3]",
+        "5": "_GND1223"
+      },
+      "output": "puf_core/bank/osc[37].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[37].ro_unit/inv5": {
+      "tile": "CLMA_405_643",
+      "ble": "B",
+      "oscillator": 37,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1223",
+        "2": "1'b0",
+        "3": "1'b1",
+        "4": "_GND1226",
+        "5": "puf_core/bank/osc[37].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[37].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[37].ro_unit/inv6": {
+      "tile": "CLMA_405_643",
+      "ble": "C",
+      "oscillator": 37,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "_GND1223",
+        "4": "_GND1225",
+        "5": "puf_core/bank/osc[37].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[37]"
+    },
+    "puf_core/bank/osc[38].ro_unit/gate0": {
+      "tile": "CLMA_405_666",
+      "ble": "A",
+      "oscillator": 38,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[38]",
+        "2": "1'b1",
+        "3": "_GND1229",
+        "4": "_GND1228",
+        "5": "puf_core/bank/N270"
+      },
+      "output": "puf_core/bank/osc[38].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[38].ro_unit/inv1": {
+      "tile": "CLMA_405_666",
+      "ble": "B",
+      "oscillator": 38,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1231",
+        "2": "1'b1",
+        "3": "_GND1228",
+        "4": "puf_core/bank/osc[38].ro_unit/chain[0]",
+        "5": "_GND1230"
+      },
+      "output": "puf_core/bank/osc[38].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[38].ro_unit/inv2": {
+      "tile": "CLMA_405_666",
+      "ble": "C",
+      "oscillator": 38,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1228",
+        "3": "_GND1231",
+        "4": "puf_core/bank/osc[38].ro_unit/chain[1]",
+        "5": "_GND1229"
+      },
+      "output": "puf_core/bank/osc[38].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[38].ro_unit/inv3": {
+      "tile": "CLMA_405_666",
+      "ble": "D",
+      "oscillator": 38,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1229",
+        "3": "_GND1230",
+        "4": "puf_core/bank/osc[38].ro_unit/chain[2]",
+        "5": "_GND1228"
+      },
+      "output": "puf_core/bank/osc[38].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[38].ro_unit/inv4": {
+      "tile": "CLMA_405_667",
+      "ble": "A",
+      "oscillator": 38,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1230",
+        "3": "_GND1229",
+        "4": "puf_core/bank/osc[38].ro_unit/chain[3]",
+        "5": "_GND1231"
+      },
+      "output": "puf_core/bank/osc[38].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[38].ro_unit/inv5": {
+      "tile": "CLMA_405_667",
+      "ble": "B",
+      "oscillator": 38,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1231",
+        "2": "1'b1",
+        "3": "_GND1228",
+        "4": "_GND1229",
+        "5": "puf_core/bank/osc[38].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[38].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[38].ro_unit/inv6": {
+      "tile": "CLMA_405_667",
+      "ble": "C",
+      "oscillator": 38,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1228",
+        "3": "_GND1231",
+        "4": "_GND1230",
+        "5": "puf_core/bank/osc[38].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[38]"
+    },
+    "puf_core/bank/osc[39].ro_unit/gate0": {
+      "tile": "CLMA_405_690",
+      "ble": "A",
+      "oscillator": 39,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[39]",
+        "2": "1'b1",
+        "3": "_GND1237",
+        "4": "_GND1236",
+        "5": "puf_core/bank/N277"
+      },
+      "output": "puf_core/bank/osc[39].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[39].ro_unit/inv1": {
+      "tile": "CLMA_405_690",
+      "ble": "B",
+      "oscillator": 39,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1239",
+        "2": "1'b1",
+        "3": "_GND1236",
+        "4": "puf_core/bank/osc[39].ro_unit/chain[0]",
+        "5": "_GND1238"
+      },
+      "output": "puf_core/bank/osc[39].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[39].ro_unit/inv2": {
+      "tile": "CLMA_405_690",
+      "ble": "C",
+      "oscillator": 39,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1236",
+        "3": "_GND1239",
+        "4": "puf_core/bank/osc[39].ro_unit/chain[1]",
+        "5": "_GND1237"
+      },
+      "output": "puf_core/bank/osc[39].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[39].ro_unit/inv3": {
+      "tile": "CLMA_405_690",
+      "ble": "D",
+      "oscillator": 39,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1237",
+        "3": "_GND1238",
+        "4": "puf_core/bank/osc[39].ro_unit/chain[2]",
+        "5": "_GND1236"
+      },
+      "output": "puf_core/bank/osc[39].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[39].ro_unit/inv4": {
+      "tile": "CLMA_405_691",
+      "ble": "A",
+      "oscillator": 39,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1238",
+        "3": "_GND1237",
+        "4": "puf_core/bank/osc[39].ro_unit/chain[3]",
+        "5": "_GND1239"
+      },
+      "output": "puf_core/bank/osc[39].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[39].ro_unit/inv5": {
+      "tile": "CLMA_405_691",
+      "ble": "B",
+      "oscillator": 39,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1239",
+        "2": "1'b1",
+        "3": "_GND1236",
+        "4": "_GND1237",
+        "5": "puf_core/bank/osc[39].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[39].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[39].ro_unit/inv6": {
+      "tile": "CLMA_405_691",
+      "ble": "C",
+      "oscillator": 39,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1236",
+        "3": "_GND1239",
+        "4": "_GND1238",
+        "5": "puf_core/bank/osc[39].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[39]"
+    },
+    "puf_core/bank/osc[40].ro_unit/gate0": {
+      "tile": "CLMA_405_702",
+      "ble": "A",
+      "oscillator": 40,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[40]",
+        "2": "1'b1",
+        "3": "_GND1211",
+        "4": "_GND1212",
+        "5": "puf_core/bank/N284"
+      },
+      "output": "puf_core/bank/osc[40].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[40].ro_unit/inv1": {
+      "tile": "CLMA_405_702",
+      "ble": "B",
+      "oscillator": 40,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1244",
+        "2": "1'b1",
+        "3": "_GND1212",
+        "4": "puf_core/bank/osc[40].ro_unit/chain[0]",
+        "5": "_GND1210"
+      },
+      "output": "puf_core/bank/osc[40].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[40].ro_unit/inv2": {
+      "tile": "CLMA_405_702",
+      "ble": "C",
+      "oscillator": 40,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1212",
+        "3": "_GND1244",
+        "4": "puf_core/bank/osc[40].ro_unit/chain[1]",
+        "5": "_GND1211"
+      },
+      "output": "puf_core/bank/osc[40].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[40].ro_unit/inv3": {
+      "tile": "CLMA_405_702",
+      "ble": "D",
+      "oscillator": 40,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1211",
+        "3": "_GND1210",
+        "4": "puf_core/bank/osc[40].ro_unit/chain[2]",
+        "5": "_GND1212"
+      },
+      "output": "puf_core/bank/osc[40].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[40].ro_unit/inv4": {
+      "tile": "CLMA_405_703",
+      "ble": "A",
+      "oscillator": 40,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1210",
+        "3": "_GND1211",
+        "4": "puf_core/bank/osc[40].ro_unit/chain[3]",
+        "5": "_GND1244"
+      },
+      "output": "puf_core/bank/osc[40].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[40].ro_unit/inv5": {
+      "tile": "CLMA_405_703",
+      "ble": "B",
+      "oscillator": 40,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1244",
+        "2": "1'b1",
+        "3": "_GND1212",
+        "4": "_GND1211",
+        "5": "puf_core/bank/osc[40].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[40].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[40].ro_unit/inv6": {
+      "tile": "CLMA_405_703",
+      "ble": "C",
+      "oscillator": 40,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1212",
+        "3": "_GND1244",
+        "4": "_GND1210",
+        "5": "puf_core/bank/osc[40].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[40]"
+    },
+    "puf_core/bank/osc[41].ro_unit/gate0": {
+      "tile": "CLMA_417_552",
+      "ble": "A",
+      "oscillator": 41,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[41]",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "_GND1254",
+        "5": "puf_core/bank/N291"
+      },
+      "output": "puf_core/bank/osc[41].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[41].ro_unit/inv1": {
+      "tile": "CLMA_417_552",
+      "ble": "B",
+      "oscillator": 41,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b0",
+        "2": "1'b1",
+        "3": "_GND1254",
+        "4": "puf_core/bank/osc[41].ro_unit/chain[0]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[41].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[41].ro_unit/inv2": {
+      "tile": "CLMA_417_552",
+      "ble": "C",
+      "oscillator": 41,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1254",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[41].ro_unit/chain[1]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[41].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[41].ro_unit/inv3": {
+      "tile": "CLMA_417_552",
+      "ble": "D",
+      "oscillator": 41,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b0",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[41].ro_unit/chain[2]",
+        "5": "_GND1254"
+      },
+      "output": "puf_core/bank/osc[41].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[41].ro_unit/inv4": {
+      "tile": "CLMA_417_553",
+      "ble": "A",
+      "oscillator": 41,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1254",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[41].ro_unit/chain[3]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[41].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[41].ro_unit/inv5": {
+      "tile": "CLMA_417_553",
+      "ble": "B",
+      "oscillator": 41,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "_GND1254",
+        "1": "1'b0",
+        "2": "1'b1",
+        "3": "_GND1254",
+        "4": "1'b1",
+        "5": "puf_core/bank/osc[41].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[41].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[41].ro_unit/inv6": {
+      "tile": "CLMA_417_553",
+      "ble": "C",
+      "oscillator": 41,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b0",
+        "2": "_GND1254",
+        "3": "1'b0",
+        "4": "1'b1",
+        "5": "puf_core/bank/osc[41].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[41]"
+    },
+    "puf_core/bank/osc[42].ro_unit/gate0": {
+      "tile": "CLMA_417_570",
+      "ble": "A",
+      "oscillator": 42,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[42]",
+        "2": "1'b1",
+        "3": "_GND1262",
+        "4": "_GND1261",
+        "5": "puf_core/bank/N298"
+      },
+      "output": "puf_core/bank/osc[42].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[42].ro_unit/inv1": {
+      "tile": "CLMA_417_570",
+      "ble": "B",
+      "oscillator": 42,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1264",
+        "2": "1'b1",
+        "3": "_GND1261",
+        "4": "puf_core/bank/osc[42].ro_unit/chain[0]",
+        "5": "_GND1263"
+      },
+      "output": "puf_core/bank/osc[42].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[42].ro_unit/inv2": {
+      "tile": "CLMA_417_570",
+      "ble": "C",
+      "oscillator": 42,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1261",
+        "3": "_GND1264",
+        "4": "puf_core/bank/osc[42].ro_unit/chain[1]",
+        "5": "_GND1262"
+      },
+      "output": "puf_core/bank/osc[42].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[42].ro_unit/inv3": {
+      "tile": "CLMA_417_570",
+      "ble": "D",
+      "oscillator": 42,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1262",
+        "3": "_GND1263",
+        "4": "puf_core/bank/osc[42].ro_unit/chain[2]",
+        "5": "_GND1261"
+      },
+      "output": "puf_core/bank/osc[42].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[42].ro_unit/inv4": {
+      "tile": "CLMA_417_571",
+      "ble": "A",
+      "oscillator": 42,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1263",
+        "3": "_GND1262",
+        "4": "puf_core/bank/osc[42].ro_unit/chain[3]",
+        "5": "_GND1264"
+      },
+      "output": "puf_core/bank/osc[42].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[42].ro_unit/inv5": {
+      "tile": "CLMA_417_571",
+      "ble": "B",
+      "oscillator": 42,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1264",
+        "2": "1'b1",
+        "3": "_GND1261",
+        "4": "_GND1262",
+        "5": "puf_core/bank/osc[42].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[42].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[42].ro_unit/inv6": {
+      "tile": "CLMA_417_571",
+      "ble": "C",
+      "oscillator": 42,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1261",
+        "3": "_GND1264",
+        "4": "_GND1263",
+        "5": "puf_core/bank/osc[42].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[42]"
+    },
+    "puf_core/bank/osc[43].ro_unit/gate0": {
+      "tile": "CLMA_417_582",
+      "ble": "A",
+      "oscillator": 43,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[43]",
+        "2": "1'b1",
+        "3": "_GND1270",
+        "4": "_GND1269",
+        "5": "puf_core/bank/N305"
+      },
+      "output": "puf_core/bank/osc[43].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[43].ro_unit/inv1": {
+      "tile": "CLMA_417_582",
+      "ble": "B",
+      "oscillator": 43,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1271",
+        "2": "1'b1",
+        "3": "_GND1269",
+        "4": "puf_core/bank/osc[43].ro_unit/chain[0]",
+        "5": "_GND1267"
+      },
+      "output": "puf_core/bank/osc[43].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[43].ro_unit/inv2": {
+      "tile": "CLMA_417_582",
+      "ble": "C",
+      "oscillator": 43,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1269",
+        "3": "_GND1271",
+        "4": "puf_core/bank/osc[43].ro_unit/chain[1]",
+        "5": "_GND1270"
+      },
+      "output": "puf_core/bank/osc[43].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[43].ro_unit/inv3": {
+      "tile": "CLMA_417_582",
+      "ble": "D",
+      "oscillator": 43,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1270",
+        "3": "_GND1267",
+        "4": "puf_core/bank/osc[43].ro_unit/chain[2]",
+        "5": "_GND1269"
+      },
+      "output": "puf_core/bank/osc[43].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[43].ro_unit/inv4": {
+      "tile": "CLMA_417_583",
+      "ble": "A",
+      "oscillator": 43,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1267",
+        "3": "_GND1270",
+        "4": "puf_core/bank/osc[43].ro_unit/chain[3]",
+        "5": "_GND1271"
+      },
+      "output": "puf_core/bank/osc[43].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[43].ro_unit/inv5": {
+      "tile": "CLMA_417_583",
+      "ble": "B",
+      "oscillator": 43,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1271",
+        "2": "1'b1",
+        "3": "_GND1269",
+        "4": "_GND1270",
+        "5": "puf_core/bank/osc[43].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[43].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[43].ro_unit/inv6": {
+      "tile": "CLMA_417_583",
+      "ble": "C",
+      "oscillator": 43,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1269",
+        "3": "_GND1271",
+        "4": "_GND1267",
+        "5": "puf_core/bank/osc[43].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[43]"
+    },
+    "puf_core/bank/osc[44].ro_unit/gate0": {
+      "tile": "CLMA_417_606",
+      "ble": "A",
+      "oscillator": 44,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[44]",
+        "2": "1'b1",
+        "3": "_GND1277",
+        "4": "_GND1276",
+        "5": "puf_core/bank/N312"
+      },
+      "output": "puf_core/bank/osc[44].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[44].ro_unit/inv1": {
+      "tile": "CLMA_417_606",
+      "ble": "B",
+      "oscillator": 44,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1279",
+        "2": "1'b1",
+        "3": "_GND1276",
+        "4": "puf_core/bank/osc[44].ro_unit/chain[0]",
+        "5": "_GND1278"
+      },
+      "output": "puf_core/bank/osc[44].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[44].ro_unit/inv2": {
+      "tile": "CLMA_417_606",
+      "ble": "C",
+      "oscillator": 44,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1276",
+        "3": "_GND1279",
+        "4": "puf_core/bank/osc[44].ro_unit/chain[1]",
+        "5": "_GND1277"
+      },
+      "output": "puf_core/bank/osc[44].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[44].ro_unit/inv3": {
+      "tile": "CLMA_417_606",
+      "ble": "D",
+      "oscillator": 44,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1277",
+        "3": "_GND1278",
+        "4": "puf_core/bank/osc[44].ro_unit/chain[2]",
+        "5": "_GND1276"
+      },
+      "output": "puf_core/bank/osc[44].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[44].ro_unit/inv4": {
+      "tile": "CLMA_417_607",
+      "ble": "A",
+      "oscillator": 44,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1278",
+        "3": "_GND1277",
+        "4": "puf_core/bank/osc[44].ro_unit/chain[3]",
+        "5": "_GND1279"
+      },
+      "output": "puf_core/bank/osc[44].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[44].ro_unit/inv5": {
+      "tile": "CLMA_417_607",
+      "ble": "B",
+      "oscillator": 44,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1279",
+        "2": "1'b1",
+        "3": "_GND1276",
+        "4": "_GND1277",
+        "5": "puf_core/bank/osc[44].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[44].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[44].ro_unit/inv6": {
+      "tile": "CLMA_417_607",
+      "ble": "C",
+      "oscillator": 44,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1276",
+        "3": "_GND1279",
+        "4": "_GND1278",
+        "5": "puf_core/bank/osc[44].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[44]"
+    },
+    "puf_core/bank/osc[45].ro_unit/gate0": {
+      "tile": "CLMA_417_630",
+      "ble": "A",
+      "oscillator": 45,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[45]",
+        "2": "1'b1",
+        "3": "_GND1194",
+        "4": "puf_core/bank/N319",
+        "5": "_GND1284"
+      },
+      "output": "puf_core/bank/osc[45].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[45].ro_unit/inv1": {
+      "tile": "CLMA_417_630",
+      "ble": "B",
+      "oscillator": 45,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1284",
+        "2": "1'b1",
+        "3": "_GND1285",
+        "4": "puf_core/bank/osc[45].ro_unit/chain[0]",
+        "5": "_GND1193"
+      },
+      "output": "puf_core/bank/osc[45].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[45].ro_unit/inv2": {
+      "tile": "CLMA_417_630",
+      "ble": "C",
+      "oscillator": 45,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1285",
+        "3": "_GND1284",
+        "4": "puf_core/bank/osc[45].ro_unit/chain[1]",
+        "5": "_GND1194"
+      },
+      "output": "puf_core/bank/osc[45].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[45].ro_unit/inv3": {
+      "tile": "CLMA_417_630",
+      "ble": "D",
+      "oscillator": 45,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1194",
+        "3": "_GND1193",
+        "4": "puf_core/bank/osc[45].ro_unit/chain[2]",
+        "5": "_GND1285"
+      },
+      "output": "puf_core/bank/osc[45].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[45].ro_unit/inv4": {
+      "tile": "CLMA_417_631",
+      "ble": "A",
+      "oscillator": 45,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1193",
+        "3": "_GND1194",
+        "4": "puf_core/bank/osc[45].ro_unit/chain[3]",
+        "5": "_GND1284"
+      },
+      "output": "puf_core/bank/osc[45].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[45].ro_unit/inv5": {
+      "tile": "CLMA_417_631",
+      "ble": "B",
+      "oscillator": 45,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1284",
+        "2": "1'b1",
+        "3": "_GND1285",
+        "4": "_GND1194",
+        "5": "puf_core/bank/osc[45].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[45].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[45].ro_unit/inv6": {
+      "tile": "CLMA_417_631",
+      "ble": "C",
+      "oscillator": 45,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1285",
+        "3": "_GND1284",
+        "4": "_GND1193",
+        "5": "puf_core/bank/osc[45].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[45]"
+    },
+    "puf_core/bank/osc[46].ro_unit/gate0": {
+      "tile": "CLMA_417_648",
+      "ble": "A",
+      "oscillator": 46,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[46]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N326",
+        "4": "_GND1287",
+        "5": "_GND1289"
+      },
+      "output": "puf_core/bank/osc[46].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[46].ro_unit/inv1": {
+      "tile": "CLMA_417_648",
+      "ble": "B",
+      "oscillator": 46,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1289",
+        "2": "1'b1",
+        "3": "_GND1287",
+        "4": "puf_core/bank/osc[46].ro_unit/chain[0]",
+        "5": "_GND1290"
+      },
+      "output": "puf_core/bank/osc[46].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[46].ro_unit/inv2": {
+      "tile": "CLMA_417_648",
+      "ble": "C",
+      "oscillator": 46,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1287",
+        "3": "_GND1289",
+        "4": "puf_core/bank/osc[46].ro_unit/chain[1]",
+        "5": "_GND1291"
+      },
+      "output": "puf_core/bank/osc[46].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[46].ro_unit/inv3": {
+      "tile": "CLMA_417_648",
+      "ble": "D",
+      "oscillator": 46,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1291",
+        "3": "_GND1290",
+        "4": "puf_core/bank/osc[46].ro_unit/chain[2]",
+        "5": "_GND1287"
+      },
+      "output": "puf_core/bank/osc[46].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[46].ro_unit/inv4": {
+      "tile": "CLMA_417_649",
+      "ble": "A",
+      "oscillator": 46,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1290",
+        "3": "_GND1291",
+        "4": "puf_core/bank/osc[46].ro_unit/chain[3]",
+        "5": "_GND1289"
+      },
+      "output": "puf_core/bank/osc[46].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[46].ro_unit/inv5": {
+      "tile": "CLMA_417_649",
+      "ble": "B",
+      "oscillator": 46,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1289",
+        "2": "1'b1",
+        "3": "_GND1287",
+        "4": "_GND1291",
+        "5": "puf_core/bank/osc[46].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[46].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[46].ro_unit/inv6": {
+      "tile": "CLMA_417_649",
+      "ble": "C",
+      "oscillator": 46,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1287",
+        "3": "_GND1289",
+        "4": "_GND1290",
+        "5": "puf_core/bank/osc[46].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[46]"
+    },
+    "puf_core/bank/osc[47].ro_unit/gate0": {
+      "tile": "CLMA_417_678",
+      "ble": "A",
+      "oscillator": 47,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[47]",
+        "2": "1'b1",
+        "3": "_GND1297",
+        "4": "_GND1296",
+        "5": "puf_core/bank/N333"
+      },
+      "output": "puf_core/bank/osc[47].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[47].ro_unit/inv1": {
+      "tile": "CLMA_417_678",
+      "ble": "B",
+      "oscillator": 47,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1299",
+        "2": "1'b1",
+        "3": "_GND1296",
+        "4": "puf_core/bank/osc[47].ro_unit/chain[0]",
+        "5": "_GND1298"
+      },
+      "output": "puf_core/bank/osc[47].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[47].ro_unit/inv2": {
+      "tile": "CLMA_417_678",
+      "ble": "C",
+      "oscillator": 47,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1296",
+        "3": "_GND1299",
+        "4": "puf_core/bank/osc[47].ro_unit/chain[1]",
+        "5": "_GND1297"
+      },
+      "output": "puf_core/bank/osc[47].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[47].ro_unit/inv3": {
+      "tile": "CLMA_417_678",
+      "ble": "D",
+      "oscillator": 47,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1297",
+        "3": "_GND1298",
+        "4": "puf_core/bank/osc[47].ro_unit/chain[2]",
+        "5": "_GND1296"
+      },
+      "output": "puf_core/bank/osc[47].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[47].ro_unit/inv4": {
+      "tile": "CLMA_417_679",
+      "ble": "A",
+      "oscillator": 47,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1298",
+        "3": "_GND1297",
+        "4": "puf_core/bank/osc[47].ro_unit/chain[3]",
+        "5": "_GND1299"
+      },
+      "output": "puf_core/bank/osc[47].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[47].ro_unit/inv5": {
+      "tile": "CLMA_417_679",
+      "ble": "B",
+      "oscillator": 47,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1299",
+        "2": "1'b1",
+        "3": "_GND1296",
+        "4": "_GND1297",
+        "5": "puf_core/bank/osc[47].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[47].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[47].ro_unit/inv6": {
+      "tile": "CLMA_417_679",
+      "ble": "C",
+      "oscillator": 47,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1296",
+        "3": "_GND1299",
+        "4": "_GND1298",
+        "5": "puf_core/bank/osc[47].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[47]"
+    },
+    "puf_core/bank/osc[48].ro_unit/gate0": {
+      "tile": "CLMA_417_708",
+      "ble": "A",
+      "oscillator": 48,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[48]",
+        "2": "1'b1",
+        "3": "_GND1305",
+        "4": "puf_core/bank/N340",
+        "5": "_GND1304"
+      },
+      "output": "puf_core/bank/osc[48].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[48].ro_unit/inv1": {
+      "tile": "CLMA_417_708",
+      "ble": "B",
+      "oscillator": 48,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1304",
+        "2": "1'b1",
+        "3": "_GND1307",
+        "4": "puf_core/bank/osc[48].ro_unit/chain[0]",
+        "5": "_GND1306"
+      },
+      "output": "puf_core/bank/osc[48].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[48].ro_unit/inv2": {
+      "tile": "CLMA_417_708",
+      "ble": "C",
+      "oscillator": 48,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1307",
+        "3": "_GND1304",
+        "4": "puf_core/bank/osc[48].ro_unit/chain[1]",
+        "5": "_GND1305"
+      },
+      "output": "puf_core/bank/osc[48].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[48].ro_unit/inv3": {
+      "tile": "CLMA_417_708",
+      "ble": "D",
+      "oscillator": 48,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1305",
+        "3": "_GND1306",
+        "4": "puf_core/bank/osc[48].ro_unit/chain[2]",
+        "5": "_GND1307"
+      },
+      "output": "puf_core/bank/osc[48].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[48].ro_unit/inv4": {
+      "tile": "CLMA_417_709",
+      "ble": "A",
+      "oscillator": 48,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1306",
+        "3": "_GND1305",
+        "4": "puf_core/bank/osc[48].ro_unit/chain[3]",
+        "5": "_GND1304"
+      },
+      "output": "puf_core/bank/osc[48].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[48].ro_unit/inv5": {
+      "tile": "CLMA_417_709",
+      "ble": "B",
+      "oscillator": 48,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1304",
+        "2": "1'b1",
+        "3": "_GND1307",
+        "4": "_GND1305",
+        "5": "puf_core/bank/osc[48].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[48].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[48].ro_unit/inv6": {
+      "tile": "CLMA_417_709",
+      "ble": "C",
+      "oscillator": 48,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1307",
+        "3": "_GND1304",
+        "4": "_GND1306",
+        "5": "puf_core/bank/osc[48].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[48]"
+    },
+    "puf_core/bank/osc[49].ro_unit/gate0": {
+      "tile": "CLMA_429_564",
+      "ble": "A",
+      "oscillator": 49,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[49]",
+        "2": "1'b1",
+        "3": "_GND1330",
+        "4": "_GND1263",
+        "5": "puf_core/bank/N347"
+      },
+      "output": "puf_core/bank/osc[49].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[49].ro_unit/inv1": {
+      "tile": "CLMA_429_564",
+      "ble": "B",
+      "oscillator": 49,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1332",
+        "2": "1'b1",
+        "3": "_GND1263",
+        "4": "puf_core/bank/osc[49].ro_unit/chain[0]",
+        "5": "_GND1331"
+      },
+      "output": "puf_core/bank/osc[49].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[49].ro_unit/inv2": {
+      "tile": "CLMA_429_564",
+      "ble": "C",
+      "oscillator": 49,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1263",
+        "3": "_GND1332",
+        "4": "puf_core/bank/osc[49].ro_unit/chain[1]",
+        "5": "_GND1330"
+      },
+      "output": "puf_core/bank/osc[49].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[49].ro_unit/inv3": {
+      "tile": "CLMA_429_564",
+      "ble": "D",
+      "oscillator": 49,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1330",
+        "3": "_GND1331",
+        "4": "puf_core/bank/osc[49].ro_unit/chain[2]",
+        "5": "_GND1263"
+      },
+      "output": "puf_core/bank/osc[49].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[49].ro_unit/inv4": {
+      "tile": "CLMA_429_565",
+      "ble": "A",
+      "oscillator": 49,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1331",
+        "3": "_GND1330",
+        "4": "puf_core/bank/osc[49].ro_unit/chain[3]",
+        "5": "_GND1332"
+      },
+      "output": "puf_core/bank/osc[49].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[49].ro_unit/inv5": {
+      "tile": "CLMA_429_565",
+      "ble": "B",
+      "oscillator": 49,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1332",
+        "2": "1'b1",
+        "3": "_GND1263",
+        "4": "_GND1330",
+        "5": "puf_core/bank/osc[49].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[49].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[49].ro_unit/inv6": {
+      "tile": "CLMA_429_565",
+      "ble": "C",
+      "oscillator": 49,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1263",
+        "3": "_GND1332",
+        "4": "_GND1331",
+        "5": "puf_core/bank/osc[49].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[49]"
+    },
+    "puf_core/bank/osc[50].ro_unit/gate0": {
+      "tile": "CLMA_429_588",
+      "ble": "A",
+      "oscillator": 50,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[50]",
+        "2": "1'b1",
+        "3": "_GND1134",
+        "4": "_GND1335",
+        "5": "puf_core/bank/N354"
+      },
+      "output": "puf_core/bank/osc[50].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[50].ro_unit/inv1": {
+      "tile": "CLMA_429_588",
+      "ble": "B",
+      "oscillator": 50,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1337",
+        "2": "1'b1",
+        "3": "_GND1335",
+        "4": "puf_core/bank/osc[50].ro_unit/chain[0]",
+        "5": "_GND1336"
+      },
+      "output": "puf_core/bank/osc[50].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[50].ro_unit/inv2": {
+      "tile": "CLMA_429_588",
+      "ble": "C",
+      "oscillator": 50,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1335",
+        "3": "_GND1337",
+        "4": "puf_core/bank/osc[50].ro_unit/chain[1]",
+        "5": "_GND1134"
+      },
+      "output": "puf_core/bank/osc[50].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[50].ro_unit/inv3": {
+      "tile": "CLMA_429_588",
+      "ble": "D",
+      "oscillator": 50,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1134",
+        "3": "_GND1336",
+        "4": "puf_core/bank/osc[50].ro_unit/chain[2]",
+        "5": "_GND1335"
+      },
+      "output": "puf_core/bank/osc[50].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[50].ro_unit/inv4": {
+      "tile": "CLMA_429_589",
+      "ble": "A",
+      "oscillator": 50,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1336",
+        "3": "_GND1134",
+        "4": "puf_core/bank/osc[50].ro_unit/chain[3]",
+        "5": "_GND1337"
+      },
+      "output": "puf_core/bank/osc[50].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[50].ro_unit/inv5": {
+      "tile": "CLMA_429_589",
+      "ble": "B",
+      "oscillator": 50,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1337",
+        "2": "1'b1",
+        "3": "_GND1335",
+        "4": "_GND1134",
+        "5": "puf_core/bank/osc[50].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[50].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[50].ro_unit/inv6": {
+      "tile": "CLMA_429_589",
+      "ble": "C",
+      "oscillator": 50,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1335",
+        "3": "_GND1337",
+        "4": "_GND1336",
+        "5": "puf_core/bank/osc[50].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[50]"
+    },
+    "puf_core/bank/osc[51].ro_unit/gate0": {
+      "tile": "CLMA_429_606",
+      "ble": "A",
+      "oscillator": 51,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[51]",
+        "2": "1'b1",
+        "3": "_GND1277",
+        "4": "_GND1278",
+        "5": "puf_core/bank/N361"
+      },
+      "output": "puf_core/bank/osc[51].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[51].ro_unit/inv1": {
+      "tile": "CLMA_429_606",
+      "ble": "B",
+      "oscillator": 51,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1342",
+        "2": "1'b1",
+        "3": "_GND1278",
+        "4": "puf_core/bank/osc[51].ro_unit/chain[0]",
+        "5": "_GND1276"
+      },
+      "output": "puf_core/bank/osc[51].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[51].ro_unit/inv2": {
+      "tile": "CLMA_429_606",
+      "ble": "C",
+      "oscillator": 51,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1278",
+        "3": "_GND1342",
+        "4": "puf_core/bank/osc[51].ro_unit/chain[1]",
+        "5": "_GND1277"
+      },
+      "output": "puf_core/bank/osc[51].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[51].ro_unit/inv3": {
+      "tile": "CLMA_429_606",
+      "ble": "D",
+      "oscillator": 51,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1277",
+        "3": "_GND1276",
+        "4": "puf_core/bank/osc[51].ro_unit/chain[2]",
+        "5": "_GND1278"
+      },
+      "output": "puf_core/bank/osc[51].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[51].ro_unit/inv4": {
+      "tile": "CLMA_429_607",
+      "ble": "A",
+      "oscillator": 51,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1276",
+        "3": "_GND1277",
+        "4": "puf_core/bank/osc[51].ro_unit/chain[3]",
+        "5": "_GND1342"
+      },
+      "output": "puf_core/bank/osc[51].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[51].ro_unit/inv5": {
+      "tile": "CLMA_429_607",
+      "ble": "B",
+      "oscillator": 51,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1342",
+        "2": "1'b1",
+        "3": "_GND1278",
+        "4": "_GND1277",
+        "5": "puf_core/bank/osc[51].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[51].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[51].ro_unit/inv6": {
+      "tile": "CLMA_429_607",
+      "ble": "C",
+      "oscillator": 51,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1278",
+        "3": "_GND1342",
+        "4": "_GND1276",
+        "5": "puf_core/bank/osc[51].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[51]"
+    },
+    "puf_core/bank/osc[52].ro_unit/gate0": {
+      "tile": "CLMA_429_624",
+      "ble": "A",
+      "oscillator": 52,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[52]",
+        "2": "1'b1",
+        "3": "_GND1345",
+        "4": "_GND1344",
+        "5": "puf_core/bank/N368"
+      },
+      "output": "puf_core/bank/osc[52].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[52].ro_unit/inv1": {
+      "tile": "CLMA_429_624",
+      "ble": "B",
+      "oscillator": 52,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1347",
+        "2": "1'b1",
+        "3": "_GND1344",
+        "4": "puf_core/bank/osc[52].ro_unit/chain[0]",
+        "5": "_GND1346"
+      },
+      "output": "puf_core/bank/osc[52].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[52].ro_unit/inv2": {
+      "tile": "CLMA_429_624",
+      "ble": "C",
+      "oscillator": 52,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1344",
+        "3": "_GND1347",
+        "4": "puf_core/bank/osc[52].ro_unit/chain[1]",
+        "5": "_GND1345"
+      },
+      "output": "puf_core/bank/osc[52].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[52].ro_unit/inv3": {
+      "tile": "CLMA_429_624",
+      "ble": "D",
+      "oscillator": 52,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1345",
+        "3": "_GND1346",
+        "4": "puf_core/bank/osc[52].ro_unit/chain[2]",
+        "5": "_GND1344"
+      },
+      "output": "puf_core/bank/osc[52].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[52].ro_unit/inv4": {
+      "tile": "CLMA_429_625",
+      "ble": "A",
+      "oscillator": 52,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1346",
+        "3": "_GND1345",
+        "4": "puf_core/bank/osc[52].ro_unit/chain[3]",
+        "5": "_GND1347"
+      },
+      "output": "puf_core/bank/osc[52].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[52].ro_unit/inv5": {
+      "tile": "CLMA_429_625",
+      "ble": "B",
+      "oscillator": 52,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1347",
+        "2": "1'b1",
+        "3": "_GND1344",
+        "4": "_GND1345",
+        "5": "puf_core/bank/osc[52].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[52].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[52].ro_unit/inv6": {
+      "tile": "CLMA_429_625",
+      "ble": "C",
+      "oscillator": 52,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1344",
+        "3": "_GND1347",
+        "4": "_GND1346",
+        "5": "puf_core/bank/osc[52].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[52]"
+    },
+    "puf_core/bank/osc[53].ro_unit/gate0": {
+      "tile": "CLMA_429_642",
+      "ble": "A",
+      "oscillator": 53,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[53]",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "puf_core/bank/N375",
+        "5": "_GND1352"
+      },
+      "output": "puf_core/bank/osc[53].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[53].ro_unit/inv1": {
+      "tile": "CLMA_429_642",
+      "ble": "B",
+      "oscillator": 53,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1352",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[53].ro_unit/chain[0]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[53].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[53].ro_unit/inv2": {
+      "tile": "CLMA_429_642",
+      "ble": "C",
+      "oscillator": 53,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b0",
+        "2": "1'b1",
+        "3": "_GND1352",
+        "4": "puf_core/bank/osc[53].ro_unit/chain[1]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[53].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[53].ro_unit/inv3": {
+      "tile": "CLMA_429_642",
+      "ble": "D",
+      "oscillator": 53,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b0",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[53].ro_unit/chain[2]",
+        "5": "1'b0"
+      },
+      "output": "puf_core/bank/osc[53].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[53].ro_unit/inv4": {
+      "tile": "CLMA_429_643",
+      "ble": "A",
+      "oscillator": 53,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b0",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "puf_core/bank/osc[53].ro_unit/chain[3]",
+        "5": "_GND1352"
+      },
+      "output": "puf_core/bank/osc[53].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[53].ro_unit/inv5": {
+      "tile": "CLMA_429_643",
+      "ble": "B",
+      "oscillator": 53,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1352",
+        "2": "1'b1",
+        "3": "1'b0",
+        "4": "_GND1354",
+        "5": "puf_core/bank/osc[53].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[53].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[53].ro_unit/inv6": {
+      "tile": "CLMA_429_643",
+      "ble": "C",
+      "oscillator": 53,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "_GND1354",
+        "1": "1'b0",
+        "2": "1'b1",
+        "3": "_GND1352",
+        "4": "1'b1",
+        "5": "puf_core/bank/osc[53].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[53]"
+    },
+    "puf_core/bank/osc[54].ro_unit/gate0": {
+      "tile": "CLMA_429_660",
+      "ble": "A",
+      "oscillator": 54,
+      "stage": 0,
+      "init": 3746770586177582079,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[54]",
+        "2": "1'b1",
+        "3": "puf_core/bank/N382",
+        "4": "_GND1357",
+        "5": "_GND1356"
+      },
+      "output": "puf_core/bank/osc[54].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[54].ro_unit/inv1": {
+      "tile": "CLMA_429_660",
+      "ble": "B",
+      "oscillator": 54,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1356",
+        "2": "1'b1",
+        "3": "_GND1357",
+        "4": "puf_core/bank/osc[54].ro_unit/chain[0]",
+        "5": "_GND1358"
+      },
+      "output": "puf_core/bank/osc[54].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[54].ro_unit/inv2": {
+      "tile": "CLMA_429_660",
+      "ble": "C",
+      "oscillator": 54,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1357",
+        "3": "_GND1356",
+        "4": "puf_core/bank/osc[54].ro_unit/chain[1]",
+        "5": "_GND1359"
+      },
+      "output": "puf_core/bank/osc[54].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[54].ro_unit/inv3": {
+      "tile": "CLMA_429_660",
+      "ble": "D",
+      "oscillator": 54,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1359",
+        "3": "_GND1358",
+        "4": "puf_core/bank/osc[54].ro_unit/chain[2]",
+        "5": "_GND1357"
+      },
+      "output": "puf_core/bank/osc[54].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[54].ro_unit/inv4": {
+      "tile": "CLMA_429_661",
+      "ble": "A",
+      "oscillator": 54,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1358",
+        "3": "_GND1359",
+        "4": "puf_core/bank/osc[54].ro_unit/chain[3]",
+        "5": "_GND1356"
+      },
+      "output": "puf_core/bank/osc[54].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[54].ro_unit/inv5": {
+      "tile": "CLMA_429_661",
+      "ble": "B",
+      "oscillator": 54,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1356",
+        "2": "1'b1",
+        "3": "_GND1357",
+        "4": "_GND1359",
+        "5": "puf_core/bank/osc[54].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[54].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[54].ro_unit/inv6": {
+      "tile": "CLMA_429_661",
+      "ble": "C",
+      "oscillator": 54,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1357",
+        "3": "_GND1356",
+        "4": "_GND1358",
+        "5": "puf_core/bank/osc[54].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[54]"
+    },
+    "puf_core/bank/osc[55].ro_unit/gate0": {
+      "tile": "CLMA_429_672",
+      "ble": "A",
+      "oscillator": 55,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[55]",
+        "2": "1'b1",
+        "3": "_GND1365",
+        "4": "_GND1364",
+        "5": "puf_core/bank/N389"
+      },
+      "output": "puf_core/bank/osc[55].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[55].ro_unit/inv1": {
+      "tile": "CLMA_429_672",
+      "ble": "B",
+      "oscillator": 55,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1367",
+        "2": "1'b1",
+        "3": "_GND1364",
+        "4": "puf_core/bank/osc[55].ro_unit/chain[0]",
+        "5": "_GND1366"
+      },
+      "output": "puf_core/bank/osc[55].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[55].ro_unit/inv2": {
+      "tile": "CLMA_429_672",
+      "ble": "C",
+      "oscillator": 55,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1364",
+        "3": "_GND1367",
+        "4": "puf_core/bank/osc[55].ro_unit/chain[1]",
+        "5": "_GND1365"
+      },
+      "output": "puf_core/bank/osc[55].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[55].ro_unit/inv3": {
+      "tile": "CLMA_429_672",
+      "ble": "D",
+      "oscillator": 55,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1365",
+        "3": "_GND1366",
+        "4": "puf_core/bank/osc[55].ro_unit/chain[2]",
+        "5": "_GND1364"
+      },
+      "output": "puf_core/bank/osc[55].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[55].ro_unit/inv4": {
+      "tile": "CLMA_429_673",
+      "ble": "A",
+      "oscillator": 55,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1366",
+        "3": "_GND1365",
+        "4": "puf_core/bank/osc[55].ro_unit/chain[3]",
+        "5": "_GND1367"
+      },
+      "output": "puf_core/bank/osc[55].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[55].ro_unit/inv5": {
+      "tile": "CLMA_429_673",
+      "ble": "B",
+      "oscillator": 55,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1367",
+        "2": "1'b1",
+        "3": "_GND1364",
+        "4": "_GND1365",
+        "5": "puf_core/bank/osc[55].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[55].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[55].ro_unit/inv6": {
+      "tile": "CLMA_429_673",
+      "ble": "C",
+      "oscillator": 55,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1364",
+        "3": "_GND1367",
+        "4": "_GND1366",
+        "5": "puf_core/bank/osc[55].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[55]"
+    },
+    "puf_core/bank/osc[56].ro_unit/gate0": {
+      "tile": "CLMA_429_690",
+      "ble": "A",
+      "oscillator": 56,
+      "stage": 0,
+      "init": 4557430888798830399,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[56]",
+        "2": "puf_core/bank/N396",
+        "3": "1'b1",
+        "4": "_GND1373",
+        "5": "_GND1372"
+      },
+      "output": "puf_core/bank/osc[56].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[56].ro_unit/inv1": {
+      "tile": "CLMA_429_690",
+      "ble": "B",
+      "oscillator": 56,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1372",
+        "2": "1'b1",
+        "3": "_GND1373",
+        "4": "puf_core/bank/osc[56].ro_unit/chain[0]",
+        "5": "_GND1374"
+      },
+      "output": "puf_core/bank/osc[56].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[56].ro_unit/inv2": {
+      "tile": "CLMA_429_690",
+      "ble": "C",
+      "oscillator": 56,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1373",
+        "3": "_GND1372",
+        "4": "puf_core/bank/osc[56].ro_unit/chain[1]",
+        "5": "_GND1375"
+      },
+      "output": "puf_core/bank/osc[56].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[56].ro_unit/inv3": {
+      "tile": "CLMA_429_690",
+      "ble": "D",
+      "oscillator": 56,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1375",
+        "3": "_GND1374",
+        "4": "puf_core/bank/osc[56].ro_unit/chain[2]",
+        "5": "_GND1373"
+      },
+      "output": "puf_core/bank/osc[56].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[56].ro_unit/inv4": {
+      "tile": "CLMA_429_691",
+      "ble": "A",
+      "oscillator": 56,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1374",
+        "3": "_GND1375",
+        "4": "puf_core/bank/osc[56].ro_unit/chain[3]",
+        "5": "_GND1372"
+      },
+      "output": "puf_core/bank/osc[56].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[56].ro_unit/inv5": {
+      "tile": "CLMA_429_691",
+      "ble": "B",
+      "oscillator": 56,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1372",
+        "2": "1'b1",
+        "3": "_GND1373",
+        "4": "_GND1375",
+        "5": "puf_core/bank/osc[56].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[56].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[56].ro_unit/inv6": {
+      "tile": "CLMA_429_691",
+      "ble": "C",
+      "oscillator": 56,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1373",
+        "3": "_GND1372",
+        "4": "_GND1374",
+        "5": "puf_core/bank/osc[56].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[56]"
+    },
+    "puf_core/bank/osc[57].ro_unit/gate0": {
+      "tile": "CLMA_453_582",
+      "ble": "A",
+      "oscillator": 57,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[57]",
+        "2": "1'b1",
+        "3": "_GND1395",
+        "4": "_GND1394",
+        "5": "puf_core/bank/N403"
+      },
+      "output": "puf_core/bank/osc[57].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[57].ro_unit/inv1": {
+      "tile": "CLMA_453_582",
+      "ble": "B",
+      "oscillator": 57,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1397",
+        "2": "1'b1",
+        "3": "_GND1394",
+        "4": "puf_core/bank/osc[57].ro_unit/chain[0]",
+        "5": "_GND1396"
+      },
+      "output": "puf_core/bank/osc[57].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[57].ro_unit/inv2": {
+      "tile": "CLMA_453_582",
+      "ble": "C",
+      "oscillator": 57,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1394",
+        "3": "_GND1397",
+        "4": "puf_core/bank/osc[57].ro_unit/chain[1]",
+        "5": "_GND1395"
+      },
+      "output": "puf_core/bank/osc[57].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[57].ro_unit/inv3": {
+      "tile": "CLMA_453_582",
+      "ble": "D",
+      "oscillator": 57,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1395",
+        "3": "_GND1396",
+        "4": "puf_core/bank/osc[57].ro_unit/chain[2]",
+        "5": "_GND1394"
+      },
+      "output": "puf_core/bank/osc[57].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[57].ro_unit/inv4": {
+      "tile": "CLMA_453_583",
+      "ble": "A",
+      "oscillator": 57,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1396",
+        "3": "_GND1395",
+        "4": "puf_core/bank/osc[57].ro_unit/chain[3]",
+        "5": "_GND1397"
+      },
+      "output": "puf_core/bank/osc[57].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[57].ro_unit/inv5": {
+      "tile": "CLMA_453_583",
+      "ble": "B",
+      "oscillator": 57,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1397",
+        "2": "1'b1",
+        "3": "_GND1394",
+        "4": "_GND1395",
+        "5": "puf_core/bank/osc[57].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[57].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[57].ro_unit/inv6": {
+      "tile": "CLMA_453_583",
+      "ble": "C",
+      "oscillator": 57,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1394",
+        "3": "_GND1397",
+        "4": "_GND1396",
+        "5": "puf_core/bank/osc[57].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[57]"
+    },
+    "puf_core/bank/osc[58].ro_unit/gate0": {
+      "tile": "CLMA_453_594",
+      "ble": "A",
+      "oscillator": 58,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[58]",
+        "2": "1'b1",
+        "3": "_GND1401",
+        "4": "puf_core/bank/N410",
+        "5": "_GND1400"
+      },
+      "output": "puf_core/bank/osc[58].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[58].ro_unit/inv1": {
+      "tile": "CLMA_453_594",
+      "ble": "B",
+      "oscillator": 58,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1400",
+        "2": "1'b1",
+        "3": "_GND1403",
+        "4": "puf_core/bank/osc[58].ro_unit/chain[0]",
+        "5": "_GND1402"
+      },
+      "output": "puf_core/bank/osc[58].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[58].ro_unit/inv2": {
+      "tile": "CLMA_453_594",
+      "ble": "C",
+      "oscillator": 58,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1403",
+        "3": "_GND1400",
+        "4": "puf_core/bank/osc[58].ro_unit/chain[1]",
+        "5": "_GND1401"
+      },
+      "output": "puf_core/bank/osc[58].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[58].ro_unit/inv3": {
+      "tile": "CLMA_453_594",
+      "ble": "D",
+      "oscillator": 58,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1401",
+        "3": "_GND1402",
+        "4": "puf_core/bank/osc[58].ro_unit/chain[2]",
+        "5": "_GND1403"
+      },
+      "output": "puf_core/bank/osc[58].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[58].ro_unit/inv4": {
+      "tile": "CLMA_453_595",
+      "ble": "A",
+      "oscillator": 58,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1402",
+        "3": "_GND1401",
+        "4": "puf_core/bank/osc[58].ro_unit/chain[3]",
+        "5": "_GND1400"
+      },
+      "output": "puf_core/bank/osc[58].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[58].ro_unit/inv5": {
+      "tile": "CLMA_453_595",
+      "ble": "B",
+      "oscillator": 58,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1400",
+        "2": "1'b1",
+        "3": "_GND1403",
+        "4": "_GND1401",
+        "5": "puf_core/bank/osc[58].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[58].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[58].ro_unit/inv6": {
+      "tile": "CLMA_453_595",
+      "ble": "C",
+      "oscillator": 58,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1403",
+        "3": "_GND1400",
+        "4": "_GND1402",
+        "5": "puf_core/bank/osc[58].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[58]"
+    },
+    "puf_core/bank/osc[59].ro_unit/gate0": {
+      "tile": "CLMA_453_612",
+      "ble": "A",
+      "oscillator": 59,
+      "stage": 0,
+      "init": 4557430888798830399,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[59]",
+        "2": "puf_core/bank/N417",
+        "3": "1'b1",
+        "4": "1'b0",
+        "5": "_GND1408"
+      },
+      "output": "puf_core/bank/osc[59].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[59].ro_unit/inv1": {
+      "tile": "CLMA_453_612",
+      "ble": "B",
+      "oscillator": 59,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1408",
+        "2": "1'b0",
+        "3": "1'b1",
+        "4": "puf_core/bank/osc[59].ro_unit/chain[0]",
+        "5": "_GND1405"
+      },
+      "output": "puf_core/bank/osc[59].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[59].ro_unit/inv2": {
+      "tile": "CLMA_453_612",
+      "ble": "C",
+      "oscillator": 59,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "_GND1408",
+        "4": "puf_core/bank/osc[59].ro_unit/chain[1]",
+        "5": "_GND1406"
+      },
+      "output": "puf_core/bank/osc[59].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[59].ro_unit/inv3": {
+      "tile": "CLMA_453_612",
+      "ble": "D",
+      "oscillator": 59,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1406",
+        "2": "_GND1406",
+        "3": "_GND1405",
+        "4": "puf_core/bank/osc[59].ro_unit/chain[2]",
+        "5": "1'b1"
+      },
+      "output": "puf_core/bank/osc[59].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[59].ro_unit/inv4": {
+      "tile": "CLMA_453_613",
+      "ble": "A",
+      "oscillator": 59,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1405",
+        "3": "_GND1406",
+        "4": "puf_core/bank/osc[59].ro_unit/chain[3]",
+        "5": "_GND1408"
+      },
+      "output": "puf_core/bank/osc[59].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[59].ro_unit/inv5": {
+      "tile": "CLMA_453_613",
+      "ble": "B",
+      "oscillator": 59,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1408",
+        "2": "1'b0",
+        "3": "1'b1",
+        "4": "_GND1406",
+        "5": "puf_core/bank/osc[59].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[59].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[59].ro_unit/inv6": {
+      "tile": "CLMA_453_613",
+      "ble": "C",
+      "oscillator": 59,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "1'b0",
+        "3": "_GND1408",
+        "4": "_GND1405",
+        "5": "puf_core/bank/osc[59].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[59]"
+    },
+    "puf_core/bank/osc[60].ro_unit/gate0": {
+      "tile": "CLMA_453_636",
+      "ble": "A",
+      "oscillator": 60,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[60]",
+        "2": "1'b1",
+        "3": "_GND1415",
+        "4": "_GND1414",
+        "5": "puf_core/bank/N424"
+      },
+      "output": "puf_core/bank/osc[60].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[60].ro_unit/inv1": {
+      "tile": "CLMA_453_636",
+      "ble": "B",
+      "oscillator": 60,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1417",
+        "2": "1'b1",
+        "3": "_GND1414",
+        "4": "puf_core/bank/osc[60].ro_unit/chain[0]",
+        "5": "_GND1416"
+      },
+      "output": "puf_core/bank/osc[60].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[60].ro_unit/inv2": {
+      "tile": "CLMA_453_636",
+      "ble": "C",
+      "oscillator": 60,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1414",
+        "3": "_GND1417",
+        "4": "puf_core/bank/osc[60].ro_unit/chain[1]",
+        "5": "_GND1415"
+      },
+      "output": "puf_core/bank/osc[60].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[60].ro_unit/inv3": {
+      "tile": "CLMA_453_636",
+      "ble": "D",
+      "oscillator": 60,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1415",
+        "3": "_GND1416",
+        "4": "puf_core/bank/osc[60].ro_unit/chain[2]",
+        "5": "_GND1414"
+      },
+      "output": "puf_core/bank/osc[60].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[60].ro_unit/inv4": {
+      "tile": "CLMA_453_637",
+      "ble": "A",
+      "oscillator": 60,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1416",
+        "3": "_GND1415",
+        "4": "puf_core/bank/osc[60].ro_unit/chain[3]",
+        "5": "_GND1417"
+      },
+      "output": "puf_core/bank/osc[60].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[60].ro_unit/inv5": {
+      "tile": "CLMA_453_637",
+      "ble": "B",
+      "oscillator": 60,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1417",
+        "2": "1'b1",
+        "3": "_GND1414",
+        "4": "_GND1415",
+        "5": "puf_core/bank/osc[60].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[60].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[60].ro_unit/inv6": {
+      "tile": "CLMA_453_637",
+      "ble": "C",
+      "oscillator": 60,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1414",
+        "3": "_GND1417",
+        "4": "_GND1416",
+        "5": "puf_core/bank/osc[60].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[60]"
+    },
+    "puf_core/bank/osc[61].ro_unit/gate0": {
+      "tile": "CLMA_453_648",
+      "ble": "A",
+      "oscillator": 61,
+      "stage": 0,
+      "init": 4557430888798830399,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[61]",
+        "2": "puf_core/bank/N431",
+        "3": "1'b1",
+        "4": "_GND1423",
+        "5": "_GND1422"
+      },
+      "output": "puf_core/bank/osc[61].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[61].ro_unit/inv1": {
+      "tile": "CLMA_453_648",
+      "ble": "B",
+      "oscillator": 61,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1422",
+        "2": "1'b1",
+        "3": "_GND1423",
+        "4": "puf_core/bank/osc[61].ro_unit/chain[0]",
+        "5": "_GND1424"
+      },
+      "output": "puf_core/bank/osc[61].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[61].ro_unit/inv2": {
+      "tile": "CLMA_453_648",
+      "ble": "C",
+      "oscillator": 61,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1423",
+        "3": "_GND1422",
+        "4": "puf_core/bank/osc[61].ro_unit/chain[1]",
+        "5": "_GND1425"
+      },
+      "output": "puf_core/bank/osc[61].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[61].ro_unit/inv3": {
+      "tile": "CLMA_453_648",
+      "ble": "D",
+      "oscillator": 61,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1425",
+        "3": "_GND1424",
+        "4": "puf_core/bank/osc[61].ro_unit/chain[2]",
+        "5": "_GND1423"
+      },
+      "output": "puf_core/bank/osc[61].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[61].ro_unit/inv4": {
+      "tile": "CLMA_453_649",
+      "ble": "A",
+      "oscillator": 61,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1424",
+        "3": "_GND1425",
+        "4": "puf_core/bank/osc[61].ro_unit/chain[3]",
+        "5": "_GND1422"
+      },
+      "output": "puf_core/bank/osc[61].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[61].ro_unit/inv5": {
+      "tile": "CLMA_453_649",
+      "ble": "B",
+      "oscillator": 61,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1422",
+        "2": "1'b1",
+        "3": "_GND1423",
+        "4": "_GND1425",
+        "5": "puf_core/bank/osc[61].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[61].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[61].ro_unit/inv6": {
+      "tile": "CLMA_453_649",
+      "ble": "C",
+      "oscillator": 61,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1423",
+        "3": "_GND1422",
+        "4": "_GND1424",
+        "5": "puf_core/bank/osc[61].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[61]"
+    },
+    "puf_core/bank/osc[62].ro_unit/gate0": {
+      "tile": "CLMA_453_672",
+      "ble": "A",
+      "oscillator": 62,
+      "stage": 0,
+      "init": 3689348818177884159,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[62]",
+        "2": "1'b1",
+        "3": "_GND1431",
+        "4": "_GND1430",
+        "5": "puf_core/bank/N438"
+      },
+      "output": "puf_core/bank/osc[62].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[62].ro_unit/inv1": {
+      "tile": "CLMA_453_672",
+      "ble": "B",
+      "oscillator": 62,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1433",
+        "2": "1'b1",
+        "3": "_GND1430",
+        "4": "puf_core/bank/osc[62].ro_unit/chain[0]",
+        "5": "_GND1432"
+      },
+      "output": "puf_core/bank/osc[62].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[62].ro_unit/inv2": {
+      "tile": "CLMA_453_672",
+      "ble": "C",
+      "oscillator": 62,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1430",
+        "3": "_GND1433",
+        "4": "puf_core/bank/osc[62].ro_unit/chain[1]",
+        "5": "_GND1431"
+      },
+      "output": "puf_core/bank/osc[62].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[62].ro_unit/inv3": {
+      "tile": "CLMA_453_672",
+      "ble": "D",
+      "oscillator": 62,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1431",
+        "3": "_GND1432",
+        "4": "puf_core/bank/osc[62].ro_unit/chain[2]",
+        "5": "_GND1430"
+      },
+      "output": "puf_core/bank/osc[62].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[62].ro_unit/inv4": {
+      "tile": "CLMA_453_673",
+      "ble": "A",
+      "oscillator": 62,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1432",
+        "3": "_GND1431",
+        "4": "puf_core/bank/osc[62].ro_unit/chain[3]",
+        "5": "_GND1433"
+      },
+      "output": "puf_core/bank/osc[62].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[62].ro_unit/inv5": {
+      "tile": "CLMA_453_673",
+      "ble": "B",
+      "oscillator": 62,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1433",
+        "2": "1'b1",
+        "3": "_GND1430",
+        "4": "_GND1431",
+        "5": "puf_core/bank/osc[62].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[62].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[62].ro_unit/inv6": {
+      "tile": "CLMA_453_673",
+      "ble": "C",
+      "oscillator": 62,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1430",
+        "3": "_GND1433",
+        "4": "_GND1432",
+        "5": "puf_core/bank/osc[62].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[62]"
+    },
+    "puf_core/bank/osc[63].ro_unit/gate0": {
+      "tile": "CLMA_453_696",
+      "ble": "A",
+      "oscillator": 63,
+      "stage": 0,
+      "init": 3689573991287357439,
+      "pins": {
+        "0": "1'b1",
+        "1": "puf_core/bank/clocks[63]",
+        "2": "1'b1",
+        "3": "_GND1439",
+        "4": "puf_core/bank/N445",
+        "5": "_GND1438"
+      },
+      "output": "puf_core/bank/osc[63].ro_unit/chain[0]"
+    },
+    "puf_core/bank/osc[63].ro_unit/inv1": {
+      "tile": "CLMA_453_696",
+      "ble": "B",
+      "oscillator": 63,
+      "stage": 1,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1438",
+        "2": "1'b1",
+        "3": "_GND1441",
+        "4": "puf_core/bank/osc[63].ro_unit/chain[0]",
+        "5": "_GND1440"
+      },
+      "output": "puf_core/bank/osc[63].ro_unit/chain[1]"
+    },
+    "puf_core/bank/osc[63].ro_unit/inv2": {
+      "tile": "CLMA_453_696",
+      "ble": "C",
+      "oscillator": 63,
+      "stage": 2,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1441",
+        "3": "_GND1438",
+        "4": "puf_core/bank/osc[63].ro_unit/chain[1]",
+        "5": "_GND1439"
+      },
+      "output": "puf_core/bank/osc[63].ro_unit/chain[2]"
+    },
+    "puf_core/bank/osc[63].ro_unit/inv3": {
+      "tile": "CLMA_453_696",
+      "ble": "D",
+      "oscillator": 63,
+      "stage": 3,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1439",
+        "3": "_GND1440",
+        "4": "puf_core/bank/osc[63].ro_unit/chain[2]",
+        "5": "_GND1441"
+      },
+      "output": "puf_core/bank/osc[63].ro_unit/chain[3]"
+    },
+    "puf_core/bank/osc[63].ro_unit/inv4": {
+      "tile": "CLMA_453_697",
+      "ble": "A",
+      "oscillator": 63,
+      "stage": 4,
+      "init": 281470681808895,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1440",
+        "3": "_GND1439",
+        "4": "puf_core/bank/osc[63].ro_unit/chain[3]",
+        "5": "_GND1438"
+      },
+      "output": "puf_core/bank/osc[63].ro_unit/chain[4]"
+    },
+    "puf_core/bank/osc[63].ro_unit/inv5": {
+      "tile": "CLMA_453_697",
+      "ble": "B",
+      "oscillator": 63,
+      "stage": 5,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "_GND1438",
+        "2": "1'b1",
+        "3": "_GND1441",
+        "4": "_GND1439",
+        "5": "puf_core/bank/osc[63].ro_unit/chain[4]"
+      },
+      "output": "puf_core/bank/osc[63].ro_unit/chain[5]"
+    },
+    "puf_core/bank/osc[63].ro_unit/inv6": {
+      "tile": "CLMA_453_697",
+      "ble": "C",
+      "oscillator": 63,
+      "stage": 6,
+      "init": 4294967295,
+      "pins": {
+        "0": "1'b1",
+        "1": "1'b1",
+        "2": "_GND1441",
+        "3": "_GND1438",
+        "4": "_GND1440",
+        "5": "puf_core/bank/osc[63].ro_unit/chain[5]"
+      },
+      "output": "puf_core/bank/clocks[63]"
+    }
+  },
+  "constraint": "C:\\Users\\zyj\\Desktop\\fpga\\kosmo_donkeycar\\cnn_deploy_opt4\\integration\\training\\board\\ro_locations.fdc",
+  "constraint_sha256": "6e08ee2af6d49f1c39a442c454af659acd8a543a81d82d29f951fce7a1f3bb94",
+  "bitstream": "C:\\Users\\zyj\\Desktop\\fpga\\kosmo_donkeycar\\cnn_deploy_opt4\\integration\\training\\build\\board\\ro_capture_seed\\prj_tasks\\pnr_1\\generate_bitstream\\kosmo_training_top.sbit",
+  "bitstream_sha256": "37af7f3971eaf341da57a05371c0094ae06073cfcf361e13627bbe84644f7ea6"
+}

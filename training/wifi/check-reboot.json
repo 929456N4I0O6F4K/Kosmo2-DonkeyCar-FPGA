@@ -1,0 +1,6 @@
+[
+  ["status", "/usr/local/sbin/kosmo-wifi status && cat /run/kosmo-wifi/dhcp.log"],
+  ["regdb", "iw reg reload && iw reg get; dmesg | tail -n 6"],
+  ["internet", "ping -I wlan0 -c 3 -W 2 1.1.1.1 && wget -T 15 -O /tmp/kosmo-wifi-reboot-http.html http://example.com"],
+  ["app_files", "find /root/kosmo-training /root/kosmo_donkeycar -maxdepth 2 -type f; ps | tail -n 24; true"]
+]

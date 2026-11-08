@@ -1,0 +1,57 @@
+--- a/drivers/usb/phy/phy-ulpi.c
++++ b/drivers/usb/phy/phy-ulpi.c
+@@ -185,14 +185,8 @@
+ {
+ 	int i, vid, pid, ret;
+ 	u32 ulpi_id = 0;
+-	struct ulpi_phy *uphy = dev_get_drvdata(phy->dev);
+-
+-	if (uphy->gpiod_reset) {
+-		gpiod_set_value(uphy->gpiod_reset, 0);
+-		msleep(5);
+-		gpiod_set_value(uphy->gpiod_reset, 1);
+-		msleep(5);
+-	}
++
++	/* Reset was released at probe, before the DWC2 core needs PHY clocks. */
+ 
+ 	for (i = 0; i < 4; i++) {
+ 		ret = usb_phy_io_read(phy, ULPI_PRODUCT_ID_HIGH - i);
+@@ -372,10 +366,18 @@
+ 		return PTR_ERR(uphy->regs);
+ 
+ 	uphy->gpiod_reset = devm_gpiod_get_optional(&pdev->dev, "reset", GPIOD_OUT_HIGH);
+-	if (IS_ERR(uphy->gpiod_reset)) {
+-		dev_warn(&pdev->dev, "get reset gpio pin error\n");
+-		uphy->gpiod_reset = NULL;
+-    }
++	if (IS_ERR(uphy->gpiod_reset))
++		return PTR_ERR(uphy->gpiod_reset);
++
++	/* GPIO values are logical: 1 asserts reset, 0 releases it.
++	 * Release here so the PHY supplies its clock before DWC2 soft reset.
++	 * Do not pulse reset again from the later HCD PHY initialization.
++	 */
++	if (uphy->gpiod_reset) {
++		msleep(5);
++		gpiod_set_value_cansleep(uphy->gpiod_reset, 0);
++		msleep(5);
++	}
+ 
+ 	if (of_property_read_u32(np, "view-port", &uphy->vp_offset))
+ 		dev_dbg(&pdev->dev, "Missing view-port property\n");
+--- a/drivers/usb/dwc2/hcd.c
++++ b/drivers/usb/dwc2/hcd.c
+@@ -5015,9 +5015,10 @@
+ 	}
+ 
+ 	hcd->usb_phy = devm_usb_get_phy_by_phandle(hcd->self.sysdev, "phys", 0);
+-	if (IS_ERR(hcd->usb_phy) || (PTR_ERR(hcd->usb_phy) == -EPROBE_DEFER)) {
++	if (IS_ERR(hcd->usb_phy)) {
++		ret = PTR_ERR(hcd->usb_phy);
+ 		hcd->usb_phy = NULL;
+-		return EPROBE_DEFER;
++		return ret;
+ 	}
+ 
+ 	if (!of_property_read_bool(hsotg->dev->of_node, "pg,skip-phy-init")) {

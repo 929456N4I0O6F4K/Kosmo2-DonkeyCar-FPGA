@@ -1,0 +1,416 @@
+{
+  "model": "mypilot1_s2_physical2_opt5\\mypilot1_s2_physical_int8.tflite",
+  "model_sha256": "d55300e9dc197605b9e23040e7b293ffe724648b2d0ffb795b4ccb50296ece7a",
+  "output_quantization": {
+    "scale": 0.008972170762717724,
+    "zero_point": -20,
+    "scale_q30": 9633795
+  },
+  "float_model_sha256": "7e19f21efb817bcf1a7c3c02841db253bbc7a588d7ee3d2b4e9f7066c3f78496",
+  "model_modified": false,
+  "puf": false,
+  "crop": "RGB[25:120,2:158,:]",
+  "input_quantization": "q=pixel-128",
+  "rgb565_conversion": "MSB first; bit replication, identical to training/uio_linux.go",
+  "output_semantics": [
+    "steering",
+    "throttle"
+  ],
+  "operators": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    77,
+    45,
+    83,
+    22,
+    9,
+    9,
+    9
+  ],
+  "layers": [
+    {
+      "name": "conv1",
+      "op": "CONV_2D",
+      "input_zp": -128,
+      "output_zp": -128,
+      "input_scale": 0.003921568859368563,
+      "output_scale": 0.00565355597063899,
+      "weight_shape": [
+        24,
+        5,
+        5,
+        3
+      ]
+    },
+    {
+      "name": "conv2",
+      "op": "CONV_2D",
+      "input_zp": -128,
+      "output_zp": -128,
+      "input_scale": 0.00565355597063899,
+      "output_scale": 0.003703237045556307,
+      "weight_shape": [
+        32,
+        5,
+        5,
+        24
+      ]
+    },
+    {
+      "name": "conv3",
+      "op": "CONV_2D",
+      "input_zp": -128,
+      "output_zp": -128,
+      "input_scale": 0.003703237045556307,
+      "output_scale": 0.0027544687036424875,
+      "weight_shape": [
+        64,
+        5,
+        5,
+        32
+      ]
+    },
+    {
+      "name": "conv4",
+      "op": "CONV_2D",
+      "input_zp": -128,
+      "output_zp": -128,
+      "input_scale": 0.0027544687036424875,
+      "output_scale": 0.0020871285814791918,
+      "weight_shape": [
+        64,
+        3,
+        3,
+        64
+      ]
+    },
+    {
+      "name": "conv5",
+      "op": "CONV_2D",
+      "input_zp": -128,
+      "output_zp": -128,
+      "input_scale": 0.0020871285814791918,
+      "output_scale": 0.0019160021329298615,
+      "weight_shape": [
+        16,
+        3,
+        3,
+        64
+      ]
+    },
+    {
+      "name": "dense1",
+      "op": "FULLY_CONNECTED",
+      "input_zp": -128,
+      "output_zp": -128,
+      "input_scale": 0.0019160021329298615,
+      "output_scale": 0.0026056442875415087,
+      "weight_shape": [
+        100,
+        960
+      ]
+    },
+    {
+      "name": "dense2",
+      "op": "FULLY_CONNECTED",
+      "input_zp": -128,
+      "output_zp": -128,
+      "input_scale": 0.0026056442875415087,
+      "output_scale": 0.002585663925856352,
+      "weight_shape": [
+        50,
+        100
+      ]
+    },
+    {
+      "name": "outputs",
+      "op": "FULLY_CONNECTED",
+      "input_zp": -128,
+      "output_zp": -20,
+      "input_scale": 0.002585663925856352,
+      "output_scale": 0.008972170762717724,
+      "weight_shape": [
+        2,
+        50
+      ]
+    }
+  ],
+  "layout": {
+    "mac_lanes": [
+      24,
+      32,
+      64
+    ],
+    "weight_bytes": 219380,
+    "frame_bytes": 44460,
+    "line_buffer_bytes": [
+      10944,
+      6912
+    ],
+    "tail_buffer_bytes": [
+      9216,
+      6272
+    ],
+    "stages": [
+      {
+        "stage": 0,
+        "name": "conv1",
+        "taps": 75,
+        "row_span": 15,
+        "row_skip": 453,
+        "stride_x": 6,
+        "stride_y": 936,
+        "out_h": 46,
+        "out_w": 76,
+        "out_c": 24,
+        "groups": 1
+      },
+      {
+        "stage": 1,
+        "name": "conv2",
+        "taps": 600,
+        "row_span": 120,
+        "row_skip": 1704,
+        "stride_x": 48,
+        "stride_y": 3648,
+        "out_h": 21,
+        "out_w": 36,
+        "out_c": 32,
+        "groups": 1
+      },
+      {
+        "stage": 2,
+        "name": "conv3",
+        "taps": 800,
+        "row_span": 160,
+        "row_skip": 992,
+        "stride_x": 64,
+        "stride_y": 2304,
+        "out_h": 9,
+        "out_w": 16,
+        "out_c": 64,
+        "groups": 1
+      },
+      {
+        "stage": 3,
+        "name": "conv4",
+        "taps": 576,
+        "row_span": 192,
+        "row_skip": 832,
+        "stride_x": 64,
+        "stride_y": 1024,
+        "out_h": 7,
+        "out_w": 14,
+        "out_c": 64,
+        "groups": 1
+      },
+      {
+        "stage": 4,
+        "name": "conv5",
+        "taps": 576,
+        "row_span": 192,
+        "row_skip": 704,
+        "stride_x": 64,
+        "stride_y": 896,
+        "out_h": 5,
+        "out_w": 12,
+        "out_c": 16,
+        "groups": 1
+      },
+      {
+        "stage": 5,
+        "name": "dense1",
+        "taps": 960,
+        "row_span": 960,
+        "row_skip": 0,
+        "stride_x": 0,
+        "stride_y": 0,
+        "out_h": 1,
+        "out_w": 1,
+        "out_c": 100,
+        "groups": 2
+      },
+      {
+        "stage": 6,
+        "name": "dense2",
+        "taps": 100,
+        "row_span": 100,
+        "row_skip": 0,
+        "stride_x": 0,
+        "stride_y": 0,
+        "out_h": 1,
+        "out_w": 1,
+        "out_c": 50,
+        "groups": 1
+      },
+      {
+        "stage": 7,
+        "name": "outputs",
+        "taps": 50,
+        "row_span": 50,
+        "row_skip": 0,
+        "stride_x": 0,
+        "stride_y": 0,
+        "out_h": 1,
+        "out_w": 1,
+        "out_c": 2,
+        "groups": 1
+      }
+    ],
+    "rom_sha256": {
+      "stage0_weights.mem": "c3c73e7437c02ebe88d63307d21a7b39154a969d1fdc9450c0ae5026662fd0c9",
+      "stage0_requant.mem": "13c166e8eb7225d6283a9d467f6dab39d619690ec76466b06c9517d8d9d5f492",
+      "stage1_weights.mem": "812a5aca0b9215313add745bfbbd97e44346353dc1b5711eadf6f3e13e3c20ff",
+      "stage1_requant.mem": "4e1013f8cf812fad3afb845303abd297533ed159bbdfff73f01c0abef75033d8",
+      "stage2_weights.mem": "15c24fd9a3ae929624edcfb2acfd98023ebeb2721bc5c0f30c7658a50552f0b1",
+      "stage2_requant.mem": "7d29acd47861e844a51c312bb7e4d7d0ba129e35efcb5640d314e61897f6d371",
+      "stage3_weights.mem": "39ecdadd8e92ff894bce42144b1e771c2b4a67a6d701bffffee473c21f633848",
+      "stage3_requant.mem": "a4b5f285f5f248d813648b5a9fc5d0f011469d88f617adaa4956782c86c776df",
+      "stage4_weights.mem": "fc3d0d7ad399260eba26db3dabf82cd2914e85158f47b2d5ca12739162a6b69f",
+      "stage4_requant.mem": "93122b253c873a67a12c212be92b24b8a47de49775d753c1ff50803b866923de",
+      "stage5_weights.mem": "24b651912f07e386daa07ee3ec538687485369535c13d4fb2c84f4314ec5e448",
+      "stage5_requant.mem": "5a66c8e2b8c27f4bf6b3f034f608200cefc6686e8a381d7ef512dc176cc0cdac",
+      "stage6_weights.mem": "8dcc173fedf4e772c5460fa7543e41d8daf6df78de5580ec5a0d8c74e7ffc719",
+      "stage6_requant.mem": "63d7968d4b5112b9e0c6523862937762c9b833cb6e95a346210593d9bf3639a2",
+      "stage7_weights.mem": "45dff85d35dd8f5375123018b364646d5ee5d14db2524d1ead26388d3486335e",
+      "stage7_requant.mem": "2e43c9f123d0409ea7181ddd264fed6b9149388bb9fb8a4709a156caaf90770d"
+    }
+  },
+  "quantizer_cases": 5401,
+  "cases": [
+    {
+      "name": "real_00",
+      "source": {
+        "archive": "20261025T045355.413308994Z_5c36bde4.zip",
+        "archive_sha256": "43bf91fdab232537185800256e9f2845aba23ce03489914dca36f7e58ea318d0",
+        "image": "20261025T045355.413308994Z_5c36bde4/images/0000004324.png",
+        "angle": -0.026,
+        "throttle": 0.439
+      },
+      "input_sha256": "bc6251dbaa75a58f77e2da39eba73583c2f04425a7f50809975d1f7bf128c0bd",
+      "golden_bytes": 124696,
+      "int8_outputs": [
+        -21,
+        41
+      ],
+      "steering_q16": -588,
+      "throttle_q16": 35868,
+      "dequantized": [
+        -0.008972170762717724,
+        0.5473024165257812
+      ],
+      "float_outputs": [
+        -0.007160669192671776,
+        0.5428574681282043
+      ],
+      "int8_vs_float_abs_error": [
+        0.001811501570045948,
+        0.004444948397576809
+      ],
+      "reference_mismatches": 0
+    },
+    {
+      "name": "black",
+      "source": {},
+      "input_sha256": "d12d0b6bf7a29ce456cf0cb92e2a7ae1e31359ea6df6895eb2ddf6cdee980450",
+      "golden_bytes": 124696,
+      "int8_outputs": [
+        -46,
+        41
+      ],
+      "steering_q16": -15288,
+      "throttle_q16": 35868,
+      "dequantized": [
+        -0.23327643983066082,
+        0.5473024165257812
+      ],
+      "float_outputs": [
+        -0.2357911914587021,
+        0.546672523021698
+      ],
+      "int8_vs_float_abs_error": [
+        0.0025147516280412674,
+        0.0006298935040831566
+      ],
+      "reference_mismatches": 0
+    },
+    {
+      "name": "white",
+      "source": {},
+      "input_sha256": "8797ee8df64071ecd974da48d832a1d617a30b278e7687271d72334f515e3e0f",
+      "golden_bytes": 124696,
+      "int8_outputs": [
+        -38,
+        41
+      ],
+      "steering_q16": -10584,
+      "throttle_q16": 35868,
+      "dequantized": [
+        -0.16149907372891903,
+        0.5473024165257812
+      ],
+      "float_outputs": [
+        -0.1578456163406372,
+        0.5445191860198975
+      ],
+      "int8_vs_float_abs_error": [
+        0.003653457388281822,
+        0.0027832305058836937
+      ],
+      "reference_mismatches": 0
+    },
+    {
+      "name": "pattern",
+      "source": {},
+      "input_sha256": "482d50f5b0f37bc490b9423003e7b5f8d963f57b21a66d6dcff0d73f43a515a8",
+      "golden_bytes": 124696,
+      "int8_outputs": [
+        72,
+        41
+      ],
+      "steering_q16": 54096,
+      "throttle_q16": 35868,
+      "dequantized": [
+        0.8254397101700306,
+        0.5473024165257812
+      ],
+      "float_outputs": [
+        0.8237834572792053,
+        0.548366367816925
+      ],
+      "int8_vs_float_abs_error": [
+        0.0016562528908252716,
+        0.0010639512911438942
+      ],
+      "reference_mismatches": 0
+    },
+    {
+      "name": "random",
+      "source": {},
+      "input_sha256": "8375ede45e1f4670d3dd0a9f0e8a8ea0b190d7dc088523312601c036d8b2baf7",
+      "golden_bytes": 124696,
+      "int8_outputs": [
+        -30,
+        41
+      ],
+      "steering_q16": -5880,
+      "throttle_q16": 35868,
+      "dequantized": [
+        -0.08972170762717724,
+        0.5473024165257812
+      ],
+      "float_outputs": [
+        -0.09104683250188828,
+        0.5462713837623596
+      ],
+      "int8_vs_float_abs_error": [
+        0.0013251248747110367,
+        0.0010310327634215355
+      ],
+      "reference_mismatches": 0
+    }
+  ]
+}

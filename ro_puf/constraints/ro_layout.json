@@ -1,0 +1,2690 @@
+[
+  {
+    "oscillator": 0,
+    "stage": 0,
+    "instance": "bank/osc[0].ro_unit/gate0",
+    "target": "CLMA_393_624"
+  },
+  {
+    "oscillator": 0,
+    "stage": 1,
+    "instance": "bank/osc[0].ro_unit/inv1",
+    "target": "CLMA_393_624"
+  },
+  {
+    "oscillator": 0,
+    "stage": 2,
+    "instance": "bank/osc[0].ro_unit/inv2",
+    "target": "CLMA_393_624"
+  },
+  {
+    "oscillator": 0,
+    "stage": 3,
+    "instance": "bank/osc[0].ro_unit/inv3",
+    "target": "CLMA_393_624"
+  },
+  {
+    "oscillator": 0,
+    "stage": 4,
+    "instance": "bank/osc[0].ro_unit/inv4",
+    "target": "CLMA_393_625"
+  },
+  {
+    "oscillator": 0,
+    "stage": 5,
+    "instance": "bank/osc[0].ro_unit/inv5",
+    "target": "CLMA_393_625"
+  },
+  {
+    "oscillator": 0,
+    "stage": 6,
+    "instance": "bank/osc[0].ro_unit/inv6",
+    "target": "CLMA_393_625"
+  },
+  {
+    "oscillator": 32,
+    "stage": 0,
+    "instance": "bank/osc[32].ro_unit/gate0",
+    "target": "CLMA_393_630"
+  },
+  {
+    "oscillator": 32,
+    "stage": 1,
+    "instance": "bank/osc[32].ro_unit/inv1",
+    "target": "CLMA_393_630"
+  },
+  {
+    "oscillator": 32,
+    "stage": 2,
+    "instance": "bank/osc[32].ro_unit/inv2",
+    "target": "CLMA_393_630"
+  },
+  {
+    "oscillator": 32,
+    "stage": 3,
+    "instance": "bank/osc[32].ro_unit/inv3",
+    "target": "CLMA_393_630"
+  },
+  {
+    "oscillator": 32,
+    "stage": 4,
+    "instance": "bank/osc[32].ro_unit/inv4",
+    "target": "CLMA_393_631"
+  },
+  {
+    "oscillator": 32,
+    "stage": 5,
+    "instance": "bank/osc[32].ro_unit/inv5",
+    "target": "CLMA_393_631"
+  },
+  {
+    "oscillator": 32,
+    "stage": 6,
+    "instance": "bank/osc[32].ro_unit/inv6",
+    "target": "CLMA_393_631"
+  },
+  {
+    "oscillator": 1,
+    "stage": 0,
+    "instance": "bank/osc[1].ro_unit/gate0",
+    "target": "CLMA_393_636"
+  },
+  {
+    "oscillator": 1,
+    "stage": 1,
+    "instance": "bank/osc[1].ro_unit/inv1",
+    "target": "CLMA_393_636"
+  },
+  {
+    "oscillator": 1,
+    "stage": 2,
+    "instance": "bank/osc[1].ro_unit/inv2",
+    "target": "CLMA_393_636"
+  },
+  {
+    "oscillator": 1,
+    "stage": 3,
+    "instance": "bank/osc[1].ro_unit/inv3",
+    "target": "CLMA_393_636"
+  },
+  {
+    "oscillator": 1,
+    "stage": 4,
+    "instance": "bank/osc[1].ro_unit/inv4",
+    "target": "CLMA_393_637"
+  },
+  {
+    "oscillator": 1,
+    "stage": 5,
+    "instance": "bank/osc[1].ro_unit/inv5",
+    "target": "CLMA_393_637"
+  },
+  {
+    "oscillator": 1,
+    "stage": 6,
+    "instance": "bank/osc[1].ro_unit/inv6",
+    "target": "CLMA_393_637"
+  },
+  {
+    "oscillator": 33,
+    "stage": 0,
+    "instance": "bank/osc[33].ro_unit/gate0",
+    "target": "CLMA_393_654"
+  },
+  {
+    "oscillator": 33,
+    "stage": 1,
+    "instance": "bank/osc[33].ro_unit/inv1",
+    "target": "CLMA_393_654"
+  },
+  {
+    "oscillator": 33,
+    "stage": 2,
+    "instance": "bank/osc[33].ro_unit/inv2",
+    "target": "CLMA_393_654"
+  },
+  {
+    "oscillator": 33,
+    "stage": 3,
+    "instance": "bank/osc[33].ro_unit/inv3",
+    "target": "CLMA_393_654"
+  },
+  {
+    "oscillator": 33,
+    "stage": 4,
+    "instance": "bank/osc[33].ro_unit/inv4",
+    "target": "CLMA_393_655"
+  },
+  {
+    "oscillator": 33,
+    "stage": 5,
+    "instance": "bank/osc[33].ro_unit/inv5",
+    "target": "CLMA_393_655"
+  },
+  {
+    "oscillator": 33,
+    "stage": 6,
+    "instance": "bank/osc[33].ro_unit/inv6",
+    "target": "CLMA_393_655"
+  },
+  {
+    "oscillator": 2,
+    "stage": 0,
+    "instance": "bank/osc[2].ro_unit/gate0",
+    "target": "CLMA_393_660"
+  },
+  {
+    "oscillator": 2,
+    "stage": 1,
+    "instance": "bank/osc[2].ro_unit/inv1",
+    "target": "CLMA_393_660"
+  },
+  {
+    "oscillator": 2,
+    "stage": 2,
+    "instance": "bank/osc[2].ro_unit/inv2",
+    "target": "CLMA_393_660"
+  },
+  {
+    "oscillator": 2,
+    "stage": 3,
+    "instance": "bank/osc[2].ro_unit/inv3",
+    "target": "CLMA_393_660"
+  },
+  {
+    "oscillator": 2,
+    "stage": 4,
+    "instance": "bank/osc[2].ro_unit/inv4",
+    "target": "CLMA_393_661"
+  },
+  {
+    "oscillator": 2,
+    "stage": 5,
+    "instance": "bank/osc[2].ro_unit/inv5",
+    "target": "CLMA_393_661"
+  },
+  {
+    "oscillator": 2,
+    "stage": 6,
+    "instance": "bank/osc[2].ro_unit/inv6",
+    "target": "CLMA_393_661"
+  },
+  {
+    "oscillator": 34,
+    "stage": 0,
+    "instance": "bank/osc[34].ro_unit/gate0",
+    "target": "CLMA_393_678"
+  },
+  {
+    "oscillator": 34,
+    "stage": 1,
+    "instance": "bank/osc[34].ro_unit/inv1",
+    "target": "CLMA_393_678"
+  },
+  {
+    "oscillator": 34,
+    "stage": 2,
+    "instance": "bank/osc[34].ro_unit/inv2",
+    "target": "CLMA_393_678"
+  },
+  {
+    "oscillator": 34,
+    "stage": 3,
+    "instance": "bank/osc[34].ro_unit/inv3",
+    "target": "CLMA_393_678"
+  },
+  {
+    "oscillator": 34,
+    "stage": 4,
+    "instance": "bank/osc[34].ro_unit/inv4",
+    "target": "CLMA_393_679"
+  },
+  {
+    "oscillator": 34,
+    "stage": 5,
+    "instance": "bank/osc[34].ro_unit/inv5",
+    "target": "CLMA_393_679"
+  },
+  {
+    "oscillator": 34,
+    "stage": 6,
+    "instance": "bank/osc[34].ro_unit/inv6",
+    "target": "CLMA_393_679"
+  },
+  {
+    "oscillator": 3,
+    "stage": 0,
+    "instance": "bank/osc[3].ro_unit/gate0",
+    "target": "CLMA_393_702"
+  },
+  {
+    "oscillator": 3,
+    "stage": 1,
+    "instance": "bank/osc[3].ro_unit/inv1",
+    "target": "CLMA_393_702"
+  },
+  {
+    "oscillator": 3,
+    "stage": 2,
+    "instance": "bank/osc[3].ro_unit/inv2",
+    "target": "CLMA_393_702"
+  },
+  {
+    "oscillator": 3,
+    "stage": 3,
+    "instance": "bank/osc[3].ro_unit/inv3",
+    "target": "CLMA_393_702"
+  },
+  {
+    "oscillator": 3,
+    "stage": 4,
+    "instance": "bank/osc[3].ro_unit/inv4",
+    "target": "CLMA_393_703"
+  },
+  {
+    "oscillator": 3,
+    "stage": 5,
+    "instance": "bank/osc[3].ro_unit/inv5",
+    "target": "CLMA_393_703"
+  },
+  {
+    "oscillator": 3,
+    "stage": 6,
+    "instance": "bank/osc[3].ro_unit/inv6",
+    "target": "CLMA_393_703"
+  },
+  {
+    "oscillator": 35,
+    "stage": 0,
+    "instance": "bank/osc[35].ro_unit/gate0",
+    "target": "CLMA_405_612"
+  },
+  {
+    "oscillator": 35,
+    "stage": 1,
+    "instance": "bank/osc[35].ro_unit/inv1",
+    "target": "CLMA_405_612"
+  },
+  {
+    "oscillator": 35,
+    "stage": 2,
+    "instance": "bank/osc[35].ro_unit/inv2",
+    "target": "CLMA_405_612"
+  },
+  {
+    "oscillator": 35,
+    "stage": 3,
+    "instance": "bank/osc[35].ro_unit/inv3",
+    "target": "CLMA_405_612"
+  },
+  {
+    "oscillator": 35,
+    "stage": 4,
+    "instance": "bank/osc[35].ro_unit/inv4",
+    "target": "CLMA_405_613"
+  },
+  {
+    "oscillator": 35,
+    "stage": 5,
+    "instance": "bank/osc[35].ro_unit/inv5",
+    "target": "CLMA_405_613"
+  },
+  {
+    "oscillator": 35,
+    "stage": 6,
+    "instance": "bank/osc[35].ro_unit/inv6",
+    "target": "CLMA_405_613"
+  },
+  {
+    "oscillator": 4,
+    "stage": 0,
+    "instance": "bank/osc[4].ro_unit/gate0",
+    "target": "CLMA_405_618"
+  },
+  {
+    "oscillator": 4,
+    "stage": 1,
+    "instance": "bank/osc[4].ro_unit/inv1",
+    "target": "CLMA_405_618"
+  },
+  {
+    "oscillator": 4,
+    "stage": 2,
+    "instance": "bank/osc[4].ro_unit/inv2",
+    "target": "CLMA_405_618"
+  },
+  {
+    "oscillator": 4,
+    "stage": 3,
+    "instance": "bank/osc[4].ro_unit/inv3",
+    "target": "CLMA_405_618"
+  },
+  {
+    "oscillator": 4,
+    "stage": 4,
+    "instance": "bank/osc[4].ro_unit/inv4",
+    "target": "CLMA_405_619"
+  },
+  {
+    "oscillator": 4,
+    "stage": 5,
+    "instance": "bank/osc[4].ro_unit/inv5",
+    "target": "CLMA_405_619"
+  },
+  {
+    "oscillator": 4,
+    "stage": 6,
+    "instance": "bank/osc[4].ro_unit/inv6",
+    "target": "CLMA_405_619"
+  },
+  {
+    "oscillator": 36,
+    "stage": 0,
+    "instance": "bank/osc[36].ro_unit/gate0",
+    "target": "CLMA_405_630"
+  },
+  {
+    "oscillator": 36,
+    "stage": 1,
+    "instance": "bank/osc[36].ro_unit/inv1",
+    "target": "CLMA_405_630"
+  },
+  {
+    "oscillator": 36,
+    "stage": 2,
+    "instance": "bank/osc[36].ro_unit/inv2",
+    "target": "CLMA_405_630"
+  },
+  {
+    "oscillator": 36,
+    "stage": 3,
+    "instance": "bank/osc[36].ro_unit/inv3",
+    "target": "CLMA_405_630"
+  },
+  {
+    "oscillator": 36,
+    "stage": 4,
+    "instance": "bank/osc[36].ro_unit/inv4",
+    "target": "CLMA_405_631"
+  },
+  {
+    "oscillator": 36,
+    "stage": 5,
+    "instance": "bank/osc[36].ro_unit/inv5",
+    "target": "CLMA_405_631"
+  },
+  {
+    "oscillator": 36,
+    "stage": 6,
+    "instance": "bank/osc[36].ro_unit/inv6",
+    "target": "CLMA_405_631"
+  },
+  {
+    "oscillator": 5,
+    "stage": 0,
+    "instance": "bank/osc[5].ro_unit/gate0",
+    "target": "CLMA_405_636"
+  },
+  {
+    "oscillator": 5,
+    "stage": 1,
+    "instance": "bank/osc[5].ro_unit/inv1",
+    "target": "CLMA_405_636"
+  },
+  {
+    "oscillator": 5,
+    "stage": 2,
+    "instance": "bank/osc[5].ro_unit/inv2",
+    "target": "CLMA_405_636"
+  },
+  {
+    "oscillator": 5,
+    "stage": 3,
+    "instance": "bank/osc[5].ro_unit/inv3",
+    "target": "CLMA_405_636"
+  },
+  {
+    "oscillator": 5,
+    "stage": 4,
+    "instance": "bank/osc[5].ro_unit/inv4",
+    "target": "CLMA_405_637"
+  },
+  {
+    "oscillator": 5,
+    "stage": 5,
+    "instance": "bank/osc[5].ro_unit/inv5",
+    "target": "CLMA_405_637"
+  },
+  {
+    "oscillator": 5,
+    "stage": 6,
+    "instance": "bank/osc[5].ro_unit/inv6",
+    "target": "CLMA_405_637"
+  },
+  {
+    "oscillator": 37,
+    "stage": 0,
+    "instance": "bank/osc[37].ro_unit/gate0",
+    "target": "CLMA_405_642"
+  },
+  {
+    "oscillator": 37,
+    "stage": 1,
+    "instance": "bank/osc[37].ro_unit/inv1",
+    "target": "CLMA_405_642"
+  },
+  {
+    "oscillator": 37,
+    "stage": 2,
+    "instance": "bank/osc[37].ro_unit/inv2",
+    "target": "CLMA_405_642"
+  },
+  {
+    "oscillator": 37,
+    "stage": 3,
+    "instance": "bank/osc[37].ro_unit/inv3",
+    "target": "CLMA_405_642"
+  },
+  {
+    "oscillator": 37,
+    "stage": 4,
+    "instance": "bank/osc[37].ro_unit/inv4",
+    "target": "CLMA_405_643"
+  },
+  {
+    "oscillator": 37,
+    "stage": 5,
+    "instance": "bank/osc[37].ro_unit/inv5",
+    "target": "CLMA_405_643"
+  },
+  {
+    "oscillator": 37,
+    "stage": 6,
+    "instance": "bank/osc[37].ro_unit/inv6",
+    "target": "CLMA_405_643"
+  },
+  {
+    "oscillator": 6,
+    "stage": 0,
+    "instance": "bank/osc[6].ro_unit/gate0",
+    "target": "CLMA_405_654"
+  },
+  {
+    "oscillator": 6,
+    "stage": 1,
+    "instance": "bank/osc[6].ro_unit/inv1",
+    "target": "CLMA_405_654"
+  },
+  {
+    "oscillator": 6,
+    "stage": 2,
+    "instance": "bank/osc[6].ro_unit/inv2",
+    "target": "CLMA_405_654"
+  },
+  {
+    "oscillator": 6,
+    "stage": 3,
+    "instance": "bank/osc[6].ro_unit/inv3",
+    "target": "CLMA_405_654"
+  },
+  {
+    "oscillator": 6,
+    "stage": 4,
+    "instance": "bank/osc[6].ro_unit/inv4",
+    "target": "CLMA_405_655"
+  },
+  {
+    "oscillator": 6,
+    "stage": 5,
+    "instance": "bank/osc[6].ro_unit/inv5",
+    "target": "CLMA_405_655"
+  },
+  {
+    "oscillator": 6,
+    "stage": 6,
+    "instance": "bank/osc[6].ro_unit/inv6",
+    "target": "CLMA_405_655"
+  },
+  {
+    "oscillator": 38,
+    "stage": 0,
+    "instance": "bank/osc[38].ro_unit/gate0",
+    "target": "CLMA_405_666"
+  },
+  {
+    "oscillator": 38,
+    "stage": 1,
+    "instance": "bank/osc[38].ro_unit/inv1",
+    "target": "CLMA_405_666"
+  },
+  {
+    "oscillator": 38,
+    "stage": 2,
+    "instance": "bank/osc[38].ro_unit/inv2",
+    "target": "CLMA_405_666"
+  },
+  {
+    "oscillator": 38,
+    "stage": 3,
+    "instance": "bank/osc[38].ro_unit/inv3",
+    "target": "CLMA_405_666"
+  },
+  {
+    "oscillator": 38,
+    "stage": 4,
+    "instance": "bank/osc[38].ro_unit/inv4",
+    "target": "CLMA_405_667"
+  },
+  {
+    "oscillator": 38,
+    "stage": 5,
+    "instance": "bank/osc[38].ro_unit/inv5",
+    "target": "CLMA_405_667"
+  },
+  {
+    "oscillator": 38,
+    "stage": 6,
+    "instance": "bank/osc[38].ro_unit/inv6",
+    "target": "CLMA_405_667"
+  },
+  {
+    "oscillator": 7,
+    "stage": 0,
+    "instance": "bank/osc[7].ro_unit/gate0",
+    "target": "CLMA_405_672"
+  },
+  {
+    "oscillator": 7,
+    "stage": 1,
+    "instance": "bank/osc[7].ro_unit/inv1",
+    "target": "CLMA_405_672"
+  },
+  {
+    "oscillator": 7,
+    "stage": 2,
+    "instance": "bank/osc[7].ro_unit/inv2",
+    "target": "CLMA_405_672"
+  },
+  {
+    "oscillator": 7,
+    "stage": 3,
+    "instance": "bank/osc[7].ro_unit/inv3",
+    "target": "CLMA_405_672"
+  },
+  {
+    "oscillator": 7,
+    "stage": 4,
+    "instance": "bank/osc[7].ro_unit/inv4",
+    "target": "CLMA_405_673"
+  },
+  {
+    "oscillator": 7,
+    "stage": 5,
+    "instance": "bank/osc[7].ro_unit/inv5",
+    "target": "CLMA_405_673"
+  },
+  {
+    "oscillator": 7,
+    "stage": 6,
+    "instance": "bank/osc[7].ro_unit/inv6",
+    "target": "CLMA_405_673"
+  },
+  {
+    "oscillator": 39,
+    "stage": 0,
+    "instance": "bank/osc[39].ro_unit/gate0",
+    "target": "CLMA_405_690"
+  },
+  {
+    "oscillator": 39,
+    "stage": 1,
+    "instance": "bank/osc[39].ro_unit/inv1",
+    "target": "CLMA_405_690"
+  },
+  {
+    "oscillator": 39,
+    "stage": 2,
+    "instance": "bank/osc[39].ro_unit/inv2",
+    "target": "CLMA_405_690"
+  },
+  {
+    "oscillator": 39,
+    "stage": 3,
+    "instance": "bank/osc[39].ro_unit/inv3",
+    "target": "CLMA_405_690"
+  },
+  {
+    "oscillator": 39,
+    "stage": 4,
+    "instance": "bank/osc[39].ro_unit/inv4",
+    "target": "CLMA_405_691"
+  },
+  {
+    "oscillator": 39,
+    "stage": 5,
+    "instance": "bank/osc[39].ro_unit/inv5",
+    "target": "CLMA_405_691"
+  },
+  {
+    "oscillator": 39,
+    "stage": 6,
+    "instance": "bank/osc[39].ro_unit/inv6",
+    "target": "CLMA_405_691"
+  },
+  {
+    "oscillator": 8,
+    "stage": 0,
+    "instance": "bank/osc[8].ro_unit/gate0",
+    "target": "CLMA_405_696"
+  },
+  {
+    "oscillator": 8,
+    "stage": 1,
+    "instance": "bank/osc[8].ro_unit/inv1",
+    "target": "CLMA_405_696"
+  },
+  {
+    "oscillator": 8,
+    "stage": 2,
+    "instance": "bank/osc[8].ro_unit/inv2",
+    "target": "CLMA_405_696"
+  },
+  {
+    "oscillator": 8,
+    "stage": 3,
+    "instance": "bank/osc[8].ro_unit/inv3",
+    "target": "CLMA_405_696"
+  },
+  {
+    "oscillator": 8,
+    "stage": 4,
+    "instance": "bank/osc[8].ro_unit/inv4",
+    "target": "CLMA_405_697"
+  },
+  {
+    "oscillator": 8,
+    "stage": 5,
+    "instance": "bank/osc[8].ro_unit/inv5",
+    "target": "CLMA_405_697"
+  },
+  {
+    "oscillator": 8,
+    "stage": 6,
+    "instance": "bank/osc[8].ro_unit/inv6",
+    "target": "CLMA_405_697"
+  },
+  {
+    "oscillator": 40,
+    "stage": 0,
+    "instance": "bank/osc[40].ro_unit/gate0",
+    "target": "CLMA_405_702"
+  },
+  {
+    "oscillator": 40,
+    "stage": 1,
+    "instance": "bank/osc[40].ro_unit/inv1",
+    "target": "CLMA_405_702"
+  },
+  {
+    "oscillator": 40,
+    "stage": 2,
+    "instance": "bank/osc[40].ro_unit/inv2",
+    "target": "CLMA_405_702"
+  },
+  {
+    "oscillator": 40,
+    "stage": 3,
+    "instance": "bank/osc[40].ro_unit/inv3",
+    "target": "CLMA_405_702"
+  },
+  {
+    "oscillator": 40,
+    "stage": 4,
+    "instance": "bank/osc[40].ro_unit/inv4",
+    "target": "CLMA_405_703"
+  },
+  {
+    "oscillator": 40,
+    "stage": 5,
+    "instance": "bank/osc[40].ro_unit/inv5",
+    "target": "CLMA_405_703"
+  },
+  {
+    "oscillator": 40,
+    "stage": 6,
+    "instance": "bank/osc[40].ro_unit/inv6",
+    "target": "CLMA_405_703"
+  },
+  {
+    "oscillator": 9,
+    "stage": 0,
+    "instance": "bank/osc[9].ro_unit/gate0",
+    "target": "CLMA_417_546"
+  },
+  {
+    "oscillator": 9,
+    "stage": 1,
+    "instance": "bank/osc[9].ro_unit/inv1",
+    "target": "CLMA_417_546"
+  },
+  {
+    "oscillator": 9,
+    "stage": 2,
+    "instance": "bank/osc[9].ro_unit/inv2",
+    "target": "CLMA_417_546"
+  },
+  {
+    "oscillator": 9,
+    "stage": 3,
+    "instance": "bank/osc[9].ro_unit/inv3",
+    "target": "CLMA_417_546"
+  },
+  {
+    "oscillator": 9,
+    "stage": 4,
+    "instance": "bank/osc[9].ro_unit/inv4",
+    "target": "CLMA_417_547"
+  },
+  {
+    "oscillator": 9,
+    "stage": 5,
+    "instance": "bank/osc[9].ro_unit/inv5",
+    "target": "CLMA_417_547"
+  },
+  {
+    "oscillator": 9,
+    "stage": 6,
+    "instance": "bank/osc[9].ro_unit/inv6",
+    "target": "CLMA_417_547"
+  },
+  {
+    "oscillator": 41,
+    "stage": 0,
+    "instance": "bank/osc[41].ro_unit/gate0",
+    "target": "CLMA_417_552"
+  },
+  {
+    "oscillator": 41,
+    "stage": 1,
+    "instance": "bank/osc[41].ro_unit/inv1",
+    "target": "CLMA_417_552"
+  },
+  {
+    "oscillator": 41,
+    "stage": 2,
+    "instance": "bank/osc[41].ro_unit/inv2",
+    "target": "CLMA_417_552"
+  },
+  {
+    "oscillator": 41,
+    "stage": 3,
+    "instance": "bank/osc[41].ro_unit/inv3",
+    "target": "CLMA_417_552"
+  },
+  {
+    "oscillator": 41,
+    "stage": 4,
+    "instance": "bank/osc[41].ro_unit/inv4",
+    "target": "CLMA_417_553"
+  },
+  {
+    "oscillator": 41,
+    "stage": 5,
+    "instance": "bank/osc[41].ro_unit/inv5",
+    "target": "CLMA_417_553"
+  },
+  {
+    "oscillator": 41,
+    "stage": 6,
+    "instance": "bank/osc[41].ro_unit/inv6",
+    "target": "CLMA_417_553"
+  },
+  {
+    "oscillator": 10,
+    "stage": 0,
+    "instance": "bank/osc[10].ro_unit/gate0",
+    "target": "CLMA_417_558"
+  },
+  {
+    "oscillator": 10,
+    "stage": 1,
+    "instance": "bank/osc[10].ro_unit/inv1",
+    "target": "CLMA_417_558"
+  },
+  {
+    "oscillator": 10,
+    "stage": 2,
+    "instance": "bank/osc[10].ro_unit/inv2",
+    "target": "CLMA_417_558"
+  },
+  {
+    "oscillator": 10,
+    "stage": 3,
+    "instance": "bank/osc[10].ro_unit/inv3",
+    "target": "CLMA_417_558"
+  },
+  {
+    "oscillator": 10,
+    "stage": 4,
+    "instance": "bank/osc[10].ro_unit/inv4",
+    "target": "CLMA_417_559"
+  },
+  {
+    "oscillator": 10,
+    "stage": 5,
+    "instance": "bank/osc[10].ro_unit/inv5",
+    "target": "CLMA_417_559"
+  },
+  {
+    "oscillator": 10,
+    "stage": 6,
+    "instance": "bank/osc[10].ro_unit/inv6",
+    "target": "CLMA_417_559"
+  },
+  {
+    "oscillator": 42,
+    "stage": 0,
+    "instance": "bank/osc[42].ro_unit/gate0",
+    "target": "CLMA_417_570"
+  },
+  {
+    "oscillator": 42,
+    "stage": 1,
+    "instance": "bank/osc[42].ro_unit/inv1",
+    "target": "CLMA_417_570"
+  },
+  {
+    "oscillator": 42,
+    "stage": 2,
+    "instance": "bank/osc[42].ro_unit/inv2",
+    "target": "CLMA_417_570"
+  },
+  {
+    "oscillator": 42,
+    "stage": 3,
+    "instance": "bank/osc[42].ro_unit/inv3",
+    "target": "CLMA_417_570"
+  },
+  {
+    "oscillator": 42,
+    "stage": 4,
+    "instance": "bank/osc[42].ro_unit/inv4",
+    "target": "CLMA_417_571"
+  },
+  {
+    "oscillator": 42,
+    "stage": 5,
+    "instance": "bank/osc[42].ro_unit/inv5",
+    "target": "CLMA_417_571"
+  },
+  {
+    "oscillator": 42,
+    "stage": 6,
+    "instance": "bank/osc[42].ro_unit/inv6",
+    "target": "CLMA_417_571"
+  },
+  {
+    "oscillator": 11,
+    "stage": 0,
+    "instance": "bank/osc[11].ro_unit/gate0",
+    "target": "CLMA_417_576"
+  },
+  {
+    "oscillator": 11,
+    "stage": 1,
+    "instance": "bank/osc[11].ro_unit/inv1",
+    "target": "CLMA_417_576"
+  },
+  {
+    "oscillator": 11,
+    "stage": 2,
+    "instance": "bank/osc[11].ro_unit/inv2",
+    "target": "CLMA_417_576"
+  },
+  {
+    "oscillator": 11,
+    "stage": 3,
+    "instance": "bank/osc[11].ro_unit/inv3",
+    "target": "CLMA_417_576"
+  },
+  {
+    "oscillator": 11,
+    "stage": 4,
+    "instance": "bank/osc[11].ro_unit/inv4",
+    "target": "CLMA_417_577"
+  },
+  {
+    "oscillator": 11,
+    "stage": 5,
+    "instance": "bank/osc[11].ro_unit/inv5",
+    "target": "CLMA_417_577"
+  },
+  {
+    "oscillator": 11,
+    "stage": 6,
+    "instance": "bank/osc[11].ro_unit/inv6",
+    "target": "CLMA_417_577"
+  },
+  {
+    "oscillator": 43,
+    "stage": 0,
+    "instance": "bank/osc[43].ro_unit/gate0",
+    "target": "CLMA_417_582"
+  },
+  {
+    "oscillator": 43,
+    "stage": 1,
+    "instance": "bank/osc[43].ro_unit/inv1",
+    "target": "CLMA_417_582"
+  },
+  {
+    "oscillator": 43,
+    "stage": 2,
+    "instance": "bank/osc[43].ro_unit/inv2",
+    "target": "CLMA_417_582"
+  },
+  {
+    "oscillator": 43,
+    "stage": 3,
+    "instance": "bank/osc[43].ro_unit/inv3",
+    "target": "CLMA_417_582"
+  },
+  {
+    "oscillator": 43,
+    "stage": 4,
+    "instance": "bank/osc[43].ro_unit/inv4",
+    "target": "CLMA_417_583"
+  },
+  {
+    "oscillator": 43,
+    "stage": 5,
+    "instance": "bank/osc[43].ro_unit/inv5",
+    "target": "CLMA_417_583"
+  },
+  {
+    "oscillator": 43,
+    "stage": 6,
+    "instance": "bank/osc[43].ro_unit/inv6",
+    "target": "CLMA_417_583"
+  },
+  {
+    "oscillator": 12,
+    "stage": 0,
+    "instance": "bank/osc[12].ro_unit/gate0",
+    "target": "CLMA_417_600"
+  },
+  {
+    "oscillator": 12,
+    "stage": 1,
+    "instance": "bank/osc[12].ro_unit/inv1",
+    "target": "CLMA_417_600"
+  },
+  {
+    "oscillator": 12,
+    "stage": 2,
+    "instance": "bank/osc[12].ro_unit/inv2",
+    "target": "CLMA_417_600"
+  },
+  {
+    "oscillator": 12,
+    "stage": 3,
+    "instance": "bank/osc[12].ro_unit/inv3",
+    "target": "CLMA_417_600"
+  },
+  {
+    "oscillator": 12,
+    "stage": 4,
+    "instance": "bank/osc[12].ro_unit/inv4",
+    "target": "CLMA_417_601"
+  },
+  {
+    "oscillator": 12,
+    "stage": 5,
+    "instance": "bank/osc[12].ro_unit/inv5",
+    "target": "CLMA_417_601"
+  },
+  {
+    "oscillator": 12,
+    "stage": 6,
+    "instance": "bank/osc[12].ro_unit/inv6",
+    "target": "CLMA_417_601"
+  },
+  {
+    "oscillator": 44,
+    "stage": 0,
+    "instance": "bank/osc[44].ro_unit/gate0",
+    "target": "CLMA_417_606"
+  },
+  {
+    "oscillator": 44,
+    "stage": 1,
+    "instance": "bank/osc[44].ro_unit/inv1",
+    "target": "CLMA_417_606"
+  },
+  {
+    "oscillator": 44,
+    "stage": 2,
+    "instance": "bank/osc[44].ro_unit/inv2",
+    "target": "CLMA_417_606"
+  },
+  {
+    "oscillator": 44,
+    "stage": 3,
+    "instance": "bank/osc[44].ro_unit/inv3",
+    "target": "CLMA_417_606"
+  },
+  {
+    "oscillator": 44,
+    "stage": 4,
+    "instance": "bank/osc[44].ro_unit/inv4",
+    "target": "CLMA_417_607"
+  },
+  {
+    "oscillator": 44,
+    "stage": 5,
+    "instance": "bank/osc[44].ro_unit/inv5",
+    "target": "CLMA_417_607"
+  },
+  {
+    "oscillator": 44,
+    "stage": 6,
+    "instance": "bank/osc[44].ro_unit/inv6",
+    "target": "CLMA_417_607"
+  },
+  {
+    "oscillator": 13,
+    "stage": 0,
+    "instance": "bank/osc[13].ro_unit/gate0",
+    "target": "CLMA_417_612"
+  },
+  {
+    "oscillator": 13,
+    "stage": 1,
+    "instance": "bank/osc[13].ro_unit/inv1",
+    "target": "CLMA_417_612"
+  },
+  {
+    "oscillator": 13,
+    "stage": 2,
+    "instance": "bank/osc[13].ro_unit/inv2",
+    "target": "CLMA_417_612"
+  },
+  {
+    "oscillator": 13,
+    "stage": 3,
+    "instance": "bank/osc[13].ro_unit/inv3",
+    "target": "CLMA_417_612"
+  },
+  {
+    "oscillator": 13,
+    "stage": 4,
+    "instance": "bank/osc[13].ro_unit/inv4",
+    "target": "CLMA_417_613"
+  },
+  {
+    "oscillator": 13,
+    "stage": 5,
+    "instance": "bank/osc[13].ro_unit/inv5",
+    "target": "CLMA_417_613"
+  },
+  {
+    "oscillator": 13,
+    "stage": 6,
+    "instance": "bank/osc[13].ro_unit/inv6",
+    "target": "CLMA_417_613"
+  },
+  {
+    "oscillator": 45,
+    "stage": 0,
+    "instance": "bank/osc[45].ro_unit/gate0",
+    "target": "CLMA_417_630"
+  },
+  {
+    "oscillator": 45,
+    "stage": 1,
+    "instance": "bank/osc[45].ro_unit/inv1",
+    "target": "CLMA_417_630"
+  },
+  {
+    "oscillator": 45,
+    "stage": 2,
+    "instance": "bank/osc[45].ro_unit/inv2",
+    "target": "CLMA_417_630"
+  },
+  {
+    "oscillator": 45,
+    "stage": 3,
+    "instance": "bank/osc[45].ro_unit/inv3",
+    "target": "CLMA_417_630"
+  },
+  {
+    "oscillator": 45,
+    "stage": 4,
+    "instance": "bank/osc[45].ro_unit/inv4",
+    "target": "CLMA_417_631"
+  },
+  {
+    "oscillator": 45,
+    "stage": 5,
+    "instance": "bank/osc[45].ro_unit/inv5",
+    "target": "CLMA_417_631"
+  },
+  {
+    "oscillator": 45,
+    "stage": 6,
+    "instance": "bank/osc[45].ro_unit/inv6",
+    "target": "CLMA_417_631"
+  },
+  {
+    "oscillator": 14,
+    "stage": 0,
+    "instance": "bank/osc[14].ro_unit/gate0",
+    "target": "CLMA_417_642"
+  },
+  {
+    "oscillator": 14,
+    "stage": 1,
+    "instance": "bank/osc[14].ro_unit/inv1",
+    "target": "CLMA_417_642"
+  },
+  {
+    "oscillator": 14,
+    "stage": 2,
+    "instance": "bank/osc[14].ro_unit/inv2",
+    "target": "CLMA_417_642"
+  },
+  {
+    "oscillator": 14,
+    "stage": 3,
+    "instance": "bank/osc[14].ro_unit/inv3",
+    "target": "CLMA_417_642"
+  },
+  {
+    "oscillator": 14,
+    "stage": 4,
+    "instance": "bank/osc[14].ro_unit/inv4",
+    "target": "CLMA_417_643"
+  },
+  {
+    "oscillator": 14,
+    "stage": 5,
+    "instance": "bank/osc[14].ro_unit/inv5",
+    "target": "CLMA_417_643"
+  },
+  {
+    "oscillator": 14,
+    "stage": 6,
+    "instance": "bank/osc[14].ro_unit/inv6",
+    "target": "CLMA_417_643"
+  },
+  {
+    "oscillator": 46,
+    "stage": 0,
+    "instance": "bank/osc[46].ro_unit/gate0",
+    "target": "CLMA_417_648"
+  },
+  {
+    "oscillator": 46,
+    "stage": 1,
+    "instance": "bank/osc[46].ro_unit/inv1",
+    "target": "CLMA_417_648"
+  },
+  {
+    "oscillator": 46,
+    "stage": 2,
+    "instance": "bank/osc[46].ro_unit/inv2",
+    "target": "CLMA_417_648"
+  },
+  {
+    "oscillator": 46,
+    "stage": 3,
+    "instance": "bank/osc[46].ro_unit/inv3",
+    "target": "CLMA_417_648"
+  },
+  {
+    "oscillator": 46,
+    "stage": 4,
+    "instance": "bank/osc[46].ro_unit/inv4",
+    "target": "CLMA_417_649"
+  },
+  {
+    "oscillator": 46,
+    "stage": 5,
+    "instance": "bank/osc[46].ro_unit/inv5",
+    "target": "CLMA_417_649"
+  },
+  {
+    "oscillator": 46,
+    "stage": 6,
+    "instance": "bank/osc[46].ro_unit/inv6",
+    "target": "CLMA_417_649"
+  },
+  {
+    "oscillator": 15,
+    "stage": 0,
+    "instance": "bank/osc[15].ro_unit/gate0",
+    "target": "CLMA_417_672"
+  },
+  {
+    "oscillator": 15,
+    "stage": 1,
+    "instance": "bank/osc[15].ro_unit/inv1",
+    "target": "CLMA_417_672"
+  },
+  {
+    "oscillator": 15,
+    "stage": 2,
+    "instance": "bank/osc[15].ro_unit/inv2",
+    "target": "CLMA_417_672"
+  },
+  {
+    "oscillator": 15,
+    "stage": 3,
+    "instance": "bank/osc[15].ro_unit/inv3",
+    "target": "CLMA_417_672"
+  },
+  {
+    "oscillator": 15,
+    "stage": 4,
+    "instance": "bank/osc[15].ro_unit/inv4",
+    "target": "CLMA_417_673"
+  },
+  {
+    "oscillator": 15,
+    "stage": 5,
+    "instance": "bank/osc[15].ro_unit/inv5",
+    "target": "CLMA_417_673"
+  },
+  {
+    "oscillator": 15,
+    "stage": 6,
+    "instance": "bank/osc[15].ro_unit/inv6",
+    "target": "CLMA_417_673"
+  },
+  {
+    "oscillator": 47,
+    "stage": 0,
+    "instance": "bank/osc[47].ro_unit/gate0",
+    "target": "CLMA_417_678"
+  },
+  {
+    "oscillator": 47,
+    "stage": 1,
+    "instance": "bank/osc[47].ro_unit/inv1",
+    "target": "CLMA_417_678"
+  },
+  {
+    "oscillator": 47,
+    "stage": 2,
+    "instance": "bank/osc[47].ro_unit/inv2",
+    "target": "CLMA_417_678"
+  },
+  {
+    "oscillator": 47,
+    "stage": 3,
+    "instance": "bank/osc[47].ro_unit/inv3",
+    "target": "CLMA_417_678"
+  },
+  {
+    "oscillator": 47,
+    "stage": 4,
+    "instance": "bank/osc[47].ro_unit/inv4",
+    "target": "CLMA_417_679"
+  },
+  {
+    "oscillator": 47,
+    "stage": 5,
+    "instance": "bank/osc[47].ro_unit/inv5",
+    "target": "CLMA_417_679"
+  },
+  {
+    "oscillator": 47,
+    "stage": 6,
+    "instance": "bank/osc[47].ro_unit/inv6",
+    "target": "CLMA_417_679"
+  },
+  {
+    "oscillator": 16,
+    "stage": 0,
+    "instance": "bank/osc[16].ro_unit/gate0",
+    "target": "CLMA_417_684"
+  },
+  {
+    "oscillator": 16,
+    "stage": 1,
+    "instance": "bank/osc[16].ro_unit/inv1",
+    "target": "CLMA_417_684"
+  },
+  {
+    "oscillator": 16,
+    "stage": 2,
+    "instance": "bank/osc[16].ro_unit/inv2",
+    "target": "CLMA_417_684"
+  },
+  {
+    "oscillator": 16,
+    "stage": 3,
+    "instance": "bank/osc[16].ro_unit/inv3",
+    "target": "CLMA_417_684"
+  },
+  {
+    "oscillator": 16,
+    "stage": 4,
+    "instance": "bank/osc[16].ro_unit/inv4",
+    "target": "CLMA_417_685"
+  },
+  {
+    "oscillator": 16,
+    "stage": 5,
+    "instance": "bank/osc[16].ro_unit/inv5",
+    "target": "CLMA_417_685"
+  },
+  {
+    "oscillator": 16,
+    "stage": 6,
+    "instance": "bank/osc[16].ro_unit/inv6",
+    "target": "CLMA_417_685"
+  },
+  {
+    "oscillator": 48,
+    "stage": 0,
+    "instance": "bank/osc[48].ro_unit/gate0",
+    "target": "CLMA_417_708"
+  },
+  {
+    "oscillator": 48,
+    "stage": 1,
+    "instance": "bank/osc[48].ro_unit/inv1",
+    "target": "CLMA_417_708"
+  },
+  {
+    "oscillator": 48,
+    "stage": 2,
+    "instance": "bank/osc[48].ro_unit/inv2",
+    "target": "CLMA_417_708"
+  },
+  {
+    "oscillator": 48,
+    "stage": 3,
+    "instance": "bank/osc[48].ro_unit/inv3",
+    "target": "CLMA_417_708"
+  },
+  {
+    "oscillator": 48,
+    "stage": 4,
+    "instance": "bank/osc[48].ro_unit/inv4",
+    "target": "CLMA_417_709"
+  },
+  {
+    "oscillator": 48,
+    "stage": 5,
+    "instance": "bank/osc[48].ro_unit/inv5",
+    "target": "CLMA_417_709"
+  },
+  {
+    "oscillator": 48,
+    "stage": 6,
+    "instance": "bank/osc[48].ro_unit/inv6",
+    "target": "CLMA_417_709"
+  },
+  {
+    "oscillator": 17,
+    "stage": 0,
+    "instance": "bank/osc[17].ro_unit/gate0",
+    "target": "CLMA_429_558"
+  },
+  {
+    "oscillator": 17,
+    "stage": 1,
+    "instance": "bank/osc[17].ro_unit/inv1",
+    "target": "CLMA_429_558"
+  },
+  {
+    "oscillator": 17,
+    "stage": 2,
+    "instance": "bank/osc[17].ro_unit/inv2",
+    "target": "CLMA_429_558"
+  },
+  {
+    "oscillator": 17,
+    "stage": 3,
+    "instance": "bank/osc[17].ro_unit/inv3",
+    "target": "CLMA_429_558"
+  },
+  {
+    "oscillator": 17,
+    "stage": 4,
+    "instance": "bank/osc[17].ro_unit/inv4",
+    "target": "CLMA_429_559"
+  },
+  {
+    "oscillator": 17,
+    "stage": 5,
+    "instance": "bank/osc[17].ro_unit/inv5",
+    "target": "CLMA_429_559"
+  },
+  {
+    "oscillator": 17,
+    "stage": 6,
+    "instance": "bank/osc[17].ro_unit/inv6",
+    "target": "CLMA_429_559"
+  },
+  {
+    "oscillator": 49,
+    "stage": 0,
+    "instance": "bank/osc[49].ro_unit/gate0",
+    "target": "CLMA_429_564"
+  },
+  {
+    "oscillator": 49,
+    "stage": 1,
+    "instance": "bank/osc[49].ro_unit/inv1",
+    "target": "CLMA_429_564"
+  },
+  {
+    "oscillator": 49,
+    "stage": 2,
+    "instance": "bank/osc[49].ro_unit/inv2",
+    "target": "CLMA_429_564"
+  },
+  {
+    "oscillator": 49,
+    "stage": 3,
+    "instance": "bank/osc[49].ro_unit/inv3",
+    "target": "CLMA_429_564"
+  },
+  {
+    "oscillator": 49,
+    "stage": 4,
+    "instance": "bank/osc[49].ro_unit/inv4",
+    "target": "CLMA_429_565"
+  },
+  {
+    "oscillator": 49,
+    "stage": 5,
+    "instance": "bank/osc[49].ro_unit/inv5",
+    "target": "CLMA_429_565"
+  },
+  {
+    "oscillator": 49,
+    "stage": 6,
+    "instance": "bank/osc[49].ro_unit/inv6",
+    "target": "CLMA_429_565"
+  },
+  {
+    "oscillator": 18,
+    "stage": 0,
+    "instance": "bank/osc[18].ro_unit/gate0",
+    "target": "CLMA_429_576"
+  },
+  {
+    "oscillator": 18,
+    "stage": 1,
+    "instance": "bank/osc[18].ro_unit/inv1",
+    "target": "CLMA_429_576"
+  },
+  {
+    "oscillator": 18,
+    "stage": 2,
+    "instance": "bank/osc[18].ro_unit/inv2",
+    "target": "CLMA_429_576"
+  },
+  {
+    "oscillator": 18,
+    "stage": 3,
+    "instance": "bank/osc[18].ro_unit/inv3",
+    "target": "CLMA_429_576"
+  },
+  {
+    "oscillator": 18,
+    "stage": 4,
+    "instance": "bank/osc[18].ro_unit/inv4",
+    "target": "CLMA_429_577"
+  },
+  {
+    "oscillator": 18,
+    "stage": 5,
+    "instance": "bank/osc[18].ro_unit/inv5",
+    "target": "CLMA_429_577"
+  },
+  {
+    "oscillator": 18,
+    "stage": 6,
+    "instance": "bank/osc[18].ro_unit/inv6",
+    "target": "CLMA_429_577"
+  },
+  {
+    "oscillator": 50,
+    "stage": 0,
+    "instance": "bank/osc[50].ro_unit/gate0",
+    "target": "CLMA_429_588"
+  },
+  {
+    "oscillator": 50,
+    "stage": 1,
+    "instance": "bank/osc[50].ro_unit/inv1",
+    "target": "CLMA_429_588"
+  },
+  {
+    "oscillator": 50,
+    "stage": 2,
+    "instance": "bank/osc[50].ro_unit/inv2",
+    "target": "CLMA_429_588"
+  },
+  {
+    "oscillator": 50,
+    "stage": 3,
+    "instance": "bank/osc[50].ro_unit/inv3",
+    "target": "CLMA_429_588"
+  },
+  {
+    "oscillator": 50,
+    "stage": 4,
+    "instance": "bank/osc[50].ro_unit/inv4",
+    "target": "CLMA_429_589"
+  },
+  {
+    "oscillator": 50,
+    "stage": 5,
+    "instance": "bank/osc[50].ro_unit/inv5",
+    "target": "CLMA_429_589"
+  },
+  {
+    "oscillator": 50,
+    "stage": 6,
+    "instance": "bank/osc[50].ro_unit/inv6",
+    "target": "CLMA_429_589"
+  },
+  {
+    "oscillator": 19,
+    "stage": 0,
+    "instance": "bank/osc[19].ro_unit/gate0",
+    "target": "CLMA_429_594"
+  },
+  {
+    "oscillator": 19,
+    "stage": 1,
+    "instance": "bank/osc[19].ro_unit/inv1",
+    "target": "CLMA_429_594"
+  },
+  {
+    "oscillator": 19,
+    "stage": 2,
+    "instance": "bank/osc[19].ro_unit/inv2",
+    "target": "CLMA_429_594"
+  },
+  {
+    "oscillator": 19,
+    "stage": 3,
+    "instance": "bank/osc[19].ro_unit/inv3",
+    "target": "CLMA_429_594"
+  },
+  {
+    "oscillator": 19,
+    "stage": 4,
+    "instance": "bank/osc[19].ro_unit/inv4",
+    "target": "CLMA_429_595"
+  },
+  {
+    "oscillator": 19,
+    "stage": 5,
+    "instance": "bank/osc[19].ro_unit/inv5",
+    "target": "CLMA_429_595"
+  },
+  {
+    "oscillator": 19,
+    "stage": 6,
+    "instance": "bank/osc[19].ro_unit/inv6",
+    "target": "CLMA_429_595"
+  },
+  {
+    "oscillator": 51,
+    "stage": 0,
+    "instance": "bank/osc[51].ro_unit/gate0",
+    "target": "CLMA_429_606"
+  },
+  {
+    "oscillator": 51,
+    "stage": 1,
+    "instance": "bank/osc[51].ro_unit/inv1",
+    "target": "CLMA_429_606"
+  },
+  {
+    "oscillator": 51,
+    "stage": 2,
+    "instance": "bank/osc[51].ro_unit/inv2",
+    "target": "CLMA_429_606"
+  },
+  {
+    "oscillator": 51,
+    "stage": 3,
+    "instance": "bank/osc[51].ro_unit/inv3",
+    "target": "CLMA_429_606"
+  },
+  {
+    "oscillator": 51,
+    "stage": 4,
+    "instance": "bank/osc[51].ro_unit/inv4",
+    "target": "CLMA_429_607"
+  },
+  {
+    "oscillator": 51,
+    "stage": 5,
+    "instance": "bank/osc[51].ro_unit/inv5",
+    "target": "CLMA_429_607"
+  },
+  {
+    "oscillator": 51,
+    "stage": 6,
+    "instance": "bank/osc[51].ro_unit/inv6",
+    "target": "CLMA_429_607"
+  },
+  {
+    "oscillator": 20,
+    "stage": 0,
+    "instance": "bank/osc[20].ro_unit/gate0",
+    "target": "CLMA_429_612"
+  },
+  {
+    "oscillator": 20,
+    "stage": 1,
+    "instance": "bank/osc[20].ro_unit/inv1",
+    "target": "CLMA_429_612"
+  },
+  {
+    "oscillator": 20,
+    "stage": 2,
+    "instance": "bank/osc[20].ro_unit/inv2",
+    "target": "CLMA_429_612"
+  },
+  {
+    "oscillator": 20,
+    "stage": 3,
+    "instance": "bank/osc[20].ro_unit/inv3",
+    "target": "CLMA_429_612"
+  },
+  {
+    "oscillator": 20,
+    "stage": 4,
+    "instance": "bank/osc[20].ro_unit/inv4",
+    "target": "CLMA_429_613"
+  },
+  {
+    "oscillator": 20,
+    "stage": 5,
+    "instance": "bank/osc[20].ro_unit/inv5",
+    "target": "CLMA_429_613"
+  },
+  {
+    "oscillator": 20,
+    "stage": 6,
+    "instance": "bank/osc[20].ro_unit/inv6",
+    "target": "CLMA_429_613"
+  },
+  {
+    "oscillator": 52,
+    "stage": 0,
+    "instance": "bank/osc[52].ro_unit/gate0",
+    "target": "CLMA_429_624"
+  },
+  {
+    "oscillator": 52,
+    "stage": 1,
+    "instance": "bank/osc[52].ro_unit/inv1",
+    "target": "CLMA_429_624"
+  },
+  {
+    "oscillator": 52,
+    "stage": 2,
+    "instance": "bank/osc[52].ro_unit/inv2",
+    "target": "CLMA_429_624"
+  },
+  {
+    "oscillator": 52,
+    "stage": 3,
+    "instance": "bank/osc[52].ro_unit/inv3",
+    "target": "CLMA_429_624"
+  },
+  {
+    "oscillator": 52,
+    "stage": 4,
+    "instance": "bank/osc[52].ro_unit/inv4",
+    "target": "CLMA_429_625"
+  },
+  {
+    "oscillator": 52,
+    "stage": 5,
+    "instance": "bank/osc[52].ro_unit/inv5",
+    "target": "CLMA_429_625"
+  },
+  {
+    "oscillator": 52,
+    "stage": 6,
+    "instance": "bank/osc[52].ro_unit/inv6",
+    "target": "CLMA_429_625"
+  },
+  {
+    "oscillator": 21,
+    "stage": 0,
+    "instance": "bank/osc[21].ro_unit/gate0",
+    "target": "CLMA_429_636"
+  },
+  {
+    "oscillator": 21,
+    "stage": 1,
+    "instance": "bank/osc[21].ro_unit/inv1",
+    "target": "CLMA_429_636"
+  },
+  {
+    "oscillator": 21,
+    "stage": 2,
+    "instance": "bank/osc[21].ro_unit/inv2",
+    "target": "CLMA_429_636"
+  },
+  {
+    "oscillator": 21,
+    "stage": 3,
+    "instance": "bank/osc[21].ro_unit/inv3",
+    "target": "CLMA_429_636"
+  },
+  {
+    "oscillator": 21,
+    "stage": 4,
+    "instance": "bank/osc[21].ro_unit/inv4",
+    "target": "CLMA_429_637"
+  },
+  {
+    "oscillator": 21,
+    "stage": 5,
+    "instance": "bank/osc[21].ro_unit/inv5",
+    "target": "CLMA_429_637"
+  },
+  {
+    "oscillator": 21,
+    "stage": 6,
+    "instance": "bank/osc[21].ro_unit/inv6",
+    "target": "CLMA_429_637"
+  },
+  {
+    "oscillator": 53,
+    "stage": 0,
+    "instance": "bank/osc[53].ro_unit/gate0",
+    "target": "CLMA_429_642"
+  },
+  {
+    "oscillator": 53,
+    "stage": 1,
+    "instance": "bank/osc[53].ro_unit/inv1",
+    "target": "CLMA_429_642"
+  },
+  {
+    "oscillator": 53,
+    "stage": 2,
+    "instance": "bank/osc[53].ro_unit/inv2",
+    "target": "CLMA_429_642"
+  },
+  {
+    "oscillator": 53,
+    "stage": 3,
+    "instance": "bank/osc[53].ro_unit/inv3",
+    "target": "CLMA_429_642"
+  },
+  {
+    "oscillator": 53,
+    "stage": 4,
+    "instance": "bank/osc[53].ro_unit/inv4",
+    "target": "CLMA_429_643"
+  },
+  {
+    "oscillator": 53,
+    "stage": 5,
+    "instance": "bank/osc[53].ro_unit/inv5",
+    "target": "CLMA_429_643"
+  },
+  {
+    "oscillator": 53,
+    "stage": 6,
+    "instance": "bank/osc[53].ro_unit/inv6",
+    "target": "CLMA_429_643"
+  },
+  {
+    "oscillator": 22,
+    "stage": 0,
+    "instance": "bank/osc[22].ro_unit/gate0",
+    "target": "CLMA_429_648"
+  },
+  {
+    "oscillator": 22,
+    "stage": 1,
+    "instance": "bank/osc[22].ro_unit/inv1",
+    "target": "CLMA_429_648"
+  },
+  {
+    "oscillator": 22,
+    "stage": 2,
+    "instance": "bank/osc[22].ro_unit/inv2",
+    "target": "CLMA_429_648"
+  },
+  {
+    "oscillator": 22,
+    "stage": 3,
+    "instance": "bank/osc[22].ro_unit/inv3",
+    "target": "CLMA_429_648"
+  },
+  {
+    "oscillator": 22,
+    "stage": 4,
+    "instance": "bank/osc[22].ro_unit/inv4",
+    "target": "CLMA_429_649"
+  },
+  {
+    "oscillator": 22,
+    "stage": 5,
+    "instance": "bank/osc[22].ro_unit/inv5",
+    "target": "CLMA_429_649"
+  },
+  {
+    "oscillator": 22,
+    "stage": 6,
+    "instance": "bank/osc[22].ro_unit/inv6",
+    "target": "CLMA_429_649"
+  },
+  {
+    "oscillator": 54,
+    "stage": 0,
+    "instance": "bank/osc[54].ro_unit/gate0",
+    "target": "CLMA_429_660"
+  },
+  {
+    "oscillator": 54,
+    "stage": 1,
+    "instance": "bank/osc[54].ro_unit/inv1",
+    "target": "CLMA_429_660"
+  },
+  {
+    "oscillator": 54,
+    "stage": 2,
+    "instance": "bank/osc[54].ro_unit/inv2",
+    "target": "CLMA_429_660"
+  },
+  {
+    "oscillator": 54,
+    "stage": 3,
+    "instance": "bank/osc[54].ro_unit/inv3",
+    "target": "CLMA_429_660"
+  },
+  {
+    "oscillator": 54,
+    "stage": 4,
+    "instance": "bank/osc[54].ro_unit/inv4",
+    "target": "CLMA_429_661"
+  },
+  {
+    "oscillator": 54,
+    "stage": 5,
+    "instance": "bank/osc[54].ro_unit/inv5",
+    "target": "CLMA_429_661"
+  },
+  {
+    "oscillator": 54,
+    "stage": 6,
+    "instance": "bank/osc[54].ro_unit/inv6",
+    "target": "CLMA_429_661"
+  },
+  {
+    "oscillator": 23,
+    "stage": 0,
+    "instance": "bank/osc[23].ro_unit/gate0",
+    "target": "CLMA_429_666"
+  },
+  {
+    "oscillator": 23,
+    "stage": 1,
+    "instance": "bank/osc[23].ro_unit/inv1",
+    "target": "CLMA_429_666"
+  },
+  {
+    "oscillator": 23,
+    "stage": 2,
+    "instance": "bank/osc[23].ro_unit/inv2",
+    "target": "CLMA_429_666"
+  },
+  {
+    "oscillator": 23,
+    "stage": 3,
+    "instance": "bank/osc[23].ro_unit/inv3",
+    "target": "CLMA_429_666"
+  },
+  {
+    "oscillator": 23,
+    "stage": 4,
+    "instance": "bank/osc[23].ro_unit/inv4",
+    "target": "CLMA_429_667"
+  },
+  {
+    "oscillator": 23,
+    "stage": 5,
+    "instance": "bank/osc[23].ro_unit/inv5",
+    "target": "CLMA_429_667"
+  },
+  {
+    "oscillator": 23,
+    "stage": 6,
+    "instance": "bank/osc[23].ro_unit/inv6",
+    "target": "CLMA_429_667"
+  },
+  {
+    "oscillator": 55,
+    "stage": 0,
+    "instance": "bank/osc[55].ro_unit/gate0",
+    "target": "CLMA_429_672"
+  },
+  {
+    "oscillator": 55,
+    "stage": 1,
+    "instance": "bank/osc[55].ro_unit/inv1",
+    "target": "CLMA_429_672"
+  },
+  {
+    "oscillator": 55,
+    "stage": 2,
+    "instance": "bank/osc[55].ro_unit/inv2",
+    "target": "CLMA_429_672"
+  },
+  {
+    "oscillator": 55,
+    "stage": 3,
+    "instance": "bank/osc[55].ro_unit/inv3",
+    "target": "CLMA_429_672"
+  },
+  {
+    "oscillator": 55,
+    "stage": 4,
+    "instance": "bank/osc[55].ro_unit/inv4",
+    "target": "CLMA_429_673"
+  },
+  {
+    "oscillator": 55,
+    "stage": 5,
+    "instance": "bank/osc[55].ro_unit/inv5",
+    "target": "CLMA_429_673"
+  },
+  {
+    "oscillator": 55,
+    "stage": 6,
+    "instance": "bank/osc[55].ro_unit/inv6",
+    "target": "CLMA_429_673"
+  },
+  {
+    "oscillator": 24,
+    "stage": 0,
+    "instance": "bank/osc[24].ro_unit/gate0",
+    "target": "CLMA_429_684"
+  },
+  {
+    "oscillator": 24,
+    "stage": 1,
+    "instance": "bank/osc[24].ro_unit/inv1",
+    "target": "CLMA_429_684"
+  },
+  {
+    "oscillator": 24,
+    "stage": 2,
+    "instance": "bank/osc[24].ro_unit/inv2",
+    "target": "CLMA_429_684"
+  },
+  {
+    "oscillator": 24,
+    "stage": 3,
+    "instance": "bank/osc[24].ro_unit/inv3",
+    "target": "CLMA_429_684"
+  },
+  {
+    "oscillator": 24,
+    "stage": 4,
+    "instance": "bank/osc[24].ro_unit/inv4",
+    "target": "CLMA_429_685"
+  },
+  {
+    "oscillator": 24,
+    "stage": 5,
+    "instance": "bank/osc[24].ro_unit/inv5",
+    "target": "CLMA_429_685"
+  },
+  {
+    "oscillator": 24,
+    "stage": 6,
+    "instance": "bank/osc[24].ro_unit/inv6",
+    "target": "CLMA_429_685"
+  },
+  {
+    "oscillator": 56,
+    "stage": 0,
+    "instance": "bank/osc[56].ro_unit/gate0",
+    "target": "CLMA_429_690"
+  },
+  {
+    "oscillator": 56,
+    "stage": 1,
+    "instance": "bank/osc[56].ro_unit/inv1",
+    "target": "CLMA_429_690"
+  },
+  {
+    "oscillator": 56,
+    "stage": 2,
+    "instance": "bank/osc[56].ro_unit/inv2",
+    "target": "CLMA_429_690"
+  },
+  {
+    "oscillator": 56,
+    "stage": 3,
+    "instance": "bank/osc[56].ro_unit/inv3",
+    "target": "CLMA_429_690"
+  },
+  {
+    "oscillator": 56,
+    "stage": 4,
+    "instance": "bank/osc[56].ro_unit/inv4",
+    "target": "CLMA_429_691"
+  },
+  {
+    "oscillator": 56,
+    "stage": 5,
+    "instance": "bank/osc[56].ro_unit/inv5",
+    "target": "CLMA_429_691"
+  },
+  {
+    "oscillator": 56,
+    "stage": 6,
+    "instance": "bank/osc[56].ro_unit/inv6",
+    "target": "CLMA_429_691"
+  },
+  {
+    "oscillator": 25,
+    "stage": 0,
+    "instance": "bank/osc[25].ro_unit/gate0",
+    "target": "CLMA_429_696"
+  },
+  {
+    "oscillator": 25,
+    "stage": 1,
+    "instance": "bank/osc[25].ro_unit/inv1",
+    "target": "CLMA_429_696"
+  },
+  {
+    "oscillator": 25,
+    "stage": 2,
+    "instance": "bank/osc[25].ro_unit/inv2",
+    "target": "CLMA_429_696"
+  },
+  {
+    "oscillator": 25,
+    "stage": 3,
+    "instance": "bank/osc[25].ro_unit/inv3",
+    "target": "CLMA_429_696"
+  },
+  {
+    "oscillator": 25,
+    "stage": 4,
+    "instance": "bank/osc[25].ro_unit/inv4",
+    "target": "CLMA_429_697"
+  },
+  {
+    "oscillator": 25,
+    "stage": 5,
+    "instance": "bank/osc[25].ro_unit/inv5",
+    "target": "CLMA_429_697"
+  },
+  {
+    "oscillator": 25,
+    "stage": 6,
+    "instance": "bank/osc[25].ro_unit/inv6",
+    "target": "CLMA_429_697"
+  },
+  {
+    "oscillator": 57,
+    "stage": 0,
+    "instance": "bank/osc[57].ro_unit/gate0",
+    "target": "CLMA_453_582"
+  },
+  {
+    "oscillator": 57,
+    "stage": 1,
+    "instance": "bank/osc[57].ro_unit/inv1",
+    "target": "CLMA_453_582"
+  },
+  {
+    "oscillator": 57,
+    "stage": 2,
+    "instance": "bank/osc[57].ro_unit/inv2",
+    "target": "CLMA_453_582"
+  },
+  {
+    "oscillator": 57,
+    "stage": 3,
+    "instance": "bank/osc[57].ro_unit/inv3",
+    "target": "CLMA_453_582"
+  },
+  {
+    "oscillator": 57,
+    "stage": 4,
+    "instance": "bank/osc[57].ro_unit/inv4",
+    "target": "CLMA_453_583"
+  },
+  {
+    "oscillator": 57,
+    "stage": 5,
+    "instance": "bank/osc[57].ro_unit/inv5",
+    "target": "CLMA_453_583"
+  },
+  {
+    "oscillator": 57,
+    "stage": 6,
+    "instance": "bank/osc[57].ro_unit/inv6",
+    "target": "CLMA_453_583"
+  },
+  {
+    "oscillator": 26,
+    "stage": 0,
+    "instance": "bank/osc[26].ro_unit/gate0",
+    "target": "CLMA_453_588"
+  },
+  {
+    "oscillator": 26,
+    "stage": 1,
+    "instance": "bank/osc[26].ro_unit/inv1",
+    "target": "CLMA_453_588"
+  },
+  {
+    "oscillator": 26,
+    "stage": 2,
+    "instance": "bank/osc[26].ro_unit/inv2",
+    "target": "CLMA_453_588"
+  },
+  {
+    "oscillator": 26,
+    "stage": 3,
+    "instance": "bank/osc[26].ro_unit/inv3",
+    "target": "CLMA_453_588"
+  },
+  {
+    "oscillator": 26,
+    "stage": 4,
+    "instance": "bank/osc[26].ro_unit/inv4",
+    "target": "CLMA_453_589"
+  },
+  {
+    "oscillator": 26,
+    "stage": 5,
+    "instance": "bank/osc[26].ro_unit/inv5",
+    "target": "CLMA_453_589"
+  },
+  {
+    "oscillator": 26,
+    "stage": 6,
+    "instance": "bank/osc[26].ro_unit/inv6",
+    "target": "CLMA_453_589"
+  },
+  {
+    "oscillator": 58,
+    "stage": 0,
+    "instance": "bank/osc[58].ro_unit/gate0",
+    "target": "CLMA_453_594"
+  },
+  {
+    "oscillator": 58,
+    "stage": 1,
+    "instance": "bank/osc[58].ro_unit/inv1",
+    "target": "CLMA_453_594"
+  },
+  {
+    "oscillator": 58,
+    "stage": 2,
+    "instance": "bank/osc[58].ro_unit/inv2",
+    "target": "CLMA_453_594"
+  },
+  {
+    "oscillator": 58,
+    "stage": 3,
+    "instance": "bank/osc[58].ro_unit/inv3",
+    "target": "CLMA_453_594"
+  },
+  {
+    "oscillator": 58,
+    "stage": 4,
+    "instance": "bank/osc[58].ro_unit/inv4",
+    "target": "CLMA_453_595"
+  },
+  {
+    "oscillator": 58,
+    "stage": 5,
+    "instance": "bank/osc[58].ro_unit/inv5",
+    "target": "CLMA_453_595"
+  },
+  {
+    "oscillator": 58,
+    "stage": 6,
+    "instance": "bank/osc[58].ro_unit/inv6",
+    "target": "CLMA_453_595"
+  },
+  {
+    "oscillator": 27,
+    "stage": 0,
+    "instance": "bank/osc[27].ro_unit/gate0",
+    "target": "CLMA_453_606"
+  },
+  {
+    "oscillator": 27,
+    "stage": 1,
+    "instance": "bank/osc[27].ro_unit/inv1",
+    "target": "CLMA_453_606"
+  },
+  {
+    "oscillator": 27,
+    "stage": 2,
+    "instance": "bank/osc[27].ro_unit/inv2",
+    "target": "CLMA_453_606"
+  },
+  {
+    "oscillator": 27,
+    "stage": 3,
+    "instance": "bank/osc[27].ro_unit/inv3",
+    "target": "CLMA_453_606"
+  },
+  {
+    "oscillator": 27,
+    "stage": 4,
+    "instance": "bank/osc[27].ro_unit/inv4",
+    "target": "CLMA_453_607"
+  },
+  {
+    "oscillator": 27,
+    "stage": 5,
+    "instance": "bank/osc[27].ro_unit/inv5",
+    "target": "CLMA_453_607"
+  },
+  {
+    "oscillator": 27,
+    "stage": 6,
+    "instance": "bank/osc[27].ro_unit/inv6",
+    "target": "CLMA_453_607"
+  },
+  {
+    "oscillator": 59,
+    "stage": 0,
+    "instance": "bank/osc[59].ro_unit/gate0",
+    "target": "CLMA_453_612"
+  },
+  {
+    "oscillator": 59,
+    "stage": 1,
+    "instance": "bank/osc[59].ro_unit/inv1",
+    "target": "CLMA_453_612"
+  },
+  {
+    "oscillator": 59,
+    "stage": 2,
+    "instance": "bank/osc[59].ro_unit/inv2",
+    "target": "CLMA_453_612"
+  },
+  {
+    "oscillator": 59,
+    "stage": 3,
+    "instance": "bank/osc[59].ro_unit/inv3",
+    "target": "CLMA_453_612"
+  },
+  {
+    "oscillator": 59,
+    "stage": 4,
+    "instance": "bank/osc[59].ro_unit/inv4",
+    "target": "CLMA_453_613"
+  },
+  {
+    "oscillator": 59,
+    "stage": 5,
+    "instance": "bank/osc[59].ro_unit/inv5",
+    "target": "CLMA_453_613"
+  },
+  {
+    "oscillator": 59,
+    "stage": 6,
+    "instance": "bank/osc[59].ro_unit/inv6",
+    "target": "CLMA_453_613"
+  },
+  {
+    "oscillator": 28,
+    "stage": 0,
+    "instance": "bank/osc[28].ro_unit/gate0",
+    "target": "CLMA_453_618"
+  },
+  {
+    "oscillator": 28,
+    "stage": 1,
+    "instance": "bank/osc[28].ro_unit/inv1",
+    "target": "CLMA_453_618"
+  },
+  {
+    "oscillator": 28,
+    "stage": 2,
+    "instance": "bank/osc[28].ro_unit/inv2",
+    "target": "CLMA_453_618"
+  },
+  {
+    "oscillator": 28,
+    "stage": 3,
+    "instance": "bank/osc[28].ro_unit/inv3",
+    "target": "CLMA_453_618"
+  },
+  {
+    "oscillator": 28,
+    "stage": 4,
+    "instance": "bank/osc[28].ro_unit/inv4",
+    "target": "CLMA_453_619"
+  },
+  {
+    "oscillator": 28,
+    "stage": 5,
+    "instance": "bank/osc[28].ro_unit/inv5",
+    "target": "CLMA_453_619"
+  },
+  {
+    "oscillator": 28,
+    "stage": 6,
+    "instance": "bank/osc[28].ro_unit/inv6",
+    "target": "CLMA_453_619"
+  },
+  {
+    "oscillator": 60,
+    "stage": 0,
+    "instance": "bank/osc[60].ro_unit/gate0",
+    "target": "CLMA_453_636"
+  },
+  {
+    "oscillator": 60,
+    "stage": 1,
+    "instance": "bank/osc[60].ro_unit/inv1",
+    "target": "CLMA_453_636"
+  },
+  {
+    "oscillator": 60,
+    "stage": 2,
+    "instance": "bank/osc[60].ro_unit/inv2",
+    "target": "CLMA_453_636"
+  },
+  {
+    "oscillator": 60,
+    "stage": 3,
+    "instance": "bank/osc[60].ro_unit/inv3",
+    "target": "CLMA_453_636"
+  },
+  {
+    "oscillator": 60,
+    "stage": 4,
+    "instance": "bank/osc[60].ro_unit/inv4",
+    "target": "CLMA_453_637"
+  },
+  {
+    "oscillator": 60,
+    "stage": 5,
+    "instance": "bank/osc[60].ro_unit/inv5",
+    "target": "CLMA_453_637"
+  },
+  {
+    "oscillator": 60,
+    "stage": 6,
+    "instance": "bank/osc[60].ro_unit/inv6",
+    "target": "CLMA_453_637"
+  },
+  {
+    "oscillator": 29,
+    "stage": 0,
+    "instance": "bank/osc[29].ro_unit/gate0",
+    "target": "CLMA_453_642"
+  },
+  {
+    "oscillator": 29,
+    "stage": 1,
+    "instance": "bank/osc[29].ro_unit/inv1",
+    "target": "CLMA_453_642"
+  },
+  {
+    "oscillator": 29,
+    "stage": 2,
+    "instance": "bank/osc[29].ro_unit/inv2",
+    "target": "CLMA_453_642"
+  },
+  {
+    "oscillator": 29,
+    "stage": 3,
+    "instance": "bank/osc[29].ro_unit/inv3",
+    "target": "CLMA_453_642"
+  },
+  {
+    "oscillator": 29,
+    "stage": 4,
+    "instance": "bank/osc[29].ro_unit/inv4",
+    "target": "CLMA_453_643"
+  },
+  {
+    "oscillator": 29,
+    "stage": 5,
+    "instance": "bank/osc[29].ro_unit/inv5",
+    "target": "CLMA_453_643"
+  },
+  {
+    "oscillator": 29,
+    "stage": 6,
+    "instance": "bank/osc[29].ro_unit/inv6",
+    "target": "CLMA_453_643"
+  },
+  {
+    "oscillator": 61,
+    "stage": 0,
+    "instance": "bank/osc[61].ro_unit/gate0",
+    "target": "CLMA_453_648"
+  },
+  {
+    "oscillator": 61,
+    "stage": 1,
+    "instance": "bank/osc[61].ro_unit/inv1",
+    "target": "CLMA_453_648"
+  },
+  {
+    "oscillator": 61,
+    "stage": 2,
+    "instance": "bank/osc[61].ro_unit/inv2",
+    "target": "CLMA_453_648"
+  },
+  {
+    "oscillator": 61,
+    "stage": 3,
+    "instance": "bank/osc[61].ro_unit/inv3",
+    "target": "CLMA_453_648"
+  },
+  {
+    "oscillator": 61,
+    "stage": 4,
+    "instance": "bank/osc[61].ro_unit/inv4",
+    "target": "CLMA_453_649"
+  },
+  {
+    "oscillator": 61,
+    "stage": 5,
+    "instance": "bank/osc[61].ro_unit/inv5",
+    "target": "CLMA_453_649"
+  },
+  {
+    "oscillator": 61,
+    "stage": 6,
+    "instance": "bank/osc[61].ro_unit/inv6",
+    "target": "CLMA_453_649"
+  },
+  {
+    "oscillator": 30,
+    "stage": 0,
+    "instance": "bank/osc[30].ro_unit/gate0",
+    "target": "CLMA_453_666"
+  },
+  {
+    "oscillator": 30,
+    "stage": 1,
+    "instance": "bank/osc[30].ro_unit/inv1",
+    "target": "CLMA_453_666"
+  },
+  {
+    "oscillator": 30,
+    "stage": 2,
+    "instance": "bank/osc[30].ro_unit/inv2",
+    "target": "CLMA_453_666"
+  },
+  {
+    "oscillator": 30,
+    "stage": 3,
+    "instance": "bank/osc[30].ro_unit/inv3",
+    "target": "CLMA_453_666"
+  },
+  {
+    "oscillator": 30,
+    "stage": 4,
+    "instance": "bank/osc[30].ro_unit/inv4",
+    "target": "CLMA_453_667"
+  },
+  {
+    "oscillator": 30,
+    "stage": 5,
+    "instance": "bank/osc[30].ro_unit/inv5",
+    "target": "CLMA_453_667"
+  },
+  {
+    "oscillator": 30,
+    "stage": 6,
+    "instance": "bank/osc[30].ro_unit/inv6",
+    "target": "CLMA_453_667"
+  },
+  {
+    "oscillator": 62,
+    "stage": 0,
+    "instance": "bank/osc[62].ro_unit/gate0",
+    "target": "CLMA_453_672"
+  },
+  {
+    "oscillator": 62,
+    "stage": 1,
+    "instance": "bank/osc[62].ro_unit/inv1",
+    "target": "CLMA_453_672"
+  },
+  {
+    "oscillator": 62,
+    "stage": 2,
+    "instance": "bank/osc[62].ro_unit/inv2",
+    "target": "CLMA_453_672"
+  },
+  {
+    "oscillator": 62,
+    "stage": 3,
+    "instance": "bank/osc[62].ro_unit/inv3",
+    "target": "CLMA_453_672"
+  },
+  {
+    "oscillator": 62,
+    "stage": 4,
+    "instance": "bank/osc[62].ro_unit/inv4",
+    "target": "CLMA_453_673"
+  },
+  {
+    "oscillator": 62,
+    "stage": 5,
+    "instance": "bank/osc[62].ro_unit/inv5",
+    "target": "CLMA_453_673"
+  },
+  {
+    "oscillator": 62,
+    "stage": 6,
+    "instance": "bank/osc[62].ro_unit/inv6",
+    "target": "CLMA_453_673"
+  },
+  {
+    "oscillator": 31,
+    "stage": 0,
+    "instance": "bank/osc[31].ro_unit/gate0",
+    "target": "CLMA_453_684"
+  },
+  {
+    "oscillator": 31,
+    "stage": 1,
+    "instance": "bank/osc[31].ro_unit/inv1",
+    "target": "CLMA_453_684"
+  },
+  {
+    "oscillator": 31,
+    "stage": 2,
+    "instance": "bank/osc[31].ro_unit/inv2",
+    "target": "CLMA_453_684"
+  },
+  {
+    "oscillator": 31,
+    "stage": 3,
+    "instance": "bank/osc[31].ro_unit/inv3",
+    "target": "CLMA_453_684"
+  },
+  {
+    "oscillator": 31,
+    "stage": 4,
+    "instance": "bank/osc[31].ro_unit/inv4",
+    "target": "CLMA_453_685"
+  },
+  {
+    "oscillator": 31,
+    "stage": 5,
+    "instance": "bank/osc[31].ro_unit/inv5",
+    "target": "CLMA_453_685"
+  },
+  {
+    "oscillator": 31,
+    "stage": 6,
+    "instance": "bank/osc[31].ro_unit/inv6",
+    "target": "CLMA_453_685"
+  },
+  {
+    "oscillator": 63,
+    "stage": 0,
+    "instance": "bank/osc[63].ro_unit/gate0",
+    "target": "CLMA_453_696"
+  },
+  {
+    "oscillator": 63,
+    "stage": 1,
+    "instance": "bank/osc[63].ro_unit/inv1",
+    "target": "CLMA_453_696"
+  },
+  {
+    "oscillator": 63,
+    "stage": 2,
+    "instance": "bank/osc[63].ro_unit/inv2",
+    "target": "CLMA_453_696"
+  },
+  {
+    "oscillator": 63,
+    "stage": 3,
+    "instance": "bank/osc[63].ro_unit/inv3",
+    "target": "CLMA_453_696"
+  },
+  {
+    "oscillator": 63,
+    "stage": 4,
+    "instance": "bank/osc[63].ro_unit/inv4",
+    "target": "CLMA_453_697"
+  },
+  {
+    "oscillator": 63,
+    "stage": 5,
+    "instance": "bank/osc[63].ro_unit/inv5",
+    "target": "CLMA_453_697"
+  },
+  {
+    "oscillator": 63,
+    "stage": 6,
+    "instance": "bank/osc[63].ro_unit/inv6",
+    "target": "CLMA_453_697"
+  }
+]

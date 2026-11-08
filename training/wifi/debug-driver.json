@@ -1,0 +1,6 @@
+[
+  ["association", "grep -E 'ret=|failed|Association|connect|Connect|error' /run/kosmo-wifi/wpa.log | tail -n 22; true"],
+  ["stop_reset", "/usr/local/sbin/kosmo-wifi stop && ip link set wlan0 down && ip link set wlan0 up && ip route"],
+  ["start", "/usr/local/sbin/kosmo-wifi start"],
+  ["status", "/usr/local/sbin/kosmo-wifi status; tail -n 12 /run/kosmo-wifi/wpa.log; true"]
+]

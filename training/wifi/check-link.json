@@ -1,0 +1,3 @@
+[
+  ["link", "cat /sys/class/net/eth0/carrier; ip addr show eth0; command -v gzip; ls -l /etc/resolv.conf; true"]
+]

@@ -1,0 +1,9 @@
+#!/bin/sh
+case "$1" in
+    start)
+        [ -e /etc/kosmo-usb-power.enabled ] || exit 0
+        /usr/local/sbin/kosmo-usb-power start
+        ;;
+    stop) /usr/local/sbin/kosmo-usb-power stop ;;
+    *) echo "Usage: $0 start|stop" >&2; exit 2 ;;
+esac

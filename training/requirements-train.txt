@@ -1,0 +1,4 @@
+numpy>=1.26,<2.2
+Pillow>=10
+tensorflow==2.19.1
+# Optional Tub v2 export: install the repository's local DonkeyCar copy.

@@ -1,0 +1,74 @@
+{
+  "created_utc": "2026-10-09T08:24:23.145112+00:00",
+  "firmware": "ro_puf_v1",
+  "bitstream_sha256": "1310661f056f1c5b0386fe4fad580721a6c9ff5ea31bc7254dccd4b6ecc6e89e",
+  "python_test_count": 12,
+  "python_test_result": "PASS",
+  "python_test_command": "python -m unittest discover -s tests -v",
+  "python_test_source_sha256": "2448e1b1cc20a7303a8d6f89cad48f134f4378eeaf754d6298ace25f1e968ad8",
+  "image_matches_A_and_B": true,
+  "all_four_sessions_complete": true,
+  "raw_CSV_hashes_order_CRCS_and_counts": "PASS",
+  "total_response_bytes": 2048,
+  "total_counter_pairs": 16384,
+  "primary_comparison": {
+    "majority_differences": 63,
+    "comparable_bits": 122,
+    "excluded_ties": 6,
+    "ab_majority_hamming": 0.5163934426229508
+  },
+  "same_board": {
+    "A": {
+      "majority_differences": 0,
+      "comparable_bits": 120,
+      "excluded_ties": 8,
+      "ab_majority_hamming": 0.0,
+      "verification_bits": 4023,
+      "raw_errors_to_reference": 52,
+      "raw_error_rate": 0.012925677355207556,
+      "verification_equal_counts_excluded": 9
+    },
+    "B": {
+      "majority_differences": 0,
+      "comparable_bits": 122,
+      "excluded_ties": 6,
+      "ab_majority_hamming": 0.0,
+      "verification_bits": 3966,
+      "raw_errors_to_reference": 11,
+      "raw_error_rate": 0.002773575390821987,
+      "verification_equal_counts_excluded": 2
+    }
+  },
+  "captures": [
+    {
+      "session": "A_ro7_v1_baseline01",
+      "board": "A",
+      "samples_sha256": "19946e538943eec7d06e5d95fcfa4f545648e64ad23b30bd16af331950bec78a",
+      "counts_sha256": "8796b58ac21d67fc9ae3323e1ec14a2e12001b41a5ab068c1c8505aba147a18d"
+    },
+    {
+      "session": "A_ro7_v1_repeat01",
+      "board": "A",
+      "samples_sha256": "3e5fd01a875d811586a046655c7665f973d65f41fb55c5e345a6466282d45767",
+      "counts_sha256": "7bceed3fb9ddffb74dc82401f0fddab97e6b5dcda96b1ac70872dff262b7f08f"
+    },
+    {
+      "session": "B_ro7_v1_baseline01",
+      "board": "B",
+      "samples_sha256": "9247007fec29315c72338b68f1c07720858f3a8d7c03c74b90be72fc6c2d2114",
+      "counts_sha256": "95902bc8d02a81ecef3e0b99cf5621f40e9c4e90c7965c1488018804f43815f8"
+    },
+    {
+      "session": "B_ro7_v1_repeat01",
+      "board": "B",
+      "samples_sha256": "60b199ff3fae5675db2a186ed22adde949211939d48f7c344c7caedc3f82947b",
+      "counts_sha256": "70b647bb60297cd5c45286aadade582a838e37ed8b4f3a474e0559716f51e2e6"
+    }
+  ],
+  "unmeasured": [
+    "confirmed power cycling",
+    "temperature and supply sweeps",
+    "device population uniqueness",
+    "entropy and cryptographic key reconstruction"
+  ]
+}

@@ -1,0 +1,4 @@
+[
+  ["start", "/tmp/kosmo-wifi-receive 8766 9502336 /tmp/kosmo-wifi1-test.tar.gz > /tmp/kosmo-wifi-receive.log 2>&1 < /dev/null & echo $!"],
+  ["ready", "cat /tmp/kosmo-wifi-receive.log"]
+]

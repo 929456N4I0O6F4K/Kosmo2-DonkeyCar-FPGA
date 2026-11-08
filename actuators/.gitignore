@@ -1,0 +1,7 @@
+build/
+runs/
+*.lock
+pds.log
+design_workspace/
+prj_tasks/
+work/

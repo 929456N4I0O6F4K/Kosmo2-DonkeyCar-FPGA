@@ -1,0 +1,150 @@
+#!/bin/sh
+set -eu
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+export PATH
+state=/run/kosmo-wifi
+config=/etc/kosmo-wifi/wpa_supplicant.conf
+umask 077
+mkdir -p "$state"
+
+find_interface() {
+    for net in /sys/class/net/*; do
+        driver=$(readlink "$net/device/driver" 2>/dev/null || true)
+        case "$driver" in */rtl8710bu) basename "$net"; return 0;; esac
+    done
+    return 1
+}
+
+prepare() {
+    test "$(uname -r)" = 5.10.0-kosmo-wifi1 || { echo 'Boot the matching Wi-Fi kernel first.' >&2; return 1; }
+    test ! -e /etc/kosmo-usb-power.enabled || { echo 'Disable the power-only service first.' >&2; return 1; }
+    test -d /sys/bus/usb/devices/usb1 || { echo 'USB host is unavailable.' >&2; return 1; }
+    # CFG80211 requests this before the SD rootfs is mounted; retry now.
+    iw reg reload
+    modprobe 8188gu
+    for usb in /sys/bus/usb/devices/*; do
+        test -f "$usb/idVendor" && test -f "$usb/idProduct" || continue
+        if [ "$(cat "$usb/idVendor"):$(cat "$usb/idProduct")" = 0bda:1a2b ]; then
+            usb_modeswitch -v 0x0bda -p 0x1a2b -K
+            break
+        fi
+    done
+    remaining=10
+    while ! iface=$(find_interface); do
+        remaining=$((remaining - 1))
+        test "$remaining" -gt 0 || { echo 'RTL8188GU interface did not appear.' >&2; return 1; }
+        sleep 1
+    done
+    printf '%s\n' "$iface" > "$state/interface"
+    ip link set "$iface" up
+    echo "Wireless interface: $iface"
+}
+
+owned_pid() {
+    test -f "$1" || return 1
+    pid=$(cat "$1")
+    case "$pid" in ''|*[!0-9]*) return 1;; esac
+    test "$pid" -gt 1 && kill -0 "$pid" 2>/dev/null || return 1
+    # Both processes receive a PID file in this private runtime directory.
+    tr '\000' '\n' < "/proc/$pid/cmdline" | grep -q '^/run/kosmo-wifi/'
+}
+
+same_process() {
+    test "$(awk -v start="$stop_start" '$22 == start && $3 != "Z" {print "alive"}' "/proc/$stop_pid/stat" 2>/dev/null)" = alive
+}
+
+stop_owned() {
+    if owned_pid "$1"; then
+        stop_pid=$pid
+        stop_start=$(awk '{print $22}' "/proc/$stop_pid/stat")
+        kill "$stop_pid"
+        for attempt in 1 2 3; do
+            same_process || break
+            sleep 1
+        done
+        # WPA removes its PID file early during termination. On this BSP its
+        # cleanup can then spin in userspace. Track the captured process start
+        # time, not the vanished PID file; never signal a reused PID.
+        if same_process; then
+            echo "Stopping unresponsive Wi-Fi process $stop_pid after TERM."
+            kill -KILL "$stop_pid"
+            sleep 1
+        fi
+        if same_process; then
+            echo 'Wi-Fi process has not exited; refusing to reset its driver.' >&2
+            return 1
+        fi
+    fi
+    rm -f "$1"
+}
+
+restore_network() {
+    if iface=$(find_interface); then
+        ip route del default dev "$iface" 2>/dev/null || true
+        ip addr flush dev "$iface" scope global
+    fi
+    if [ -f "$state/default.before" ] && [ -z "$(ip route show default)" ]; then
+        set -f
+        while IFS= read -r route; do
+            test -z "$route" || ip route add $route || true
+        done < "$state/default.before"
+        set +f
+    fi
+    if [ -f "$state/resolv.before" ] && [ -f "$state/resolv.wifi" ] && cmp -s /etc/resolv.conf "$state/resolv.wifi"; then
+        cat "$state/resolv.before" > /etc/resolv.conf
+    fi
+}
+
+case "${1:-status}" in
+    prepare) prepare;;
+    scan)
+        prepare
+        iw dev "$iface" scan
+        ;;
+    start)
+        prepare
+        test -s "$config" || { echo "Set $config first." >&2; exit 1; }
+        if owned_pid "$state/wpa.pid"; then
+            echo 'Wi-Fi is already running.'
+            exit 0
+        fi
+        ip route show default > "$state/default.before"
+        test ! -f /etc/resolv.conf || cp /etc/resolv.conf "$state/resolv.before"
+        chmod 600 "$config"
+        wpa_supplicant -B -D nl80211 -i "$iface" -c "$config" -P "$state/wpa.pid" -f "$state/wpa.log"
+        if ! udhcpc -b -i "$iface" -p "$state/dhcp.pid" -s /usr/local/libexec/kosmo-wifi-udhcpc -t 3 -T 3 > "$state/dhcp.log" 2>&1; then
+            stop_owned "$state/wpa.pid"
+            restore_network
+            exit 1
+        fi
+        echo 'Wi-Fi connection started; use kosmo-wifi status to check it.'
+        ;;
+    stop)
+        for pidfile in "$state/dhcp.pid" "$state/wpa.pid"; do
+            stop_owned "$pidfile"
+        done
+        restore_network
+        # This vendor driver can leave cfg80211 current_bss set after a local
+        # disconnect (-EALREADY on the next connect). A normal module unload
+        # clears that state; never force unload or cycle USB host power.
+        if grep -q '^8188gu ' /proc/modules; then
+            modprobe -r 8188gu
+        fi
+        echo 'Wi-Fi stopped.'
+        ;;
+    lease-down) restore_network;;
+    status)
+        uname -r
+        if iface=$(find_interface); then
+            iw dev "$iface" link
+            ip addr show dev "$iface"
+            if owned_pid "$state/wpa.pid"; then
+                wpa_cli -p "$state/control" -i "$iface" status
+            fi
+        else
+            echo 'No RTL8188GU interface.'
+        fi
+        ip route
+        ;;
+    *) echo 'Usage: kosmo-wifi prepare|scan|start|stop|status' >&2; exit 2;;
+esac

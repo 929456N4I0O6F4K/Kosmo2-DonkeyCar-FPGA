@@ -1,0 +1,18 @@
+{
+  "model": "mypilot1_s2_physical2_opt5/mypilot1_s2_physical_int8.tflite",
+  "float_model": "mypilot1_s2_physical2_opt5/mypilot1_s2_physical.tflite",
+  "keras_model": "mypilot1_s2_physical2_opt5/mypilot1_s2_physical_best.keras",
+  "training_config": "mypilot1_s2_physical2_opt5/train_config.json",
+  "previous_model": "mypilot1_s2_physical2\u91cd\u6784\u524d\\mypilot1_s2_physical2\\mypilot1_s2_physical_int8.tflite",
+  "crop": {
+    "top": 25,
+    "left": 2,
+    "right": 2,
+    "height": 95,
+    "width": 156
+  },
+  "recording_archives": "model/*.zip",
+  "firmware_version": 11,
+  "release": "camera-cnn-drive-opt5-puf-masked-v11",
+  "inference": "single-pass"
+}

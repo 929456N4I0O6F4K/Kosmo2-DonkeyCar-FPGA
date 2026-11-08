@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-09",
+  "scope": "Read-only source/data feasibility audit. The 144-bit RO adapter is an offline projection, not integrated RTL or a hardware CNN test. Projection mask is first A session only and is not qualified for cold starts or environmental changes. Unavailable observations are reported explicitly.",
+  "ro_bitstream_sha256": "1310661f056f1c5b0386fe4fad580721a6c9ff5ea31bc7254dccd4b6ecc6e89e",
+  "challenges": [
+    598,
+    92,
+    898,
+    491,
+    313,
+    573,
+    177,
+    439,
+    635,
+    447,
+    838,
+    249,
+    956,
+    56,
+    816,
+    746
+  ],
+  "a_reference_projection": {
+    "raw_observed_valid_positions": 122,
+    "parity_valid_positions": 12,
+    "total_observed_valid_positions": 134,
+    "response_18bytes_le": "9cfc88cd6117800521325549a8c083b89064",
+    "sign_mask_hex": "ffb7fffff7effd7dffffbdbfffffffffffff",
+    "packing": "signs[9*i+:8]=stabilized byte; signs[9*i+8]=parity(byte); parity valid only if all eight raw bits valid; masked signs forced to zero",
+    "entropy_claim": false
+  },
+  "projected_sessions": {
+    "A_ro7_v1_baseline01": {
+      "comparable_sign_positions": 134,
+      "different_sign_positions": 0,
+      "unavailable_reference_mask_positions": [],
+      "stage_taps": {
+        "5": {
+          "total_taps": 960,
+          "masked_protected_taps": 894,
+          "unavailable_taps": 0,
+          "different_compensation_taps": 0
+        },
+        "6": {
+          "total_taps": 100,
+          "masked_protected_taps": 94,
+          "unavailable_taps": 0,
+          "different_compensation_taps": 0
+        }
+      }
+    },
+    "A_ro7_v1_repeat01": {
+      "comparable_sign_positions": 127,
+      "different_sign_positions": 0,
+      "unavailable_reference_mask_positions": [
+        1,
+        8,
+        42,
+        44,
+        85,
+        140,
+        143
+      ],
+      "stage_taps": {
+        "5": {
+          "total_taps": 960,
+          "masked_protected_taps": 894,
+          "unavailable_taps": 47,
+          "different_compensation_taps": 0
+        },
+        "6": {
+          "total_taps": 100,
+          "masked_protected_taps": 94,
+          "unavailable_taps": 5,
+          "different_compensation_taps": 0
+        }
+      }
+    },
+    "B_ro7_v1_baseline01": {
+      "comparable_sign_positions": 127,
+      "different_sign_positions": 66,
+      "unavailable_reference_mask_positions": [
+        75,
+        80,
+        85,
+        112,
+        116,
+        124,
+        125
+      ],
+      "stage_taps": {
+        "5": {
+          "total_taps": 960,
+          "masked_protected_taps": 894,
+          "unavailable_taps": 45,
+          "different_compensation_taps": 437
+        },
+        "6": {
+          "total_taps": 100,
+          "masked_protected_taps": 94,
+          "unavailable_taps": 3,
+          "different_compensation_taps": 44
+        }
+      }
+    },
+    "B_ro7_v1_repeat01": {
+      "comparable_sign_positions": 129,
+      "different_sign_positions": 68,
+      "unavailable_reference_mask_positions": [
+        66,
+        71,
+        118,
+        124,
+        125
+      ],
+      "stage_taps": {
+        "5": {
+          "total_taps": 960,
+          "masked_protected_taps": 894,
+          "unavailable_taps": 32,
+          "different_compensation_taps": 450
+        },
+        "6": {
+          "total_taps": 100,
+          "masked_protected_taps": 94,
+          "unavailable_taps": 2,
+          "different_compensation_taps": 45
+        }
+      }
+    }
+  },
+  "weight_audit": {
+    "5": {
+      "taps": 960,
+      "channels": 100,
+      "bytes": 96000,
+      "original_int8_minus128_count": 0,
+      "legacy_binding_byte_mismatches": 0,
+      "offline_ro_projection_negated_taps": 375,
+      "offline_ro_double_negation_byte_mismatches": 0,
+      "original_sha256": "8866cae508934bbc6b76ce4b3c7264d96f8b25e26cfec115d948a9c1ff717b09",
+      "legacy_bound_sha256": "ca874143de3b9a6f49ef8f9b6fde0ce8e27c4aa3fc0f25ba854702a8588336a9"
+    },
+    "6": {
+      "taps": 100,
+      "channels": 50,
+      "bytes": 5000,
+      "original_int8_minus128_count": 0,
+      "legacy_binding_byte_mismatches": 0,
+      "offline_ro_projection_negated_taps": 40,
+      "offline_ro_double_negation_byte_mismatches": 0,
+      "original_sha256": "f4c87c0456b331a7a77498762c9d57d2e47c40783ad8d1a912ac6505cdbd6732",
+      "legacy_bound_sha256": "b757171932db3c538aa8a4224bd88225abbe19120adff3f6dc8e6281042e5f9f"
+    }
+  },
+  "existing_kosmo_cnn": {
+    "clock_hz": 100000000,
+    "setup_margin_ns": 0.38,
+    "resources": {
+      "lut": 16406,
+      "ff": 6096,
+      "apm": 74,
+      "drm36k": 77,
+      "drm18k": 3,
+      "drm36_equivalent": 78.5
+    },
+    "hardware_inference_verified": false
+  },
+  "ro_startup_estimate": {
+    "window_ms": 1,
+    "lanes": 8,
+    "repeats": 32,
+    "challenges": 16,
+    "measurement_only_seconds": 4.096,
+    "current_fsm_batch_cycles_at_50mhz": 12844768,
+    "current_fsm_total_seconds_at_50mhz": 4.11032576,
+    "jtag_host_time_included": false
+  },
+  "source_findings": {
+    "legacy_timeout_clocks": 100000,
+    "legacy_timeout_counter_width": 20,
+    "inference_command_checks_signs_valid": false,
+    "cached_signs_reads_are_independent_measurements": false
+  },
+  "raw_ab_majority": {
+    "majority_differences": 63,
+    "comparable_bits": 122,
+    "excluded_ties": 6,
+    "ab_majority_hamming": 0.5163934426229508
+  }
+}

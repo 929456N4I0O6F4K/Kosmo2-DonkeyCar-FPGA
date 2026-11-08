@@ -1,0 +1,7 @@
+[
+  ["system", "uname -a; cat /proc/cmdline; uptime; mount; df -h; true"],
+  ["boot_paths", "ls -la /boot /mnt /media; ls -l /dev/mmcblk*; cat /etc/fstab; true"],
+  ["network", "ip addr; ip route; command -v wget curl udhcpc; true"],
+  ["usb", "ls /sys/bus/usb/devices; dmesg | grep -i -E 'dwc2|ulpi|usb|over-current' | tail -n 45; test ! -x /usr/local/sbin/kosmo-usb-power || /usr/local/sbin/kosmo-usb-power status; true"],
+  ["car", "ps | grep -E 'kosmo|donkey|camera|pwm' | grep -v grep; ls -l /etc/init.d/*kosmo* /etc/kosmo*; true"]
+]

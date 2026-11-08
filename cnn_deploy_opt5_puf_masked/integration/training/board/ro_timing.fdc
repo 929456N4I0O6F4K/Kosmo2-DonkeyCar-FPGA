@@ -1,0 +1,12 @@
+# Physical RO clocks are asynchronous to the camera, system and JTAG clocks.
+# The bank stops before the ripple counter buses are read by the sampler.
+# Input divider timing is constrained at the 600 MHz engineering bound.
+create_clock -name ro_a -period 1.666667 [get_pins {puf_core/counter_a/div0/CLK}]
+create_clock -name ro_b -period 1.666667 [get_pins {puf_core/counter_b/div0/CLK}]
+foreach side {a b} {
+ foreach stage {0 1 2 3} {
+  set factor [expr {1 << ($stage+1)}]
+  create_generated_clock -name ro_${side}_div$factor -source [get_pins puf_core/counter_${side}/div0/CLK] -divide_by $factor [get_pins puf_core/counter_${side}/div${stage}/Q]
+ }
+}
+set_clock_groups -asynchronous -group [get_clocks sysclk_50] -group [get_clocks cam_pclk] -group [get_clocks jtag_tck] -group [get_clocks {ro_a ro_a_div*}] -group [get_clocks {ro_b ro_b_div*}]

@@ -1,0 +1,175 @@
+{
+  "MODEL_TYPE": "linear",
+  "architecture": "Conv5=16 + 裁剪 95×156 (无 CLAHE, 与 FPGA 部署一致)",
+  "data_source": "physicaldata2 (主) + physicdata 直行样本补充 (|angle|<0.08)",
+  "optimization_version": "v5: 确定性成对镜像(强化反向赛道) + 干扰线/淡线增强(换场地泛化) + v4全量继承",
+  "sessions": [
+    "20261027T070955.261051027Z_4034257a",
+    "20261027T072534.464032656Z_4512e73d",
+    "20261027T072607.428730149Z_c29c96fe",
+    "20261027T072628.584416757Z_4aa36223",
+    "20261027T072707.429027936Z_0138a725",
+    "physicdata(直行补充)"
+  ],
+  "session_counts": {
+    "20261027T070955.261051027Z_4034257a": 4523,
+    "20261027T072534.464032656Z_4512e73d": 21,
+    "20261027T072607.428730149Z_c29c96fe": 51,
+    "20261027T072628.584416757Z_4aa36223": 57,
+    "20261027T072707.429027936Z_0138a725": 65,
+    "physicdata(直行补充)": 964
+  },
+  "total_records": 5673,
+  "straight_supplement": {
+    "source": "physicdata (上一版)",
+    "threshold": 0.08,
+    "count": 964,
+    "note": "仅提取直行样本, 不学习弯道数据"
+  },
+  "angle_bins": [
+    -1.01,
+    -0.5,
+    -0.2,
+    -0.05,
+    0.05,
+    0.2,
+    0.5,
+    1.01
+  ],
+  "angle_bin_labels": [
+    "急左",
+    "中左",
+    "小左",
+    "直行",
+    "小右",
+    "中右",
+    "急右"
+  ],
+  "bin_weights": {
+    "急左": 2.0,
+    "中左": 1.5,
+    "小左": 1.0,
+    "直行": 2.0,
+    "小右": 1.0,
+    "中右": 1.0,
+    "急右": 1.5
+  },
+  "bin_distribution": {
+    "急左": 453,
+    "中左": 336,
+    "小左": 503,
+    "直行": 996,
+    "小右": 540,
+    "中右": 534,
+    "急右": 2311
+  },
+  "data_strategy": "v5: 确定性成对镜像×2 (原图+镜像同batch方向对称, 禁随机翻转) + 分箱均衡过采样 (急左/中左→1200, 其余→1000, 急右→1500) + 门控欠转惩罚×2 (对称)",
+  "augmentation": {
+    "paired_mirror": {
+      "enabled": true,
+      "random_flip_disabled": true,
+      "note": "训练集每条样本 → (原图, angle) + (镜像图, -angle), 强化反向赛道"
+    },
+    "scene_distract_v5": {
+      "22_synthetic_lines": "25% 概率 (仅|angle|>0.3), 1-3段折线 (单段40-100px, 4-8px粗, LINE_AA, 裁切后保留)",
+      "23_faded_lines": "30% 概率, 随机椭圆内近白像素(S<90,V>150)压暗30-70%"
+    },
+    "A_basic": {
+      "horizontal_flip": "禁用 (成对镜像替代)",
+      "brightness": "±80",
+      "contrast": "0.5~1.6",
+      "rotation": "±10°",
+      "horizontal_shift": "±15",
+      "vertical_shift": "±5"
+    },
+    "A_light_robust": {
+      "hsv_perturb": "H±15, S±0.3, V±0.3",
+      "gamma_correction": "γ∈[0.5, 2.0]",
+      "gaussian_noise": "σ∈[0, 15]",
+      "shadow_simulation": "全图随机5-8顶点多边形, 强度0.2-0.7",
+      "motion_blur": "核 7-25, 多方向 (0/30/45/-30/90°)",
+      "cutout": "1-4个, h/15~h/2 见方",
+      "exposure": "40%, 过曝1.2-1.6 / 欠曝0.4-0.7",
+      "faded_saturation": "S×0.15-0.5"
+    }
+  },
+  "preprocessing": {
+    "method": "crop",
+    "crop": {
+      "ROI_CROP_TOP": 25,
+      "ROI_CROP_LEFT": 2,
+      "ROI_CROP_RIGHT": 2
+    },
+    "clahe": false,
+    "normalization": "/255.0",
+    "input_height": 95,
+    "input_width": 156
+  },
+  "training_strategy": {
+    "C_mixup": {
+      "alpha": 0.2,
+      "prob": 0.2
+    },
+    "C_swa": {
+      "start_epoch_frac": 0.75
+    },
+    "C_tta": {
+      "methods": [
+        "original",
+        "horizontal_flip"
+      ],
+      "aggregation": "mean(angle取反)"
+    },
+    "D_weighted_loss": "WeightedMSE (分箱权重 + 门控欠转惩罚 ×2.0; v4 移除直行幅值惩罚, 保留预判打角) + Mixup 概率 0.2",
+    "v4_label_cleaning": {
+      "tau_align": {
+        "model": "opt3_best",
+        "max_tau": 3,
+        "improve_thresh": 0.02,
+        "min_session": 40
+      },
+      "median_filter": {
+        "window": 5,
+        "note": "保留>=3帧的预判性提前打角(中值保边)"
+      },
+      "remove_correction_frames": {
+        "jump_thresh": 0.3,
+        "note": "仅剔过冲后急速反向帧, 渐进预判不触发"
+      }
+    }
+  },
+  "hyperparameters": {
+    "learning_rate_init": 0.0003,
+    "learning_rate_min": 1e-06,
+    "lr_schedule": "warmup_cosine",
+    "warmup_epochs": 3,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "early_stop_patience": 15,
+    "validation_split": "v5 时间留出 (大 session 后 15% + 小 session 全进 val, 替代随机划分)",
+    "seed": 42,
+    "num_trials": 2,
+    "label_smoothing": 0.05
+  },
+  "transfer_model": "models/mypilot1_s2_cropped.keras",
+  "total_params": 219732,
+  "dense1_input": 960,
+  "dense1_params": 96000,
+  "bram_blocks": 21,
+  "bram_utilization": "99.2%",
+  "int8_size_kb": 231.140625,
+  "evaluation_tta": {
+    "angle_mae": 0.1936944240907571,
+    "angle_corr": 0.8919215039142547,
+    "throttle_mae": 0.025657744247509145,
+    "throttle_corr": -0.031416875041329735
+  },
+  "trial_selection": {
+    "mode": "并行双trial (--trial-idx) 合并选优",
+    "selected_trial": 2,
+    "val_losses": {
+      "trial_2": 0.07319409400224686,
+      "trial_1": 0.07525462657213211
+    }
+  }
+}

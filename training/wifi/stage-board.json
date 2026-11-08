@@ -1,0 +1,9 @@
+[
+  ["verify_package", "echo '2c9d9393ac2ccb1c0541155a8be844a1fa9d1f8c016b78fd2958b60208f2226a  /tmp/kosmo-wifi1-test.tar.gz' | sha256sum -c - && cat /tmp/kosmo-wifi-receive.log"],
+  ["extract", "mkdir -p /root/kosmo-wifi1-test && gzip -dc /tmp/kosmo-wifi1-test.tar.gz | tar -xf - -C /root/kosmo-wifi1-test"],
+  ["verify_files", "cd /root/kosmo-wifi1-test && sha256sum -c SHA256SUMS > /tmp/kosmo-wifi-files.check && tail -n 4 /tmp/kosmo-wifi-files.check"],
+  ["tools", "/root/kosmo-wifi1-test/usr/sbin/iw --version; /root/kosmo-wifi1-test/usr/sbin/wpa_supplicant -v; /root/kosmo-wifi1-test/usr/sbin/udhcpc --help; true"],
+  ["stage_kernel", "mount -o remount,rw /mnt/kosmo-boot && cp /root/kosmo-wifi1-test/Image-kosmo-wifi1 /mnt/kosmo-boot/Image-kosmo-wifi1 && sync && sha256sum /mnt/kosmo-boot/Image /mnt/kosmo-boot/Image-kosmo-wifi1"],
+  ["stage_modules", "mkdir -p /lib/modules && cp -R /root/kosmo-wifi1-test/lib/modules/5.10.0-kosmo-wifi1 /lib/modules/ && sync"],
+  ["disable_power_only", "cp -p /etc/kosmo-usb-power.enabled /root/kosmo-wifi-backup-20261014/power-only.enabled && /usr/local/sbin/kosmo-usb-power stop && rm /etc/kosmo-usb-power.enabled && sync"]
+]

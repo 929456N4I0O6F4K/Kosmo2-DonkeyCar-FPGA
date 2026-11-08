@@ -1,0 +1,28 @@
+#!/bin/sh
+set -eu
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+export PATH
+state=/run/kosmo-wifi
+test -f "$state/interface" && test "${interface:-}" = "$(cat "$state/interface")" || exit 1
+case "${1:-}" in
+    deconfig|nak)
+        /usr/local/sbin/kosmo-wifi lease-down
+        ;;
+    bound|renew)
+        test -n "${ip:-}" || exit 1
+        ifconfig "$interface" "$ip" netmask "${subnet:-255.255.255.0}" up
+        for gateway in ${router:-}; do
+            ip route replace default via "$gateway" dev "$interface"
+            break
+        done
+        if [ -n "${dns:-}" ]; then
+            umask 077
+            : > "$state/resolv.wifi"
+            for server in $dns; do
+                case "$server" in *[!0-9a-fA-F:.]*) continue;; esac
+                printf 'nameserver %s\n' "$server" >> "$state/resolv.wifi"
+            done
+            test ! -s "$state/resolv.wifi" || cat "$state/resolv.wifi" > /etc/resolv.conf
+        fi
+        ;;
+esac

@@ -1,0 +1,3 @@
+[
+  ["receiver_tools", "for x in nc netcat socat python python3 ftpget ftpput; do command -v $x; done; busybox --list | grep -E 'nc|httpd|ftp|dd'; true"]
+]

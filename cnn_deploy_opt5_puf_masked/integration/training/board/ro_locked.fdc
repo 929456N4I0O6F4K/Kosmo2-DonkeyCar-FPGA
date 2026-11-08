@@ -1,0 +1,905 @@
+# Integrated RO7 actual placement: 448 native LUTs; feedback and truth tables checked.
+# PAP_LOC fixes tile and FY[A-D] BLE.
+# Input-pin assignment is now fixed at RTL level: ro_cell.v directly instantiates
+# V_LUT6CARRY with feedback on I0 and gate-enable on I1 鈥?the mapper cannot
+# rearrange explicitly-named physical primitive ports between builds.
+# Feedback routing is still NOT locked.
+# IMPORTANT: regenerate this file from the final production netlist before enrolling.
+define_attribute {i:puf_core/bank/osc[0].ro_unit/gate0} {PAP_LOC} {CLMA_393_624:FYA}
+define_attribute {i:puf_core/bank/osc[0].ro_unit/inv1} {PAP_LOC} {CLMA_393_624:FYB}
+define_attribute {i:puf_core/bank/osc[0].ro_unit/inv2} {PAP_LOC} {CLMA_393_624:FYC}
+define_attribute {i:puf_core/bank/osc[0].ro_unit/inv3} {PAP_LOC} {CLMA_393_624:FYD}
+define_attribute {i:puf_core/bank/osc[0].ro_unit/inv4} {PAP_LOC} {CLMA_393_625:FYA}
+define_attribute {i:puf_core/bank/osc[0].ro_unit/inv5} {PAP_LOC} {CLMA_393_625:FYB}
+define_attribute {i:puf_core/bank/osc[0].ro_unit/inv6} {PAP_LOC} {CLMA_393_625:FYC}
+define_attribute {i:puf_core/bank/osc[10].ro_unit/gate0} {PAP_LOC} {CLMA_417_558:FYA}
+define_attribute {i:puf_core/bank/osc[10].ro_unit/inv1} {PAP_LOC} {CLMA_417_558:FYB}
+define_attribute {i:puf_core/bank/osc[10].ro_unit/inv2} {PAP_LOC} {CLMA_417_558:FYC}
+define_attribute {i:puf_core/bank/osc[10].ro_unit/inv3} {PAP_LOC} {CLMA_417_558:FYD}
+define_attribute {i:puf_core/bank/osc[10].ro_unit/inv4} {PAP_LOC} {CLMA_417_559:FYA}
+define_attribute {i:puf_core/bank/osc[10].ro_unit/inv5} {PAP_LOC} {CLMA_417_559:FYB}
+define_attribute {i:puf_core/bank/osc[10].ro_unit/inv6} {PAP_LOC} {CLMA_417_559:FYC}
+define_attribute {i:puf_core/bank/osc[11].ro_unit/gate0} {PAP_LOC} {CLMA_417_576:FYA}
+define_attribute {i:puf_core/bank/osc[11].ro_unit/inv1} {PAP_LOC} {CLMA_417_576:FYB}
+define_attribute {i:puf_core/bank/osc[11].ro_unit/inv2} {PAP_LOC} {CLMA_417_576:FYC}
+define_attribute {i:puf_core/bank/osc[11].ro_unit/inv3} {PAP_LOC} {CLMA_417_576:FYD}
+define_attribute {i:puf_core/bank/osc[11].ro_unit/inv4} {PAP_LOC} {CLMA_417_577:FYA}
+define_attribute {i:puf_core/bank/osc[11].ro_unit/inv5} {PAP_LOC} {CLMA_417_577:FYB}
+define_attribute {i:puf_core/bank/osc[11].ro_unit/inv6} {PAP_LOC} {CLMA_417_577:FYC}
+define_attribute {i:puf_core/bank/osc[12].ro_unit/gate0} {PAP_LOC} {CLMA_417_600:FYA}
+define_attribute {i:puf_core/bank/osc[12].ro_unit/inv1} {PAP_LOC} {CLMA_417_600:FYB}
+define_attribute {i:puf_core/bank/osc[12].ro_unit/inv2} {PAP_LOC} {CLMA_417_600:FYC}
+define_attribute {i:puf_core/bank/osc[12].ro_unit/inv3} {PAP_LOC} {CLMA_417_600:FYD}
+define_attribute {i:puf_core/bank/osc[12].ro_unit/inv4} {PAP_LOC} {CLMA_417_601:FYA}
+define_attribute {i:puf_core/bank/osc[12].ro_unit/inv5} {PAP_LOC} {CLMA_417_601:FYB}
+define_attribute {i:puf_core/bank/osc[12].ro_unit/inv6} {PAP_LOC} {CLMA_417_601:FYC}
+define_attribute {i:puf_core/bank/osc[13].ro_unit/gate0} {PAP_LOC} {CLMA_417_612:FYA}
+define_attribute {i:puf_core/bank/osc[13].ro_unit/inv1} {PAP_LOC} {CLMA_417_612:FYB}
+define_attribute {i:puf_core/bank/osc[13].ro_unit/inv2} {PAP_LOC} {CLMA_417_612:FYC}
+define_attribute {i:puf_core/bank/osc[13].ro_unit/inv3} {PAP_LOC} {CLMA_417_612:FYD}
+define_attribute {i:puf_core/bank/osc[13].ro_unit/inv4} {PAP_LOC} {CLMA_417_613:FYA}
+define_attribute {i:puf_core/bank/osc[13].ro_unit/inv5} {PAP_LOC} {CLMA_417_613:FYB}
+define_attribute {i:puf_core/bank/osc[13].ro_unit/inv6} {PAP_LOC} {CLMA_417_613:FYC}
+define_attribute {i:puf_core/bank/osc[14].ro_unit/gate0} {PAP_LOC} {CLMA_417_642:FYA}
+define_attribute {i:puf_core/bank/osc[14].ro_unit/inv1} {PAP_LOC} {CLMA_417_642:FYB}
+define_attribute {i:puf_core/bank/osc[14].ro_unit/inv2} {PAP_LOC} {CLMA_417_642:FYC}
+define_attribute {i:puf_core/bank/osc[14].ro_unit/inv3} {PAP_LOC} {CLMA_417_642:FYD}
+define_attribute {i:puf_core/bank/osc[14].ro_unit/inv4} {PAP_LOC} {CLMA_417_643:FYA}
+define_attribute {i:puf_core/bank/osc[14].ro_unit/inv5} {PAP_LOC} {CLMA_417_643:FYB}
+define_attribute {i:puf_core/bank/osc[14].ro_unit/inv6} {PAP_LOC} {CLMA_417_643:FYC}
+define_attribute {i:puf_core/bank/osc[15].ro_unit/gate0} {PAP_LOC} {CLMA_417_672:FYA}
+define_attribute {i:puf_core/bank/osc[15].ro_unit/inv1} {PAP_LOC} {CLMA_417_672:FYB}
+define_attribute {i:puf_core/bank/osc[15].ro_unit/inv2} {PAP_LOC} {CLMA_417_672:FYC}
+define_attribute {i:puf_core/bank/osc[15].ro_unit/inv3} {PAP_LOC} {CLMA_417_672:FYD}
+define_attribute {i:puf_core/bank/osc[15].ro_unit/inv4} {PAP_LOC} {CLMA_417_673:FYA}
+define_attribute {i:puf_core/bank/osc[15].ro_unit/inv5} {PAP_LOC} {CLMA_417_673:FYB}
+define_attribute {i:puf_core/bank/osc[15].ro_unit/inv6} {PAP_LOC} {CLMA_417_673:FYC}
+define_attribute {i:puf_core/bank/osc[16].ro_unit/gate0} {PAP_LOC} {CLMA_417_684:FYA}
+define_attribute {i:puf_core/bank/osc[16].ro_unit/inv1} {PAP_LOC} {CLMA_417_684:FYB}
+define_attribute {i:puf_core/bank/osc[16].ro_unit/inv2} {PAP_LOC} {CLMA_417_684:FYC}
+define_attribute {i:puf_core/bank/osc[16].ro_unit/inv3} {PAP_LOC} {CLMA_417_684:FYD}
+define_attribute {i:puf_core/bank/osc[16].ro_unit/inv4} {PAP_LOC} {CLMA_417_685:FYA}
+define_attribute {i:puf_core/bank/osc[16].ro_unit/inv5} {PAP_LOC} {CLMA_417_685:FYB}
+define_attribute {i:puf_core/bank/osc[16].ro_unit/inv6} {PAP_LOC} {CLMA_417_685:FYC}
+define_attribute {i:puf_core/bank/osc[17].ro_unit/gate0} {PAP_LOC} {CLMA_429_558:FYA}
+define_attribute {i:puf_core/bank/osc[17].ro_unit/inv1} {PAP_LOC} {CLMA_429_558:FYB}
+define_attribute {i:puf_core/bank/osc[17].ro_unit/inv2} {PAP_LOC} {CLMA_429_558:FYC}
+define_attribute {i:puf_core/bank/osc[17].ro_unit/inv3} {PAP_LOC} {CLMA_429_558:FYD}
+define_attribute {i:puf_core/bank/osc[17].ro_unit/inv4} {PAP_LOC} {CLMA_429_559:FYA}
+define_attribute {i:puf_core/bank/osc[17].ro_unit/inv5} {PAP_LOC} {CLMA_429_559:FYB}
+define_attribute {i:puf_core/bank/osc[17].ro_unit/inv6} {PAP_LOC} {CLMA_429_559:FYC}
+define_attribute {i:puf_core/bank/osc[18].ro_unit/gate0} {PAP_LOC} {CLMA_429_576:FYA}
+define_attribute {i:puf_core/bank/osc[18].ro_unit/inv1} {PAP_LOC} {CLMA_429_576:FYB}
+define_attribute {i:puf_core/bank/osc[18].ro_unit/inv2} {PAP_LOC} {CLMA_429_576:FYC}
+define_attribute {i:puf_core/bank/osc[18].ro_unit/inv3} {PAP_LOC} {CLMA_429_576:FYD}
+define_attribute {i:puf_core/bank/osc[18].ro_unit/inv4} {PAP_LOC} {CLMA_429_577:FYA}
+define_attribute {i:puf_core/bank/osc[18].ro_unit/inv5} {PAP_LOC} {CLMA_429_577:FYB}
+define_attribute {i:puf_core/bank/osc[18].ro_unit/inv6} {PAP_LOC} {CLMA_429_577:FYC}
+define_attribute {i:puf_core/bank/osc[19].ro_unit/gate0} {PAP_LOC} {CLMA_429_594:FYA}
+define_attribute {i:puf_core/bank/osc[19].ro_unit/inv1} {PAP_LOC} {CLMA_429_594:FYB}
+define_attribute {i:puf_core/bank/osc[19].ro_unit/inv2} {PAP_LOC} {CLMA_429_594:FYC}
+define_attribute {i:puf_core/bank/osc[19].ro_unit/inv3} {PAP_LOC} {CLMA_429_594:FYD}
+define_attribute {i:puf_core/bank/osc[19].ro_unit/inv4} {PAP_LOC} {CLMA_429_595:FYA}
+define_attribute {i:puf_core/bank/osc[19].ro_unit/inv5} {PAP_LOC} {CLMA_429_595:FYB}
+define_attribute {i:puf_core/bank/osc[19].ro_unit/inv6} {PAP_LOC} {CLMA_429_595:FYC}
+define_attribute {i:puf_core/bank/osc[1].ro_unit/gate0} {PAP_LOC} {CLMA_393_636:FYA}
+define_attribute {i:puf_core/bank/osc[1].ro_unit/inv1} {PAP_LOC} {CLMA_393_636:FYB}
+define_attribute {i:puf_core/bank/osc[1].ro_unit/inv2} {PAP_LOC} {CLMA_393_636:FYC}
+define_attribute {i:puf_core/bank/osc[1].ro_unit/inv3} {PAP_LOC} {CLMA_393_636:FYD}
+define_attribute {i:puf_core/bank/osc[1].ro_unit/inv4} {PAP_LOC} {CLMA_393_637:FYA}
+define_attribute {i:puf_core/bank/osc[1].ro_unit/inv5} {PAP_LOC} {CLMA_393_637:FYB}
+define_attribute {i:puf_core/bank/osc[1].ro_unit/inv6} {PAP_LOC} {CLMA_393_637:FYC}
+define_attribute {i:puf_core/bank/osc[20].ro_unit/gate0} {PAP_LOC} {CLMA_429_612:FYA}
+define_attribute {i:puf_core/bank/osc[20].ro_unit/inv1} {PAP_LOC} {CLMA_429_612:FYB}
+define_attribute {i:puf_core/bank/osc[20].ro_unit/inv2} {PAP_LOC} {CLMA_429_612:FYC}
+define_attribute {i:puf_core/bank/osc[20].ro_unit/inv3} {PAP_LOC} {CLMA_429_612:FYD}
+define_attribute {i:puf_core/bank/osc[20].ro_unit/inv4} {PAP_LOC} {CLMA_429_613:FYA}
+define_attribute {i:puf_core/bank/osc[20].ro_unit/inv5} {PAP_LOC} {CLMA_429_613:FYB}
+define_attribute {i:puf_core/bank/osc[20].ro_unit/inv6} {PAP_LOC} {CLMA_429_613:FYC}
+define_attribute {i:puf_core/bank/osc[21].ro_unit/gate0} {PAP_LOC} {CLMA_429_636:FYA}
+define_attribute {i:puf_core/bank/osc[21].ro_unit/inv1} {PAP_LOC} {CLMA_429_636:FYB}
+define_attribute {i:puf_core/bank/osc[21].ro_unit/inv2} {PAP_LOC} {CLMA_429_636:FYC}
+define_attribute {i:puf_core/bank/osc[21].ro_unit/inv3} {PAP_LOC} {CLMA_429_636:FYD}
+define_attribute {i:puf_core/bank/osc[21].ro_unit/inv4} {PAP_LOC} {CLMA_429_637:FYA}
+define_attribute {i:puf_core/bank/osc[21].ro_unit/inv5} {PAP_LOC} {CLMA_429_637:FYB}
+define_attribute {i:puf_core/bank/osc[21].ro_unit/inv6} {PAP_LOC} {CLMA_429_637:FYC}
+define_attribute {i:puf_core/bank/osc[22].ro_unit/gate0} {PAP_LOC} {CLMA_429_648:FYA}
+define_attribute {i:puf_core/bank/osc[22].ro_unit/inv1} {PAP_LOC} {CLMA_429_648:FYB}
+define_attribute {i:puf_core/bank/osc[22].ro_unit/inv2} {PAP_LOC} {CLMA_429_648:FYC}
+define_attribute {i:puf_core/bank/osc[22].ro_unit/inv3} {PAP_LOC} {CLMA_429_648:FYD}
+define_attribute {i:puf_core/bank/osc[22].ro_unit/inv4} {PAP_LOC} {CLMA_429_649:FYA}
+define_attribute {i:puf_core/bank/osc[22].ro_unit/inv5} {PAP_LOC} {CLMA_429_649:FYB}
+define_attribute {i:puf_core/bank/osc[22].ro_unit/inv6} {PAP_LOC} {CLMA_429_649:FYC}
+define_attribute {i:puf_core/bank/osc[23].ro_unit/gate0} {PAP_LOC} {CLMA_429_666:FYA}
+define_attribute {i:puf_core/bank/osc[23].ro_unit/inv1} {PAP_LOC} {CLMA_429_666:FYB}
+define_attribute {i:puf_core/bank/osc[23].ro_unit/inv2} {PAP_LOC} {CLMA_429_666:FYC}
+define_attribute {i:puf_core/bank/osc[23].ro_unit/inv3} {PAP_LOC} {CLMA_429_666:FYD}
+define_attribute {i:puf_core/bank/osc[23].ro_unit/inv4} {PAP_LOC} {CLMA_429_667:FYA}
+define_attribute {i:puf_core/bank/osc[23].ro_unit/inv5} {PAP_LOC} {CLMA_429_667:FYB}
+define_attribute {i:puf_core/bank/osc[23].ro_unit/inv6} {PAP_LOC} {CLMA_429_667:FYC}
+define_attribute {i:puf_core/bank/osc[24].ro_unit/gate0} {PAP_LOC} {CLMA_429_684:FYA}
+define_attribute {i:puf_core/bank/osc[24].ro_unit/inv1} {PAP_LOC} {CLMA_429_684:FYB}
+define_attribute {i:puf_core/bank/osc[24].ro_unit/inv2} {PAP_LOC} {CLMA_429_684:FYC}
+define_attribute {i:puf_core/bank/osc[24].ro_unit/inv3} {PAP_LOC} {CLMA_429_684:FYD}
+define_attribute {i:puf_core/bank/osc[24].ro_unit/inv4} {PAP_LOC} {CLMA_429_685:FYA}
+define_attribute {i:puf_core/bank/osc[24].ro_unit/inv5} {PAP_LOC} {CLMA_429_685:FYB}
+define_attribute {i:puf_core/bank/osc[24].ro_unit/inv6} {PAP_LOC} {CLMA_429_685:FYC}
+define_attribute {i:puf_core/bank/osc[25].ro_unit/gate0} {PAP_LOC} {CLMA_429_696:FYA}
+define_attribute {i:puf_core/bank/osc[25].ro_unit/inv1} {PAP_LOC} {CLMA_429_696:FYB}
+define_attribute {i:puf_core/bank/osc[25].ro_unit/inv2} {PAP_LOC} {CLMA_429_696:FYC}
+define_attribute {i:puf_core/bank/osc[25].ro_unit/inv3} {PAP_LOC} {CLMA_429_696:FYD}
+define_attribute {i:puf_core/bank/osc[25].ro_unit/inv4} {PAP_LOC} {CLMA_429_697:FYA}
+define_attribute {i:puf_core/bank/osc[25].ro_unit/inv5} {PAP_LOC} {CLMA_429_697:FYB}
+define_attribute {i:puf_core/bank/osc[25].ro_unit/inv6} {PAP_LOC} {CLMA_429_697:FYC}
+define_attribute {i:puf_core/bank/osc[26].ro_unit/gate0} {PAP_LOC} {CLMA_453_588:FYA}
+define_attribute {i:puf_core/bank/osc[26].ro_unit/inv1} {PAP_LOC} {CLMA_453_588:FYB}
+define_attribute {i:puf_core/bank/osc[26].ro_unit/inv2} {PAP_LOC} {CLMA_453_588:FYC}
+define_attribute {i:puf_core/bank/osc[26].ro_unit/inv3} {PAP_LOC} {CLMA_453_588:FYD}
+define_attribute {i:puf_core/bank/osc[26].ro_unit/inv4} {PAP_LOC} {CLMA_453_589:FYA}
+define_attribute {i:puf_core/bank/osc[26].ro_unit/inv5} {PAP_LOC} {CLMA_453_589:FYB}
+define_attribute {i:puf_core/bank/osc[26].ro_unit/inv6} {PAP_LOC} {CLMA_453_589:FYC}
+define_attribute {i:puf_core/bank/osc[27].ro_unit/gate0} {PAP_LOC} {CLMA_453_606:FYA}
+define_attribute {i:puf_core/bank/osc[27].ro_unit/inv1} {PAP_LOC} {CLMA_453_606:FYB}
+define_attribute {i:puf_core/bank/osc[27].ro_unit/inv2} {PAP_LOC} {CLMA_453_606:FYC}
+define_attribute {i:puf_core/bank/osc[27].ro_unit/inv3} {PAP_LOC} {CLMA_453_606:FYD}
+define_attribute {i:puf_core/bank/osc[27].ro_unit/inv4} {PAP_LOC} {CLMA_453_607:FYA}
+define_attribute {i:puf_core/bank/osc[27].ro_unit/inv5} {PAP_LOC} {CLMA_453_607:FYB}
+define_attribute {i:puf_core/bank/osc[27].ro_unit/inv6} {PAP_LOC} {CLMA_453_607:FYC}
+define_attribute {i:puf_core/bank/osc[28].ro_unit/gate0} {PAP_LOC} {CLMA_453_618:FYA}
+define_attribute {i:puf_core/bank/osc[28].ro_unit/inv1} {PAP_LOC} {CLMA_453_618:FYB}
+define_attribute {i:puf_core/bank/osc[28].ro_unit/inv2} {PAP_LOC} {CLMA_453_618:FYC}
+define_attribute {i:puf_core/bank/osc[28].ro_unit/inv3} {PAP_LOC} {CLMA_453_618:FYD}
+define_attribute {i:puf_core/bank/osc[28].ro_unit/inv4} {PAP_LOC} {CLMA_453_619:FYA}
+define_attribute {i:puf_core/bank/osc[28].ro_unit/inv5} {PAP_LOC} {CLMA_453_619:FYB}
+define_attribute {i:puf_core/bank/osc[28].ro_unit/inv6} {PAP_LOC} {CLMA_453_619:FYC}
+define_attribute {i:puf_core/bank/osc[29].ro_unit/gate0} {PAP_LOC} {CLMA_453_642:FYA}
+define_attribute {i:puf_core/bank/osc[29].ro_unit/inv1} {PAP_LOC} {CLMA_453_642:FYB}
+define_attribute {i:puf_core/bank/osc[29].ro_unit/inv2} {PAP_LOC} {CLMA_453_642:FYC}
+define_attribute {i:puf_core/bank/osc[29].ro_unit/inv3} {PAP_LOC} {CLMA_453_642:FYD}
+define_attribute {i:puf_core/bank/osc[29].ro_unit/inv4} {PAP_LOC} {CLMA_453_643:FYA}
+define_attribute {i:puf_core/bank/osc[29].ro_unit/inv5} {PAP_LOC} {CLMA_453_643:FYB}
+define_attribute {i:puf_core/bank/osc[29].ro_unit/inv6} {PAP_LOC} {CLMA_453_643:FYC}
+define_attribute {i:puf_core/bank/osc[2].ro_unit/gate0} {PAP_LOC} {CLMA_393_660:FYA}
+define_attribute {i:puf_core/bank/osc[2].ro_unit/inv1} {PAP_LOC} {CLMA_393_660:FYB}
+define_attribute {i:puf_core/bank/osc[2].ro_unit/inv2} {PAP_LOC} {CLMA_393_660:FYC}
+define_attribute {i:puf_core/bank/osc[2].ro_unit/inv3} {PAP_LOC} {CLMA_393_660:FYD}
+define_attribute {i:puf_core/bank/osc[2].ro_unit/inv4} {PAP_LOC} {CLMA_393_661:FYA}
+define_attribute {i:puf_core/bank/osc[2].ro_unit/inv5} {PAP_LOC} {CLMA_393_661:FYB}
+define_attribute {i:puf_core/bank/osc[2].ro_unit/inv6} {PAP_LOC} {CLMA_393_661:FYC}
+define_attribute {i:puf_core/bank/osc[30].ro_unit/gate0} {PAP_LOC} {CLMA_453_666:FYA}
+define_attribute {i:puf_core/bank/osc[30].ro_unit/inv1} {PAP_LOC} {CLMA_453_666:FYB}
+define_attribute {i:puf_core/bank/osc[30].ro_unit/inv2} {PAP_LOC} {CLMA_453_666:FYC}
+define_attribute {i:puf_core/bank/osc[30].ro_unit/inv3} {PAP_LOC} {CLMA_453_666:FYD}
+define_attribute {i:puf_core/bank/osc[30].ro_unit/inv4} {PAP_LOC} {CLMA_453_667:FYA}
+define_attribute {i:puf_core/bank/osc[30].ro_unit/inv5} {PAP_LOC} {CLMA_453_667:FYB}
+define_attribute {i:puf_core/bank/osc[30].ro_unit/inv6} {PAP_LOC} {CLMA_453_667:FYC}
+define_attribute {i:puf_core/bank/osc[31].ro_unit/gate0} {PAP_LOC} {CLMA_453_684:FYA}
+define_attribute {i:puf_core/bank/osc[31].ro_unit/inv1} {PAP_LOC} {CLMA_453_684:FYB}
+define_attribute {i:puf_core/bank/osc[31].ro_unit/inv2} {PAP_LOC} {CLMA_453_684:FYC}
+define_attribute {i:puf_core/bank/osc[31].ro_unit/inv3} {PAP_LOC} {CLMA_453_684:FYD}
+define_attribute {i:puf_core/bank/osc[31].ro_unit/inv4} {PAP_LOC} {CLMA_453_685:FYA}
+define_attribute {i:puf_core/bank/osc[31].ro_unit/inv5} {PAP_LOC} {CLMA_453_685:FYB}
+define_attribute {i:puf_core/bank/osc[31].ro_unit/inv6} {PAP_LOC} {CLMA_453_685:FYC}
+define_attribute {i:puf_core/bank/osc[32].ro_unit/gate0} {PAP_LOC} {CLMA_393_630:FYA}
+define_attribute {i:puf_core/bank/osc[32].ro_unit/inv1} {PAP_LOC} {CLMA_393_630:FYB}
+define_attribute {i:puf_core/bank/osc[32].ro_unit/inv2} {PAP_LOC} {CLMA_393_630:FYC}
+define_attribute {i:puf_core/bank/osc[32].ro_unit/inv3} {PAP_LOC} {CLMA_393_630:FYD}
+define_attribute {i:puf_core/bank/osc[32].ro_unit/inv4} {PAP_LOC} {CLMA_393_631:FYA}
+define_attribute {i:puf_core/bank/osc[32].ro_unit/inv5} {PAP_LOC} {CLMA_393_631:FYB}
+define_attribute {i:puf_core/bank/osc[32].ro_unit/inv6} {PAP_LOC} {CLMA_393_631:FYC}
+define_attribute {i:puf_core/bank/osc[33].ro_unit/gate0} {PAP_LOC} {CLMA_393_654:FYA}
+define_attribute {i:puf_core/bank/osc[33].ro_unit/inv1} {PAP_LOC} {CLMA_393_654:FYB}
+define_attribute {i:puf_core/bank/osc[33].ro_unit/inv2} {PAP_LOC} {CLMA_393_654:FYC}
+define_attribute {i:puf_core/bank/osc[33].ro_unit/inv3} {PAP_LOC} {CLMA_393_654:FYD}
+define_attribute {i:puf_core/bank/osc[33].ro_unit/inv4} {PAP_LOC} {CLMA_393_655:FYA}
+define_attribute {i:puf_core/bank/osc[33].ro_unit/inv5} {PAP_LOC} {CLMA_393_655:FYB}
+define_attribute {i:puf_core/bank/osc[33].ro_unit/inv6} {PAP_LOC} {CLMA_393_655:FYC}
+define_attribute {i:puf_core/bank/osc[34].ro_unit/gate0} {PAP_LOC} {CLMA_393_678:FYA}
+define_attribute {i:puf_core/bank/osc[34].ro_unit/inv1} {PAP_LOC} {CLMA_393_678:FYB}
+define_attribute {i:puf_core/bank/osc[34].ro_unit/inv2} {PAP_LOC} {CLMA_393_678:FYC}
+define_attribute {i:puf_core/bank/osc[34].ro_unit/inv3} {PAP_LOC} {CLMA_393_678:FYD}
+define_attribute {i:puf_core/bank/osc[34].ro_unit/inv4} {PAP_LOC} {CLMA_393_679:FYA}
+define_attribute {i:puf_core/bank/osc[34].ro_unit/inv5} {PAP_LOC} {CLMA_393_679:FYB}
+define_attribute {i:puf_core/bank/osc[34].ro_unit/inv6} {PAP_LOC} {CLMA_393_679:FYC}
+define_attribute {i:puf_core/bank/osc[35].ro_unit/gate0} {PAP_LOC} {CLMA_405_612:FYA}
+define_attribute {i:puf_core/bank/osc[35].ro_unit/inv1} {PAP_LOC} {CLMA_405_612:FYB}
+define_attribute {i:puf_core/bank/osc[35].ro_unit/inv2} {PAP_LOC} {CLMA_405_612:FYC}
+define_attribute {i:puf_core/bank/osc[35].ro_unit/inv3} {PAP_LOC} {CLMA_405_612:FYD}
+define_attribute {i:puf_core/bank/osc[35].ro_unit/inv4} {PAP_LOC} {CLMA_405_613:FYA}
+define_attribute {i:puf_core/bank/osc[35].ro_unit/inv5} {PAP_LOC} {CLMA_405_613:FYB}
+define_attribute {i:puf_core/bank/osc[35].ro_unit/inv6} {PAP_LOC} {CLMA_405_613:FYC}
+define_attribute {i:puf_core/bank/osc[36].ro_unit/gate0} {PAP_LOC} {CLMA_405_630:FYA}
+define_attribute {i:puf_core/bank/osc[36].ro_unit/inv1} {PAP_LOC} {CLMA_405_630:FYB}
+define_attribute {i:puf_core/bank/osc[36].ro_unit/inv2} {PAP_LOC} {CLMA_405_630:FYC}
+define_attribute {i:puf_core/bank/osc[36].ro_unit/inv3} {PAP_LOC} {CLMA_405_630:FYD}
+define_attribute {i:puf_core/bank/osc[36].ro_unit/inv4} {PAP_LOC} {CLMA_405_631:FYA}
+define_attribute {i:puf_core/bank/osc[36].ro_unit/inv5} {PAP_LOC} {CLMA_405_631:FYB}
+define_attribute {i:puf_core/bank/osc[36].ro_unit/inv6} {PAP_LOC} {CLMA_405_631:FYC}
+define_attribute {i:puf_core/bank/osc[37].ro_unit/gate0} {PAP_LOC} {CLMA_405_642:FYA}
+define_attribute {i:puf_core/bank/osc[37].ro_unit/inv1} {PAP_LOC} {CLMA_405_642:FYB}
+define_attribute {i:puf_core/bank/osc[37].ro_unit/inv2} {PAP_LOC} {CLMA_405_642:FYC}
+define_attribute {i:puf_core/bank/osc[37].ro_unit/inv3} {PAP_LOC} {CLMA_405_642:FYD}
+define_attribute {i:puf_core/bank/osc[37].ro_unit/inv4} {PAP_LOC} {CLMA_405_643:FYA}
+define_attribute {i:puf_core/bank/osc[37].ro_unit/inv5} {PAP_LOC} {CLMA_405_643:FYB}
+define_attribute {i:puf_core/bank/osc[37].ro_unit/inv6} {PAP_LOC} {CLMA_405_643:FYC}
+define_attribute {i:puf_core/bank/osc[38].ro_unit/gate0} {PAP_LOC} {CLMA_405_666:FYA}
+define_attribute {i:puf_core/bank/osc[38].ro_unit/inv1} {PAP_LOC} {CLMA_405_666:FYB}
+define_attribute {i:puf_core/bank/osc[38].ro_unit/inv2} {PAP_LOC} {CLMA_405_666:FYC}
+define_attribute {i:puf_core/bank/osc[38].ro_unit/inv3} {PAP_LOC} {CLMA_405_666:FYD}
+define_attribute {i:puf_core/bank/osc[38].ro_unit/inv4} {PAP_LOC} {CLMA_405_667:FYA}
+define_attribute {i:puf_core/bank/osc[38].ro_unit/inv5} {PAP_LOC} {CLMA_405_667:FYB}
+define_attribute {i:puf_core/bank/osc[38].ro_unit/inv6} {PAP_LOC} {CLMA_405_667:FYC}
+define_attribute {i:puf_core/bank/osc[39].ro_unit/gate0} {PAP_LOC} {CLMA_405_690:FYA}
+define_attribute {i:puf_core/bank/osc[39].ro_unit/inv1} {PAP_LOC} {CLMA_405_690:FYB}
+define_attribute {i:puf_core/bank/osc[39].ro_unit/inv2} {PAP_LOC} {CLMA_405_690:FYC}
+define_attribute {i:puf_core/bank/osc[39].ro_unit/inv3} {PAP_LOC} {CLMA_405_690:FYD}
+define_attribute {i:puf_core/bank/osc[39].ro_unit/inv4} {PAP_LOC} {CLMA_405_691:FYA}
+define_attribute {i:puf_core/bank/osc[39].ro_unit/inv5} {PAP_LOC} {CLMA_405_691:FYB}
+define_attribute {i:puf_core/bank/osc[39].ro_unit/inv6} {PAP_LOC} {CLMA_405_691:FYC}
+define_attribute {i:puf_core/bank/osc[3].ro_unit/gate0} {PAP_LOC} {CLMA_393_702:FYA}
+define_attribute {i:puf_core/bank/osc[3].ro_unit/inv1} {PAP_LOC} {CLMA_393_702:FYB}
+define_attribute {i:puf_core/bank/osc[3].ro_unit/inv2} {PAP_LOC} {CLMA_393_702:FYC}
+define_attribute {i:puf_core/bank/osc[3].ro_unit/inv3} {PAP_LOC} {CLMA_393_702:FYD}
+define_attribute {i:puf_core/bank/osc[3].ro_unit/inv4} {PAP_LOC} {CLMA_393_703:FYA}
+define_attribute {i:puf_core/bank/osc[3].ro_unit/inv5} {PAP_LOC} {CLMA_393_703:FYB}
+define_attribute {i:puf_core/bank/osc[3].ro_unit/inv6} {PAP_LOC} {CLMA_393_703:FYC}
+define_attribute {i:puf_core/bank/osc[40].ro_unit/gate0} {PAP_LOC} {CLMA_405_702:FYA}
+define_attribute {i:puf_core/bank/osc[40].ro_unit/inv1} {PAP_LOC} {CLMA_405_702:FYB}
+define_attribute {i:puf_core/bank/osc[40].ro_unit/inv2} {PAP_LOC} {CLMA_405_702:FYC}
+define_attribute {i:puf_core/bank/osc[40].ro_unit/inv3} {PAP_LOC} {CLMA_405_702:FYD}
+define_attribute {i:puf_core/bank/osc[40].ro_unit/inv4} {PAP_LOC} {CLMA_405_703:FYA}
+define_attribute {i:puf_core/bank/osc[40].ro_unit/inv5} {PAP_LOC} {CLMA_405_703:FYB}
+define_attribute {i:puf_core/bank/osc[40].ro_unit/inv6} {PAP_LOC} {CLMA_405_703:FYC}
+define_attribute {i:puf_core/bank/osc[41].ro_unit/gate0} {PAP_LOC} {CLMA_417_552:FYA}
+define_attribute {i:puf_core/bank/osc[41].ro_unit/inv1} {PAP_LOC} {CLMA_417_552:FYB}
+define_attribute {i:puf_core/bank/osc[41].ro_unit/inv2} {PAP_LOC} {CLMA_417_552:FYC}
+define_attribute {i:puf_core/bank/osc[41].ro_unit/inv3} {PAP_LOC} {CLMA_417_552:FYD}
+define_attribute {i:puf_core/bank/osc[41].ro_unit/inv4} {PAP_LOC} {CLMA_417_553:FYA}
+define_attribute {i:puf_core/bank/osc[41].ro_unit/inv5} {PAP_LOC} {CLMA_417_553:FYB}
+define_attribute {i:puf_core/bank/osc[41].ro_unit/inv6} {PAP_LOC} {CLMA_417_553:FYC}
+define_attribute {i:puf_core/bank/osc[42].ro_unit/gate0} {PAP_LOC} {CLMA_417_570:FYA}
+define_attribute {i:puf_core/bank/osc[42].ro_unit/inv1} {PAP_LOC} {CLMA_417_570:FYB}
+define_attribute {i:puf_core/bank/osc[42].ro_unit/inv2} {PAP_LOC} {CLMA_417_570:FYC}
+define_attribute {i:puf_core/bank/osc[42].ro_unit/inv3} {PAP_LOC} {CLMA_417_570:FYD}
+define_attribute {i:puf_core/bank/osc[42].ro_unit/inv4} {PAP_LOC} {CLMA_417_571:FYA}
+define_attribute {i:puf_core/bank/osc[42].ro_unit/inv5} {PAP_LOC} {CLMA_417_571:FYB}
+define_attribute {i:puf_core/bank/osc[42].ro_unit/inv6} {PAP_LOC} {CLMA_417_571:FYC}
+define_attribute {i:puf_core/bank/osc[43].ro_unit/gate0} {PAP_LOC} {CLMA_417_582:FYA}
+define_attribute {i:puf_core/bank/osc[43].ro_unit/inv1} {PAP_LOC} {CLMA_417_582:FYB}
+define_attribute {i:puf_core/bank/osc[43].ro_unit/inv2} {PAP_LOC} {CLMA_417_582:FYC}
+define_attribute {i:puf_core/bank/osc[43].ro_unit/inv3} {PAP_LOC} {CLMA_417_582:FYD}
+define_attribute {i:puf_core/bank/osc[43].ro_unit/inv4} {PAP_LOC} {CLMA_417_583:FYA}
+define_attribute {i:puf_core/bank/osc[43].ro_unit/inv5} {PAP_LOC} {CLMA_417_583:FYB}
+define_attribute {i:puf_core/bank/osc[43].ro_unit/inv6} {PAP_LOC} {CLMA_417_583:FYC}
+define_attribute {i:puf_core/bank/osc[44].ro_unit/gate0} {PAP_LOC} {CLMA_417_606:FYA}
+define_attribute {i:puf_core/bank/osc[44].ro_unit/inv1} {PAP_LOC} {CLMA_417_606:FYB}
+define_attribute {i:puf_core/bank/osc[44].ro_unit/inv2} {PAP_LOC} {CLMA_417_606:FYC}
+define_attribute {i:puf_core/bank/osc[44].ro_unit/inv3} {PAP_LOC} {CLMA_417_606:FYD}
+define_attribute {i:puf_core/bank/osc[44].ro_unit/inv4} {PAP_LOC} {CLMA_417_607:FYA}
+define_attribute {i:puf_core/bank/osc[44].ro_unit/inv5} {PAP_LOC} {CLMA_417_607:FYB}
+define_attribute {i:puf_core/bank/osc[44].ro_unit/inv6} {PAP_LOC} {CLMA_417_607:FYC}
+define_attribute {i:puf_core/bank/osc[45].ro_unit/gate0} {PAP_LOC} {CLMA_417_630:FYA}
+define_attribute {i:puf_core/bank/osc[45].ro_unit/inv1} {PAP_LOC} {CLMA_417_630:FYB}
+define_attribute {i:puf_core/bank/osc[45].ro_unit/inv2} {PAP_LOC} {CLMA_417_630:FYC}
+define_attribute {i:puf_core/bank/osc[45].ro_unit/inv3} {PAP_LOC} {CLMA_417_630:FYD}
+define_attribute {i:puf_core/bank/osc[45].ro_unit/inv4} {PAP_LOC} {CLMA_417_631:FYA}
+define_attribute {i:puf_core/bank/osc[45].ro_unit/inv5} {PAP_LOC} {CLMA_417_631:FYB}
+define_attribute {i:puf_core/bank/osc[45].ro_unit/inv6} {PAP_LOC} {CLMA_417_631:FYC}
+define_attribute {i:puf_core/bank/osc[46].ro_unit/gate0} {PAP_LOC} {CLMA_417_648:FYA}
+define_attribute {i:puf_core/bank/osc[46].ro_unit/inv1} {PAP_LOC} {CLMA_417_648:FYB}
+define_attribute {i:puf_core/bank/osc[46].ro_unit/inv2} {PAP_LOC} {CLMA_417_648:FYC}
+define_attribute {i:puf_core/bank/osc[46].ro_unit/inv3} {PAP_LOC} {CLMA_417_648:FYD}
+define_attribute {i:puf_core/bank/osc[46].ro_unit/inv4} {PAP_LOC} {CLMA_417_649:FYA}
+define_attribute {i:puf_core/bank/osc[46].ro_unit/inv5} {PAP_LOC} {CLMA_417_649:FYB}
+define_attribute {i:puf_core/bank/osc[46].ro_unit/inv6} {PAP_LOC} {CLMA_417_649:FYC}
+define_attribute {i:puf_core/bank/osc[47].ro_unit/gate0} {PAP_LOC} {CLMA_417_678:FYA}
+define_attribute {i:puf_core/bank/osc[47].ro_unit/inv1} {PAP_LOC} {CLMA_417_678:FYB}
+define_attribute {i:puf_core/bank/osc[47].ro_unit/inv2} {PAP_LOC} {CLMA_417_678:FYC}
+define_attribute {i:puf_core/bank/osc[47].ro_unit/inv3} {PAP_LOC} {CLMA_417_678:FYD}
+define_attribute {i:puf_core/bank/osc[47].ro_unit/inv4} {PAP_LOC} {CLMA_417_679:FYA}
+define_attribute {i:puf_core/bank/osc[47].ro_unit/inv5} {PAP_LOC} {CLMA_417_679:FYB}
+define_attribute {i:puf_core/bank/osc[47].ro_unit/inv6} {PAP_LOC} {CLMA_417_679:FYC}
+define_attribute {i:puf_core/bank/osc[48].ro_unit/gate0} {PAP_LOC} {CLMA_417_708:FYA}
+define_attribute {i:puf_core/bank/osc[48].ro_unit/inv1} {PAP_LOC} {CLMA_417_708:FYB}
+define_attribute {i:puf_core/bank/osc[48].ro_unit/inv2} {PAP_LOC} {CLMA_417_708:FYC}
+define_attribute {i:puf_core/bank/osc[48].ro_unit/inv3} {PAP_LOC} {CLMA_417_708:FYD}
+define_attribute {i:puf_core/bank/osc[48].ro_unit/inv4} {PAP_LOC} {CLMA_417_709:FYA}
+define_attribute {i:puf_core/bank/osc[48].ro_unit/inv5} {PAP_LOC} {CLMA_417_709:FYB}
+define_attribute {i:puf_core/bank/osc[48].ro_unit/inv6} {PAP_LOC} {CLMA_417_709:FYC}
+define_attribute {i:puf_core/bank/osc[49].ro_unit/gate0} {PAP_LOC} {CLMA_429_564:FYA}
+define_attribute {i:puf_core/bank/osc[49].ro_unit/inv1} {PAP_LOC} {CLMA_429_564:FYB}
+define_attribute {i:puf_core/bank/osc[49].ro_unit/inv2} {PAP_LOC} {CLMA_429_564:FYC}
+define_attribute {i:puf_core/bank/osc[49].ro_unit/inv3} {PAP_LOC} {CLMA_429_564:FYD}
+define_attribute {i:puf_core/bank/osc[49].ro_unit/inv4} {PAP_LOC} {CLMA_429_565:FYA}
+define_attribute {i:puf_core/bank/osc[49].ro_unit/inv5} {PAP_LOC} {CLMA_429_565:FYB}
+define_attribute {i:puf_core/bank/osc[49].ro_unit/inv6} {PAP_LOC} {CLMA_429_565:FYC}
+define_attribute {i:puf_core/bank/osc[4].ro_unit/gate0} {PAP_LOC} {CLMA_405_618:FYA}
+define_attribute {i:puf_core/bank/osc[4].ro_unit/inv1} {PAP_LOC} {CLMA_405_618:FYB}
+define_attribute {i:puf_core/bank/osc[4].ro_unit/inv2} {PAP_LOC} {CLMA_405_618:FYC}
+define_attribute {i:puf_core/bank/osc[4].ro_unit/inv3} {PAP_LOC} {CLMA_405_618:FYD}
+define_attribute {i:puf_core/bank/osc[4].ro_unit/inv4} {PAP_LOC} {CLMA_405_619:FYA}
+define_attribute {i:puf_core/bank/osc[4].ro_unit/inv5} {PAP_LOC} {CLMA_405_619:FYB}
+define_attribute {i:puf_core/bank/osc[4].ro_unit/inv6} {PAP_LOC} {CLMA_405_619:FYC}
+define_attribute {i:puf_core/bank/osc[50].ro_unit/gate0} {PAP_LOC} {CLMA_429_588:FYA}
+define_attribute {i:puf_core/bank/osc[50].ro_unit/inv1} {PAP_LOC} {CLMA_429_588:FYB}
+define_attribute {i:puf_core/bank/osc[50].ro_unit/inv2} {PAP_LOC} {CLMA_429_588:FYC}
+define_attribute {i:puf_core/bank/osc[50].ro_unit/inv3} {PAP_LOC} {CLMA_429_588:FYD}
+define_attribute {i:puf_core/bank/osc[50].ro_unit/inv4} {PAP_LOC} {CLMA_429_589:FYA}
+define_attribute {i:puf_core/bank/osc[50].ro_unit/inv5} {PAP_LOC} {CLMA_429_589:FYB}
+define_attribute {i:puf_core/bank/osc[50].ro_unit/inv6} {PAP_LOC} {CLMA_429_589:FYC}
+define_attribute {i:puf_core/bank/osc[51].ro_unit/gate0} {PAP_LOC} {CLMA_429_606:FYA}
+define_attribute {i:puf_core/bank/osc[51].ro_unit/inv1} {PAP_LOC} {CLMA_429_606:FYB}
+define_attribute {i:puf_core/bank/osc[51].ro_unit/inv2} {PAP_LOC} {CLMA_429_606:FYC}
+define_attribute {i:puf_core/bank/osc[51].ro_unit/inv3} {PAP_LOC} {CLMA_429_606:FYD}
+define_attribute {i:puf_core/bank/osc[51].ro_unit/inv4} {PAP_LOC} {CLMA_429_607:FYA}
+define_attribute {i:puf_core/bank/osc[51].ro_unit/inv5} {PAP_LOC} {CLMA_429_607:FYB}
+define_attribute {i:puf_core/bank/osc[51].ro_unit/inv6} {PAP_LOC} {CLMA_429_607:FYC}
+define_attribute {i:puf_core/bank/osc[52].ro_unit/gate0} {PAP_LOC} {CLMA_429_624:FYA}
+define_attribute {i:puf_core/bank/osc[52].ro_unit/inv1} {PAP_LOC} {CLMA_429_624:FYB}
+define_attribute {i:puf_core/bank/osc[52].ro_unit/inv2} {PAP_LOC} {CLMA_429_624:FYC}
+define_attribute {i:puf_core/bank/osc[52].ro_unit/inv3} {PAP_LOC} {CLMA_429_624:FYD}
+define_attribute {i:puf_core/bank/osc[52].ro_unit/inv4} {PAP_LOC} {CLMA_429_625:FYA}
+define_attribute {i:puf_core/bank/osc[52].ro_unit/inv5} {PAP_LOC} {CLMA_429_625:FYB}
+define_attribute {i:puf_core/bank/osc[52].ro_unit/inv6} {PAP_LOC} {CLMA_429_625:FYC}
+define_attribute {i:puf_core/bank/osc[53].ro_unit/gate0} {PAP_LOC} {CLMA_429_642:FYA}
+define_attribute {i:puf_core/bank/osc[53].ro_unit/inv1} {PAP_LOC} {CLMA_429_642:FYB}
+define_attribute {i:puf_core/bank/osc[53].ro_unit/inv2} {PAP_LOC} {CLMA_429_642:FYC}
+define_attribute {i:puf_core/bank/osc[53].ro_unit/inv3} {PAP_LOC} {CLMA_429_642:FYD}
+define_attribute {i:puf_core/bank/osc[53].ro_unit/inv4} {PAP_LOC} {CLMA_429_643:FYA}
+define_attribute {i:puf_core/bank/osc[53].ro_unit/inv5} {PAP_LOC} {CLMA_429_643:FYB}
+define_attribute {i:puf_core/bank/osc[53].ro_unit/inv6} {PAP_LOC} {CLMA_429_643:FYC}
+define_attribute {i:puf_core/bank/osc[54].ro_unit/gate0} {PAP_LOC} {CLMA_429_660:FYA}
+define_attribute {i:puf_core/bank/osc[54].ro_unit/inv1} {PAP_LOC} {CLMA_429_660:FYB}
+define_attribute {i:puf_core/bank/osc[54].ro_unit/inv2} {PAP_LOC} {CLMA_429_660:FYC}
+define_attribute {i:puf_core/bank/osc[54].ro_unit/inv3} {PAP_LOC} {CLMA_429_660:FYD}
+define_attribute {i:puf_core/bank/osc[54].ro_unit/inv4} {PAP_LOC} {CLMA_429_661:FYA}
+define_attribute {i:puf_core/bank/osc[54].ro_unit/inv5} {PAP_LOC} {CLMA_429_661:FYB}
+define_attribute {i:puf_core/bank/osc[54].ro_unit/inv6} {PAP_LOC} {CLMA_429_661:FYC}
+define_attribute {i:puf_core/bank/osc[55].ro_unit/gate0} {PAP_LOC} {CLMA_429_672:FYA}
+define_attribute {i:puf_core/bank/osc[55].ro_unit/inv1} {PAP_LOC} {CLMA_429_672:FYB}
+define_attribute {i:puf_core/bank/osc[55].ro_unit/inv2} {PAP_LOC} {CLMA_429_672:FYC}
+define_attribute {i:puf_core/bank/osc[55].ro_unit/inv3} {PAP_LOC} {CLMA_429_672:FYD}
+define_attribute {i:puf_core/bank/osc[55].ro_unit/inv4} {PAP_LOC} {CLMA_429_673:FYA}
+define_attribute {i:puf_core/bank/osc[55].ro_unit/inv5} {PAP_LOC} {CLMA_429_673:FYB}
+define_attribute {i:puf_core/bank/osc[55].ro_unit/inv6} {PAP_LOC} {CLMA_429_673:FYC}
+define_attribute {i:puf_core/bank/osc[56].ro_unit/gate0} {PAP_LOC} {CLMA_429_690:FYA}
+define_attribute {i:puf_core/bank/osc[56].ro_unit/inv1} {PAP_LOC} {CLMA_429_690:FYB}
+define_attribute {i:puf_core/bank/osc[56].ro_unit/inv2} {PAP_LOC} {CLMA_429_690:FYC}
+define_attribute {i:puf_core/bank/osc[56].ro_unit/inv3} {PAP_LOC} {CLMA_429_690:FYD}
+define_attribute {i:puf_core/bank/osc[56].ro_unit/inv4} {PAP_LOC} {CLMA_429_691:FYA}
+define_attribute {i:puf_core/bank/osc[56].ro_unit/inv5} {PAP_LOC} {CLMA_429_691:FYB}
+define_attribute {i:puf_core/bank/osc[56].ro_unit/inv6} {PAP_LOC} {CLMA_429_691:FYC}
+define_attribute {i:puf_core/bank/osc[57].ro_unit/gate0} {PAP_LOC} {CLMA_453_582:FYA}
+define_attribute {i:puf_core/bank/osc[57].ro_unit/inv1} {PAP_LOC} {CLMA_453_582:FYB}
+define_attribute {i:puf_core/bank/osc[57].ro_unit/inv2} {PAP_LOC} {CLMA_453_582:FYC}
+define_attribute {i:puf_core/bank/osc[57].ro_unit/inv3} {PAP_LOC} {CLMA_453_582:FYD}
+define_attribute {i:puf_core/bank/osc[57].ro_unit/inv4} {PAP_LOC} {CLMA_453_583:FYA}
+define_attribute {i:puf_core/bank/osc[57].ro_unit/inv5} {PAP_LOC} {CLMA_453_583:FYB}
+define_attribute {i:puf_core/bank/osc[57].ro_unit/inv6} {PAP_LOC} {CLMA_453_583:FYC}
+define_attribute {i:puf_core/bank/osc[58].ro_unit/gate0} {PAP_LOC} {CLMA_453_594:FYA}
+define_attribute {i:puf_core/bank/osc[58].ro_unit/inv1} {PAP_LOC} {CLMA_453_594:FYB}
+define_attribute {i:puf_core/bank/osc[58].ro_unit/inv2} {PAP_LOC} {CLMA_453_594:FYC}
+define_attribute {i:puf_core/bank/osc[58].ro_unit/inv3} {PAP_LOC} {CLMA_453_594:FYD}
+define_attribute {i:puf_core/bank/osc[58].ro_unit/inv4} {PAP_LOC} {CLMA_453_595:FYA}
+define_attribute {i:puf_core/bank/osc[58].ro_unit/inv5} {PAP_LOC} {CLMA_453_595:FYB}
+define_attribute {i:puf_core/bank/osc[58].ro_unit/inv6} {PAP_LOC} {CLMA_453_595:FYC}
+define_attribute {i:puf_core/bank/osc[59].ro_unit/gate0} {PAP_LOC} {CLMA_453_612:FYA}
+define_attribute {i:puf_core/bank/osc[59].ro_unit/inv1} {PAP_LOC} {CLMA_453_612:FYB}
+define_attribute {i:puf_core/bank/osc[59].ro_unit/inv2} {PAP_LOC} {CLMA_453_612:FYC}
+define_attribute {i:puf_core/bank/osc[59].ro_unit/inv3} {PAP_LOC} {CLMA_453_612:FYD}
+define_attribute {i:puf_core/bank/osc[59].ro_unit/inv4} {PAP_LOC} {CLMA_453_613:FYA}
+define_attribute {i:puf_core/bank/osc[59].ro_unit/inv5} {PAP_LOC} {CLMA_453_613:FYB}
+define_attribute {i:puf_core/bank/osc[59].ro_unit/inv6} {PAP_LOC} {CLMA_453_613:FYC}
+define_attribute {i:puf_core/bank/osc[5].ro_unit/gate0} {PAP_LOC} {CLMA_405_636:FYA}
+define_attribute {i:puf_core/bank/osc[5].ro_unit/inv1} {PAP_LOC} {CLMA_405_636:FYB}
+define_attribute {i:puf_core/bank/osc[5].ro_unit/inv2} {PAP_LOC} {CLMA_405_636:FYC}
+define_attribute {i:puf_core/bank/osc[5].ro_unit/inv3} {PAP_LOC} {CLMA_405_636:FYD}
+define_attribute {i:puf_core/bank/osc[5].ro_unit/inv4} {PAP_LOC} {CLMA_405_637:FYA}
+define_attribute {i:puf_core/bank/osc[5].ro_unit/inv5} {PAP_LOC} {CLMA_405_637:FYB}
+define_attribute {i:puf_core/bank/osc[5].ro_unit/inv6} {PAP_LOC} {CLMA_405_637:FYC}
+define_attribute {i:puf_core/bank/osc[60].ro_unit/gate0} {PAP_LOC} {CLMA_453_636:FYA}
+define_attribute {i:puf_core/bank/osc[60].ro_unit/inv1} {PAP_LOC} {CLMA_453_636:FYB}
+define_attribute {i:puf_core/bank/osc[60].ro_unit/inv2} {PAP_LOC} {CLMA_453_636:FYC}
+define_attribute {i:puf_core/bank/osc[60].ro_unit/inv3} {PAP_LOC} {CLMA_453_636:FYD}
+define_attribute {i:puf_core/bank/osc[60].ro_unit/inv4} {PAP_LOC} {CLMA_453_637:FYA}
+define_attribute {i:puf_core/bank/osc[60].ro_unit/inv5} {PAP_LOC} {CLMA_453_637:FYB}
+define_attribute {i:puf_core/bank/osc[60].ro_unit/inv6} {PAP_LOC} {CLMA_453_637:FYC}
+define_attribute {i:puf_core/bank/osc[61].ro_unit/gate0} {PAP_LOC} {CLMA_453_648:FYA}
+define_attribute {i:puf_core/bank/osc[61].ro_unit/inv1} {PAP_LOC} {CLMA_453_648:FYB}
+define_attribute {i:puf_core/bank/osc[61].ro_unit/inv2} {PAP_LOC} {CLMA_453_648:FYC}
+define_attribute {i:puf_core/bank/osc[61].ro_unit/inv3} {PAP_LOC} {CLMA_453_648:FYD}
+define_attribute {i:puf_core/bank/osc[61].ro_unit/inv4} {PAP_LOC} {CLMA_453_649:FYA}
+define_attribute {i:puf_core/bank/osc[61].ro_unit/inv5} {PAP_LOC} {CLMA_453_649:FYB}
+define_attribute {i:puf_core/bank/osc[61].ro_unit/inv6} {PAP_LOC} {CLMA_453_649:FYC}
+define_attribute {i:puf_core/bank/osc[62].ro_unit/gate0} {PAP_LOC} {CLMA_453_672:FYA}
+define_attribute {i:puf_core/bank/osc[62].ro_unit/inv1} {PAP_LOC} {CLMA_453_672:FYB}
+define_attribute {i:puf_core/bank/osc[62].ro_unit/inv2} {PAP_LOC} {CLMA_453_672:FYC}
+define_attribute {i:puf_core/bank/osc[62].ro_unit/inv3} {PAP_LOC} {CLMA_453_672:FYD}
+define_attribute {i:puf_core/bank/osc[62].ro_unit/inv4} {PAP_LOC} {CLMA_453_673:FYA}
+define_attribute {i:puf_core/bank/osc[62].ro_unit/inv5} {PAP_LOC} {CLMA_453_673:FYB}
+define_attribute {i:puf_core/bank/osc[62].ro_unit/inv6} {PAP_LOC} {CLMA_453_673:FYC}
+define_attribute {i:puf_core/bank/osc[63].ro_unit/gate0} {PAP_LOC} {CLMA_453_696:FYA}
+define_attribute {i:puf_core/bank/osc[63].ro_unit/inv1} {PAP_LOC} {CLMA_453_696:FYB}
+define_attribute {i:puf_core/bank/osc[63].ro_unit/inv2} {PAP_LOC} {CLMA_453_696:FYC}
+define_attribute {i:puf_core/bank/osc[63].ro_unit/inv3} {PAP_LOC} {CLMA_453_696:FYD}
+define_attribute {i:puf_core/bank/osc[63].ro_unit/inv4} {PAP_LOC} {CLMA_453_697:FYA}
+define_attribute {i:puf_core/bank/osc[63].ro_unit/inv5} {PAP_LOC} {CLMA_453_697:FYB}
+define_attribute {i:puf_core/bank/osc[63].ro_unit/inv6} {PAP_LOC} {CLMA_453_697:FYC}
+define_attribute {i:puf_core/bank/osc[6].ro_unit/gate0} {PAP_LOC} {CLMA_405_654:FYA}
+define_attribute {i:puf_core/bank/osc[6].ro_unit/inv1} {PAP_LOC} {CLMA_405_654:FYB}
+define_attribute {i:puf_core/bank/osc[6].ro_unit/inv2} {PAP_LOC} {CLMA_405_654:FYC}
+define_attribute {i:puf_core/bank/osc[6].ro_unit/inv3} {PAP_LOC} {CLMA_405_654:FYD}
+define_attribute {i:puf_core/bank/osc[6].ro_unit/inv4} {PAP_LOC} {CLMA_405_655:FYA}
+define_attribute {i:puf_core/bank/osc[6].ro_unit/inv5} {PAP_LOC} {CLMA_405_655:FYB}
+define_attribute {i:puf_core/bank/osc[6].ro_unit/inv6} {PAP_LOC} {CLMA_405_655:FYC}
+define_attribute {i:puf_core/bank/osc[7].ro_unit/gate0} {PAP_LOC} {CLMA_405_672:FYA}
+define_attribute {i:puf_core/bank/osc[7].ro_unit/inv1} {PAP_LOC} {CLMA_405_672:FYB}
+define_attribute {i:puf_core/bank/osc[7].ro_unit/inv2} {PAP_LOC} {CLMA_405_672:FYC}
+define_attribute {i:puf_core/bank/osc[7].ro_unit/inv3} {PAP_LOC} {CLMA_405_672:FYD}
+define_attribute {i:puf_core/bank/osc[7].ro_unit/inv4} {PAP_LOC} {CLMA_405_673:FYA}
+define_attribute {i:puf_core/bank/osc[7].ro_unit/inv5} {PAP_LOC} {CLMA_405_673:FYB}
+define_attribute {i:puf_core/bank/osc[7].ro_unit/inv6} {PAP_LOC} {CLMA_405_673:FYC}
+define_attribute {i:puf_core/bank/osc[8].ro_unit/gate0} {PAP_LOC} {CLMA_405_696:FYA}
+define_attribute {i:puf_core/bank/osc[8].ro_unit/inv1} {PAP_LOC} {CLMA_405_696:FYB}
+define_attribute {i:puf_core/bank/osc[8].ro_unit/inv2} {PAP_LOC} {CLMA_405_696:FYC}
+define_attribute {i:puf_core/bank/osc[8].ro_unit/inv3} {PAP_LOC} {CLMA_405_696:FYD}
+define_attribute {i:puf_core/bank/osc[8].ro_unit/inv4} {PAP_LOC} {CLMA_405_697:FYA}
+define_attribute {i:puf_core/bank/osc[8].ro_unit/inv5} {PAP_LOC} {CLMA_405_697:FYB}
+define_attribute {i:puf_core/bank/osc[8].ro_unit/inv6} {PAP_LOC} {CLMA_405_697:FYC}
+define_attribute {i:puf_core/bank/osc[9].ro_unit/gate0} {PAP_LOC} {CLMA_417_546:FYA}
+define_attribute {i:puf_core/bank/osc[9].ro_unit/inv1} {PAP_LOC} {CLMA_417_546:FYB}
+define_attribute {i:puf_core/bank/osc[9].ro_unit/inv2} {PAP_LOC} {CLMA_417_546:FYC}
+define_attribute {i:puf_core/bank/osc[9].ro_unit/inv3} {PAP_LOC} {CLMA_417_546:FYD}
+define_attribute {i:puf_core/bank/osc[9].ro_unit/inv4} {PAP_LOC} {CLMA_417_547:FYA}
+define_attribute {i:puf_core/bank/osc[9].ro_unit/inv5} {PAP_LOC} {CLMA_417_547:FYB}
+define_attribute {i:puf_core/bank/osc[9].ro_unit/inv6} {PAP_LOC} {CLMA_417_547:FYC}
+
+# PAP_FIXED_ROUTE constraints for all 448 PUF RO signal nets
+define_attribute {n:puf_core/bank/N4} {PAP_FIXED_ROUTE} {CR0:CLMA_417_636;A_CR0:SRB_414_636;ZQW[3]:SRB_414_636;IQW[3]:SRB_390_636;ZDS[3]:SRB_390_636;IDS[3]:SRB_390_624;A_A3:SRB_390_624;A3:CLMA_393_624;}
+define_attribute {n:puf_core/bank/N11} {PAP_FIXED_ROUTE} {CR2:CLMA_417_636;A_CR2:SRB_414_636;ZDW[1]:SRB_414_636;IDW[1]:SRB_402_636;ZDW[1]:SRB_402_636;IDW[1]:SRB_390_636;A_A5:SRB_390_636;A5:CLMA_393_636;}
+define_attribute {n:puf_core/bank/N18} {PAP_FIXED_ROUTE} {Y0:CLMA_417_636;A_Y0:SRB_414_636;ZDW[2]:SRB_414_636;IDW[2]:SRB_402_636;ZQNW[3]:SRB_402_636;IQNW[3]:SRB_390_654;ZSNA[2]:SRB_390_654;ISNA[2]:SRB_390_660;A_A3:SRB_390_660;A3:CLMA_393_660;}
+define_attribute {n:puf_core/bank/N25} {PAP_FIXED_ROUTE} {Y2:CLMA_417_636;A_Y2:SRB_414_636;ZDW[0]:SRB_414_636;IDW[0]:SRB_402_636;ZQN[0]:SRB_402_636;IQN[0]:SRB_402_672;ZQNW[1]:SRB_402_672;IQNW[1]:SRB_390_690;ZDN[1]:SRB_390_690;IDN[1]:SRB_390_702;A_A5:SRB_390_702;A5:CLMA_393_702;}
+define_attribute {n:puf_core/bank/N32} {PAP_FIXED_ROUTE} {CR1:CLMA_417_636;A_CR1:SRB_414_636;ZSSB[0]:SRB_414_636;ISSB[0]:SRB_414_630;ZDSW[2]:SRB_414_630;IDSW[2]:SRB_408_624;ZDSW[0]:SRB_408_624;IDSW[0]:SRB_402_618;A_A5:SRB_402_618;A5:CLMA_405_618;}
+define_attribute {n:puf_core/bank/N39} {PAP_FIXED_ROUTE} {CR0:CLMA_417_624;A_CR0:SRB_414_624;ZDW[3]:SRB_414_624;IDW[3]:SRB_402_624;ZDN[3]:SRB_402_624;IDN[3]:SRB_402_636;A_A3:SRB_402_636;A3:CLMA_405_636;}
+define_attribute {n:puf_core/bank/N46} {PAP_FIXED_ROUTE} {Y1:CLMA_417_636;A_Y1:SRB_414_636;ZSNA[2]:SRB_414_636;ISNA[2]:SRB_414_642;ZDNW[2]:SRB_414_642;IDNW[2]:SRB_408_648;ZDNW[2]:SRB_408_648;IDNW[2]:SRB_402_654;A_A3:SRB_402_654;A3:CLMA_405_654;}
+define_attribute {n:puf_core/bank/N53} {PAP_FIXED_ROUTE} {CR2:CLMA_417_655;S_CR2:SRB_414_654;ZSNA[0]:SRB_414_654;ISNA[0]:SRB_414_660;ZDNW[0]:SRB_414_660;IDNW[0]:SRB_408_666;ZDNW[0]:SRB_408_666;IDNW[0]:SRB_402_672;A_A5:SRB_402_672;A5:CLMA_405_672;}
+define_attribute {n:puf_core/bank/N60} {PAP_FIXED_ROUTE} {CR2:CLMA_417_624;A_CR2:SRB_414_624;ZQN[1]:SRB_414_624;IQN[1]:SRB_414_660;ZQN[1]:SRB_414_660;IQN[1]:SRB_414_696;ZDW[1]:SRB_414_696;IDW[1]:SRB_402_696;A_A5:SRB_402_696;A5:CLMA_405_696;}
+define_attribute {n:puf_core/bank/N67} {PAP_FIXED_ROUTE} {Y0:CLMA_417_624;A_Y0:SRB_414_624;ZQS[2]:SRB_414_624;IQS[2]:SRB_414_588;ZQS[2]:SRB_414_588;IQS[2]:SRB_414_552;ZSSB[2]:SRB_414_552;ISSB[2]:SRB_414_546;A_A2:SRB_414_546;A2:CLMA_417_546;}
+define_attribute {n:puf_core/bank/N74} {PAP_FIXED_ROUTE} {Y2:CLMA_417_624;A_Y2:SRB_414_624;ZQS[0]:SRB_414_624;IQS[0]:SRB_414_588;ZQS[0]:SRB_414_588;IQS[0]:SRB_414_552;ZSNB[0]:SRB_414_552;ISNB[0]:SRB_414_558;A_A4:SRB_414_558;A4:CLMA_417_558;}
+define_attribute {n:puf_core/bank/N81} {PAP_FIXED_ROUTE} {CR1:CLMA_417_624;A_CR1:SRB_414_624;ZDSW[2]:SRB_414_624;IDSW[2]:SRB_408_618;ZQS[2]:SRB_408_618;IQS[2]:SRB_408_582;ZDSE[2]:SRB_408_582;IDSE[2]:SRB_414_576;A_A3:SRB_414_576;A3:CLMA_417_576;}
+define_attribute {n:puf_core/bank/N88} {PAP_FIXED_ROUTE} {CR3:CLMA_417_624;A_CR3:SRB_414_624;ZDSW[0]:SRB_414_624;IDSW[0]:SRB_408_618;ZDS[0]:SRB_408_618;IDS[0]:SRB_408_606;ZDSE[0]:SRB_408_606;IDSE[0]:SRB_414_600;A_A5:SRB_414_600;A5:CLMA_417_600;}
+define_attribute {n:puf_core/bank/N95} {PAP_FIXED_ROUTE} {Y1:CLMA_417_624;A_Y1:SRB_414_624;ZDS[3]:SRB_414_624;IDS[3]:SRB_414_612;A_A3:SRB_414_612;A3:CLMA_417_612;}
+define_attribute {n:puf_core/bank/N102} {PAP_FIXED_ROUTE} {Y3:CLMA_417_624;A_Y3:SRB_414_624;ZSNB[1]:SRB_414_624;ISNB[1]:SRB_414_630;ZDN[1]:SRB_414_630;IDN[1]:SRB_414_642;A_A5:SRB_414_642;A5:CLMA_417_642;}
+define_attribute {n:puf_core/bank/N109} {PAP_FIXED_ROUTE} {Y2:CLMA_417_655;S_Y2:SRB_414_654;ZSNB[0]:SRB_414_654;ISNB[0]:SRB_414_660;ZDN[0]:SRB_414_660;IDN[0]:SRB_414_672;A_A4:SRB_414_672;A4:CLMA_417_672;}
+define_attribute {n:puf_core/bank/N116} {PAP_FIXED_ROUTE} {CR2:CLMA_429_630;A_CR2:SRB_426_630;ZSNA[0]:SRB_426_630;ISNA[0]:SRB_426_636;ZDN[0]:SRB_426_636;IDN[0]:SRB_426_648;ZQN[0]:SRB_426_648;IQN[0]:SRB_426_684;ZDW[0]:SRB_426_684;IDW[0]:SRB_414_684;A_A4:SRB_414_684;A4:CLMA_417_684;}
+define_attribute {n:puf_core/bank/N123} {PAP_FIXED_ROUTE} {CR3:CLMA_429_630;A_CR3:SRB_426_630;ZDNW[2]:SRB_426_630;IDNW[2]:SRB_420_636;ZQS[2]:SRB_420_636;IQS[2]:SRB_420_600;ZDSW[0]:SRB_420_600;IDSW[0]:SRB_414_594;ZQS[0]:SRB_414_594;IQS[0]:SRB_414_558;ZDE[0]:SRB_414_558;IDE[0]:SRB_426_558;A_A4:SRB_426_558;A4:CLMA_429_558;}
+define_attribute {n:puf_core/bank/N130} {PAP_FIXED_ROUTE} {Y2:CLMA_429_630;A_Y2:SRB_426_630;ZQS[0]:SRB_426_630;IQS[0]:SRB_426_594;ZSSA[1]:SRB_426_594;ISSA[1]:SRB_426_588;ZDS[1]:SRB_426_588;IDS[1]:SRB_426_576;A_A5:SRB_426_576;A5:CLMA_429_576;}
+define_attribute {n:puf_core/bank/N137} {PAP_FIXED_ROUTE} {Y3:CLMA_429_630;A_Y3:SRB_426_630;ZDS[1]:SRB_426_630;IDS[1]:SRB_426_618;ZDS[1]:SRB_426_618;IDS[1]:SRB_426_606;ZDS[1]:SRB_426_606;IDS[1]:SRB_426_594;A_A5:SRB_426_594;A5:CLMA_429_594;}
+define_attribute {n:puf_core/bank/N144} {PAP_FIXED_ROUTE} {CR0:CLMA_429_630;A_CR0:SRB_426_630;ZDS[3]:SRB_426_630;IDS[3]:SRB_426_618;ZSSA[0]:SRB_426_618;ISSA[0]:SRB_426_612;A_A5:SRB_426_612;A5:CLMA_429_612;}
+define_attribute {n:puf_core/bank/N151} {PAP_FIXED_ROUTE} {CR2:CLMS_423_649;S_CR2:SRB_420_648;ZSEA[1]:SRB_420_648;ISEA[1]:SRB_426_648;ZDS[1]:SRB_426_648;IDS[1]:SRB_426_636;A_A5:SRB_426_636;A5:CLMA_429_636;}
+define_attribute {n:puf_core/bank/N158} {PAP_FIXED_ROUTE} {Y0:CLMA_429_630;A_Y0:SRB_426_630;ZSNA[1]:SRB_426_630;ISNA[1]:SRB_426_636;ZDN[1]:SRB_426_636;IDN[1]:SRB_426_648;A_A5:SRB_426_648;A5:CLMA_429_648;}
+define_attribute {n:puf_core/bank/N165} {PAP_FIXED_ROUTE} {CR3:CLMS_423_649;S_CR3:SRB_420_648;ZDN[2]:SRB_420_648;IDN[2]:SRB_420_660;ZDNE[0]:SRB_420_660;IDNE[0]:SRB_426_666;A_A5:SRB_426_666;A5:CLMA_429_666;}
+define_attribute {n:puf_core/bank/N172} {PAP_FIXED_ROUTE} {CR1:CLMA_429_630;A_CR1:SRB_426_630;ZQNW[1]:SRB_426_630;IQNW[1]:SRB_414_648;ZQN[1]:SRB_414_648;IQN[1]:SRB_414_684;ZDE[1]:SRB_414_684;IDE[1]:SRB_426_684;A_A5:SRB_426_684;A5:CLMA_429_684;}
+define_attribute {n:puf_core/bank/N179} {PAP_FIXED_ROUTE} {Y2:CLMS_423_649;S_Y2:SRB_420_648;ZQN[0]:SRB_420_648;IQN[0]:SRB_420_684;ZDN[0]:SRB_420_684;IDN[0]:SRB_420_696;ZSEA[0]:SRB_420_696;ISEA[0]:SRB_426_696;A_A5:SRB_426_696;A5:CLMA_429_696;}
+define_attribute {n:puf_core/bank/N186} {PAP_FIXED_ROUTE} {Y1:CLMA_429_630;A_Y1:SRB_426_630;ZQE[3]:SRB_426_630;IQE[3]:SRB_450_630;ZQS[3]:SRB_450_630;IQS[3]:SRB_450_594;ZSSA[0]:SRB_450_594;ISSA[0]:SRB_450_588;A_A5:SRB_450_588;A5:CLMA_453_588;}
+define_attribute {n:puf_core/bank/N193} {PAP_FIXED_ROUTE} {CR0:CLMS_435_631;S_CR0:SRB_432_630;ZQSE[2]:SRB_432_630;IQSE[2]:SRB_444_612;ZDSE[2]:SRB_444_612;IDSE[2]:SRB_450_606;A_A3:SRB_450_606;A3:CLMA_453_606;}
+define_attribute {n:puf_core/bank/N200} {PAP_FIXED_ROUTE} {CR1:CLMS_435_631;S_CR1:SRB_432_630;ZSEA[0]:SRB_432_630;ISEA[0]:SRB_438_630;ZDSE[0]:SRB_438_630;IDSE[0]:SRB_444_624;ZDSE[0]:SRB_444_624;IDSE[0]:SRB_450_618;A_A5:SRB_450_618;A5:CLMA_453_618;}
+define_attribute {n:puf_core/bank/N207} {PAP_FIXED_ROUTE} {Y0:CLMS_435_631;S_Y0:SRB_432_630;ZQNE[2]:SRB_432_630;IQNE[2]:SRB_444_648;ZDSE[2]:SRB_444_648;IDSE[2]:SRB_450_642;A_A3:SRB_450_642;A3:CLMA_453_642;}
+define_attribute {n:puf_core/bank/N214} {PAP_FIXED_ROUTE} {Y1:CLMS_435_631;S_Y1:SRB_432_630;ZDNE[1]:SRB_432_630;IDNE[1]:SRB_438_636;ZQNE[1]:SRB_438_636;IQNE[1]:SRB_450_654;ZDN[1]:SRB_450_654;IDN[1]:SRB_450_666;A_A5:SRB_450_666;A5:CLMA_453_666;}
+define_attribute {n:puf_core/bank/N221} {PAP_FIXED_ROUTE} {Y3:CLMS_423_649;S_Y3:SRB_420_648;ZQE[1]:SRB_420_648;IQE[1]:SRB_444_648;ZQN[1]:SRB_444_648;IQN[1]:SRB_444_684;ZSEA[1]:SRB_444_684;ISEA[1]:SRB_450_684;A_A4:SRB_450_684;A4:CLMA_453_684;}
+define_attribute {n:puf_core/bank/N228} {PAP_FIXED_ROUTE} {CR0:CLMS_399_625;S_CR0:SRB_396_624;ZDNW[3]:SRB_396_624;IDNW[3]:SRB_390_630;A_A2:SRB_390_630;A2:CLMA_393_630;}
+define_attribute {n:puf_core/bank/N235} {PAP_FIXED_ROUTE} {CR1:CLMS_399_625;S_CR1:SRB_396_624;ZDN[0]:SRB_396_624;IDN[0]:SRB_396_636;ZDN[0]:SRB_396_636;IDN[0]:SRB_396_648;ZDNW[0]:SRB_396_648;IDNW[0]:SRB_390_654;A_A5:SRB_390_654;A5:CLMA_393_654;}
+define_attribute {n:puf_core/bank/N242} {PAP_FIXED_ROUTE} {Y0:CLMS_399_625;S_Y0:SRB_396_624;ZDN[2]:SRB_396_624;IDN[2]:SRB_396_636;ZQN[2]:SRB_396_636;IQN[2]:SRB_396_672;ZDNW[2]:SRB_396_672;IDNW[2]:SRB_390_678;A_A3:SRB_390_678;A3:CLMA_393_678;}
+define_attribute {n:puf_core/bank/N249} {PAP_FIXED_ROUTE} {Y1:CLMS_399_625;S_Y1:SRB_396_624;ZSSA[0]:SRB_396_624;ISSA[0]:SRB_396_618;ZDSE[0]:SRB_396_618;IDSE[0]:SRB_402_612;A_A5:SRB_402_612;A5:CLMA_405_612;}
+define_attribute {n:puf_core/bank/N256} {PAP_FIXED_ROUTE} {CR0:CLMA_423_636;A_CR0:SRB_420_636;ZDW[3]:SRB_420_636;IDW[3]:SRB_408_636;ZDSW[1]:SRB_408_636;IDSW[1]:SRB_402_630;A_A4:SRB_402_630;A4:CLMA_405_630;}
+define_attribute {n:puf_core/bank/N263} {PAP_FIXED_ROUTE} {CR3:CLMA_423_636;A_CR3:SRB_420_636;ZDW[2]:SRB_420_636;IDW[2]:SRB_408_636;ZDNW[2]:SRB_408_636;IDNW[2]:SRB_402_642;A_A3:SRB_402_642;A3:CLMA_405_642;}
+define_attribute {n:puf_core/bank/N270} {PAP_FIXED_ROUTE} {Y0:CLMA_423_636;A_Y0:SRB_420_636;ZQN[2]:SRB_420_636;IQN[2]:SRB_420_672;ZDW[2]:SRB_420_672;IDW[2]:SRB_408_672;ZDSW[0]:SRB_408_672;IDSW[0]:SRB_402_666;A_A5:SRB_402_666;A5:CLMA_405_666;}
+define_attribute {n:puf_core/bank/N277} {PAP_FIXED_ROUTE} {CR2:CLMA_423_642;A_CR2:SRB_420_642;ZQN[1]:SRB_420_642;IQN[1]:SRB_420_678;ZQNW[2]:SRB_420_678;IQNW[2]:SRB_408_696;ZDSW[0]:SRB_408_696;IDSW[0]:SRB_402_690;A_A5:SRB_402_690;A5:CLMA_405_690;}
+define_attribute {n:puf_core/bank/N284} {PAP_FIXED_ROUTE} {CR1:CLMA_423_636;A_CR1:SRB_420_636;ZQN[0]:SRB_420_636;IQN[0]:SRB_420_672;ZQNW[1]:SRB_420_672;IQNW[1]:SRB_408_690;ZSNA[0]:SRB_408_690;ISNA[0]:SRB_408_696;ZDNW[0]:SRB_408_696;IDNW[0]:SRB_402_702;A_A5:SRB_402_702;A5:CLMA_405_702;}
+define_attribute {n:puf_core/bank/N291} {PAP_FIXED_ROUTE} {Y3:CLMA_423_636;A_Y3:SRB_420_636;ZDSW[3]:SRB_420_636;IDSW[3]:SRB_414_630;ZQS[3]:SRB_414_630;IQS[3]:SRB_414_594;ZQS[3]:SRB_414_594;IQS[3]:SRB_414_558;ZSSA[0]:SRB_414_558;ISSA[0]:SRB_414_552;A_A5:SRB_414_552;A5:CLMA_417_552;}
+define_attribute {n:puf_core/bank/N298} {PAP_FIXED_ROUTE} {Y1:CLMA_423_636;A_Y1:SRB_420_636;ZDSW[1]:SRB_420_636;IDSW[1]:SRB_414_630;ZDS[1]:SRB_414_630;IDS[1]:SRB_414_618;ZQS[1]:SRB_414_618;IQS[1]:SRB_414_582;ZDS[1]:SRB_414_582;IDS[1]:SRB_414_570;A_A5:SRB_414_570;A5:CLMA_417_570;}
+define_attribute {n:puf_core/bank/N305} {PAP_FIXED_ROUTE} {CR2:CLMA_417_637;S_CR2:SRB_414_636;ZQS[1]:SRB_414_636;IQS[1]:SRB_414_600;ZDS[1]:SRB_414_600;IDS[1]:SRB_414_588;ZSSB[1]:SRB_414_588;ISSB[1]:SRB_414_582;A_A5:SRB_414_582;A5:CLMA_417_582;}
+define_attribute {n:puf_core/bank/N312} {PAP_FIXED_ROUTE} {CR2:CLMA_423_636;A_CR2:SRB_420_636;ZDSE[1]:SRB_420_636;IDSE[1]:SRB_426_630;ZQSW[1]:SRB_426_630;IQSW[1]:SRB_414_612;ZSSB[1]:SRB_414_612;ISSB[1]:SRB_414_606;A_A5:SRB_414_606;A5:CLMA_417_606;}
+define_attribute {n:puf_core/bank/N319} {PAP_FIXED_ROUTE} {Y2:CLMA_417_637;S_Y2:SRB_414_636;ZSSA[1]:SRB_414_636;ISSA[1]:SRB_414_630;A_A4:SRB_414_630;A4:CLMA_417_630;}
+define_attribute {n:puf_core/bank/N326} {PAP_FIXED_ROUTE} {Y2:CLMA_423_636;A_Y2:SRB_420_636;ZSWB[3]:SRB_420_636;ISWB[3]:SRB_414_636;ZDN[3]:SRB_414_636;IDN[3]:SRB_414_648;A_A3:SRB_414_648;A3:CLMA_417_648;}
+define_attribute {n:puf_core/bank/N333} {PAP_FIXED_ROUTE} {Y2:CLMA_423_642;A_Y2:SRB_420_642;ZDW[0]:SRB_420_642;IDW[0]:SRB_408_642;ZQN[0]:SRB_408_642;IQN[0]:SRB_408_678;ZSEA[0]:SRB_408_678;ISEA[0]:SRB_414_678;A_A5:SRB_414_678;A5:CLMA_417_678;}
+define_attribute {n:puf_core/bank/N340} {PAP_FIXED_ROUTE} {CR2:CLMS_423_637;S_CR2:SRB_420_636;ZQN[1]:SRB_420_636;IQN[1]:SRB_420_672;ZQN[1]:SRB_420_672;IQN[1]:SRB_420_708;ZSWB[0]:SRB_420_708;ISWB[0]:SRB_414_708;A_A4:SRB_414_708;A4:CLMA_417_708;}
+define_attribute {n:puf_core/bank/N347} {PAP_FIXED_ROUTE} {CR2:CLMS_423_631;S_CR2:SRB_420_630;ZDS[1]:SRB_420_630;IDS[1]:SRB_420_618;ZQS[1]:SRB_420_618;IQS[1]:SRB_420_582;ZDSE[1]:SRB_420_582;IDSE[1]:SRB_426_576;ZDS[1]:SRB_426_576;IDS[1]:SRB_426_564;A_A5:SRB_426_564;A5:CLMA_429_564;}
+define_attribute {n:puf_core/bank/N354} {PAP_FIXED_ROUTE} {Y2:CLMS_423_637;S_Y2:SRB_420_636;ZDS[0]:SRB_420_636;IDS[0]:SRB_420_624;ZQS[0]:SRB_420_624;IQS[0]:SRB_420_588;ZSEB[1]:SRB_420_588;ISEB[1]:SRB_426_588;A_A5:SRB_426_588;A5:CLMA_429_588;}
+define_attribute {n:puf_core/bank/N361} {PAP_FIXED_ROUTE} {Y2:CLMS_423_631;S_Y2:SRB_420_630;ZSSB[0]:SRB_420_630;ISSB[0]:SRB_420_624;ZDS[0]:SRB_420_624;IDS[0]:SRB_420_612;ZDSE[0]:SRB_420_612;IDSE[0]:SRB_426_606;A_A5:SRB_426_606;A5:CLMA_429_606;}
+define_attribute {n:puf_core/bank/N368} {PAP_FIXED_ROUTE} {CR0:CLMS_423_637;S_CR0:SRB_420_636;ZSSA[0]:SRB_420_636;ISSA[0]:SRB_420_630;ZDSE[0]:SRB_420_630;IDSE[0]:SRB_426_624;A_A5:SRB_426_624;A5:CLMA_429_624;}
+define_attribute {n:puf_core/bank/N375} {PAP_FIXED_ROUTE} {CR0:CLMA_435_636;A_CR0:SRB_432_636;ZSWB[2]:SRB_432_636;ISWB[2]:SRB_426_636;ZSNA[1]:SRB_426_636;ISNA[1]:SRB_426_642;A_A4:SRB_426_642;A4:CLMA_429_642;}
+define_attribute {n:puf_core/bank/N382} {PAP_FIXED_ROUTE} {Y0:CLMS_423_637;S_Y0:SRB_420_636;ZQNE[2]:SRB_420_636;IQNE[2]:SRB_432_654;ZDNW[2]:SRB_432_654;IDNW[2]:SRB_426_660;A_A3:SRB_426_660;A3:CLMA_429_660;}
+define_attribute {n:puf_core/bank/N389} {PAP_FIXED_ROUTE} {CR3:CLMS_423_637;S_CR3:SRB_420_636;ZDE[2]:SRB_420_636;IDE[2]:SRB_432_636;ZQN[2]:SRB_432_636;IQN[2]:SRB_432_672;ZSWB[1]:SRB_432_672;ISWB[1]:SRB_426_672;A_A5:SRB_426_672;A5:CLMA_429_672;}
+define_attribute {n:puf_core/bank/N396} {PAP_FIXED_ROUTE} {CR1:CLMS_423_637;S_CR1:SRB_420_636;ZDNE[2]:SRB_420_636;IDNE[2]:SRB_426_642;ZQN[2]:SRB_426_642;IQN[2]:SRB_426_678;ZDN[2]:SRB_426_678;IDN[2]:SRB_426_690;A_A2:SRB_426_690;A2:CLMA_429_690;}
+define_attribute {n:puf_core/bank/N403} {PAP_FIXED_ROUTE} {Y0:CLMA_435_636;A_Y0:SRB_432_636;ZQSE[1]:SRB_432_636;IQSE[1]:SRB_444_618;ZDSE[1]:SRB_444_618;IDSE[1]:SRB_450_612;ZQS[1]:SRB_450_612;IQS[1]:SRB_450_576;ZSNB[1]:SRB_450_576;ISNB[1]:SRB_450_582;A_A5:SRB_450_582;A5:CLMA_453_582;}
+define_attribute {n:puf_core/bank/N410} {PAP_FIXED_ROUTE} {Y1:CLMS_423_637;S_Y1:SRB_420_636;ZQSE[2]:SRB_420_636;IQSE[2]:SRB_432_618;ZQSE[1]:SRB_432_618;IQSE[1]:SRB_444_600;ZDSE[1]:SRB_444_600;IDSE[1]:SRB_450_594;A_A4:SRB_450_594;A4:CLMA_453_594;}
+define_attribute {n:puf_core/bank/N417} {PAP_FIXED_ROUTE} {CR1:CLMA_435_636;A_CR1:SRB_432_636;ZQSE[3]:SRB_432_636;IQSE[3]:SRB_444_618;ZDSE[3]:SRB_444_618;IDSE[3]:SRB_450_612;A_A2:SRB_450_612;A2:CLMA_453_612;}
+define_attribute {n:puf_core/bank/N424} {PAP_FIXED_ROUTE} {CR2:CLMA_435_636;A_CR2:SRB_432_636;ZSEA[1]:SRB_432_636;ISEA[1]:SRB_438_636;ZDE[1]:SRB_438_636;IDE[1]:SRB_450_636;A_A5:SRB_450_636;A5:CLMA_453_636;}
+define_attribute {n:puf_core/bank/N431} {PAP_FIXED_ROUTE} {Y1:CLMA_435_636;A_Y1:SRB_432_636;ZQNE[3]:SRB_432_636;IQNE[3]:SRB_444_654;ZDSE[3]:SRB_444_654;IDSE[3]:SRB_450_648;A_A2:SRB_450_648;A2:CLMA_453_648;}
+define_attribute {n:puf_core/bank/N438} {PAP_FIXED_ROUTE} {Y2:CLMA_435_636;A_Y2:SRB_432_636;ZDE[0]:SRB_432_636;IDE[0]:SRB_444_636;ZQN[0]:SRB_444_636;IQN[0]:SRB_444_672;ZSEA[0]:SRB_444_672;ISEA[0]:SRB_450_672;A_A5:SRB_450_672;A5:CLMA_453_672;}
+define_attribute {n:puf_core/bank/N445} {PAP_FIXED_ROUTE} {Y3:CLMS_423_637;S_Y3:SRB_420_636;ZQE[1]:SRB_420_636;IQE[1]:SRB_444_636;ZQN[1]:SRB_444_636;IQN[1]:SRB_444_672;ZQNE[1]:SRB_444_672;IQNE[1]:SRB_456_690;ZDNW[1]:SRB_456_690;IDNW[1]:SRB_450_696;A_A4:SRB_450_696;A4:CLMA_453_696;}
+define_attribute {n:puf_core/bank/osc[0].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_624;A_Y0:SRB_390_624;A_B4:SRB_390_624;B4:CLMA_393_624;}
+define_attribute {n:puf_core/bank/osc[0].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_624;A_Y1:SRB_390_624;A_C4:SRB_390_624;C4:CLMA_393_624;}
+define_attribute {n:puf_core/bank/osc[0].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_393_624;A_Y2:SRB_390_624;A_D4:SRB_390_624;D4:CLMA_393_624;}
+define_attribute {n:puf_core/bank/osc[0].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_393_624;A_Y3:SRB_390_624;S_A4:SRB_390_624;A4:CLMA_393_625;}
+define_attribute {n:puf_core/bank/osc[0].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_625;S_Y0:SRB_390_624;S_B5:SRB_390_624;B5:CLMA_393_625;}
+define_attribute {n:puf_core/bank/osc[0].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_625;S_Y1:SRB_390_624;S_C5:SRB_390_624;C5:CLMA_393_625;}
+define_attribute {n:puf_core/bank/osc[1].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_636;A_Y0:SRB_390_636;A_B4:SRB_390_636;B4:CLMA_393_636;}
+define_attribute {n:puf_core/bank/osc[1].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_636;A_Y1:SRB_390_636;A_C4:SRB_390_636;C4:CLMA_393_636;}
+define_attribute {n:puf_core/bank/osc[1].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_393_636;A_Y2:SRB_390_636;A_D4:SRB_390_636;D4:CLMA_393_636;}
+define_attribute {n:puf_core/bank/osc[1].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_393_636;A_Y3:SRB_390_636;S_A4:SRB_390_636;A4:CLMA_393_637;}
+define_attribute {n:puf_core/bank/osc[1].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_637;S_Y0:SRB_390_636;S_B5:SRB_390_636;B5:CLMA_393_637;}
+define_attribute {n:puf_core/bank/osc[1].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_637;S_Y1:SRB_390_636;S_C5:SRB_390_636;C5:CLMA_393_637;}
+define_attribute {n:puf_core/bank/osc[2].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_660;A_Y0:SRB_390_660;A_B4:SRB_390_660;B4:CLMA_393_660;}
+define_attribute {n:puf_core/bank/osc[2].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_660;A_Y1:SRB_390_660;A_C4:SRB_390_660;C4:CLMA_393_660;}
+define_attribute {n:puf_core/bank/osc[2].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_393_660;A_Y2:SRB_390_660;A_D4:SRB_390_660;D4:CLMA_393_660;}
+define_attribute {n:puf_core/bank/osc[2].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_393_660;A_Y3:SRB_390_660;S_A4:SRB_390_660;A4:CLMA_393_661;}
+define_attribute {n:puf_core/bank/osc[2].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_661;S_Y0:SRB_390_660;S_B5:SRB_390_660;B5:CLMA_393_661;}
+define_attribute {n:puf_core/bank/osc[2].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_661;S_Y1:SRB_390_660;S_C5:SRB_390_660;C5:CLMA_393_661;}
+define_attribute {n:puf_core/bank/osc[3].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_702;A_Y0:SRB_390_702;A_B4:SRB_390_702;B4:CLMA_393_702;}
+define_attribute {n:puf_core/bank/osc[3].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_702;A_Y1:SRB_390_702;A_C4:SRB_390_702;C4:CLMA_393_702;}
+define_attribute {n:puf_core/bank/osc[3].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_393_702;A_Y2:SRB_390_702;A_D4:SRB_390_702;D4:CLMA_393_702;}
+define_attribute {n:puf_core/bank/osc[3].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_393_702;A_Y3:SRB_390_702;S_A4:SRB_390_702;A4:CLMA_393_703;}
+define_attribute {n:puf_core/bank/osc[3].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_703;S_Y0:SRB_390_702;S_B5:SRB_390_702;B5:CLMA_393_703;}
+define_attribute {n:puf_core/bank/osc[3].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_703;S_Y1:SRB_390_702;S_C5:SRB_390_702;C5:CLMA_393_703;}
+define_attribute {n:puf_core/bank/osc[4].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_618;A_Y0:SRB_402_618;A_B4:SRB_402_618;B4:CLMA_405_618;}
+define_attribute {n:puf_core/bank/osc[4].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_618;A_Y1:SRB_402_618;A_C4:SRB_402_618;C4:CLMA_405_618;}
+define_attribute {n:puf_core/bank/osc[4].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_618;A_Y2:SRB_402_618;A_D4:SRB_402_618;D4:CLMA_405_618;}
+define_attribute {n:puf_core/bank/osc[4].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_618;A_Y3:SRB_402_618;S_A4:SRB_402_618;A4:CLMA_405_619;}
+define_attribute {n:puf_core/bank/osc[4].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_619;S_Y0:SRB_402_618;S_B5:SRB_402_618;B5:CLMA_405_619;}
+define_attribute {n:puf_core/bank/osc[4].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_619;S_Y1:SRB_402_618;S_C5:SRB_402_618;C5:CLMA_405_619;}
+define_attribute {n:puf_core/bank/osc[5].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_636;A_Y0:SRB_402_636;A_B4:SRB_402_636;B4:CLMA_405_636;}
+define_attribute {n:puf_core/bank/osc[5].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_636;A_Y1:SRB_402_636;A_C4:SRB_402_636;C4:CLMA_405_636;}
+define_attribute {n:puf_core/bank/osc[5].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_636;A_Y2:SRB_402_636;A_D4:SRB_402_636;D4:CLMA_405_636;}
+define_attribute {n:puf_core/bank/osc[5].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_636;A_Y3:SRB_402_636;S_A4:SRB_402_636;A4:CLMA_405_637;}
+define_attribute {n:puf_core/bank/osc[5].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_637;S_Y0:SRB_402_636;S_B5:SRB_402_636;B5:CLMA_405_637;}
+define_attribute {n:puf_core/bank/osc[5].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_637;S_Y1:SRB_402_636;S_C5:SRB_402_636;C5:CLMA_405_637;}
+define_attribute {n:puf_core/bank/osc[6].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_654;A_Y0:SRB_402_654;A_B4:SRB_402_654;B4:CLMA_405_654;}
+define_attribute {n:puf_core/bank/osc[6].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_654;A_Y1:SRB_402_654;A_C4:SRB_402_654;C4:CLMA_405_654;}
+define_attribute {n:puf_core/bank/osc[6].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_654;A_Y2:SRB_402_654;A_D4:SRB_402_654;D4:CLMA_405_654;}
+define_attribute {n:puf_core/bank/osc[6].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_654;A_Y3:SRB_402_654;S_A4:SRB_402_654;A4:CLMA_405_655;}
+define_attribute {n:puf_core/bank/osc[6].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_655;S_Y0:SRB_402_654;S_B5:SRB_402_654;B5:CLMA_405_655;}
+define_attribute {n:puf_core/bank/osc[6].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_655;S_Y1:SRB_402_654;S_C5:SRB_402_654;C5:CLMA_405_655;}
+define_attribute {n:puf_core/bank/osc[7].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_672;A_Y0:SRB_402_672;A_B4:SRB_402_672;B4:CLMA_405_672;}
+define_attribute {n:puf_core/bank/osc[7].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_672;A_Y1:SRB_402_672;A_C4:SRB_402_672;C4:CLMA_405_672;}
+define_attribute {n:puf_core/bank/osc[7].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_672;A_Y2:SRB_402_672;A_D4:SRB_402_672;D4:CLMA_405_672;}
+define_attribute {n:puf_core/bank/osc[7].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_672;A_Y3:SRB_402_672;S_A4:SRB_402_672;A4:CLMA_405_673;}
+define_attribute {n:puf_core/bank/osc[7].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_673;S_Y0:SRB_402_672;S_B5:SRB_402_672;B5:CLMA_405_673;}
+define_attribute {n:puf_core/bank/osc[7].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_673;S_Y1:SRB_402_672;S_C5:SRB_402_672;C5:CLMA_405_673;}
+define_attribute {n:puf_core/bank/osc[8].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_696;A_Y0:SRB_402_696;A_B4:SRB_402_696;B4:CLMA_405_696;}
+define_attribute {n:puf_core/bank/osc[8].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_696;A_Y1:SRB_402_696;A_C4:SRB_402_696;C4:CLMA_405_696;}
+define_attribute {n:puf_core/bank/osc[8].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_696;A_Y2:SRB_402_696;A_D4:SRB_402_696;D4:CLMA_405_696;}
+define_attribute {n:puf_core/bank/osc[8].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_696;A_Y3:SRB_402_696;S_A4:SRB_402_696;A4:CLMA_405_697;}
+define_attribute {n:puf_core/bank/osc[8].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_697;S_Y0:SRB_402_696;S_B5:SRB_402_696;B5:CLMA_405_697;}
+define_attribute {n:puf_core/bank/osc[8].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_697;S_Y1:SRB_402_696;S_C5:SRB_402_696;C5:CLMA_405_697;}
+define_attribute {n:puf_core/bank/osc[9].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_546;A_Y0:SRB_414_546;A_B4:SRB_414_546;B4:CLMA_417_546;}
+define_attribute {n:puf_core/bank/osc[9].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_546;A_Y1:SRB_414_546;A_C4:SRB_414_546;C4:CLMA_417_546;}
+define_attribute {n:puf_core/bank/osc[9].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_546;A_Y2:SRB_414_546;A_D4:SRB_414_546;D4:CLMA_417_546;}
+define_attribute {n:puf_core/bank/osc[9].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_546;A_Y3:SRB_414_546;S_A4:SRB_414_546;A4:CLMA_417_547;}
+define_attribute {n:puf_core/bank/osc[9].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_547;S_Y0:SRB_414_546;S_B5:SRB_414_546;B5:CLMA_417_547;}
+define_attribute {n:puf_core/bank/osc[9].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_547;S_Y1:SRB_414_546;S_C5:SRB_414_546;C5:CLMA_417_547;}
+define_attribute {n:puf_core/bank/osc[10].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_558;A_Y0:SRB_414_558;A_B4:SRB_414_558;B4:CLMA_417_558;}
+define_attribute {n:puf_core/bank/osc[10].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_558;A_Y1:SRB_414_558;A_C4:SRB_414_558;C4:CLMA_417_558;}
+define_attribute {n:puf_core/bank/osc[10].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_558;A_Y2:SRB_414_558;A_D4:SRB_414_558;D4:CLMA_417_558;}
+define_attribute {n:puf_core/bank/osc[10].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_558;A_Y3:SRB_414_558;S_A4:SRB_414_558;A4:CLMA_417_559;}
+define_attribute {n:puf_core/bank/osc[10].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_559;S_Y0:SRB_414_558;S_B5:SRB_414_558;B5:CLMA_417_559;}
+define_attribute {n:puf_core/bank/osc[10].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_559;S_Y1:SRB_414_558;S_C5:SRB_414_558;C5:CLMA_417_559;}
+define_attribute {n:puf_core/bank/osc[11].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_576;A_Y0:SRB_414_576;A_B4:SRB_414_576;B4:CLMA_417_576;}
+define_attribute {n:puf_core/bank/osc[11].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_576;A_Y1:SRB_414_576;A_C4:SRB_414_576;C4:CLMA_417_576;}
+define_attribute {n:puf_core/bank/osc[11].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_576;A_Y2:SRB_414_576;A_D4:SRB_414_576;D4:CLMA_417_576;}
+define_attribute {n:puf_core/bank/osc[11].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_576;A_Y3:SRB_414_576;S_A4:SRB_414_576;A4:CLMA_417_577;}
+define_attribute {n:puf_core/bank/osc[11].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_577;S_Y0:SRB_414_576;S_B5:SRB_414_576;B5:CLMA_417_577;}
+define_attribute {n:puf_core/bank/osc[11].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_577;S_Y1:SRB_414_576;S_C5:SRB_414_576;C5:CLMA_417_577;}
+define_attribute {n:puf_core/bank/osc[12].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_600;A_Y0:SRB_414_600;A_B4:SRB_414_600;B4:CLMA_417_600;}
+define_attribute {n:puf_core/bank/osc[12].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_600;A_Y1:SRB_414_600;A_C4:SRB_414_600;C4:CLMA_417_600;}
+define_attribute {n:puf_core/bank/osc[12].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_600;A_Y2:SRB_414_600;A_D4:SRB_414_600;D4:CLMA_417_600;}
+define_attribute {n:puf_core/bank/osc[12].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_600;A_Y3:SRB_414_600;S_A4:SRB_414_600;A4:CLMA_417_601;}
+define_attribute {n:puf_core/bank/osc[12].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_601;S_Y0:SRB_414_600;S_B5:SRB_414_600;B5:CLMA_417_601;}
+define_attribute {n:puf_core/bank/osc[12].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_601;S_Y1:SRB_414_600;S_C5:SRB_414_600;C5:CLMA_417_601;}
+define_attribute {n:puf_core/bank/osc[13].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_612;A_Y0:SRB_414_612;A_B4:SRB_414_612;B4:CLMA_417_612;}
+define_attribute {n:puf_core/bank/osc[13].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_612;A_Y1:SRB_414_612;A_C4:SRB_414_612;C4:CLMA_417_612;}
+define_attribute {n:puf_core/bank/osc[13].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_612;A_Y2:SRB_414_612;A_D4:SRB_414_612;D4:CLMA_417_612;}
+define_attribute {n:puf_core/bank/osc[13].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_612;A_Y3:SRB_414_612;S_A4:SRB_414_612;A4:CLMA_417_613;}
+define_attribute {n:puf_core/bank/osc[13].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_613;S_Y0:SRB_414_612;S_B5:SRB_414_612;B5:CLMA_417_613;}
+define_attribute {n:puf_core/bank/osc[13].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_613;S_Y1:SRB_414_612;S_C5:SRB_414_612;C5:CLMA_417_613;}
+define_attribute {n:puf_core/bank/osc[14].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_642;A_Y0:SRB_414_642;A_B4:SRB_414_642;B4:CLMA_417_642;}
+define_attribute {n:puf_core/bank/osc[14].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_642;A_Y1:SRB_414_642;A_C4:SRB_414_642;C4:CLMA_417_642;}
+define_attribute {n:puf_core/bank/osc[14].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_642;A_Y2:SRB_414_642;A_D4:SRB_414_642;D4:CLMA_417_642;}
+define_attribute {n:puf_core/bank/osc[14].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_642;A_Y3:SRB_414_642;S_A4:SRB_414_642;A4:CLMA_417_643;}
+define_attribute {n:puf_core/bank/osc[14].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_643;S_Y0:SRB_414_642;S_B5:SRB_414_642;B5:CLMA_417_643;}
+define_attribute {n:puf_core/bank/osc[14].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_643;S_Y1:SRB_414_642;S_C5:SRB_414_642;C5:CLMA_417_643;}
+define_attribute {n:puf_core/bank/osc[15].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_672;A_Y0:SRB_414_672;A_B4:SRB_414_672;B4:CLMA_417_672;}
+define_attribute {n:puf_core/bank/osc[15].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_672;A_Y1:SRB_414_672;A_C4:SRB_414_672;C4:CLMA_417_672;}
+define_attribute {n:puf_core/bank/osc[15].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_672;A_Y2:SRB_414_672;A_D4:SRB_414_672;D4:CLMA_417_672;}
+define_attribute {n:puf_core/bank/osc[15].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_672;A_Y3:SRB_414_672;S_A4:SRB_414_672;A4:CLMA_417_673;}
+define_attribute {n:puf_core/bank/osc[15].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_673;S_Y0:SRB_414_672;S_B5:SRB_414_672;B5:CLMA_417_673;}
+define_attribute {n:puf_core/bank/osc[15].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_673;S_Y1:SRB_414_672;S_C5:SRB_414_672;C5:CLMA_417_673;}
+define_attribute {n:puf_core/bank/osc[16].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_684;A_Y0:SRB_414_684;A_B4:SRB_414_684;B4:CLMA_417_684;}
+define_attribute {n:puf_core/bank/osc[16].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_684;A_Y1:SRB_414_684;A_C4:SRB_414_684;C4:CLMA_417_684;}
+define_attribute {n:puf_core/bank/osc[16].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_684;A_Y2:SRB_414_684;A_D4:SRB_414_684;D4:CLMA_417_684;}
+define_attribute {n:puf_core/bank/osc[16].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_684;A_Y3:SRB_414_684;S_A4:SRB_414_684;A4:CLMA_417_685;}
+define_attribute {n:puf_core/bank/osc[16].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_685;S_Y0:SRB_414_684;S_B5:SRB_414_684;B5:CLMA_417_685;}
+define_attribute {n:puf_core/bank/osc[16].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_685;S_Y1:SRB_414_684;S_C5:SRB_414_684;C5:CLMA_417_685;}
+define_attribute {n:puf_core/bank/osc[17].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_558;A_Y0:SRB_426_558;A_B4:SRB_426_558;B4:CLMA_429_558;}
+define_attribute {n:puf_core/bank/osc[17].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_558;A_Y1:SRB_426_558;A_C4:SRB_426_558;C4:CLMA_429_558;}
+define_attribute {n:puf_core/bank/osc[17].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_558;A_Y2:SRB_426_558;A_D4:SRB_426_558;D4:CLMA_429_558;}
+define_attribute {n:puf_core/bank/osc[17].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_558;A_Y3:SRB_426_558;S_A4:SRB_426_558;A4:CLMA_429_559;}
+define_attribute {n:puf_core/bank/osc[17].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_559;S_Y0:SRB_426_558;S_B5:SRB_426_558;B5:CLMA_429_559;}
+define_attribute {n:puf_core/bank/osc[17].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_559;S_Y1:SRB_426_558;S_C5:SRB_426_558;C5:CLMA_429_559;}
+define_attribute {n:puf_core/bank/osc[18].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_576;A_Y0:SRB_426_576;A_B4:SRB_426_576;B4:CLMA_429_576;}
+define_attribute {n:puf_core/bank/osc[18].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_576;A_Y1:SRB_426_576;A_C4:SRB_426_576;C4:CLMA_429_576;}
+define_attribute {n:puf_core/bank/osc[18].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_576;A_Y2:SRB_426_576;A_D4:SRB_426_576;D4:CLMA_429_576;}
+define_attribute {n:puf_core/bank/osc[18].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_576;A_Y3:SRB_426_576;S_A4:SRB_426_576;A4:CLMA_429_577;}
+define_attribute {n:puf_core/bank/osc[18].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_577;S_Y0:SRB_426_576;S_B5:SRB_426_576;B5:CLMA_429_577;}
+define_attribute {n:puf_core/bank/osc[18].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_577;S_Y1:SRB_426_576;S_C5:SRB_426_576;C5:CLMA_429_577;}
+define_attribute {n:puf_core/bank/osc[19].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_594;A_Y0:SRB_426_594;A_B4:SRB_426_594;B4:CLMA_429_594;}
+define_attribute {n:puf_core/bank/osc[19].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_594;A_Y1:SRB_426_594;A_C4:SRB_426_594;C4:CLMA_429_594;}
+define_attribute {n:puf_core/bank/osc[19].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_594;A_Y2:SRB_426_594;A_D4:SRB_426_594;D4:CLMA_429_594;}
+define_attribute {n:puf_core/bank/osc[19].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_594;A_Y3:SRB_426_594;S_A4:SRB_426_594;A4:CLMA_429_595;}
+define_attribute {n:puf_core/bank/osc[19].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_595;S_Y0:SRB_426_594;S_B5:SRB_426_594;B5:CLMA_429_595;}
+define_attribute {n:puf_core/bank/osc[19].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_595;S_Y1:SRB_426_594;S_C5:SRB_426_594;C5:CLMA_429_595;}
+define_attribute {n:puf_core/bank/osc[20].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_612;A_Y0:SRB_426_612;A_B4:SRB_426_612;B4:CLMA_429_612;}
+define_attribute {n:puf_core/bank/osc[20].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_612;A_Y1:SRB_426_612;A_C4:SRB_426_612;C4:CLMA_429_612;}
+define_attribute {n:puf_core/bank/osc[20].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_612;A_Y2:SRB_426_612;A_D4:SRB_426_612;D4:CLMA_429_612;}
+define_attribute {n:puf_core/bank/osc[20].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_612;A_Y3:SRB_426_612;S_A4:SRB_426_612;A4:CLMA_429_613;}
+define_attribute {n:puf_core/bank/osc[20].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_613;S_Y0:SRB_426_612;S_B5:SRB_426_612;B5:CLMA_429_613;}
+define_attribute {n:puf_core/bank/osc[20].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_613;S_Y1:SRB_426_612;S_C5:SRB_426_612;C5:CLMA_429_613;}
+define_attribute {n:puf_core/bank/osc[21].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_636;A_Y0:SRB_426_636;A_B4:SRB_426_636;B4:CLMA_429_636;}
+define_attribute {n:puf_core/bank/osc[21].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_636;A_Y1:SRB_426_636;A_C4:SRB_426_636;C4:CLMA_429_636;}
+define_attribute {n:puf_core/bank/osc[21].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_636;A_Y2:SRB_426_636;A_D4:SRB_426_636;D4:CLMA_429_636;}
+define_attribute {n:puf_core/bank/osc[21].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_636;A_Y3:SRB_426_636;S_A4:SRB_426_636;A4:CLMA_429_637;}
+define_attribute {n:puf_core/bank/osc[21].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_637;S_Y0:SRB_426_636;S_B5:SRB_426_636;B5:CLMA_429_637;}
+define_attribute {n:puf_core/bank/osc[21].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_637;S_Y1:SRB_426_636;S_C5:SRB_426_636;C5:CLMA_429_637;}
+define_attribute {n:puf_core/bank/osc[22].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_648;A_Y0:SRB_426_648;A_B4:SRB_426_648;B4:CLMA_429_648;}
+define_attribute {n:puf_core/bank/osc[22].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_648;A_Y1:SRB_426_648;A_C4:SRB_426_648;C4:CLMA_429_648;}
+define_attribute {n:puf_core/bank/osc[22].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_648;A_Y2:SRB_426_648;A_D4:SRB_426_648;D4:CLMA_429_648;}
+define_attribute {n:puf_core/bank/osc[22].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_648;A_Y3:SRB_426_648;S_A4:SRB_426_648;A4:CLMA_429_649;}
+define_attribute {n:puf_core/bank/osc[22].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_649;S_Y0:SRB_426_648;S_B5:SRB_426_648;B5:CLMA_429_649;}
+define_attribute {n:puf_core/bank/osc[22].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_649;S_Y1:SRB_426_648;S_C5:SRB_426_648;C5:CLMA_429_649;}
+define_attribute {n:puf_core/bank/osc[23].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_666;A_Y0:SRB_426_666;A_B4:SRB_426_666;B4:CLMA_429_666;}
+define_attribute {n:puf_core/bank/osc[23].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_666;A_Y1:SRB_426_666;A_C4:SRB_426_666;C4:CLMA_429_666;}
+define_attribute {n:puf_core/bank/osc[23].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_666;A_Y2:SRB_426_666;A_D4:SRB_426_666;D4:CLMA_429_666;}
+define_attribute {n:puf_core/bank/osc[23].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_666;A_Y3:SRB_426_666;S_A4:SRB_426_666;A4:CLMA_429_667;}
+define_attribute {n:puf_core/bank/osc[23].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_667;S_Y0:SRB_426_666;S_B5:SRB_426_666;B5:CLMA_429_667;}
+define_attribute {n:puf_core/bank/osc[23].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_667;S_Y1:SRB_426_666;S_C5:SRB_426_666;C5:CLMA_429_667;}
+define_attribute {n:puf_core/bank/osc[24].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_684;A_Y0:SRB_426_684;A_B4:SRB_426_684;B4:CLMA_429_684;}
+define_attribute {n:puf_core/bank/osc[24].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_684;A_Y1:SRB_426_684;A_C4:SRB_426_684;C4:CLMA_429_684;}
+define_attribute {n:puf_core/bank/osc[24].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_684;A_Y2:SRB_426_684;A_D4:SRB_426_684;D4:CLMA_429_684;}
+define_attribute {n:puf_core/bank/osc[24].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_684;A_Y3:SRB_426_684;S_A4:SRB_426_684;A4:CLMA_429_685;}
+define_attribute {n:puf_core/bank/osc[24].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_685;S_Y0:SRB_426_684;S_B5:SRB_426_684;B5:CLMA_429_685;}
+define_attribute {n:puf_core/bank/osc[24].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_685;S_Y1:SRB_426_684;S_C5:SRB_426_684;C5:CLMA_429_685;}
+define_attribute {n:puf_core/bank/osc[25].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_696;A_Y0:SRB_426_696;A_B4:SRB_426_696;B4:CLMA_429_696;}
+define_attribute {n:puf_core/bank/osc[25].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_696;A_Y1:SRB_426_696;A_C4:SRB_426_696;C4:CLMA_429_696;}
+define_attribute {n:puf_core/bank/osc[25].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_696;A_Y2:SRB_426_696;A_D4:SRB_426_696;D4:CLMA_429_696;}
+define_attribute {n:puf_core/bank/osc[25].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_696;A_Y3:SRB_426_696;S_A4:SRB_426_696;A4:CLMA_429_697;}
+define_attribute {n:puf_core/bank/osc[25].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_697;S_Y0:SRB_426_696;S_B5:SRB_426_696;B5:CLMA_429_697;}
+define_attribute {n:puf_core/bank/osc[25].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_697;S_Y1:SRB_426_696;S_C5:SRB_426_696;C5:CLMA_429_697;}
+define_attribute {n:puf_core/bank/osc[26].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_588;A_Y0:SRB_450_588;A_B4:SRB_450_588;B4:CLMA_453_588;}
+define_attribute {n:puf_core/bank/osc[26].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_588;A_Y1:SRB_450_588;A_C4:SRB_450_588;C4:CLMA_453_588;}
+define_attribute {n:puf_core/bank/osc[26].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_588;A_Y2:SRB_450_588;A_D4:SRB_450_588;D4:CLMA_453_588;}
+define_attribute {n:puf_core/bank/osc[26].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_588;A_Y3:SRB_450_588;S_A4:SRB_450_588;A4:CLMA_453_589;}
+define_attribute {n:puf_core/bank/osc[26].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_589;S_Y0:SRB_450_588;S_B5:SRB_450_588;B5:CLMA_453_589;}
+define_attribute {n:puf_core/bank/osc[26].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_589;S_Y1:SRB_450_588;S_C5:SRB_450_588;C5:CLMA_453_589;}
+define_attribute {n:puf_core/bank/osc[27].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_606;A_Y0:SRB_450_606;A_B4:SRB_450_606;B4:CLMA_453_606;}
+define_attribute {n:puf_core/bank/osc[27].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_606;A_Y1:SRB_450_606;A_C4:SRB_450_606;C4:CLMA_453_606;}
+define_attribute {n:puf_core/bank/osc[27].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_606;A_Y2:SRB_450_606;A_D4:SRB_450_606;D4:CLMA_453_606;}
+define_attribute {n:puf_core/bank/osc[27].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_606;A_Y3:SRB_450_606;S_A4:SRB_450_606;A4:CLMA_453_607;}
+define_attribute {n:puf_core/bank/osc[27].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_607;S_Y0:SRB_450_606;S_B5:SRB_450_606;B5:CLMA_453_607;}
+define_attribute {n:puf_core/bank/osc[27].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_607;S_Y1:SRB_450_606;S_C5:SRB_450_606;C5:CLMA_453_607;}
+define_attribute {n:puf_core/bank/osc[28].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_618;A_Y0:SRB_450_618;A_B4:SRB_450_618;B4:CLMA_453_618;}
+define_attribute {n:puf_core/bank/osc[28].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_618;A_Y1:SRB_450_618;A_C4:SRB_450_618;C4:CLMA_453_618;}
+define_attribute {n:puf_core/bank/osc[28].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_618;A_Y2:SRB_450_618;A_D4:SRB_450_618;D4:CLMA_453_618;}
+define_attribute {n:puf_core/bank/osc[28].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_618;A_Y3:SRB_450_618;S_A4:SRB_450_618;A4:CLMA_453_619;}
+define_attribute {n:puf_core/bank/osc[28].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_619;S_Y0:SRB_450_618;S_B5:SRB_450_618;B5:CLMA_453_619;}
+define_attribute {n:puf_core/bank/osc[28].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_619;S_Y1:SRB_450_618;S_C5:SRB_450_618;C5:CLMA_453_619;}
+define_attribute {n:puf_core/bank/osc[29].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_642;A_Y0:SRB_450_642;A_B4:SRB_450_642;B4:CLMA_453_642;}
+define_attribute {n:puf_core/bank/osc[29].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_642;A_Y1:SRB_450_642;A_C4:SRB_450_642;C4:CLMA_453_642;}
+define_attribute {n:puf_core/bank/osc[29].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_642;A_Y2:SRB_450_642;A_D4:SRB_450_642;D4:CLMA_453_642;}
+define_attribute {n:puf_core/bank/osc[29].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_642;A_Y3:SRB_450_642;S_A4:SRB_450_642;A4:CLMA_453_643;}
+define_attribute {n:puf_core/bank/osc[29].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_643;S_Y0:SRB_450_642;S_B5:SRB_450_642;B5:CLMA_453_643;}
+define_attribute {n:puf_core/bank/osc[29].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_643;S_Y1:SRB_450_642;S_C5:SRB_450_642;C5:CLMA_453_643;}
+define_attribute {n:puf_core/bank/osc[30].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_666;A_Y0:SRB_450_666;A_B4:SRB_450_666;B4:CLMA_453_666;}
+define_attribute {n:puf_core/bank/osc[30].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_666;A_Y1:SRB_450_666;A_C4:SRB_450_666;C4:CLMA_453_666;}
+define_attribute {n:puf_core/bank/osc[30].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_666;A_Y2:SRB_450_666;A_D4:SRB_450_666;D4:CLMA_453_666;}
+define_attribute {n:puf_core/bank/osc[30].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_666;A_Y3:SRB_450_666;S_A4:SRB_450_666;A4:CLMA_453_667;}
+define_attribute {n:puf_core/bank/osc[30].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_667;S_Y0:SRB_450_666;S_B5:SRB_450_666;B5:CLMA_453_667;}
+define_attribute {n:puf_core/bank/osc[30].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_667;S_Y1:SRB_450_666;S_C5:SRB_450_666;C5:CLMA_453_667;}
+define_attribute {n:puf_core/bank/osc[31].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_684;A_Y0:SRB_450_684;A_B4:SRB_450_684;B4:CLMA_453_684;}
+define_attribute {n:puf_core/bank/osc[31].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_684;A_Y1:SRB_450_684;A_C4:SRB_450_684;C4:CLMA_453_684;}
+define_attribute {n:puf_core/bank/osc[31].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_684;A_Y2:SRB_450_684;A_D4:SRB_450_684;D4:CLMA_453_684;}
+define_attribute {n:puf_core/bank/osc[31].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_684;A_Y3:SRB_450_684;S_A4:SRB_450_684;A4:CLMA_453_685;}
+define_attribute {n:puf_core/bank/osc[31].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_685;S_Y0:SRB_450_684;S_B5:SRB_450_684;B5:CLMA_453_685;}
+define_attribute {n:puf_core/bank/osc[31].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_685;S_Y1:SRB_450_684;S_C5:SRB_450_684;C5:CLMA_453_685;}
+define_attribute {n:puf_core/bank/osc[32].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_630;A_Y0:SRB_390_630;A_B4:SRB_390_630;B4:CLMA_393_630;}
+define_attribute {n:puf_core/bank/osc[32].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_630;A_Y1:SRB_390_630;A_C4:SRB_390_630;C4:CLMA_393_630;}
+define_attribute {n:puf_core/bank/osc[32].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_393_630;A_Y2:SRB_390_630;A_D4:SRB_390_630;D4:CLMA_393_630;}
+define_attribute {n:puf_core/bank/osc[32].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_393_630;A_Y3:SRB_390_630;S_A4:SRB_390_630;A4:CLMA_393_631;}
+define_attribute {n:puf_core/bank/osc[32].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_631;S_Y0:SRB_390_630;S_B5:SRB_390_630;B5:CLMA_393_631;}
+define_attribute {n:puf_core/bank/osc[32].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_631;S_Y1:SRB_390_630;S_C5:SRB_390_630;C5:CLMA_393_631;}
+define_attribute {n:puf_core/bank/osc[33].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_654;A_Y0:SRB_390_654;A_B4:SRB_390_654;B4:CLMA_393_654;}
+define_attribute {n:puf_core/bank/osc[33].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_654;A_Y1:SRB_390_654;A_C4:SRB_390_654;C4:CLMA_393_654;}
+define_attribute {n:puf_core/bank/osc[33].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_393_654;A_Y2:SRB_390_654;A_D4:SRB_390_654;D4:CLMA_393_654;}
+define_attribute {n:puf_core/bank/osc[33].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_393_654;A_Y3:SRB_390_654;S_A4:SRB_390_654;A4:CLMA_393_655;}
+define_attribute {n:puf_core/bank/osc[33].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_655;S_Y0:SRB_390_654;S_B5:SRB_390_654;B5:CLMA_393_655;}
+define_attribute {n:puf_core/bank/osc[33].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_655;S_Y1:SRB_390_654;S_C5:SRB_390_654;C5:CLMA_393_655;}
+define_attribute {n:puf_core/bank/osc[34].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_678;A_Y0:SRB_390_678;A_B4:SRB_390_678;B4:CLMA_393_678;}
+define_attribute {n:puf_core/bank/osc[34].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_678;A_Y1:SRB_390_678;A_C4:SRB_390_678;C4:CLMA_393_678;}
+define_attribute {n:puf_core/bank/osc[34].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_393_678;A_Y2:SRB_390_678;A_D4:SRB_390_678;D4:CLMA_393_678;}
+define_attribute {n:puf_core/bank/osc[34].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_393_678;A_Y3:SRB_390_678;S_A4:SRB_390_678;A4:CLMA_393_679;}
+define_attribute {n:puf_core/bank/osc[34].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_393_679;S_Y0:SRB_390_678;S_B5:SRB_390_678;B5:CLMA_393_679;}
+define_attribute {n:puf_core/bank/osc[34].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_393_679;S_Y1:SRB_390_678;S_C5:SRB_390_678;C5:CLMA_393_679;}
+define_attribute {n:puf_core/bank/osc[35].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_612;A_Y0:SRB_402_612;A_B4:SRB_402_612;B4:CLMA_405_612;}
+define_attribute {n:puf_core/bank/osc[35].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_612;A_Y1:SRB_402_612;A_C4:SRB_402_612;C4:CLMA_405_612;}
+define_attribute {n:puf_core/bank/osc[35].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_612;A_Y2:SRB_402_612;A_D4:SRB_402_612;D4:CLMA_405_612;}
+define_attribute {n:puf_core/bank/osc[35].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_612;A_Y3:SRB_402_612;S_A4:SRB_402_612;A4:CLMA_405_613;}
+define_attribute {n:puf_core/bank/osc[35].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_613;S_Y0:SRB_402_612;S_B5:SRB_402_612;B5:CLMA_405_613;}
+define_attribute {n:puf_core/bank/osc[35].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_613;S_Y1:SRB_402_612;S_C5:SRB_402_612;C5:CLMA_405_613;}
+define_attribute {n:puf_core/bank/osc[36].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_630;A_Y0:SRB_402_630;A_B4:SRB_402_630;B4:CLMA_405_630;}
+define_attribute {n:puf_core/bank/osc[36].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_630;A_Y1:SRB_402_630;A_C4:SRB_402_630;C4:CLMA_405_630;}
+define_attribute {n:puf_core/bank/osc[36].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_630;A_Y2:SRB_402_630;A_D4:SRB_402_630;D4:CLMA_405_630;}
+define_attribute {n:puf_core/bank/osc[36].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_630;A_Y3:SRB_402_630;S_A4:SRB_402_630;A4:CLMA_405_631;}
+define_attribute {n:puf_core/bank/osc[36].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_631;S_Y0:SRB_402_630;S_B5:SRB_402_630;B5:CLMA_405_631;}
+define_attribute {n:puf_core/bank/osc[36].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_631;S_Y1:SRB_402_630;S_C5:SRB_402_630;C5:CLMA_405_631;}
+define_attribute {n:puf_core/bank/osc[37].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_642;A_Y0:SRB_402_642;A_B4:SRB_402_642;B4:CLMA_405_642;}
+define_attribute {n:puf_core/bank/osc[37].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_642;A_Y1:SRB_402_642;A_C4:SRB_402_642;C4:CLMA_405_642;}
+define_attribute {n:puf_core/bank/osc[37].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_642;A_Y2:SRB_402_642;A_D4:SRB_402_642;D4:CLMA_405_642;}
+define_attribute {n:puf_core/bank/osc[37].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_642;A_Y3:SRB_402_642;S_A4:SRB_402_642;A4:CLMA_405_643;}
+define_attribute {n:puf_core/bank/osc[37].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_643;S_Y0:SRB_402_642;S_B5:SRB_402_642;B5:CLMA_405_643;}
+define_attribute {n:puf_core/bank/osc[37].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_643;S_Y1:SRB_402_642;S_C5:SRB_402_642;C5:CLMA_405_643;}
+define_attribute {n:puf_core/bank/osc[38].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_666;A_Y0:SRB_402_666;A_B4:SRB_402_666;B4:CLMA_405_666;}
+define_attribute {n:puf_core/bank/osc[38].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_666;A_Y1:SRB_402_666;A_C4:SRB_402_666;C4:CLMA_405_666;}
+define_attribute {n:puf_core/bank/osc[38].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_666;A_Y2:SRB_402_666;A_D4:SRB_402_666;D4:CLMA_405_666;}
+define_attribute {n:puf_core/bank/osc[38].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_666;A_Y3:SRB_402_666;S_A4:SRB_402_666;A4:CLMA_405_667;}
+define_attribute {n:puf_core/bank/osc[38].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_667;S_Y0:SRB_402_666;S_B5:SRB_402_666;B5:CLMA_405_667;}
+define_attribute {n:puf_core/bank/osc[38].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_667;S_Y1:SRB_402_666;S_C5:SRB_402_666;C5:CLMA_405_667;}
+define_attribute {n:puf_core/bank/osc[39].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_690;A_Y0:SRB_402_690;A_B4:SRB_402_690;B4:CLMA_405_690;}
+define_attribute {n:puf_core/bank/osc[39].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_690;A_Y1:SRB_402_690;A_C4:SRB_402_690;C4:CLMA_405_690;}
+define_attribute {n:puf_core/bank/osc[39].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_690;A_Y2:SRB_402_690;A_D4:SRB_402_690;D4:CLMA_405_690;}
+define_attribute {n:puf_core/bank/osc[39].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_690;A_Y3:SRB_402_690;S_A4:SRB_402_690;A4:CLMA_405_691;}
+define_attribute {n:puf_core/bank/osc[39].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_691;S_Y0:SRB_402_690;S_B5:SRB_402_690;B5:CLMA_405_691;}
+define_attribute {n:puf_core/bank/osc[39].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_691;S_Y1:SRB_402_690;S_C5:SRB_402_690;C5:CLMA_405_691;}
+define_attribute {n:puf_core/bank/osc[40].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_702;A_Y0:SRB_402_702;A_B4:SRB_402_702;B4:CLMA_405_702;}
+define_attribute {n:puf_core/bank/osc[40].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_702;A_Y1:SRB_402_702;A_C4:SRB_402_702;C4:CLMA_405_702;}
+define_attribute {n:puf_core/bank/osc[40].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_405_702;A_Y2:SRB_402_702;A_D4:SRB_402_702;D4:CLMA_405_702;}
+define_attribute {n:puf_core/bank/osc[40].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_405_702;A_Y3:SRB_402_702;S_A4:SRB_402_702;A4:CLMA_405_703;}
+define_attribute {n:puf_core/bank/osc[40].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_405_703;S_Y0:SRB_402_702;S_B5:SRB_402_702;B5:CLMA_405_703;}
+define_attribute {n:puf_core/bank/osc[40].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_405_703;S_Y1:SRB_402_702;S_C5:SRB_402_702;C5:CLMA_405_703;}
+define_attribute {n:puf_core/bank/osc[41].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_552;A_Y0:SRB_414_552;A_B4:SRB_414_552;B4:CLMA_417_552;}
+define_attribute {n:puf_core/bank/osc[41].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_552;A_Y1:SRB_414_552;A_C4:SRB_414_552;C4:CLMA_417_552;}
+define_attribute {n:puf_core/bank/osc[41].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_552;A_Y2:SRB_414_552;A_D4:SRB_414_552;D4:CLMA_417_552;}
+define_attribute {n:puf_core/bank/osc[41].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_552;A_Y3:SRB_414_552;S_A4:SRB_414_552;A4:CLMA_417_553;}
+define_attribute {n:puf_core/bank/osc[41].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_553;S_Y0:SRB_414_552;S_B5:SRB_414_552;B5:CLMA_417_553;}
+define_attribute {n:puf_core/bank/osc[41].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_553;S_Y1:SRB_414_552;S_C5:SRB_414_552;C5:CLMA_417_553;}
+define_attribute {n:puf_core/bank/osc[42].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_570;A_Y0:SRB_414_570;A_B4:SRB_414_570;B4:CLMA_417_570;}
+define_attribute {n:puf_core/bank/osc[42].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_570;A_Y1:SRB_414_570;A_C4:SRB_414_570;C4:CLMA_417_570;}
+define_attribute {n:puf_core/bank/osc[42].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_570;A_Y2:SRB_414_570;A_D4:SRB_414_570;D4:CLMA_417_570;}
+define_attribute {n:puf_core/bank/osc[42].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_570;A_Y3:SRB_414_570;S_A4:SRB_414_570;A4:CLMA_417_571;}
+define_attribute {n:puf_core/bank/osc[42].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_571;S_Y0:SRB_414_570;S_B5:SRB_414_570;B5:CLMA_417_571;}
+define_attribute {n:puf_core/bank/osc[42].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_571;S_Y1:SRB_414_570;S_C5:SRB_414_570;C5:CLMA_417_571;}
+define_attribute {n:puf_core/bank/osc[43].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_582;A_Y0:SRB_414_582;A_B4:SRB_414_582;B4:CLMA_417_582;}
+define_attribute {n:puf_core/bank/osc[43].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_582;A_Y1:SRB_414_582;A_C4:SRB_414_582;C4:CLMA_417_582;}
+define_attribute {n:puf_core/bank/osc[43].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_582;A_Y2:SRB_414_582;A_D4:SRB_414_582;D4:CLMA_417_582;}
+define_attribute {n:puf_core/bank/osc[43].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_582;A_Y3:SRB_414_582;S_A4:SRB_414_582;A4:CLMA_417_583;}
+define_attribute {n:puf_core/bank/osc[43].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_583;S_Y0:SRB_414_582;S_B5:SRB_414_582;B5:CLMA_417_583;}
+define_attribute {n:puf_core/bank/osc[43].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_583;S_Y1:SRB_414_582;S_C5:SRB_414_582;C5:CLMA_417_583;}
+define_attribute {n:puf_core/bank/osc[44].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_606;A_Y0:SRB_414_606;A_B4:SRB_414_606;B4:CLMA_417_606;}
+define_attribute {n:puf_core/bank/osc[44].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_606;A_Y1:SRB_414_606;A_C4:SRB_414_606;C4:CLMA_417_606;}
+define_attribute {n:puf_core/bank/osc[44].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_606;A_Y2:SRB_414_606;A_D4:SRB_414_606;D4:CLMA_417_606;}
+define_attribute {n:puf_core/bank/osc[44].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_606;A_Y3:SRB_414_606;S_A4:SRB_414_606;A4:CLMA_417_607;}
+define_attribute {n:puf_core/bank/osc[44].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_607;S_Y0:SRB_414_606;S_B5:SRB_414_606;B5:CLMA_417_607;}
+define_attribute {n:puf_core/bank/osc[44].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_607;S_Y1:SRB_414_606;S_C5:SRB_414_606;C5:CLMA_417_607;}
+define_attribute {n:puf_core/bank/osc[45].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_630;A_Y0:SRB_414_630;A_B4:SRB_414_630;B4:CLMA_417_630;}
+define_attribute {n:puf_core/bank/osc[45].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_630;A_Y1:SRB_414_630;A_C4:SRB_414_630;C4:CLMA_417_630;}
+define_attribute {n:puf_core/bank/osc[45].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_630;A_Y2:SRB_414_630;A_D4:SRB_414_630;D4:CLMA_417_630;}
+define_attribute {n:puf_core/bank/osc[45].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_630;A_Y3:SRB_414_630;S_A4:SRB_414_630;A4:CLMA_417_631;}
+define_attribute {n:puf_core/bank/osc[45].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_631;S_Y0:SRB_414_630;S_B5:SRB_414_630;B5:CLMA_417_631;}
+define_attribute {n:puf_core/bank/osc[45].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_631;S_Y1:SRB_414_630;S_C5:SRB_414_630;C5:CLMA_417_631;}
+define_attribute {n:puf_core/bank/osc[46].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_648;A_Y0:SRB_414_648;A_B4:SRB_414_648;B4:CLMA_417_648;}
+define_attribute {n:puf_core/bank/osc[46].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_648;A_Y1:SRB_414_648;A_C4:SRB_414_648;C4:CLMA_417_648;}
+define_attribute {n:puf_core/bank/osc[46].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_648;A_Y2:SRB_414_648;A_D4:SRB_414_648;D4:CLMA_417_648;}
+define_attribute {n:puf_core/bank/osc[46].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_648;A_Y3:SRB_414_648;S_A4:SRB_414_648;A4:CLMA_417_649;}
+define_attribute {n:puf_core/bank/osc[46].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_649;S_Y0:SRB_414_648;S_B5:SRB_414_648;B5:CLMA_417_649;}
+define_attribute {n:puf_core/bank/osc[46].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_649;S_Y1:SRB_414_648;S_C5:SRB_414_648;C5:CLMA_417_649;}
+define_attribute {n:puf_core/bank/osc[47].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_678;A_Y0:SRB_414_678;A_B4:SRB_414_678;B4:CLMA_417_678;}
+define_attribute {n:puf_core/bank/osc[47].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_678;A_Y1:SRB_414_678;A_C4:SRB_414_678;C4:CLMA_417_678;}
+define_attribute {n:puf_core/bank/osc[47].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_678;A_Y2:SRB_414_678;A_D4:SRB_414_678;D4:CLMA_417_678;}
+define_attribute {n:puf_core/bank/osc[47].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_678;A_Y3:SRB_414_678;S_A4:SRB_414_678;A4:CLMA_417_679;}
+define_attribute {n:puf_core/bank/osc[47].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_679;S_Y0:SRB_414_678;S_B5:SRB_414_678;B5:CLMA_417_679;}
+define_attribute {n:puf_core/bank/osc[47].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_679;S_Y1:SRB_414_678;S_C5:SRB_414_678;C5:CLMA_417_679;}
+define_attribute {n:puf_core/bank/osc[48].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_708;A_Y0:SRB_414_708;A_B4:SRB_414_708;B4:CLMA_417_708;}
+define_attribute {n:puf_core/bank/osc[48].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_708;A_Y1:SRB_414_708;A_C4:SRB_414_708;C4:CLMA_417_708;}
+define_attribute {n:puf_core/bank/osc[48].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_417_708;A_Y2:SRB_414_708;A_D4:SRB_414_708;D4:CLMA_417_708;}
+define_attribute {n:puf_core/bank/osc[48].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_417_708;A_Y3:SRB_414_708;S_A4:SRB_414_708;A4:CLMA_417_709;}
+define_attribute {n:puf_core/bank/osc[48].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_417_709;S_Y0:SRB_414_708;S_B5:SRB_414_708;B5:CLMA_417_709;}
+define_attribute {n:puf_core/bank/osc[48].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_417_709;S_Y1:SRB_414_708;S_C5:SRB_414_708;C5:CLMA_417_709;}
+define_attribute {n:puf_core/bank/osc[49].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_564;A_Y0:SRB_426_564;A_B4:SRB_426_564;B4:CLMA_429_564;}
+define_attribute {n:puf_core/bank/osc[49].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_564;A_Y1:SRB_426_564;A_C4:SRB_426_564;C4:CLMA_429_564;}
+define_attribute {n:puf_core/bank/osc[49].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_564;A_Y2:SRB_426_564;A_D4:SRB_426_564;D4:CLMA_429_564;}
+define_attribute {n:puf_core/bank/osc[49].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_564;A_Y3:SRB_426_564;S_A4:SRB_426_564;A4:CLMA_429_565;}
+define_attribute {n:puf_core/bank/osc[49].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_565;S_Y0:SRB_426_564;S_B5:SRB_426_564;B5:CLMA_429_565;}
+define_attribute {n:puf_core/bank/osc[49].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_565;S_Y1:SRB_426_564;S_C5:SRB_426_564;C5:CLMA_429_565;}
+define_attribute {n:puf_core/bank/osc[50].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_588;A_Y0:SRB_426_588;A_B4:SRB_426_588;B4:CLMA_429_588;}
+define_attribute {n:puf_core/bank/osc[50].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_588;A_Y1:SRB_426_588;A_C4:SRB_426_588;C4:CLMA_429_588;}
+define_attribute {n:puf_core/bank/osc[50].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_588;A_Y2:SRB_426_588;A_D4:SRB_426_588;D4:CLMA_429_588;}
+define_attribute {n:puf_core/bank/osc[50].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_588;A_Y3:SRB_426_588;S_A4:SRB_426_588;A4:CLMA_429_589;}
+define_attribute {n:puf_core/bank/osc[50].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_589;S_Y0:SRB_426_588;S_B5:SRB_426_588;B5:CLMA_429_589;}
+define_attribute {n:puf_core/bank/osc[50].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_589;S_Y1:SRB_426_588;S_C5:SRB_426_588;C5:CLMA_429_589;}
+define_attribute {n:puf_core/bank/osc[51].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_606;A_Y0:SRB_426_606;A_B4:SRB_426_606;B4:CLMA_429_606;}
+define_attribute {n:puf_core/bank/osc[51].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_606;A_Y1:SRB_426_606;A_C4:SRB_426_606;C4:CLMA_429_606;}
+define_attribute {n:puf_core/bank/osc[51].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_606;A_Y2:SRB_426_606;A_D4:SRB_426_606;D4:CLMA_429_606;}
+define_attribute {n:puf_core/bank/osc[51].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_606;A_Y3:SRB_426_606;S_A4:SRB_426_606;A4:CLMA_429_607;}
+define_attribute {n:puf_core/bank/osc[51].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_607;S_Y0:SRB_426_606;S_B5:SRB_426_606;B5:CLMA_429_607;}
+define_attribute {n:puf_core/bank/osc[51].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_607;S_Y1:SRB_426_606;S_C5:SRB_426_606;C5:CLMA_429_607;}
+define_attribute {n:puf_core/bank/osc[52].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_624;A_Y0:SRB_426_624;A_B4:SRB_426_624;B4:CLMA_429_624;}
+define_attribute {n:puf_core/bank/osc[52].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_624;A_Y1:SRB_426_624;A_C4:SRB_426_624;C4:CLMA_429_624;}
+define_attribute {n:puf_core/bank/osc[52].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_624;A_Y2:SRB_426_624;A_D4:SRB_426_624;D4:CLMA_429_624;}
+define_attribute {n:puf_core/bank/osc[52].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_624;A_Y3:SRB_426_624;S_A4:SRB_426_624;A4:CLMA_429_625;}
+define_attribute {n:puf_core/bank/osc[52].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_625;S_Y0:SRB_426_624;S_B5:SRB_426_624;B5:CLMA_429_625;}
+define_attribute {n:puf_core/bank/osc[52].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_625;S_Y1:SRB_426_624;S_C5:SRB_426_624;C5:CLMA_429_625;}
+define_attribute {n:puf_core/bank/osc[53].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_642;A_Y0:SRB_426_642;A_B4:SRB_426_642;B4:CLMA_429_642;}
+define_attribute {n:puf_core/bank/osc[53].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_642;A_Y1:SRB_426_642;A_C4:SRB_426_642;C4:CLMA_429_642;}
+define_attribute {n:puf_core/bank/osc[53].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_642;A_Y2:SRB_426_642;A_D4:SRB_426_642;D4:CLMA_429_642;}
+define_attribute {n:puf_core/bank/osc[53].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_642;A_Y3:SRB_426_642;S_A4:SRB_426_642;A4:CLMA_429_643;}
+define_attribute {n:puf_core/bank/osc[53].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_643;S_Y0:SRB_426_642;S_B5:SRB_426_642;B5:CLMA_429_643;}
+define_attribute {n:puf_core/bank/osc[53].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_643;S_Y1:SRB_426_642;S_C5:SRB_426_642;C5:CLMA_429_643;}
+define_attribute {n:puf_core/bank/osc[54].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_660;A_Y0:SRB_426_660;A_B4:SRB_426_660;B4:CLMA_429_660;}
+define_attribute {n:puf_core/bank/osc[54].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_660;A_Y1:SRB_426_660;A_C4:SRB_426_660;C4:CLMA_429_660;}
+define_attribute {n:puf_core/bank/osc[54].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_660;A_Y2:SRB_426_660;A_D4:SRB_426_660;D4:CLMA_429_660;}
+define_attribute {n:puf_core/bank/osc[54].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_660;A_Y3:SRB_426_660;S_A4:SRB_426_660;A4:CLMA_429_661;}
+define_attribute {n:puf_core/bank/osc[54].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_661;S_Y0:SRB_426_660;S_B5:SRB_426_660;B5:CLMA_429_661;}
+define_attribute {n:puf_core/bank/osc[54].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_661;S_Y1:SRB_426_660;S_C5:SRB_426_660;C5:CLMA_429_661;}
+define_attribute {n:puf_core/bank/osc[55].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_672;A_Y0:SRB_426_672;A_B4:SRB_426_672;B4:CLMA_429_672;}
+define_attribute {n:puf_core/bank/osc[55].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_672;A_Y1:SRB_426_672;A_C4:SRB_426_672;C4:CLMA_429_672;}
+define_attribute {n:puf_core/bank/osc[55].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_672;A_Y2:SRB_426_672;A_D4:SRB_426_672;D4:CLMA_429_672;}
+define_attribute {n:puf_core/bank/osc[55].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_672;A_Y3:SRB_426_672;S_A4:SRB_426_672;A4:CLMA_429_673;}
+define_attribute {n:puf_core/bank/osc[55].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_673;S_Y0:SRB_426_672;S_B5:SRB_426_672;B5:CLMA_429_673;}
+define_attribute {n:puf_core/bank/osc[55].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_673;S_Y1:SRB_426_672;S_C5:SRB_426_672;C5:CLMA_429_673;}
+define_attribute {n:puf_core/bank/osc[56].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_690;A_Y0:SRB_426_690;A_B4:SRB_426_690;B4:CLMA_429_690;}
+define_attribute {n:puf_core/bank/osc[56].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_690;A_Y1:SRB_426_690;A_C4:SRB_426_690;C4:CLMA_429_690;}
+define_attribute {n:puf_core/bank/osc[56].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_429_690;A_Y2:SRB_426_690;A_D4:SRB_426_690;D4:CLMA_429_690;}
+define_attribute {n:puf_core/bank/osc[56].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_429_690;A_Y3:SRB_426_690;S_A4:SRB_426_690;A4:CLMA_429_691;}
+define_attribute {n:puf_core/bank/osc[56].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_429_691;S_Y0:SRB_426_690;S_B5:SRB_426_690;B5:CLMA_429_691;}
+define_attribute {n:puf_core/bank/osc[56].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_429_691;S_Y1:SRB_426_690;S_C5:SRB_426_690;C5:CLMA_429_691;}
+define_attribute {n:puf_core/bank/osc[57].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_582;A_Y0:SRB_450_582;A_B4:SRB_450_582;B4:CLMA_453_582;}
+define_attribute {n:puf_core/bank/osc[57].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_582;A_Y1:SRB_450_582;A_C4:SRB_450_582;C4:CLMA_453_582;}
+define_attribute {n:puf_core/bank/osc[57].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_582;A_Y2:SRB_450_582;A_D4:SRB_450_582;D4:CLMA_453_582;}
+define_attribute {n:puf_core/bank/osc[57].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_582;A_Y3:SRB_450_582;S_A4:SRB_450_582;A4:CLMA_453_583;}
+define_attribute {n:puf_core/bank/osc[57].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_583;S_Y0:SRB_450_582;S_B5:SRB_450_582;B5:CLMA_453_583;}
+define_attribute {n:puf_core/bank/osc[57].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_583;S_Y1:SRB_450_582;S_C5:SRB_450_582;C5:CLMA_453_583;}
+define_attribute {n:puf_core/bank/osc[58].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_594;A_Y0:SRB_450_594;A_B4:SRB_450_594;B4:CLMA_453_594;}
+define_attribute {n:puf_core/bank/osc[58].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_594;A_Y1:SRB_450_594;A_C4:SRB_450_594;C4:CLMA_453_594;}
+define_attribute {n:puf_core/bank/osc[58].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_594;A_Y2:SRB_450_594;A_D4:SRB_450_594;D4:CLMA_453_594;}
+define_attribute {n:puf_core/bank/osc[58].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_594;A_Y3:SRB_450_594;S_A4:SRB_450_594;A4:CLMA_453_595;}
+define_attribute {n:puf_core/bank/osc[58].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_595;S_Y0:SRB_450_594;S_B5:SRB_450_594;B5:CLMA_453_595;}
+define_attribute {n:puf_core/bank/osc[58].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_595;S_Y1:SRB_450_594;S_C5:SRB_450_594;C5:CLMA_453_595;}
+define_attribute {n:puf_core/bank/osc[59].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_612;A_Y0:SRB_450_612;A_B4:SRB_450_612;B4:CLMA_453_612;}
+define_attribute {n:puf_core/bank/osc[59].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_612;A_Y1:SRB_450_612;A_C4:SRB_450_612;C4:CLMA_453_612;}
+define_attribute {n:puf_core/bank/osc[59].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_612;A_Y2:SRB_450_612;A_D4:SRB_450_612;D4:CLMA_453_612;}
+define_attribute {n:puf_core/bank/osc[59].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_612;A_Y3:SRB_450_612;S_A4:SRB_450_612;A4:CLMA_453_613;}
+define_attribute {n:puf_core/bank/osc[59].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_613;S_Y0:SRB_450_612;S_B5:SRB_450_612;B5:CLMA_453_613;}
+define_attribute {n:puf_core/bank/osc[59].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_613;S_Y1:SRB_450_612;S_C5:SRB_450_612;C5:CLMA_453_613;}
+define_attribute {n:puf_core/bank/osc[60].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_636;A_Y0:SRB_450_636;A_B4:SRB_450_636;B4:CLMA_453_636;}
+define_attribute {n:puf_core/bank/osc[60].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_636;A_Y1:SRB_450_636;A_C4:SRB_450_636;C4:CLMA_453_636;}
+define_attribute {n:puf_core/bank/osc[60].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_636;A_Y2:SRB_450_636;A_D4:SRB_450_636;D4:CLMA_453_636;}
+define_attribute {n:puf_core/bank/osc[60].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_636;A_Y3:SRB_450_636;S_A4:SRB_450_636;A4:CLMA_453_637;}
+define_attribute {n:puf_core/bank/osc[60].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_637;S_Y0:SRB_450_636;S_B5:SRB_450_636;B5:CLMA_453_637;}
+define_attribute {n:puf_core/bank/osc[60].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_637;S_Y1:SRB_450_636;S_C5:SRB_450_636;C5:CLMA_453_637;}
+define_attribute {n:puf_core/bank/osc[61].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_648;A_Y0:SRB_450_648;A_B4:SRB_450_648;B4:CLMA_453_648;}
+define_attribute {n:puf_core/bank/osc[61].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_648;A_Y1:SRB_450_648;A_C4:SRB_450_648;C4:CLMA_453_648;}
+define_attribute {n:puf_core/bank/osc[61].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_648;A_Y2:SRB_450_648;A_D4:SRB_450_648;D4:CLMA_453_648;}
+define_attribute {n:puf_core/bank/osc[61].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_648;A_Y3:SRB_450_648;S_A4:SRB_450_648;A4:CLMA_453_649;}
+define_attribute {n:puf_core/bank/osc[61].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_649;S_Y0:SRB_450_648;S_B5:SRB_450_648;B5:CLMA_453_649;}
+define_attribute {n:puf_core/bank/osc[61].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_649;S_Y1:SRB_450_648;S_C5:SRB_450_648;C5:CLMA_453_649;}
+define_attribute {n:puf_core/bank/osc[62].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_672;A_Y0:SRB_450_672;A_B4:SRB_450_672;B4:CLMA_453_672;}
+define_attribute {n:puf_core/bank/osc[62].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_672;A_Y1:SRB_450_672;A_C4:SRB_450_672;C4:CLMA_453_672;}
+define_attribute {n:puf_core/bank/osc[62].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_672;A_Y2:SRB_450_672;A_D4:SRB_450_672;D4:CLMA_453_672;}
+define_attribute {n:puf_core/bank/osc[62].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_672;A_Y3:SRB_450_672;S_A4:SRB_450_672;A4:CLMA_453_673;}
+define_attribute {n:puf_core/bank/osc[62].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_673;S_Y0:SRB_450_672;S_B5:SRB_450_672;B5:CLMA_453_673;}
+define_attribute {n:puf_core/bank/osc[62].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_673;S_Y1:SRB_450_672;S_C5:SRB_450_672;C5:CLMA_453_673;}
+define_attribute {n:puf_core/bank/osc[63].ro_unit/chain [0]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_696;A_Y0:SRB_450_696;A_B4:SRB_450_696;B4:CLMA_453_696;}
+define_attribute {n:puf_core/bank/osc[63].ro_unit/chain [1]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_696;A_Y1:SRB_450_696;A_C4:SRB_450_696;C4:CLMA_453_696;}
+define_attribute {n:puf_core/bank/osc[63].ro_unit/chain [2]} {PAP_FIXED_ROUTE} {Y2:CLMA_453_696;A_Y2:SRB_450_696;A_D4:SRB_450_696;D4:CLMA_453_696;}
+define_attribute {n:puf_core/bank/osc[63].ro_unit/chain [3]} {PAP_FIXED_ROUTE} {Y3:CLMA_453_696;A_Y3:SRB_450_696;S_A4:SRB_450_696;A4:CLMA_453_697;}
+define_attribute {n:puf_core/bank/osc[63].ro_unit/chain [4]} {PAP_FIXED_ROUTE} {Y0:CLMA_453_697;S_Y0:SRB_450_696;S_B5:SRB_450_696;B5:CLMA_453_697;}
+define_attribute {n:puf_core/bank/osc[63].ro_unit/chain [5]} {PAP_FIXED_ROUTE} {Y1:CLMA_453_697;S_Y1:SRB_450_696;S_C5:SRB_450_696;C5:CLMA_453_697;}

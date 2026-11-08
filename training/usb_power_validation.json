@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-13",
+  "transport": "UART COM6 115200 8N1; no SSH",
+  "power_only": true,
+  "usb_data_supported": false,
+  "boot_autostart_verified": true,
+  "hardware_checks": [
+    "idempotent_start",
+    "stop_restores_resources",
+    "start_from_restored_state",
+    "simulate_power_loss",
+    "power_loss_refuses_retry",
+    "latched_fault_refuses_retry",
+    "explicit_stop_clears_fault",
+    "final_start"
+  ],
+  "deployment_evidence": "runs/20261013-155354-970374-usb-power-deploy/probe.json",
+  "boot_evidence": "runs/20261013-155404-855411-usb-power-boot-check",
+  "router_5v_0_55a_passed": false,
+  "continuous_0_5a_load_tested": false,
+  "wireless_adapter": {
+    "chip": "RTL8188GU",
+    "usb_id": "0bda:b711",
+    "windows_pnp_status": "OK",
+    "kosmo_wifi_connected": false
+  },
+  "sha256": {
+    "usb_power/kosmo-usb-power": "e8bcb4425bf1f4eb823a9b4cfcc12fef45f9f4f8071c0597cd0a7324a9c6e80e",
+    "usb_power/S41kosmo-usb-power": "ac46bcb2d1360aa697de1eff8c2df22824e1848c9fb0c2191e8b410d232931a8",
+    "tools/usb_power.py": "a2928da5af1e09f91557d744f5d6646a30548d1c7e5bb150ca78e60c923f97a3",
+    "enable_usb_power.cmd": "1943aa8258b3773673d9199e78cdd8926c85598036899e2743fda1b53cf4ba82"
+  }
+}

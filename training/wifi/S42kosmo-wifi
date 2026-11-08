@@ -1,0 +1,14 @@
+#!/bin/sh
+case "$1" in
+    start)
+        test -f /etc/kosmo-wifi.enabled || exit 0
+        if [ -s /etc/kosmo-wifi/wpa_supplicant.conf ]; then
+            /usr/local/sbin/kosmo-wifi start
+        else
+            /usr/local/sbin/kosmo-wifi prepare
+        fi
+        ;;
+    stop) /usr/local/sbin/kosmo-wifi stop;;
+    restart) "$0" stop && "$0" start;;
+    *) echo "Usage: $0 start|stop|restart" >&2; exit 2;;
+esac

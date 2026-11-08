@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "host": "192.168.43.124",
+  "firmware_version": 11,
+  "model_sha256": "d55300e9dc197605b9e23040e7b293ffe724648b2d0ffb795b4ccb50296ece7a",
+  "exact_same_frame_predictions": 50,
+  "max_processing_ms": 17.59624,
+  "video_fps": 7.580091869475893,
+  "source_sequence_fps": 7.5030695593500845,
+  "capture_drops_during_video": 0,
+  "capture_drops_during_comparison": 0,
+  "final_neutral_standby": true,
+  "nonzero_actuation_tested": false,
+  "evidence_sha256": {
+    "integration/training/runs/20261028-144836-191542-deployment/summary.json": "2b6b42874f86274c4125d9df402d39ff8788f2c5afbd645e72fd46c00d736c77",
+    "runs/20261028-145143-cnn-board/validation.json": "a240fcaccf3280353e3b61739a8ce3008199f9cc4ad35680e82379483baf4770",
+    "integration/training/runs/20261028-144836-191542-deployment/artifacts.json": "31ba6f6e295cd4eba5b5261e6b3b3da77e3838cdcb77163f88f654bf2f5b619a",
+    "integration/training/runs/20261028-144836-191542-deployment/jtag-05/status.json": "6e4c7d135589d4aac6671db597799b22ffe59e884b3eb4234fc7bceb5ed1a997"
+  }
+}

@@ -1,0 +1,8 @@
+[
+  ["kernel", "uname -a; test x$(uname -r) = x5.10.0-kosmo-wifi1"],
+  ["usb", "dmesg | grep -i -E 'dwc2|ulpi|usb|over-current' | tail -n 70; ls /sys/bus/usb/devices; true"],
+  ["usb_ids", "for d in /sys/bus/usb/devices/*; do test ! -f $d/idVendor || { echo $d; cat $d/idVendor $d/idProduct; }; done"],
+  ["modeswitch", "/root/kosmo-wifi1-test/usr/sbin/usb_modeswitch -v 0x0bda -p 0x1a2b -K"],
+  ["module", "modprobe 8188gu && lsmod"],
+  ["wireless", "ip link; /root/kosmo-wifi1-test/usr/sbin/iw dev; dmesg | tail -n 45; true"]
+]

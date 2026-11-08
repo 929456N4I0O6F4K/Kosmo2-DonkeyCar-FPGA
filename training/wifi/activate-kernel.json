@@ -1,0 +1,6 @@
+[
+  ["mount", "mkdir -p /mnt/kosmo-boot && (grep -q ' /mnt/kosmo-boot ' /proc/mounts || mount /dev/mmcblk0p1 /mnt/kosmo-boot) && mount -o remount,rw /mnt/kosmo-boot"],
+  ["backup_original", "echo 'e88ee74708d950bbfc2aad10188d036afef00d86507f672bff3272bb5aed4bbe  /mnt/kosmo-boot/Image' | sha256sum -c - && test ! -e /mnt/kosmo-boot/Image.pre-wifi1 && cp /mnt/kosmo-boot/Image /mnt/kosmo-boot/Image.pre-wifi1 && sync"],
+  ["stage", "cp /root/kosmo-wifi1/Image-kosmo-wifi1 /mnt/kosmo-boot/Image.wifi-new && sync && echo '57bcf660a60f22586e3d2e74146b2a0de427da79ec5bd83eecb3e0db7f3417dc  /mnt/kosmo-boot/Image.wifi-new' | sha256sum -c -"],
+  ["activate", "test -f /etc/kosmo-wifi.enabled && test ! -e /etc/kosmo-usb-power.enabled && mv /mnt/kosmo-boot/Image.wifi-new /mnt/kosmo-boot/Image && sync && sha256sum /mnt/kosmo-boot/Image /mnt/kosmo-boot/Image.pre-wifi1"]
+]

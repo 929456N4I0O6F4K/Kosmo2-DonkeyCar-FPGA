@@ -1,0 +1,169 @@
+#!/bin/sh
+# Kosmo2 PG2K100-400 / MES-PG2K100-MBG400 V1.2 USB-A power only.
+# PU MIO46 resets USB3320; USB3320 CPEN drives MIC2025-1.
+# Register sources and limitations: ../USB_POWER.md.
+set -eu
+USB_DEV=/sys/bus/platform/devices/f0040000.usb2_0
+USB_PHY=/sys/bus/platform/devices/f0040000.phy
+USB_GPIO=/sys/class/gpio/gpio46
+USB_STATE=/run/kosmo-usb-power
+USB_FAULT=/run/kosmo-usb-power.fault
+USB_OWNER=kosmo-usb-power-only
+
+die() { echo "USB power: $*" >&2; exit 1; }
+rd() { devmem "$1" 32; }
+wr() { devmem "$1" 32 "$2"; }
+mask() { usb_old=$(rd "$1"); wr "$1" "$(( (usb_old & ~$2) | $3 ))"; }
+
+guard() {
+    [ "$(id -u)" = 0 ] || die 'root required'
+    tr '\000' '\n' < /proc/device-tree/compatible | grep -qx 'pango,kosmo2-pg2k100-400' || die 'unsupported board'
+    [ -d "$USB_DEV" ] && [ -d "$USB_PHY" ] || die 'USB0 device tree missing'
+    [ "$(cat /sys/class/gpio/gpiochip32/label)" = e500a000.gpio ] || die 'GPIO bank mismatch'
+    [ "$(cat /sys/class/gpio/gpiochip32/ngpio)" = 22 ] || die 'GPIO bank size mismatch'
+    [ $(( $(rd 0xe5007178) & 255 )) = 0 ] || die 'MIO46 is not configured as GPIO'
+}
+
+wait_bits() {
+    usb_wait=0
+    while [ $(( $(rd "$1") & $2 )) -ne "$3" ]; do
+        usb_wait=$((usb_wait + 1))
+        [ "$usb_wait" -lt 25 ] || return 1
+        sleep 0.01
+    done
+}
+
+ulpi_read() {
+    # DWC2 GPVNDCTL: request bit25, done bit27, address[21:16], data[7:0].
+    wr 0xf0040034 "$((33554432 | $1 << 16))"
+    wait_bits 0xf0040034 134217728 134217728 || return 1
+    echo "$(( $(rd 0xf0040034) & 255 ))"
+}
+
+status() {
+    [ ! -e /etc/kosmo-usb-power.enabled ] || echo 'boot_enabled=1'
+    [ ! -e "$USB_FAULT" ] || echo 'fault_latched=1 (inspect load before stop/start)'
+    usb_clk=$(rd 0xe50060dc)
+    printf 'USB_CLOCK=%s\n' "$usb_clk"
+    if [ $((usb_clk & 1)) = 0 ]; then echo 'power=off (USB0 clock gated)'; return 3; fi
+    usb_id=$(rd 0xf0040040)
+    printf 'GSNPSID=%s\n' "$usb_id"
+    [ $((usb_id & 4294901760)) = $((0x4f540000)) ] || return 4
+    usb_hprt=$(rd 0xf0040440)
+    printf 'HPRT=%s GOTGCTL=%s\n' "$usb_hprt" "$(rd 0xf0040000)"
+    printf 'port_power=%s overcurrent_active=%s overcurrent_change=%s\n' "$(( (usb_hprt >> 12) & 1 ))" "$(( (usb_hprt >> 4) & 1 ))" "$(( (usb_hprt >> 5) & 1 ))"
+    # Never issue PHY transactions concurrently with a kernel driver.
+    if [ -L "$USB_DEV/driver" ] || [ -L "$USB_PHY/driver" ]; then
+        echo 'owner=kernel (PHY access skipped)'; return 4
+    fi
+    usb_otg=$(ulpi_read 10) || return 4
+    usb_status=$(ulpi_read 19) || return 4
+    printf 'ULPI_OTG=0x%02x ULPI_STATUS=0x%02x cpen_request=%s vbus_valid=%s\n' "$usb_otg" "$usb_status" "$(( (usb_otg >> 5) & 3 ))" "$(( (usb_status >> 1) & 1 ))"
+    echo 'VBUS comparator is not a voltage/current measurement; verify the actual load.'
+    [ $((usb_hprt & 4144)) = 4096 ] && [ $((usb_status & 2)) = 2 ]
+}
+
+release_owned() {
+    [ -d "$USB_STATE" ] || return 0
+    # Refuse to touch hardware if another driver has taken it.
+    [ ! -L "$USB_DEV/driver" ] || return 1
+    if [ -e "$USB_STATE/gpio" ] && [ -d "$USB_GPIO" ]; then
+        # RESETB low also removes CPEN even if the controller clock is gone.
+        echo 0 > "$USB_GPIO/value"
+        echo 46 > /sys/class/gpio/unexport
+    fi
+    if [ -e "$USB_STATE/clock" ]; then
+        usb_clock_original=$(cat "$USB_STATE/clock")
+        case "$usb_clock_original" in 0|1) ;; *) return 1 ;; esac
+        mask 0xe50060dc 1 "$usb_clock_original"
+    fi
+    for usb_node in "$USB_DEV" "$USB_PHY"; do
+        if [ "$(cat "$usb_node/driver_override")" = "$USB_OWNER" ]; then
+            printf '\n' > "$usb_node/driver_override"
+        fi
+    done
+    if [ -e "$USB_STATE/phy_bound" ]; then
+        echo f0040000.phy > /sys/bus/platform/drivers/ulpi-phy/bind || return 1
+    fi
+    rm -f "$USB_STATE/gpio" "$USB_STATE/clock" "$USB_STATE/phy_bound"
+    rmdir "$USB_STATE"
+}
+
+failed_start() {
+    trap - EXIT HUP INT TERM
+    echo 'USB power: startup failed; power removed, no automatic retry.' >&2
+    : > "$USB_FAULT"
+    release_owned || echo 'USB power: cleanup incomplete; inspect before retry.' >&2
+    exit 1
+}
+
+start() {
+    [ ! -e "$USB_FAULT" ] || die 'fault latched; inspect/unplug load, then stop before retry'
+    if [ -d "$USB_STATE" ]; then
+        if status; then return 0; fi
+        : > "$USB_FAULT"
+        die 'power was lost; no automatic retry'
+    fi
+    [ ! -L "$USB_DEV/driver" ] || die 'USB0 is owned by its kernel driver'
+    [ ! -d "$USB_GPIO" ] || die 'GPIO46 already exported by another tool'
+    for usb_node in "$USB_DEV" "$USB_PHY"; do
+        usb_override=$(cat "$usb_node/driver_override")
+        case "$usb_override" in ''|'(null)') ;; *) die 'existing driver override';; esac
+    done
+    usb_clk=$(rd 0xe50060dc)
+    [ $((usb_clk & 12)) = 0 ] || die 'USB0 clock domain held in reset'
+    umask 077
+    mkdir "$USB_STATE"
+    echo "$((usb_clk & 1))" > "$USB_STATE/clock"
+    trap failed_start EXIT HUP INT TERM
+    echo "$USB_OWNER" > "$USB_DEV/driver_override"
+    echo "$USB_OWNER" > "$USB_PHY/driver_override"
+    if [ -L "$USB_PHY/driver" ]; then
+        [ "$(basename "$(readlink "$USB_PHY/driver")")" = ulpi-phy ] || die 'unexpected PHY driver'
+        echo f0040000.phy > /sys/bus/platform/drivers/ulpi-phy/unbind
+        : > "$USB_STATE/phy_bound"
+    fi
+    echo 46 > /sys/class/gpio/export
+    : > "$USB_STATE/gpio"
+    [ "$(cat "$USB_GPIO/active_low")" = 0 ] || die 'unexpected GPIO polarity'
+    echo low > "$USB_GPIO/direction"
+    mask 0xe50060dc 1 1
+    sleep 0.01
+    echo 1 > "$USB_GPIO/value"
+    sleep 0.02
+    [ $(( $(rd 0xf0040040) & 4294901760 )) = $((0x4f540000)) ] || die 'DWC2 ID mismatch'
+    wr 0xf0040018 0
+    mask 0xf0040008 33 0  # No interrupts or DMA in power-only mode.
+    # Vendor BSP high-speed ULPI configuration; retain internal VBUS sensing.
+    mask 0xf004000c $(( (1<<6)|(1<<17)|(1<<20)|(1<<21)|(1<<22)|(1<<29)|(1<<30) )) 0
+    wait_bits 0xf0040010 2147483648 2147483648 || die 'AHB idle timeout'
+    wr 0xf0040010 1
+    wait_bits 0xf0040010 1 0 || die 'core reset timeout'
+    mask 0xf004000c $((1<<30)) $((1<<29))
+    sleep 0.05
+    wait_bits 0xf0040014 1 1 || die 'host mode timeout'
+    [ "$(ulpi_read 0) $(ulpi_read 1) $(ulpi_read 2) $(ulpi_read 3)" = '36 4 7 0' ] || die 'USB3320 ID mismatch'
+    # Exclude W1C change flags and port-enable from the read/modify/write.
+    usb_hprt=$(rd 0xf0040440)
+    [ $((usb_hprt & 48)) = 0 ] || die 'port has an overcurrent event'
+    wr 0xf0040440 "$(( (usb_hprt & ~46) | 4096 ))"
+    sleep 0.2
+    for usb_sample in 1 2 3 4 5; do
+        usb_hprt=$(rd 0xf0040440)
+        [ $((usb_hprt & 4144)) = 4096 ] || die 'port power dropped or overcurrent event'
+        [ $(( $(ulpi_read 19) & 2 )) = 2 ] || die 'VBUS not valid'
+        sleep 0.2
+    done
+    trap - EXIT HUP INT TERM
+    status
+}
+
+case "${1:-}" in start|stop|status) ;; *) echo "Usage: $0 start|stop|status" >&2; exit 2;; esac
+guard
+exec 9>/run/kosmo-usb-power.lock
+flock -n 9 || die 'another USB power operation is running'
+case "$1" in
+    start) start ;;
+    stop) release_owned; rm -f "$USB_FAULT"; echo 'USB power stopped; owned resources released.' ;;
+    status) status ;;
+esac

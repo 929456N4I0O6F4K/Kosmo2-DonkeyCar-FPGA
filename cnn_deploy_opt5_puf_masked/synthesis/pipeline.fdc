@@ -1,0 +1,8 @@
+# Resource harness only. I/O auto-placement is not a car board wiring plan.
+create_clock -name sysclk_50 -period 20 [get_ports sysclk_50]
+define_attribute p:sysclk_50 PAP_IO_LOC T9
+define_attribute p:sysclk_50 PAP_IO_VCCIO 3.3
+define_attribute p:sysclk_50 PAP_IO_STANDARD LVCMOS33
+# Only external harness paths are excluded. Every internal CNN/crop path is timed.
+set_false_path -from [get_ports {rst raw_we raw_waddress[*] raw_wdata[*] frame_valid result_ready frame_sequence[*] report_select[*]}]
+set_false_path -to [get_ports {frame_ready frame_consumed result_valid timeout_fault result_expired report[*]}]

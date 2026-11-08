@@ -1,0 +1,19 @@
+create_clock -name sysclk_50 -period 20 [get_ports sysclk_50]
+create_clock -name jtag_tck -period 66.667 [get_pins {dvio/scanchain/TCK_USER}]
+set_clock_groups -asynchronous -group [get_clocks jtag_tck] -group [get_clocks sysclk_50]
+# J8-37 -> V10 SCL; J8-38 -> U9 SDA, L6 bank at 3.3 V.
+foreach {port pin} {sysclk_50 T9 pca_scl V10 pca_sda U9} {
+ define_attribute p:$port PAP_IO_LOC $pin
+ define_attribute p:$port PAP_IO_VCCIO 3.3
+ define_attribute p:$port PAP_IO_STANDARD LVCMOS33
+}
+foreach {port pin} {rstn C20 led_n[0] G14 led_n[1] E18 led_n[2] E19 led_n[3] F16 led_n[4] F17} {
+ define_attribute p:$port PAP_IO_LOC $pin
+ define_attribute p:$port PAP_IO_VCCIO 2.5
+ define_attribute p:$port PAP_IO_STANDARD LVCMOS25
+}
+# Module pullups to 3.3 V are required; weak pulls help diagnose unplugged bus.
+define_attribute {p:pca_scl} {PAP_IO_BUS_KEEPER} {PULLUP}
+define_attribute {p:pca_sda} {PAP_IO_BUS_KEEPER} {PULLUP}
+set_false_path -from [get_ports {rstn pca_scl pca_sda}]
+set_false_path -to [get_ports {pca_scl pca_sda led_n[*]}]

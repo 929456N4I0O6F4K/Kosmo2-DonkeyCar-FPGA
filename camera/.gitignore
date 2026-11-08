@@ -1,0 +1,12 @@
+build/
+runs/
+*.lock
+pds.log
+*.backup_*.pds
+design_workspace/
+prj_tasks/
+work/
+transcript
+vsim.wlf
+__pycache__/
+

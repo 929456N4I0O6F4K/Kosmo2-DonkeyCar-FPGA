@@ -1,0 +1,7 @@
+[
+  ["mount_boot", "mkdir -p /mnt/kosmo-boot && (grep -q ' /mnt/kosmo-boot ' /proc/mounts || mount -o ro /dev/mmcblk0p1 /mnt/kosmo-boot) && ls -la /mnt/kosmo-boot"],
+  ["boot_config", "find /mnt/kosmo-boot -maxdepth 3 -type f; for p in /mnt/kosmo-boot/uEnv.txt /mnt/kosmo-boot/extlinux/extlinux.conf /mnt/kosmo-boot/boot.cmd; do test ! -f $p || cat $p; done; command -v fw_printenv; busybox --list | grep -E 'udhcpc|base64|sha256|stty'; true"],
+  ["boot_backup", "mkdir -p /root/kosmo-wifi-backup-20261014 && test ! -e /root/kosmo-wifi-backup-20261014/boot-before.tar && tar -cf /root/kosmo-wifi-backup-20261014/boot-before.tar -C /mnt/kosmo-boot . && sha256sum /root/kosmo-wifi-backup-20261014/boot-before.tar"],
+  ["fdt", "sha256sum /sys/firmware/fdt; base64 /sys/firmware/fdt"],
+  ["network", "cat /sys/class/net/eth0/carrier; ip addr show eth0; true"]
+]

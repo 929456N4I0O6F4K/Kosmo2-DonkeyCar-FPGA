@@ -1,0 +1,7 @@
+[
+  ["verify_package", "echo 'cdd8c539373ea90615d9bd70ce4bfd06af6aa22418020547afb0c982ca920e12  /tmp/kosmo-wifi1.tar.gz' | sha256sum -c -"],
+  ["extract", "mkdir -p /root/kosmo-wifi1 && gzip -dc /tmp/kosmo-wifi1.tar.gz | tar -xf - -C /root/kosmo-wifi1"],
+  ["install", "sh /root/kosmo-wifi1/install_runtime.sh && command -v ifconfig"],
+  ["start", "/usr/local/sbin/kosmo-wifi start"],
+  ["status", "/usr/local/sbin/kosmo-wifi status; cat /run/kosmo-wifi/dhcp.log; tail -n 15 /run/kosmo-wifi/wpa.log; true"]
+]

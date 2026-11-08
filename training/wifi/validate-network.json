@@ -1,0 +1,6 @@
+[
+  ["gateway", "ping -I wlan0 -c 3 -W 2 192.168.43.1"],
+  ["internet", "ping -I wlan0 -c 3 -W 2 1.1.1.1"],
+  ["dns_http", "cat /etc/resolv.conf; wget -T 15 -O /tmp/kosmo-wifi-http-check.html http://example.com && wc -c /tmp/kosmo-wifi-http-check.html"],
+  ["services", "ps | head -n 35; ls -l /opt /root; ls /sys/class/uio; true"]
+]

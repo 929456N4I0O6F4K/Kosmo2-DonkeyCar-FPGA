@@ -1,0 +1,41 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- build output / generated hardware artifacts ---
+build/
+runs/
+log/
+logbackup/
+prj_tasks/
+*.sbit
+*.smsk
+*.sdf
+*.netlist
+*.vcd
+*.fst
+*.fsdb
+*.ppf
+*.wlf
+
+# --- local run state ---
+board_probe.json
+*.log
+deploy.lock
+.host-deps/
+
+# --- TensorBoard ---
+events.out.tfevents*
+*.ckpt*
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/

@@ -1,0 +1,23 @@
+# Normalize line endings: LF in the repository, native in the working tree.
+* text=auto
+
+# Binary artifacts that must never be converted.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.docx binary
+*.pptx binary
+*.xlsx binary
+*.zip  binary
+*.tar.gz binary
+*.gz   binary
+*.npy  binary
+*.h5   binary
+*.keras binary
+*.tflite binary
+*.sbit binary
+*.smsk binary
+*.vcd  binary

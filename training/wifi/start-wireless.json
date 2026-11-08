@@ -1,0 +1,5 @@
+[
+  ["config_compat", "sed -i '/^update_config=/d' /etc/kosmo-wifi/wpa_supplicant.conf && chmod 600 /etc/kosmo-wifi/wpa_supplicant.conf"],
+  ["start", "/usr/local/sbin/kosmo-wifi start"],
+  ["status", "/usr/local/sbin/kosmo-wifi status; tail -n 12 /run/kosmo-wifi/wpa.log; cat /run/kosmo-wifi/dhcp.log; true"]
+]

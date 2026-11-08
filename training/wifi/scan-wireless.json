@@ -1,0 +1,4 @@
+[
+  ["scan", "ip link set wlan0 up && /root/kosmo-wifi1-test/usr/sbin/iw dev wlan0 scan > /tmp/kosmo-wifi-scan.txt && grep -E 'SSID:|freq:|signal:|Authentication suites' /tmp/kosmo-wifi-scan.txt"],
+  ["stability", "cat /sys/bus/usb/devices/1-1/idVendor /sys/bus/usb/devices/1-1/idProduct; dmesg | tail -n 12; true"]
+]

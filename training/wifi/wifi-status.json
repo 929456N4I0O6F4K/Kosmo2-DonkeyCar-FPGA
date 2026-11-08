@@ -1,0 +1,4 @@
+[
+  ["status", "/usr/local/sbin/kosmo-wifi status; tail -n 30 /run/kosmo-wifi/wpa.log; test ! -f /run/kosmo-wifi/dhcp.log || tail -n 20 /run/kosmo-wifi/dhcp.log; true"],
+  ["kernel", "dmesg | tail -n 12; ls -l /etc/kosmo-wifi/wpa_supplicant.conf /run/kosmo-wifi; true"]
+]

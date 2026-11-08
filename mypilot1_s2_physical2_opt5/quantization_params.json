@@ -1,0 +1,24 @@
+[
+  {
+    "name": "serving_default_img_in:0",
+    "scale": 0.003921568859368563,
+    "zero_point": -128,
+    "dtype": "<class 'numpy.int8'>",
+    "shape": [
+      1,
+      95,
+      156,
+      3
+    ]
+  },
+  {
+    "name": "StatefulPartitionedCall_1:0",
+    "scale": 0.008972170762717724,
+    "zero_point": -20,
+    "dtype": "<class 'numpy.int8'>",
+    "shape": [
+      1,
+      2
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+# PDS DVIO recommended 15 MHz scan clock. The hub gates/routes this clock.
+create_clock -name jtag_tck -period 66.667 [get_pins {camera/jtag_debug.dvio/scanchain/TCK_USER}]
+set_clock_groups -asynchronous -group [get_clocks jtag_tck] -group [get_clocks sysclk_50] -group [get_clocks cam_pclk]
+# Bench profile validated first by the camera_meter voltage test.
+# Same Kosmo2 attribute as Demo/2.voice_out; SCCB stays open drain.
+define_attribute {p:cam_scl} {PAP_IO_BUS_KEEPER} {PULLUP}
+define_attribute {p:cam_sda} {PAP_IO_BUS_KEEPER} {PULLUP}

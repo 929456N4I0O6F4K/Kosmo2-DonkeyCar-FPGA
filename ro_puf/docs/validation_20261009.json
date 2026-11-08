@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-10-09T08:08:12.284965+00:00",
+  "firmware": "ro_puf_v1",
+  "bitstream_sha256": "1310661f056f1c5b0386fe4fad580721a6c9ff5ea31bc7254dccd4b6ecc6e89e",
+  "checks": {
+    "control_simulation": "PASS",
+    "simulation_scope": "Deterministic RO and DVIO substitutes; actual counter/control RTL; 512 counter pairs and CRC reconstructed",
+    "simulation_log": "build/sim/run.log",
+    "python_tests": "PASS",
+    "python_test_count": 11,
+    "python_test_command": "python -m unittest discover -s tests -v",
+    "python_test_source_sha256": "00ab8c2553232373cb7f4bded8f2aa683dd47d035d66e451adf04f0b8b1f7f3e",
+    "native_lut_count": 448,
+    "native_truth_tables_and_feedback": "PASS",
+    "placement": "PASS",
+    "raw_buffers": "PASS",
+    "timing_constraints": "PASS",
+    "counter_input_limit_hz": 600000000,
+    "board_A_capture_integrity": "PASS"
+  },
+  "sessions": {
+    "A_ro7_v1_baseline01": {
+      "status": "complete",
+      "samples": 512,
+      "counter_rows": 4096,
+      "bitstream_sha256": "1310661f056f1c5b0386fe4fad580721a6c9ff5ea31bc7254dccd4b6ecc6e89e",
+      "samples_sha256": "19946e538943eec7d06e5d95fcfa4f545648e64ad23b30bd16af331950bec78a",
+      "counts_sha256": "8796b58ac21d67fc9ae3323e1ec14a2e12001b41a5ab068c1c8505aba147a18d",
+      "nominal_frequency_min_hz": 530544000,
+      "nominal_frequency_max_hz": 558656000
+    },
+    "A_ro7_v1_repeat01": {
+      "status": "complete",
+      "samples": 512,
+      "counter_rows": 4096,
+      "bitstream_sha256": "1310661f056f1c5b0386fe4fad580721a6c9ff5ea31bc7254dccd4b6ecc6e89e",
+      "samples_sha256": "3e5fd01a875d811586a046655c7665f973d65f41fb55c5e345a6466282d45767",
+      "counts_sha256": "7bceed3fb9ddffb74dc82401f0fddab97e6b5dcda96b1ac70872dff262b7f08f",
+      "nominal_frequency_min_hz": 530416000,
+      "nominal_frequency_max_hz": 558928000
+    }
+  },
+  "unmeasured": [
+    "board B and A/B Hamming distance",
+    "confirmed power cycle of this RO image",
+    "temperature and supply sweeps",
+    "entropy and cryptographic key reconstruction"
+  ]
+}

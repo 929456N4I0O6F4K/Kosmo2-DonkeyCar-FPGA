@@ -1,0 +1,23 @@
+create_clock -name sysclk_50 -period 20 [get_ports sysclk_50]
+define_attribute p:sysclk_50 PAP_IO_LOC T9
+define_attribute p:sysclk_50 PAP_IO_VCCIO 3.3
+define_attribute p:sysclk_50 PAP_IO_STANDARD LVCMOS33
+foreach {port pin} {rstn C20 led_n[0] G14 led_n[1] E18 led_n[2] E19 led_n[3] F16 led_n[4] F17} {
+ define_attribute p:$port PAP_IO_LOC $pin
+ define_attribute p:$port PAP_IO_VCCIO 2.5
+ define_attribute p:$port PAP_IO_STANDARD LVCMOS25
+}
+set_false_path -from [get_ports rstn]
+set_false_path -to [get_ports {led_n[*]}]
+create_clock -name jtag_tck -period 66.667 [get_pins {dvio/scanchain/TCK_USER}]
+# Engineering limit of 600 MHz at the first divider. Measured frequencies
+# must be checked against this limit; this does not predict RO loop delay.
+create_clock -name ro_a -period 1.666667 [get_pins {counter_a/div0/CLK}]
+create_clock -name ro_b -period 1.666667 [get_pins {counter_b/div0/CLK}]
+foreach side {a b} {
+ foreach stage {0 1 2 3} {
+  set factor [expr {1 << ($stage+1)}]
+  create_generated_clock -name ro_${side}_div$factor -source [get_pins counter_${side}/div0/CLK] -divide_by $factor [get_pins counter_${side}/div${stage}/Q]
+ }
+}
+set_clock_groups -asynchronous -group [get_clocks sysclk_50] -group [get_clocks jtag_tck] -group [get_clocks {ro_a ro_a_div*}] -group [get_clocks {ro_b ro_b_div*}]

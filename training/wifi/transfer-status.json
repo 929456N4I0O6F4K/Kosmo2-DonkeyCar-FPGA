@@ -1,0 +1,3 @@
+[
+  ["transfer", "ls -l /tmp/kosmo-wifi1.tar.gz; cat /tmp/kosmo-wifi-receive.log; ps | grep kosmo-wifi-receive; cat /proc/net/dev; dmesg | tail -n 18; true"]
+]

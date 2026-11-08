@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kosmo · 驾驶采集</title><link rel="stylesheet" href="/style.css"></head>
+<body><main>
+<header><span class="brand">KOSMO / DONKEYCAR</span><span id="mode">正在连接</span></header>
+<div class="title"><h1>驾驶与采集</h1><span id="inputMode">已停止</span></div>
+<section class="layout">
+  <div class="view">
+    <div class="camera"><img id="video" alt="相机画面"><div class="camerafoot"><span id="fresh">等待画面</span><span>160 × 120 RGB</span></div></div>
+    <p id="controller">正在连接设备</p><p id="setpoints">等待板端反馈</p>
+    <div class="record"><button id="record">开始录制 · R</button><span id="count">0 帧</span><a id="download" href="/api/download" hidden>下载采集 ZIP ↓</a></div>
+    <p id="recordHealth" role="status" hidden></p><p id="session"></p><p id="error" role="alert"></p>
+  </div>
+  <div class="panel">
+    <h2>比例摇杆</h2><p>按住区域内任意位置，向上拖动前进，左右拖动转向；拖得越远，输入越大。松开停止。</p>
+    <div id="joystick" aria-label="比例驾驶摇杆，向上前进，左右转向" aria-disabled="true"><span class="direction up">前进 ↑</span><span class="direction left">← 左</span><span class="direction right">右 →</span><span id="stick"></span><span class="stickhint">按住并拖动</span></div>
+    <button id="stop" class="stop">停止 · SPACE / ESC</button>
+    <div class="settings"><label for="step">按键步长</label><select id="step"><option value="0.05">0.05</option><option value="0.02">0.02</option><option value="0.01">0.01</option></select><span>Shift + 方向键：0.01 微调</span></div>
+    <label for="angle">转向 <output id="angleValue">0.00</output></label>
+    <div class="axis"><button id="angleMinus" aria-label="转向向左微调">−</button><input id="angle" type="range" min="-1" max="1" step="0.01" value="0" disabled><button id="anglePlus" aria-label="转向向右微调">+</button></div>
+    <button id="center" class="small">转向回中 · C</button>
+    <label for="throttle">前进油门 <output id="throttleValue">0.00</output></label>
+    <div class="axis"><button id="throttleMinus" aria-label="减小油门">−</button><input id="throttle" type="range" min="0" max="1" step="0.01" value="0" disabled><button id="throttlePlus" aria-label="增大油门">+</button></div>
+    <label for="limit">油门上限 <output id="limitValue">1.00</output></label><input id="limit" type="range" min="0" max="1" step="0.05" value="1">
+    <p class="keys"><strong>键盘 / 滑杆：调整后保持，空格停车。</strong><br>I / K 加减油门，J / L 左右微调；也支持 WASD 和方向键。Shift 为 0.01 微调，C 回中，R 录制。</p>
+    <p class="note">当前仅前进，前进上限已提高。请从小油门逐步增加；约 0.43 相当于原来的 1.00。</p>
+    <details id="steeringPanel" class="steering-settings">
+      <summary>左右转向幅度</summary>
+      <p>两侧分别调整，100% 为原有行程。建议每次增加 5%，保存后用零油门转向检查；出现顶住或持续嗡鸣时减小该侧幅度。</p>
+      <label for="steeringLeft">左转幅度 <output id="steeringLeftValue">110%</output></label>
+      <input id="steeringLeft" type="range" min="50" max="150" step="1" value="110" disabled>
+      <label for="steeringRight">右转幅度 <output id="steeringRightValue">110%</output></label>
+      <input id="steeringRight" type="range" min="50" max="150" step="1" value="110" disabled>
+      <div class="settings"><button id="steeringSave" disabled>保存转向设置</button><button id="steeringOriginal" class="small" disabled>填入原行程 100%</button></div>
+      <p id="steeringSaved"></p><p id="steeringMessage" role="status">连接后读取设置</p>
+      <p class="note">停车并结束录制后可保存，保存时不转动车轮。设置保存在小车上，下次启动自动恢复。</p>
+    </details>
+    <details id="exposurePanel" class="steering-settings">
+      <summary>相机曝光</summary>
+      <label for="exposureMode">曝光方式</label>
+      <select id="exposureMode" disabled><option value="auto">自动曝光</option><option value="manual">手动曝光</option></select>
+      <label for="exposureValue">手动曝光值 <output id="exposureValueLabel">300</output></label>
+      <input id="exposureValue" type="range" min="0" max="1200" step="1" value="300" disabled>
+      <div class="settings"><button id="exposureSave" disabled>应用并保存曝光</button></div>
+      <p id="exposureSaved"></p><p id="exposureMessage" role="status">连接后读取设置</p>
+      <p class="note">停车并结束录制后可调整。手动值越大曝光越长，可能增加运动模糊；它是相机曝光档位，不是微秒。手动模式同时固定增益，自动模式恢复自动曝光和增益。保存后下次启动自动恢复。</p>
+    </details>
+  </div>
+</section>
+<footer>图像与对应转向、油门一同保存 · 失去连接或切到后台时停止</footer>
+</main><script src="/app.js"></script></body></html>

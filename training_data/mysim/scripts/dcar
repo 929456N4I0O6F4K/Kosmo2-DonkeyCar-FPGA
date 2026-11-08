@@ -1,0 +1,1300 @@
+#!/bin/bash
+# ============================================================
+# Donkey Car 训练管理工具 dcar
+# 统一管理模型创建、数据采集、训练、清除
+#
+# 目录结构：
+#   models/
+#   └── <model_name>/                # 模型同名根目录
+#       ├── <model_name>.keras       # 模型文件（或 .h5 格式）
+#       ├── 0_custom/                # 物理世界场景数据
+#       ├── 1_generated-track/       # 模拟器场景 1 数据
+#       ├── 2_generated-roads/        # 模拟器场景 2 数据
+#       ├── 3_warehouse/             # 模拟器场景 3 数据
+#       ├── 4_avc-sparkfun/           # 模拟器场景 4 数据
+#       └── 5_mountain/              # 模拟器场景 5 数据
+#
+# 场景映射：
+#   0 → 自定义/物理世界（不启动模拟器）
+#   1 → donkey-generated-track-v0
+#   2 → donkey-generated-roads-v0
+#   3 → donkey-warehouse-v0
+#   4 → donkey-avc-sparkfun-v0
+#   5 → donkey-mountain-track-v0
+#
+# 用法：
+#   ./dcar create  <model_name>                    # 创建模型
+#   ./dcar collect <model_name>                   # 数据采集（选场景）
+#   ./dcar train   <model_name>                   # 训练（增量/从头+选场景）
+#   ./dcar clean   [model_name] [scene_num]       # 清除数据/进程
+#   ./dcar status                                 # 查看状态
+#   ./dcar list                                    # 列出所有模型
+# ============================================================
+
+# ---- 路径配置 ----
+MYSIM_DIR="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/.." && pwd)"
+CAR_MODELS_DIR="$MYSIM_DIR/models"
+SIM_DIR="$(dirname "$MYSIM_DIR")/DonkeySimLinux"
+MYCONFIG="$MYSIM_DIR/myconfig.py"
+CONDA_INIT="source $HOME/.miniforge3/etc/profile.d/conda.sh && conda activate donkey"
+
+# ---- 场景映射 ----
+# 格式："编号:场景名称:donkey环境名:是否启动模拟器"
+SCENES=(
+    "0:custom:物理世界(自定义):False"
+    "1:generated-track:donkey-generated-track-v0:True"
+    "2:generated-roads:donkey-generated-roads-v0:True"
+    "3:warehouse:donkey-warehouse-v0:True"
+    "4:avc-sparkfun:donkey-avc-sparkfun-v0:True"
+    "5:mountain:donkey-mountain-track-v0:True"
+)
+
+# ---- 辅助函数 ----
+get_scene_name() {
+    local num=$1
+    for scene in "${SCENES[@]}"; do
+        local s_num=$(echo "$scene" | cut -d: -f1)
+        if [ "$s_num" = "$num" ]; then
+            echo "$scene" | cut -d: -f2
+            return
+        fi
+    done
+    echo ""
+}
+
+get_scene_env() {
+    local num=$1
+    for scene in "${SCENES[@]}"; do
+        local s_num=$(echo "$scene" | cut -d: -f1)
+        if [ "$s_num" = "$num" ]; then
+            echo "$scene" | cut -d: -f3
+            return
+        fi
+    done
+    echo ""
+}
+
+get_scene_need_sim() {
+    local num=$1
+    for scene in "${SCENES[@]}"; do
+        local s_num=$(echo "$scene" | cut -d: -f1)
+        if [ "$s_num" = "$num" ]; then
+            echo "$scene" | cut -d: -f4
+            return
+        fi
+    done
+    echo "True"
+}
+
+get_scene_dir_name() {
+    local num=$1
+    local name=$(get_scene_name "$num")
+    echo "${num}_${name}"
+}
+
+list_scenes() {
+    echo "可用场景："
+    for scene in "${SCENES[@]}"; do
+        local num=$(echo "$scene" | cut -d: -f1)
+        local name=$(echo "$scene" | cut -d: -f2)
+        local env=$(echo "$scene" | cut -d: -f3)
+        local need_sim=$(echo "$scene" | cut -d: -f4)
+        if [ "$num" = "0" ]; then
+            echo "  $num) $env（不启动模拟器）"
+        else
+            echo "  $num) $env"
+        fi
+    done
+}
+
+# 修改 myconfig.py 中的配置项
+set_config() {
+    local key=$1
+    local value=$2
+    # 先移除已存在的配置行，再在文件开头添加
+    eval "$CONDA_INIT"
+    python - "$MYCONFIG" "$key" "$value" <<'PYEOF'
+import sys
+config_path = sys.argv[1]
+key = sys.argv[2]
+value = sys.argv[3]
+with open(config_path, 'r') as f:
+    content = f.read()
+lines = content.split('\n')
+new_lines = [l for l in lines if not l.startswith(key + ' =')]
+for i, l in enumerate(new_lines):
+    if l.strip() == 'import os':
+        new_lines.insert(i + 1, f'{key} = {value}')
+        break
+with open(config_path, 'w') as f:
+    f.write('\n'.join(new_lines))
+print(f'已设置 {key} = {value}')
+PYEOF
+}
+
+# 保存当前 myconfig.py 中的图像变换配置到模型目录
+# 用于推理时还原训练时的遮罩设置（TRANSFORMATIONS/ROI_CROP_*）
+save_train_config() {
+    local model_name=$1
+    local model_dir="$CAR_MODELS_DIR/$model_name"
+    local train_config="$model_dir/${model_name}.train_config.json"
+    eval "$CONDA_INIT"
+    python - "$train_config" "$MYSIM_DIR" <<'PYEOF'
+import sys, json
+sys.path.insert(0, sys.argv[2])
+import myconfig as c
+config = {
+    "TRANSFORMATIONS": getattr(c, 'TRANSFORMATIONS', []),
+    "POST_TRANSFORMATIONS": getattr(c, 'POST_TRANSFORMATIONS', []),
+    "ROI_CROP_TOP": getattr(c, 'ROI_CROP_TOP', 0),
+    "ROI_CROP_BOTTOM": getattr(c, 'ROI_CROP_BOTTOM', 0),
+    "ROI_CROP_LEFT": getattr(c, 'ROI_CROP_LEFT', 0),
+    "ROI_CROP_RIGHT": getattr(c, 'ROI_CROP_RIGHT', 0),
+}
+with open(sys.argv[1], 'w') as f:
+    json.dump(config, f, indent=2, default=str)
+print(f'训练配置已保存: {sys.argv[1]}')
+print(f'  TRANSFORMATIONS = {config["TRANSFORMATIONS"]}')
+print(f'  ROI_CROP_TOP = {config["ROI_CROP_TOP"]}')
+PYEOF
+}
+
+# 从模型目录读取训练配置，还原到 myconfig.py
+# 确保推理时应用与训练时一致的遮罩（CROP）
+# 支持两种预处理方式：
+#   - "mask"（默认）：白色填充顶部 ROI_CROP_TOP 行（Donkey Car 内置 ImgCropMask）
+#   - "crop"        ：真正裁剪顶部 ROI_CROP_TOP 行（自定义 ImgRealCrop，输出 95×160）
+load_train_config() {
+    local model_name=$1
+    local model_dir="$CAR_MODELS_DIR/$model_name"
+    local train_config="$model_dir/${model_name}.train_config.json"
+    if [ ! -f "$train_config" ]; then
+        echo "提示: 未找到训练配置 $train_config"
+        echo "      推理时将使用 myconfig.py 当前设置"
+        return 1
+    fi
+    echo "读取训练配置: $train_config"
+    eval "$CONDA_INIT"
+    python - "$train_config" "$MYCONFIG" "$MYSIM_DIR" <<'PYEOF'
+import sys, json
+config_path = sys.argv[1]
+myconfig_path = sys.argv[2]
+mysim_dir = sys.argv[3]
+with open(config_path) as f:
+    train_config = json.load(f)
+with open(myconfig_path, 'r') as f:
+    content = f.read()
+lines = content.split('\n')
+keys_to_set = ['TRANSFORMATIONS', 'POST_TRANSFORMATIONS',
+               'ROI_CROP_TOP', 'ROI_CROP_BOTTOM',
+               'ROI_CROP_LEFT', 'ROI_CROP_RIGHT',
+               'CUSTOM_CROP_MODULE', 'CUSTOM_CROP_CLASS',
+               'CUSTOM_CROP_CLAHE', 'CUSTOM_CROP_CLAHE_CLIP', 'CUSTOM_CROP_CLAHE_TILE']
+new_lines = [l for l in lines if not any(l.startswith(k + ' =') for k in keys_to_set)]
+# 判断预处理方式：mask(白色填充) 或 crop(真正裁剪)
+preprocess = train_config.get('preprocessing', {})
+if isinstance(preprocess, dict):
+    method = preprocess.get('method', '')
+    # 防呆: 训练脚本新格式无 method 字段, 有 'crop' 嵌套键即为裁剪版
+    if not method:
+        method = 'crop' if 'crop' in preprocess else 'mask'
+    # 兼容嵌套 {'crop': {...}} 与平铺两种格式
+    crop_cfg = preprocess.get('crop', {}) if isinstance(preprocess.get('crop'), dict) else {}
+    crop_top = crop_cfg.get('ROI_CROP_TOP', preprocess.get('ROI_CROP_TOP', 0))
+    crop_bottom = crop_cfg.get('ROI_CROP_BOTTOM', preprocess.get('ROI_CROP_BOTTOM', 0))
+    crop_left = crop_cfg.get('ROI_CROP_LEFT', preprocess.get('ROI_CROP_LEFT', 0))
+    crop_right = crop_cfg.get('ROI_CROP_RIGHT', preprocess.get('ROI_CROP_RIGHT', 0))
+else:
+    method = 'mask'
+    crop_top = train_config.get('ROI_CROP_TOP', 0)
+    crop_bottom = train_config.get('ROI_CROP_BOTTOM', 0)
+    crop_left = train_config.get('ROI_CROP_LEFT', 0)
+    crop_right = train_config.get('ROI_CROP_RIGHT', 0)
+if method == 'crop':
+    # 裁剪版：使用自定义 ImgRealCrop 做真正裁剪
+    transformations = ['CUSTOM_CROP']
+    custom_module = f"'{mysim_dir}/custom_crop.py'"
+    custom_class = "'ImgRealCrop'"
+    print(f'预处理: 真正裁剪 (CUSTOM_CROP, top={crop_top}, left={crop_left}, right={crop_right})')
+else:
+    # 白色填充版：使用内置 CROP
+    transformations = train_config.get('TRANSFORMATIONS', ['CROP'])
+    custom_module = None
+    custom_class = None
+    print(f'预处理: 白色填充 (CROP, top={crop_top})')
+# CLAHE 开关: 训练时用了 B_clahe 则推理必须一致 (opt 系列模型)
+clahe_cfg = preprocess.get('B_clahe', {}) if isinstance(preprocess, dict) else {}
+if method == 'crop' and clahe_cfg:
+    clahe_enable = 'True'
+    clahe_clip = clahe_cfg.get('clipLimit', 2.0)
+    clahe_tile = (clahe_cfg.get('tileGridSize', [8, 8]) or [8, 8])[0]
+    print(f'CLAHE: 启用 (clip={clahe_clip}, tile={clahe_tile}x{clahe_tile})')
+else:
+    clahe_enable = 'False'
+    clahe_clip, clahe_tile = 2.0, 8
+    print('CLAHE: 关闭')
+for i, l in enumerate(new_lines):
+    if l.strip() == 'import os':
+        insert_lines = [
+            f'TRANSFORMATIONS = {transformations}',
+            f'POST_TRANSFORMATIONS = {train_config.get("POST_TRANSFORMATIONS", [])}',
+            f'ROI_CROP_TOP = {crop_top}',
+            f'ROI_CROP_BOTTOM = {crop_bottom}',
+            f'ROI_CROP_LEFT = {crop_left}',
+            f'ROI_CROP_RIGHT = {crop_right}',
+        ]
+        if custom_module:
+            insert_lines.append(f'CUSTOM_CROP_MODULE = {custom_module}')
+            insert_lines.append(f'CUSTOM_CROP_CLASS = {custom_class}')
+        insert_lines.append(f'CUSTOM_CROP_CLAHE = {clahe_enable}')
+        insert_lines.append(f'CUSTOM_CROP_CLAHE_CLIP = {clahe_clip}')
+        insert_lines.append(f'CUSTOM_CROP_CLAHE_TILE = {clahe_tile}')
+        for j, il in enumerate(insert_lines):
+            new_lines.insert(i + 1 + j, il)
+        break
+with open(myconfig_path, 'w') as f:
+    f.write('\n'.join(new_lines))
+print(f'已还原推理遮罩配置:')
+print(f'  TRANSFORMATIONS = {transformations}')
+print(f'  ROI_CROP_TOP = {crop_top}, LEFT = {crop_left}, RIGHT = {crop_right}')
+print(f'  CUSTOM_CROP_CLAHE = {clahe_enable}')
+PYEOF
+}
+
+# 获取模型路径（支持 .keras、.h5 和 .tflite 三种扩展名）
+get_model_file() {
+    local model_name=$1
+    local model_dir="$CAR_MODELS_DIR/$model_name"
+    for ext in keras h5 tflite; do
+        if [ -f "$model_dir/$model_name.$ext" ]; then
+            echo "$model_dir/$model_name.$ext"
+            return 0
+        fi
+    done
+    # 未找到，返回默认路径（用于错误提示）
+    echo "$model_dir/$model_name.keras"
+    return 1
+}
+
+# 检查模型是否存在（同名目录存在即视为已存在）
+check_model_exists() {
+    local model_name=$1
+    local model_dir="$CAR_MODELS_DIR/$model_name"
+    if [ -d "$model_dir" ]; then
+        return 0  # 目录存在即视为已存在
+    else
+        return 1  # 不存在
+    fi
+}
+
+# 检查模型是否已训练（有 .keras、.h5 或 .tflite 文件）
+check_model_trained() {
+    local model_name=$1
+    local model_dir="$CAR_MODELS_DIR/$model_name"
+    for ext in keras h5 tflite; do
+        if [ -f "$model_dir/$model_name.$ext" ]; then
+            return 0  # 已训练
+        fi
+    done
+    return 1  # 未训练
+}
+
+# 获取场景数据目录的记录数
+count_records() {
+    local data_dir=$1
+    if [ -f "$data_dir/manifest.json" ]; then
+        eval "$CONDA_INIT"
+        python -c "
+import json
+count = 0
+with open('$data_dir/manifest.json') as f:
+    for line in f:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            m = json.loads(line)
+            if isinstance(m, dict) and 'current_index' in m:
+                count = m['current_index']
+                break
+        except:
+            continue
+print(count)
+" 2>/dev/null
+    elif [ -d "$data_dir/images/" ]; then
+        ls "$data_dir/images/" 2>/dev/null | wc -l
+    else
+        echo "0"
+    fi
+}
+
+# ============================================================
+# 命令实现
+# ============================================================
+
+cmd_create() {
+    local model_name=$1
+    if [ -z "$model_name" ]; then
+        echo "用法: ./dcar create <model_name>"
+        echo "示例: ./dcar create mypilot"
+        exit 1
+    fi
+
+    local model_dir="$CAR_MODELS_DIR/$model_name"
+    local model_file=$(get_model_file "$model_name")
+
+    echo "=== 创建模型: $model_name ==="
+
+    if check_model_exists "$model_name"; then
+        # 已存在
+        local rel_path=$(realpath --relative-to="$MYSIM_DIR" "$model_dir" 2>/dev/null || echo "models/$model_name")
+        echo "相对路径: $rel_path"
+        if check_model_trained "$model_name"; then
+            echo "状态: 已存在，可直接使用（已训练）"
+            local size=$(stat -c %s "$model_file" 2>/dev/null)
+            echo "模型文件: $(realpath --relative-to="$MYSIM_DIR" "$model_file") (${size} bytes)"
+        else
+            echo "状态: 已存在，可直接使用（尚未训练，仅有数据目录）"
+        fi
+        echo ""
+        echo "该模型下的场景数据："
+        local has_scene_data=false
+        for scene in "${SCENES[@]}"; do
+            local num=$(echo "$scene" | cut -d: -f1)
+            local sname=$(get_scene_dir_name "$num")
+            local sdir="$model_dir/$sname"
+            if [ -d "$sdir" ]; then
+                local count=$(count_records "$sdir")
+                echo "  [$num] $sname: $count 条记录"
+                has_scene_data=true
+            fi
+        done
+        if [ "$has_scene_data" = false ]; then
+            echo "  (无场景数据)"
+        fi
+    else
+        # 不存在
+        local rel_path=$(realpath --relative-to="$MYSIM_DIR" "$model_dir" 2>/dev/null || echo "models/$model_name")
+        echo "相对路径: $rel_path"
+        echo "状态: 不存在"
+        echo ""
+        read -p "是否创建同名文件夹？[y/N] " confirm
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+            mkdir -p "$model_dir"
+            echo "已创建: $(realpath --relative-to="$MYSIM_DIR" "$model_dir")"
+            echo ""
+            echo "模型 $model_name 已就绪。"
+            echo "下一步: ./dcar collect $model_name  采集数据"
+            echo "       ./dcar train $model_name    训练模型"
+        else
+            echo "已取消创建。"
+            exit 0
+        fi
+    fi
+}
+
+cmd_collect() {
+    local model_name=$1
+    if [ -z "$model_name" ]; then
+        echo "用法: ./dcar collect <model_name>"
+        echo "示例: ./dcar collect mypilot"
+        exit 1
+    fi
+
+    local model_dir="$CAR_MODELS_DIR/$model_name"
+    local model_file=$(get_model_file "$model_name")
+
+    # 检查模型目录是否存在
+    if [ ! -d "$model_dir" ]; then
+        echo "错误: 模型目录不存在: $model_dir"
+        echo "请先运行: ./dcar create $model_name"
+        exit 1
+    fi
+
+    echo "=== 数据采集: $model_name ==="
+    echo ""
+
+    # ---- 第1步: 选择数据类型 ----
+    echo "选择数据类型："
+    echo "  1) linear 仅图像数据（无雷达）"
+    echo "  2) radar  图像 + 雷达距离融合 ★推荐（支持超声波）"
+    echo ""
+    read -p "选择 [1-2，默认2]: " data_type_choice
+    data_type_choice=${data_type_choice:-2}
+    case "$data_type_choice" in
+        1) data_type="linear"; echo "选择: linear（仅图像）" ;;
+        2) data_type="radar";  echo "选择: radar（图像+雷达）" ;;
+        *) data_type="radar";  echo "使用 radar" ;;
+    esac
+    echo ""
+
+    # ---- 第2步: 选择场景 ----
+    list_scenes
+    echo ""
+    read -p "选择场景编号 [0-5]: " scene_num
+
+    # 验证场景编号
+    local scene_name=$(get_scene_name "$scene_num")
+    if [ -z "$scene_name" ]; then
+        echo "错误: 无效的场景编号 $scene_num"
+        exit 1
+    fi
+
+    local scene_env=$(get_scene_env "$scene_num")
+    local need_sim=$(get_scene_need_sim "$scene_num")
+    local scene_dir_name=$(get_scene_dir_name "$scene_num")
+    # 数据类型作为目录后缀,避免 radar/linear 模式共用同一 tub 导致 schema 冲突
+    local scene_data_dir="$model_dir/${scene_dir_name}_${data_type}"
+
+    echo ""
+    echo "选中的场景: $scene_env"
+    echo "数据目录: $(realpath --relative-to="$MYSIM_DIR" "$scene_data_dir")"
+
+    # 创建场景数据目录
+    mkdir -p "$scene_data_dir"
+    echo "场景数据目录已就绪: $scene_data_dir"
+
+    # ---- 第3步: 配置 myconfig.py ----
+    echo ""
+    echo "=== 配置参数 ==="
+    eval "$CONDA_INIT"
+
+    # 设置 DATA_PATH 指向场景数据目录
+    set_config "DATA_PATH" "\"$scene_data_dir\""
+
+    # 根据数据类型设置 HAVE_RADAR
+    if [ "$data_type" = "radar" ]; then
+        set_config "HAVE_RADAR" "True"
+        echo "已启用 HAVE_RADAR=True（雷达数据将写入 tub）"
+    else
+        set_config "HAVE_RADAR" "False"
+        echo "已设置 HAVE_RADAR=False（仅图像数据）"
+    fi
+
+    if [ "$need_sim" = "True" ]; then
+        # 模拟器场景：设置 GYM_ENV_NAME 并启动模拟器
+        set_config "DONKEY_GYM_ENV_NAME" "\"$scene_env\""
+        echo "已设置场景: $scene_env"
+
+        # 启动模拟器
+        echo ""
+        echo "=== 启动模拟器 ==="
+        if ! pgrep -f "donkey_sim.x86_64" > /dev/null 2>&1; then
+            echo "启动模拟器（图形模式）..."
+            cd "$SIM_DIR"
+            nohup ./donkey_sim.x86_64 > /dev/null 2>&1 &
+            echo "等待模拟器就绪..."
+            for i in $(seq 1 30); do
+                if ss -tunap 2>/dev/null | grep -q ":9091.*LISTEN"; then
+                    echo "模拟器已就绪 (端口 9091)"
+                    break
+                fi
+                sleep 1
+            done
+        else
+            echo "模拟器已在运行"
+        fi
+    else
+        # 物理世界场景：不启动模拟器
+        echo "物理世界场景：不启动模拟器"
+        echo "将使用真实摄像头采集数据"
+    fi
+
+    # ---- 第4步: 启动 manage.py drive ----
+    echo ""
+    echo "=== 启动 Web 控制器 ==="
+    cd "$MYSIM_DIR"
+    pkill -f "manage.py drive" 2>/dev/null || true
+    sleep 2
+
+    if check_model_trained "$model_name"; then
+        echo "加载已有模型: $(realpath --relative-to="$MYSIM_DIR" "$model_file")"
+        # 还原训练时的遮罩配置，确保推理时应用与训练时一致的 CROP
+        load_train_config "$model_name"
+
+        # 推理模型类型优先用 train_config.json 中的 MODEL_TYPE
+        # 若无配置文件，则用本次采集选择的数据类型
+        local train_config="$model_dir/${model_name}.train_config.json"
+        local model_type="$data_type"
+        if [ -f "$train_config" ]; then
+            local saved_type=$(python -c "
+import json
+with open('$train_config') as f:
+    print(json.load(f).get('MODEL_TYPE', ''))
+" 2>/dev/null)
+            if [ -n "$saved_type" ]; then
+                model_type="$saved_type"
+            fi
+        fi
+        echo "模型类型: $model_type"
+        # .tflite 模型需要 tflite_ 前缀才能让 DonkeyCar 使用 TfLite 解释器
+        if [[ "$model_file" == *.tflite ]] && [[ "$model_type" != tflite_* ]]; then
+            model_type="tflite_${model_type}"
+            echo "检测到 .tflite 模型，自动调整模型类型为: $model_type"
+        fi
+        nohup python manage.py drive --model "$model_file" --type "$model_type" \
+            > /tmp/donkey_drive.log 2>&1 &
+    else
+        echo "无模型（未找到 .keras、.h5 或 .tflite 文件），以纯手动模式启动"
+        nohup python manage.py drive > /tmp/donkey_drive.log 2>&1 &
+    fi
+
+    sleep 8
+    if grep -q "drive your car" /tmp/donkey_drive.log 2>/dev/null; then
+        echo "Web 控制器已就绪"
+    else
+        echo "等待 Web 控制器启动..."
+        sleep 5
+    fi
+
+    echo ""
+    echo "============================================================"
+    echo "数据采集已就绪！"
+    echo ""
+    echo "数据类型: $data_type"
+    echo "浏览器打开: http://localhost:8887"
+    echo ""
+    echo "操作说明："
+    echo "  - User 模式: 手动带跑（方向键控制），有油门时自动录制"
+    echo "  - Full Auto: AI 驾驶（测试已有模型），切换此模式即测试"
+    echo "  - Auto Steer: AI 转向 + 人工油门"
+    echo ""
+    echo "场景: $scene_env"
+    echo "数据保存到: $(realpath --relative-to="$MYSIM_DIR" "$scene_data_dir")"
+    echo "============================================================"
+}
+
+cmd_train() {
+    local model_name=$1
+    if [ -z "$model_name" ]; then
+        echo "用法: ./dcar train <model_name>"
+        echo "示例: ./dcar train mypilot"
+        exit 1
+    fi
+
+    local model_dir="$CAR_MODELS_DIR/$model_name"
+    local model_file="$model_dir/$model_name.keras"
+
+    if [ ! -d "$model_dir" ]; then
+        echo "错误: 模型目录不存在: $model_dir"
+        echo "请先运行: ./dcar create $model_name"
+        exit 1
+    fi
+
+    echo "=== 训练模型: $model_name ==="
+
+    # 检查已有模型，决定增量/从头
+    local is_incremental=false
+    local transfer_opt=""
+    if check_model_trained "$model_name"; then
+        local existing_file=$(get_model_file "$model_name")
+        echo "检测到已有模型: $(realpath --relative-to="$MYSIM_DIR" "$existing_file")"
+        echo ""
+        read -p "是否进行增量训练（在已有模型基础上继续学习）？[Y/n] " confirm
+        if [[ ! "$confirm" =~ ^[Nn]$ ]]; then
+            is_incremental=true
+            transfer_opt="--transfer $existing_file"
+            echo "模式: 增量训练"
+        else
+            echo "模式: 从头训练（将覆盖旧模型）"
+        fi
+    else
+        echo "未检测到已训练的模型（无 .keras、.h5 或 .tflite 文件）"
+        echo "模式: 从头训练"
+    fi
+
+    # 列出有数据的场景
+    echo ""
+    echo "=== 场景数据检查 ==="
+    local available_scenes=()
+    local has_data=false
+    for scene in "${SCENES[@]}"; do
+        local num=$(echo "$scene" | cut -d: -f1)
+        local scene_dir_name=$(get_scene_dir_name "$num")
+        local sdir="$model_dir/$scene_dir_name"
+        if [ -d "$sdir" ]; then
+            local count=$(count_records "$sdir")
+            if [ "$count" -gt 0 ]; then
+                echo "  [$num] $scene_dir_name: $count 条记录"
+                available_scenes+=("$num")
+                has_data=true
+            fi
+        fi
+    done
+
+    if [ "$has_data" = false ]; then
+        echo "错误: 没有找到训练数据"
+        echo "请先运行: ./dcar collect $model_name"
+        exit 1
+    fi
+
+    # 选择训练场景
+    echo ""
+    echo "选择训练场景："
+    echo "  a) 全部场景合并训练"
+    for num in "${available_scenes[@]}"; do
+        local sname=$(get_scene_dir_name "$num")
+        echo "  $num) 仅 $sname"
+    done
+    echo ""
+    read -p "选择 [a/场景编号，多个用空格分隔]: " scene_choice
+
+    # 构建训练数据路径列表
+    local tubs=()
+    if [ "$scene_choice" = "a" ]; then
+        for num in "${available_scenes[@]}"; do
+            local scene_dir_name=$(get_scene_dir_name "$num")
+            tubs+=("$model_dir/$scene_dir_name")
+        done
+    else
+        for num in $scene_choice; do
+            local scene_dir_name=$(get_scene_dir_name "$num")
+            local sdir="$model_dir/$scene_dir_name"
+            if [ -d "$sdir" ]; then
+                tubs+=("$sdir")
+            else
+                echo "警告: 场景 $num 数据目录不存在，跳过"
+            fi
+        done
+    fi
+
+    if [ ${#tubs[@]} -eq 0 ]; then
+        echo "错误: 没有选择有效的训练数据"
+        exit 1
+    fi
+
+    # 训练类型选择（转换为 train_model.py 的参数）
+    echo ""
+    echo "=== 训练类型选择 ==="
+    echo "  1) 标准训练（无遮罩 无增强）"
+    echo "  2) 仅遮罩训练（CROP，无增强）"
+    echo "  3) 仅增强训练（无遮罩，BRIGHTNESS+BLUR）"
+    echo "  4) 遮罩+增强训练（CROP + BRIGHTNESS + BLUR）★推荐"
+    echo "  5) 当前配置（保持 myconfig.py 现有设置）"
+    echo ""
+    read -p "选择训练类型 [1-5，默认4]: " train_type
+    train_type=${train_type:-4}
+
+    local crop_opt=""
+    local aug_opt=""
+    case "$train_type" in
+        1)
+            echo "选择: 标准训练（无遮罩 无增强）"
+            crop_opt="--no-crop"
+            aug_opt="--augmentations "
+            ;;
+        2)
+            echo "选择: 仅遮罩训练（CROP_TOP=25）"
+            crop_opt="--crop-top 25"
+            aug_opt="--augmentations "
+            ;;
+        3)
+            echo "选择: 仅增强训练（BRIGHTNESS+BLUR）"
+            crop_opt="--no-crop"
+            aug_opt="--augmentations BRIGHTNESS,BLUR"
+            ;;
+        4)
+            echo "选择: 遮罩+增强训练（CROP_TOP=25 + BRIGHTNESS + BLUR）★推荐"
+            crop_opt="--crop-top 25"
+            aug_opt="--augmentations BRIGHTNESS,BLUR"
+            ;;
+        5)
+            echo "选择: 当前配置（使用 myconfig.py 现有设置）"
+            # 不传 crop_opt 和 aug_opt，使用 myconfig 默认值
+            ;;
+        *)
+            echo "错误: 无效选择 $train_type"
+            exit 1
+            ;;
+    esac
+
+    # 学习率选择
+    local lr_opt=""
+    local epochs_opt=""
+    local type_opt="linear"
+
+    # 模型类型选择(检测训练数据中是否有 radar/dist_array)
+    local has_radar=false
+    for tub in "${tubs[@]}"; do
+        if [ -d "$tub" ]; then
+            # 检查 manifest.json 中是否有 radar/dist_array 字段
+            for manifest in "$tub"/manifest.json; do
+                if [ -f "$manifest" ] && grep -q '"radar/dist_array"' "$manifest" 2>/dev/null; then
+                    has_radar=true
+                    break
+                fi
+            done
+        fi
+        [ "$has_radar" = true ] && break
+    done
+
+    if [ "$has_radar" = true ]; then
+        echo ""
+        echo "=== 检测到雷达数据 ==="
+        echo "  1) radar 模型 (图像 + 距离融合) ★推荐"
+        echo "  2) linear 模型 (仅图像,忽略雷达)"
+        read -p "选择 [1-2，默认1]: " model_type_choice
+        model_type_choice=${model_type_choice:-1}
+        case "$model_type_choice" in
+            1) type_opt="radar"; echo "选择: radar 模型" ;;
+            2) type_opt="linear"; echo "选择: linear 模型" ;;
+            *) type_opt="radar"; echo "使用 radar 模型" ;;
+        esac
+    else
+        echo ""
+        echo "未检测到雷达数据,使用 linear 模型"
+        type_opt="linear"
+    fi
+    echo ""
+    if [ "$is_incremental" = true ]; then
+        echo "=== 增量训练学习率 ==="
+        echo "  1) 0.0001（推荐）"
+        echo "  2) 0.00005（更保守）"
+        echo "  3) 0.0005（较快）"
+        echo "  4) 自定义"
+        read -p "选择 [1-4，默认1]: " lr_choice
+        lr_choice=${lr_choice:-1}
+        case "$lr_choice" in
+            1) lr_opt="--lr 0.0001" ;;
+            2) lr_opt="--lr 0.00005" ;;
+            3) lr_opt="--lr 0.0005" ;;
+            4)
+               read -p "输入学习率: " custom_lr
+               lr_opt="--lr $custom_lr"
+               ;;
+            *) lr_opt="--lr 0.0001" ;;
+        esac
+        epochs_opt="--epochs 15"
+        echo "已设置 epochs=15（增量训练）"
+    else
+        echo "=== 从头训练学习率 ==="
+        echo "  1) 0.0005（推荐）"
+        echo "  2) 0.001（较快收敛）"
+        echo "  3) 0.0001（保守）"
+        echo "  4) 自定义"
+        read -p "选择 [1-4，默认1]: " lr_choice
+        lr_choice=${lr_choice:-1}
+        case "$lr_choice" in
+            1) lr_opt="--lr 0.0005" ;;
+            2) lr_opt="--lr 0.001" ;;
+            3) lr_opt="--lr 0.0001" ;;
+            4)
+               read -p "输入学习率: " custom_lr
+               lr_opt="--lr $custom_lr"
+               ;;
+            *) lr_opt="--lr 0.0005" ;;
+        esac
+        echo ""
+        read -p "训练 epochs [默认 50]: " epoch_choice
+        epoch_choice=${epoch_choice:-50}
+        epochs_opt="--epochs $epoch_choice"
+    fi
+
+    # 多场景时选择训练策略
+    local balance_opt=""
+    if [ ${#tubs[@]} -gt 1 ]; then
+        echo ""
+        echo "=== 多场景训练策略 ==="
+        echo "  1) 标准合并训练（大数据场景主导）"
+        echo "  2) 按场景平衡训练（每场景等量抽样，消除场景偏置）"
+        echo "  3) 按角度分箱平衡 ★推荐（急转弯/中弯/直行等量，解决转弯不足）"
+        echo ""
+        read -p "选择 [1-3，默认3]: " strategy_choice
+        strategy_choice=${strategy_choice:-3}
+        case "$strategy_choice" in
+            1) echo "选择: 标准合并训练" ;;
+            2) balance_opt="--balance min"; echo "选择: 按场景平衡训练" ;;
+            3) balance_opt="--balance angle"; echo "选择: 按角度分箱平衡" ;;
+            *) balance_opt="--balance angle"; echo "使用按角度分箱平衡" ;;
+        esac
+    else
+        # 单场景也支持角度平衡
+        echo ""
+        echo "=== 训练策略 ==="
+        echo "  1) 标准训练（使用全部数据）"
+        echo "  2) 按角度分箱平衡 ★推荐（急转弯/中弯/直行等量，解决转弯不足）"
+        echo ""
+        read -p "选择 [1-2，默认2]: " strategy_choice
+        strategy_choice=${strategy_choice:-2}
+        case "$strategy_choice" in
+            1) echo "选择: 标准训练" ;;
+            2) balance_opt="--balance angle"; echo "选择: 按角度分箱平衡" ;;
+            *) balance_opt="--balance angle"; echo "使用按角度分箱平衡" ;;
+        esac
+    fi
+
+    # 汇总配置
+    echo ""
+    echo "=== 训练配置 ==="
+    echo "模型: $(realpath --relative-to="$MYSIM_DIR" "$model_file")"
+    echo "模型类型: $type_opt"
+    echo "训练类型: $train_type"
+    echo "训练数据:"
+    for tub in "${tubs[@]}"; do
+        local count=$(count_records "$tub")
+        echo "  $(realpath --relative-to="$MYSIM_DIR" "$tub"): $count 条"
+    done
+
+    # 停止采集进程
+    echo ""
+    pkill -f "manage.py drive" 2>/dev/null || true
+    sleep 2
+
+    # 构建逗号分隔的 tub 路径
+    local tubs_csv=""
+    for tub in "${tubs[@]}"; do
+        if [ -z "$tubs_csv" ]; then
+            tubs_csv="$tub"
+        else
+            tubs_csv="$tubs_csv,$tub"
+        fi
+    done
+
+    # 调用统一训练脚本
+    echo "=== 开始训练 ==="
+    eval "$CONDA_INIT"
+    cd "$MYSIM_DIR"
+
+    python scripts/train/train_model.py \
+        --model "$model_file" \
+        --tubs "$tubs_csv" \
+        --type "$type_opt" \
+        $crop_opt \
+        $aug_opt \
+        $lr_opt \
+        $epochs_opt \
+        $balance_opt \
+        $transfer_opt
+
+    local train_result=$?
+
+    if [ $train_result -ne 0 ]; then
+        echo ""
+        echo "=== 训练失败 ==="
+        echo "模型验证未通过，请检查训练参数"
+        echo "建议："
+        echo "  1. 检查训练数据是否足够"
+        echo "  2. 尝试降低学习率"
+        echo "  3. 增加 epochs"
+        exit 1
+    fi
+
+    echo ""
+    echo "=== 训练完成 ==="
+    echo "模型已保存: $(realpath --relative-to="$MYSIM_DIR" "$model_file")"
+    echo ""
+    echo "测试方法: ./dcar collect $model_name"
+    echo "  然后在 Web 界面切换 Full Auto 模式即可测试"
+}
+
+cmd_clean() {
+    local model_name=$1
+    local scene_num=$2
+
+    # 无论什么参数，先清除进程
+    echo "=== 清除进程资源 ==="
+    local killed=0
+    if pgrep -f "manage.py drive" > /dev/null 2>&1; then
+        pkill -f "manage.py drive"
+        echo "已停止 manage.py drive (PID $(pgrep -f 'manage.py drive' | head -1 2>/dev/null || echo '?'))"
+        killed=1
+        sleep 2
+    fi
+    if pgrep -f "donkey_sim.x86_64" > /dev/null 2>&1; then
+        pkill -f "donkey_sim.x86_64"
+        echo "已停止 donkey_sim (PID $(pgrep -f 'donkey_sim.x86_64' | head -1 2>/dev/null || echo '?'))"
+        killed=1
+        sleep 2
+    fi
+    if [ "$killed" = 0 ]; then
+        echo "无运行中的进程"
+    fi
+
+    # 如果指定了模型名，清除数据
+    if [ -n "$model_name" ]; then
+        local model_dir="$CAR_MODELS_DIR/$model_name"
+        if [ ! -d "$model_dir" ]; then
+            echo "错误: 模型目录不存在: $model_dir"
+            exit 1
+        fi
+
+        if [ -n "$scene_num" ]; then
+            # 清除指定场景数据
+            local scene_dir_name=$(get_scene_dir_name "$scene_num")
+            local scene_data_dir="$model_dir/$scene_dir_name"
+            if [ -d "$scene_data_dir" ]; then
+                echo ""
+                echo "=== 清除场景数据 ==="
+                echo "场景: $scene_dir_name"
+                rm -f "$scene_data_dir/manifest.json"
+                rm -f "$scene_data_dir/catalog_"*.catalog
+                rm -f "$scene_data_dir/catalog_"*.catalog_manifest
+                rm -rf "$scene_data_dir/images"
+                rm -rf "$scene_data_dir"/tub_*
+                echo "已清空: $(realpath --relative-to="$MYSIM_DIR" "$scene_data_dir")"
+            else
+                echo "警告: 场景 $scene_num 数据目录不存在"
+            fi
+        else
+            # 清除该模型所有场景数据
+            echo ""
+            echo "=== 清除所有场景数据 ==="
+            for scene in "${SCENES[@]}"; do
+                local num=$(echo "$scene" | cut -d: -f1)
+                local scene_dir_name=$(get_scene_dir_name "$num")
+                local sdir="$model_dir/$scene_dir_name"
+                if [ -d "$sdir" ]; then
+                    rm -f "$sdir/manifest.json"
+                    rm -f "$sdir/catalog_"*.catalog
+                    rm -f "$sdir/catalog_"*.catalog_manifest
+                    rm -rf "$sdir/images"
+                    rm -rf "$sdir"/tub_*
+                    echo "已清空: $(realpath --relative-to="$MYSIM_DIR" "$sdir")"
+                fi
+            done
+            echo "模型 $model_name 的所有场景数据已清空（模型文件保留）"
+        fi
+    fi
+}
+
+cmd_status() {
+    echo "=== Donkey Car 状态 ==="
+    echo ""
+    echo "路径配置:"
+    echo "  模型根目录: $CAR_MODELS_DIR"
+    echo "  模拟器路径: $SIM_DIR"
+    echo ""
+
+    echo "进程状态:"
+    if pgrep -f "donkey_sim.x86_64" > /dev/null 2>&1; then
+        echo "  模拟器: 运行中 (PID $(pgrep -f 'donkey_sim.x86_64' | head -1))"
+    else
+        echo "  模拟器: 未运行"
+    fi
+    if pgrep -f "manage.py drive" > /dev/null 2>&1; then
+        echo "  Web控制器: 运行中 (PID $(pgrep -f 'manage.py drive' | head -1))"
+        ss -tunap 2>/dev/null | grep ":8887" | head -1 | sed 's/^/    /'
+    else
+        echo "  Web控制器: 未运行"
+    fi
+
+    echo ""
+    echo "模型列表:"
+    if [ -d "$CAR_MODELS_DIR" ]; then
+        local found=false
+        for model_dir in "$CAR_MODELS_DIR"/*/; do
+            if [ -d "$model_dir" ]; then
+                local mname=$(basename "$model_dir")
+                local model_file=""
+                for ext in keras h5; do
+                    if [ -f "$model_dir$mname.$ext" ]; then
+                        model_file="$model_dir$mname.$ext"
+                        break
+                    fi
+                done
+                local rel_dir=$(realpath --relative-to="$MYSIM_DIR" "$model_dir")
+                if [ -n "$model_file" ]; then
+                    local size=$(stat -c %s "$model_file" 2>/dev/null)
+                    local mtime=$(stat -c %y "$model_file" 2>/dev/null | cut -d. -f1)
+                    # 读取模型类型
+                    local train_cfg="${model_dir}${mname}.train_config.json"
+                    local mtype="linear"
+                    if [ -f "$train_cfg" ]; then
+                        mtype=$(python -c "
+import json
+with open('$train_cfg') as f:
+    print(json.load(f).get('MODEL_TYPE', 'linear'))
+" 2>/dev/null)
+                        mtype=${mtype:-linear}
+                    fi
+                    echo "  $mname: 有模型 ($mtype, ${size} bytes, $mtime)"
+                else
+                    echo "  $mname: 无模型（仅有数据目录）"
+                fi
+                # 显示各场景数据
+                for scene in "${SCENES[@]}"; do
+                    local num=$(echo "$scene" | cut -d: -f1)
+                    local scene_dir_name=$(get_scene_dir_name "$num")
+                    local sdir="$model_dir$scene_dir_name"
+                    if [ -d "$sdir" ]; then
+                        local count=$(count_records "$sdir")
+                        echo "    [$num] $scene_dir_name: $count 条"
+                    fi
+                done
+                found=true
+            fi
+        done
+        if [ "$found" = false ]; then
+            echo "  (无模型)"
+        fi
+    else
+        echo "  目录不存在: $CAR_MODELS_DIR"
+    fi
+}
+
+cmd_list() {
+    echo "=== 模型列表 ==="
+    if [ ! -d "$CAR_MODELS_DIR" ]; then
+        echo "目录不存在: $CAR_MODELS_DIR"
+        echo "运行 ./dcar create <model_name> 创建第一个模型"
+        return
+    fi
+    local found=false
+    for model_dir in "$CAR_MODELS_DIR"/*/; do
+        if [ -d "$model_dir" ]; then
+            local mname=$(basename "$model_dir")
+            local has_model=false
+            for ext in keras h5; do
+                if [ -f "$model_dir$mname.$ext" ]; then
+                    has_model=true
+                    break
+                fi
+            done
+            if [ "$has_model" = true ]; then
+                # 读取模型类型
+                local train_cfg="${model_dir}${mname}.train_config.json"
+                local mtype="linear"
+                if [ -f "$train_cfg" ]; then
+                    mtype=$(python -c "
+import json
+with open('$train_cfg') as f:
+    print(json.load(f).get('MODEL_TYPE', 'linear'))
+" 2>/dev/null)
+                    mtype=${mtype:-linear}
+                fi
+                echo "  $mname ✓ ($mtype)"
+            else
+                echo "  $mname (仅有数据)"
+            fi
+            found=true
+        fi
+    done
+    if [ "$found" = false ]; then
+        echo "  (无模型)"
+    fi
+}
+
+show_help() {
+    echo "Donkey Car 训练管理工具 dcar"
+    echo ""
+    echo "用法:"
+    echo "  ./dcar create  <model_name>             创建模型（检查同名，询问是否创建）"
+    echo "  ./dcar collect <model_name>             数据采集（选择场景，启动模拟器/Web）"
+    echo "  ./dcar train   <model_name>             训练（增量/从头+选场景）"
+    echo "  ./dcar clean   [model_name] [scene_num] 清除数据/进程"
+    echo "  ./dcar status                            查看状态"
+    echo "  ./dcar list                              列出所有模型"
+    echo "  ./dcar help                              显示帮助"
+    echo ""
+    echo "场景编号:"
+    echo "  0 → 物理世界（不启动模拟器）"
+    echo "  1 → donkey-generated-track-v0"
+    echo "  2 → donkey-generated-roads-v0"
+    echo "  3 → donkey-warehouse-v0"
+    echo "  4 → donkey-avc-sparkfun-v0"
+    echo "  5 → donkey-mountain-track-v0"
+    echo ""
+    echo "目录结构:"
+    echo "  models/"
+    echo "  └── <model_name>/"
+    echo "      ├── <model_name>.keras    # 或 <model_name>.h5"
+    echo "      ├── 0_custom/          # 物理世界数据"
+    echo "      ├── 1_generated-track/ # 场景1数据"
+    echo "      └── ..."
+    echo ""
+    echo "典型工作流:"
+    echo "  1. ./dcar create mypilot          # 创建模型"
+    echo "  2. ./dcar collect mypilot          # 采集数据（选场景1）"
+    echo "     → 浏览器 http://localhost:8887 手动带跑"
+    echo "  3. ./dcar mirror mypilot           # 生成镜像反向数据（数据翻倍）"
+    echo "  4. ./dcar train mypilot           # 训练"
+    echo "  5. ./dcar collect mypilot          # 再次采集（Full Auto 测试模型）"
+    echo "  6. ./dcar train mypilot           # 增量训练（纠错数据）"
+    echo "  7. ./dcar clean mypilot 1          # 清除场景1数据"
+    echo ""
+    echo "mirror 命令（镜像反向数据）:"
+    echo "  ./dcar mirror <model_name>                    # 选择场景生成镜像"
+    echo "  ./dcar mirror <model_name> <scene_num>       # 指定场景生成镜像"
+    echo "  ./dcar mirror <model_name> <scene_num> --dry-run  # 只统计不写入"
+    echo "  原理: 图像水平翻转 + 角度取反 → 左右弯完全对称"
+}
+
+# ============================================================
+# 镜像反向数据生成
+# ============================================================
+cmd_mirror() {
+    local model_name=$1
+    local scene_num=${2:-}
+    local dry_run=""
+
+    if [ -z "$model_name" ]; then
+        echo "用法: ./dcar mirror <model_name> [scene_num] [--dry-run]"
+        echo "示例:"
+        echo "  ./dcar mirror mypilot           # 交互选择场景"
+        echo "  ./dcar mirror mypilot 1          # 指定场景1"
+        echo "  ./dcar mirror mypilot 1 --dry-run # 只统计不写入"
+        exit 1
+    fi
+
+    # 检查 --dry-run 参数
+    for arg in "$@"; do
+        if [ "$arg" = "--dry-run" ]; then
+            dry_run="--dry-run"
+        fi
+    done
+
+    local model_dir="$CAR_MODELS_DIR/$model_name"
+    if [ ! -d "$model_dir" ]; then
+        echo "错误: 模型目录不存在: $model_dir"
+        echo "请先运行: ./dcar create $model_name"
+        exit 1
+    fi
+
+    echo "=== 镜像反向数据生成: $model_name ==="
+    echo ""
+
+    # 如果未指定场景，列出有数据的场景供选择
+    if [ -z "$scene_num" ] || [ "$scene_num" = "--dry-run" ]; then
+        echo "选择要镜像的场景："
+        local available_scenes=()
+        local idx=1
+        for scene in "${SCENES[@]}"; do
+            local num=$(echo "$scene" | cut -d: -f1)
+            local scene_dir_name=$(get_scene_dir_name "$num")
+            local sdir="$model_dir/$scene_dir_name"
+            if [ -d "$sdir" ]; then
+                local count=$(count_records "$sdir")
+                if [ "$count" -gt 0 ]; then
+                    echo "  $idx) $scene_dir_name: $count 条记录"
+                    available_scenes+=("$num")
+                    idx=$((idx + 1))
+                fi
+            fi
+        done
+
+        if [ ${#available_scenes[@]} -eq 0 ]; then
+            echo "错误: 没有找到有数据的场景"
+            echo "请先运行: ./dcar collect $model_name 采集数据"
+            exit 1
+        fi
+
+        echo "  a) 全部场景"
+        echo ""
+        read -p "选择 [编号/多编号空格分隔/a]: " choice
+
+        if [ "$choice" = "a" ]; then
+            scene_num="all"
+        else
+            # 将用户选择的编号转换为实际场景编号
+            local selected_nums=""
+            for c in $choice; do
+                local actual_num=${available_scenes[$((c - 1))]}
+                if [ -n "$actual_num" ]; then
+                    selected_nums="$selected_nums $actual_num"
+                fi
+            done
+            scene_num=$(echo "$selected_nums" | xargs)
+        fi
+    fi
+
+    echo ""
+    eval "$CONDA_INIT"
+    cd "$MYSIM_DIR"
+
+    # 处理选中的场景
+    local total_orig=0
+    local total_mirror=0
+    local processed=0
+
+    if [ "$scene_num" = "all" ]; then
+        # 全部场景
+        for scene in "${SCENES[@]}"; do
+            local num=$(echo "$scene" | cut -d: -f1)
+            local scene_dir_name=$(get_scene_dir_name "$num")
+            local sdir="$model_dir/$scene_dir_name"
+            if [ -d "$sdir" ]; then
+                local count=$(count_records "$sdir")
+                if [ "$count" -gt 0 ]; then
+                    echo "--- 处理 $scene_dir_name ($count 条) ---"
+                    python scripts/collect/mirror_data.py "$sdir" $dry_run
+                    processed=$((processed + 1))
+                fi
+            fi
+        done
+    else
+        # 指定场景
+        for num in $scene_num; do
+            local scene_name=$(get_scene_name "$num")
+            if [ -z "$scene_name" ]; then
+                echo "警告: 无效场景编号 $num，跳过"
+                continue
+            fi
+            local scene_dir_name=$(get_scene_dir_name "$num")
+            local sdir="$model_dir/$scene_dir_name"
+            if [ -d "$sdir" ]; then
+                local count=$(count_records "$sdir")
+                if [ "$count" -gt 0 ]; then
+                    echo "--- 处理 $scene_dir_name ($count 条) ---"
+                    python scripts/collect/mirror_data.py "$sdir" $dry_run
+                    processed=$((processed + 1))
+                else
+                    echo "跳过 $scene_dir_name（无数据）"
+                fi
+            else
+                echo "警告: 场景 $num 数据目录不存在，跳过"
+            fi
+        done
+    fi
+
+    if [ "$processed" -eq 0 ]; then
+        echo "错误: 未处理任何场景"
+        exit 1
+    fi
+
+    echo ""
+    echo "============================================================"
+    echo "镜像完成！共处理 $processed 个场景"
+    echo ""
+    echo "下一步:"
+    echo "  ./dcar train $model_name   # 用翻倍的数据训练"
+    echo "  ./dcar clean $model_name <scene>  # 清除数据（会同时清除镜像）"
+    echo "============================================================"
+}
+
+# ============================================================
+# 主入口
+# ============================================================
+case "$1" in
+    create)
+        cmd_create "$2"
+        ;;
+    collect)
+        cmd_collect "$2"
+        ;;
+    train)
+        cmd_train "$2"
+        ;;
+    mirror)
+        cmd_mirror "$2" "$3" "$4"
+        ;;
+    clean)
+        cmd_clean "$2" "$3"
+        ;;
+    status)
+        cmd_status
+        ;;
+    list)
+        cmd_list
+        ;;
+    help|--help|-h)
+        show_help
+        ;;
+    "")
+        show_help
+        ;;
+    *)
+        echo "未知命令: $1"
+        echo "运行 ./dcar help 查看帮助"
+        exit 1
+        ;;
+esac

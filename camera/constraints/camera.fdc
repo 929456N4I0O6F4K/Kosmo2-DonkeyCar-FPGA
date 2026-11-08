@@ -1,0 +1,26 @@
+# Board schematic MES-PG2K100-MBG400-V1.2_SCH20260514.pdf, sheet 5.
+# L6 and R5: 3.3 V. R4 (switch + green LEDs): 2.5 V.
+# Demo key_led_test pin mapping; oscillator corrected to board 50 MHz / LVCMOS33.
+create_clock -name sysclk_50 -period 20 [get_ports sysclk_50]
+# Conservative 24 MHz maximum PCLK; external module crystal must be measured.
+create_clock -name cam_pclk -period 41.667 [get_ports cam_pclk]
+set_clock_groups -asynchronous -group [get_clocks sysclk_50] -group [get_clocks cam_pclk]
+# OV2640 data is launched on falling PCLK (COM10=0), sampled on rising PCLK.
+# 0..8 ns board+sensor input budget: provisional until actual module is measured.
+set_input_delay -clock cam_pclk -clock_fall -max 8 [get_ports {cam_data[*] cam_href cam_vsync}]
+set_input_delay -clock cam_pclk -clock_fall -min 0 [get_ports {cam_data[*] cam_href cam_vsync}]
+# Y6 is the N pin: PDS Place-0170 rejects its single-ended dedicated clock path.
+# Use GMCLK P pin Y7, J8-10, for camera PCLK. J8-9 is GND.
+foreach {port pin} {sysclk_50 T9 uart_rx T20 uart_tx U20 cam_pclk Y7 cam_vsync W6 cam_href Y13 cam_reset_n V6 cam_sda W8 cam_scl W9 cam_data[0] U5 cam_data[1] Y12 cam_data[2] V11 cam_data[3] Y11 cam_data[4] W11 cam_data[5] W10 cam_data[6] Y9 cam_data[7] Y8} {
+ define_attribute p:$port PAP_IO_LOC $pin
+ define_attribute p:$port PAP_IO_VCCIO 3.3
+ define_attribute p:$port PAP_IO_STANDARD LVCMOS33
+}
+foreach {port pin} {rstn C20 led_n[0] G14 led_n[1] E18 led_n[2] E19 led_n[3] F16 led_n[4] F17} {
+ define_attribute p:$port PAP_IO_LOC $pin
+ define_attribute p:$port PAP_IO_VCCIO 2.5
+ define_attribute p:$port PAP_IO_STANDARD LVCMOS25
+}
+# Asynchronous controls enter synchronizers. Low speed SCCB/UART/LED outputs.
+set_false_path -from [get_ports {rstn uart_rx cam_scl cam_sda}]
+set_false_path -to [get_ports {uart_tx cam_scl cam_sda cam_reset_n led_n[*]}]

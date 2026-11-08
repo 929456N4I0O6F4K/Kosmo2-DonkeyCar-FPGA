@@ -1,0 +1,6 @@
+[
+  ["stop", "/usr/local/sbin/kosmo-wifi stop && modprobe -r 8188gu && lsmod"],
+  ["routes", "ip route show default; cat /run/kosmo-wifi/default.before; ip route replace default via 192.168.137.1 dev eth0"],
+  ["start", "/usr/local/sbin/kosmo-wifi start"],
+  ["status", "/usr/local/sbin/kosmo-wifi status; tail -n 8 /run/kosmo-wifi/wpa.log; true"]
+]

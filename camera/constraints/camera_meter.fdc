@@ -1,0 +1,20 @@
+# Kosmo2 schematic: L6 camera IO at 3.3 V; R4 reset/LED IO at 2.5 V.
+create_clock -name sysclk_50 -period 20 [get_ports sysclk_50]
+create_clock -name jtag_tck -period 66.667 [get_pins {dvio/scanchain/TCK_USER}]
+set_clock_groups -asynchronous -group [get_clocks jtag_tck] -group [get_clocks sysclk_50]
+foreach {port pin} {sysclk_50 T9 cam_reset_n V6 cam_sda W8 cam_scl W9} {
+ define_attribute p:$port PAP_IO_LOC $pin
+ define_attribute p:$port PAP_IO_VCCIO 3.3
+ define_attribute p:$port PAP_IO_STANDARD LVCMOS33
+}
+foreach {port pin} {rstn C20 led_n[0] G14 led_n[1] E18 led_n[2] E19 led_n[3] F16 led_n[4] F17} {
+ define_attribute p:$port PAP_IO_LOC $pin
+ define_attribute p:$port PAP_IO_VCCIO 2.5
+ define_attribute p:$port PAP_IO_STANDARD LVCMOS25
+}
+# Diagnostic weak pullups: same attribute used by Kosmo2 Demo/2.voice_out.
+# These do not establish a known 4.7 kohm value or prove SCCB rise-time compliance.
+define_attribute {p:cam_scl} {PAP_IO_BUS_KEEPER} {PULLUP}
+define_attribute {p:cam_sda} {PAP_IO_BUS_KEEPER} {PULLUP}
+set_false_path -from [get_ports {rstn cam_scl cam_sda}]
+set_false_path -to [get_ports {cam_scl cam_sda cam_reset_n led_n[*]}]
